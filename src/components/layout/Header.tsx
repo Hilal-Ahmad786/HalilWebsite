@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
+import { getAllCities } from '@/data/cities';
 import { trackPhoneClick, trackWhatsAppClick, trackCTAClick } from '@/lib/analytics';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const cities = getAllCities();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,6 +111,46 @@ export default function Header() {
                 ))}
               </div>
             </div>
+
+            {/* Cities Dropdown */}
+            <div className="relative group">
+              <button className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center gap-1">
+                Şehirler
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+              
+              {/* Cities Dropdown */}
+              <div className="absolute top-full left-0 mt-2 w-72 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
+                <div className="p-4 bg-purple-600 text-white font-bold">
+                  Hizmet Verdiğimiz Şehirler
+                </div>
+                <div className="grid grid-cols-2 gap-2 p-4">
+                  {cities.map((city) => (
+                    <Link
+                      key={city.id}
+                      href={`/sehirler/${city.slug}`}
+                      className="px-4 py-2 hover:bg-gray-50 border-l-2 border-transparent hover:border-lime-400 transition font-medium text-gray-700 hover:text-purple-600"
+                    >
+                      {city.name}
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  href="/sehirler"
+                  className="block p-4 bg-gray-50 text-center font-bold text-purple-600 hover:bg-gray-100 transition border-t"
+                >
+                  Tüm Şehirler →
+                </Link>
+              </div>
+            </div>
+            <Link
+            href="/blog"
+            className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase"
+            >
+            Bilgiler
+            </Link>
             
             <Link
               href="/hakkimizda"
@@ -200,6 +242,30 @@ export default function Header() {
                     {service.title}
                   </Link>
                 ))}
+              </div>
+
+              {/* Mobile Cities */}
+              <div className="space-y-2">
+                <div className="text-lime-400 font-bold text-sm tracking-wider uppercase mb-2">
+                  ŞEHİRLER
+                </div>
+                {cities.slice(0, 5).map((city) => (
+                  <Link
+                    key={city.id}
+                    href={`/sehirler/${city.slug}`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-white hover:text-lime-400 transition pl-4 py-2"
+                  >
+                    {city.name}
+                  </Link>
+                ))}
+                <Link
+                  href="/sehirler"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block text-lime-400 hover:text-lime-300 transition pl-4 py-2 font-bold"
+                >
+                  Tüm Şehirler →
+                </Link>
               </div>
               
               <Link

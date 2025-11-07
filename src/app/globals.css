@@ -22,5 +22,178 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 15px; /* Reduced from 16px */
+  line-height: 1.6;
+}
+
+/* ===== IMPROVED TYPOGRAPHY - Smaller & More Spacing ===== */
+h1 {
+  font-size: 2.5rem; /* Reduced from 4rem+ */
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2rem; /* Reduced from 3rem+ */
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.5rem; /* Reduced from 2rem+ */
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 0.95rem; /* Reduced from 1rem */
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ===== IMPROVED SPACING ===== */
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* ===== WHATSAPP GREEN COLOR ===== */
+.bg-whatsapp {
+  background-color: #25D366 !important;
+}
+
+.bg-whatsapp:hover {
+  background-color: #20BA5A !important;
+}
+
+.text-whatsapp {
+  color: #25D366 !important;
+}
+
+.border-whatsapp {
+  border-color: #25D366 !important;
+}
+
+/* Replace all instances of success-green with whatsapp color */
+.bg-success-green {
+  background-color: #25D366 !important;
+}
+
+.bg-success-green-dark {
+  background-color: #20BA5A !important;
+}
+
+/* ===== IMPROVED BUTTON SIZES ===== */
+button,
+a.btn,
+.button {
+  padding: 0.75rem 1.5rem; /* More reasonable padding */
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ===== IMPROVED ICON QUALITY ===== */
+svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.icon-lg svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-xl svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ===== SMOOTH ANIMATIONS ===== */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* ===== IMPROVED FOCUS STATES ===== */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #A3E635;
+  outline-offset: 2px;
+}
+
+/* ===== LOADING STATES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  button,
+  a.btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
 }
