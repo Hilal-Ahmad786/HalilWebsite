@@ -1,0 +1,170 @@
+/* 
+  PREMIUM AUTO DESIGN SYSTEM
+  Philosophy: "Modern Minimalism with Bold Accents"
+  Focus: Conversion-first, sharp edges, high contrast
+*/
+
+:root {
+  /* ===== PRIMARY COLORS ===== */
+  --primary-purple: #9333EA;
+  --primary-purple-dark: #7E22CE;
+  --primary-purple-light: #A855F7;
+  
+  /* ===== ACCENT COLORS ===== */
+  --accent-lime: #A3E635;
+  --accent-lime-dark: #84CC16;
+  --accent-lime-light: #BEF264;
+  
+  /* ===== SECONDARY COLORS ===== */
+  --secondary-fuchsia: #C026D3;
+  --secondary-fuchsia-dark: #A21CAF;
+  --secondary-fuchsia-light: #D946EF;
+  
+  /* ===== NEUTRAL COLORS ===== */
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  
+  /* ===== SEMANTIC COLORS ===== */
+  --success-green: #16A34A;
+  --success-green-dark: #15803D;
+  --warning-yellow: #EAB308;
+  --danger-red: #DC2626;
+  
+  /* ===== SPACING SYSTEM - 8px base ===== */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  
+  /* ===== TYPOGRAPHY SCALE ===== */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
+  --text-8xl: 6rem;        /* 96px */
+  
+  /* ===== FONT WEIGHTS ===== */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  
+  /* ===== BORDER RADIUS - Sharp Design ===== */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 0;    /* No rounding for Premium Auto */
+  
+  /* ===== SHADOWS - Minimal ===== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ===== Z-INDEX SCALE ===== */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 400;
+  --z-fixed: 500;
+  --z-modal: 600;
+  --z-popover: 700;
+  --z-tooltip: 800;
+  
+  /* ===== GRADIENTS ===== */
+  --gradient-purple: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-fuchsia) 100%);
+  --gradient-lime: linear-gradient(135deg, var(--accent-lime) 0%, var(--accent-lime-light) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--gray-900) 0%, var(--primary-purple-dark) 50%, var(--gray-900) 100%);
+}
+
+/* ===== GLOBAL RESETS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--gray-900);
+  background: var(--gray-50);
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background-color: var(--accent-lime);
+  color: var(--gray-900);
+}
+
+/* ===== FOCUS STYLES ===== */
+:focus-visible {
+  outline: 3px solid var(--accent-lime);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.text-gradient-purple {
+  background: var(--gradient-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-lime {
+  background: var(--gradient-lime);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
