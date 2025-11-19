@@ -40,12 +40,13 @@ body {
 main {
   width: 100%;
   overflow-x: hidden;
+
 }
 
 
 
 
-/* ===== IMPROVED TYPOGRAPHY - Base defaults (only for elements without Tailwind classes) ===== */
+/* ===== IMPROVED TYPOGRAPHY - Base defaults (only for elementsdd without Tailwind classes) ===== */
 h1 {
   font-size: 2.5rem;
   line-height: 1.2;
