@@ -20,6 +20,22 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+  if (isMenuOpen) {
+    // Arka plan sayfanın scroll olmasını engelle
+    document.body.style.overflow = 'hidden';
+  } else {
+    // Menü kapanınca normale dön
+    document.body.style.overflow = '';
+  }
+
+  // Güvenli cleanup
+  return () => {
+    document.body.style.overflow = '';
+  };
+}, [isMenuOpen]);
+
+
   const handlePhoneClick = (location: string) => {
     trackPhoneClick(location);
     trackCTAClick('Phone Call', location);
@@ -34,13 +50,13 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-gray-900/98 backdrop-blur-md shadow-2xl'
+          ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl'
           : 'bg-gray-900/80 backdrop-blur-sm'
       }`}
     >
       {/* Top Bar - Urgent Call Banner */}
       <div className="bg-gradient-to-r from-lime-400 to-lime-500 text-gray-900 py-2">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <div className="flex items-center justify-center gap-4 text-sm font-bold">
             <span className="animate-pulse">🔥</span>
             <span className="hidden sm:inline">HEMEN ARAYIN - ANINDA TEKLİF ALIN</span>
@@ -57,7 +73,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -75,7 +91,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-3">
             <Link
               href="/"
               className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase"
@@ -85,10 +101,17 @@ export default function Header() {
             
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center gap-1">
+                
+              <button     
+              className="nav-trigger-btn text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center"
+>
                 Hizmetler
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </button>
               
@@ -114,14 +137,19 @@ export default function Header() {
 
             {/* Cities Dropdown */}
             <div className="relative group">
-              <button className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center gap-1">
+
+              <button     
+              className="nav-trigger-btn text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center">
                 Şehirler
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </button>
               
-              {/* Cities Dropdown */}
               <div className="absolute top-full left-0 mt-2 w-72 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
                 <div className="p-4 bg-purple-600 text-white font-bold">
                   Hizmet Verdiğimiz Şehirler
@@ -145,11 +173,13 @@ export default function Header() {
                 </Link>
               </div>
             </div>
+
+            {/* Blog link (Bilgiler) */}
             <Link
-            href="/blog"
-            className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase"
+              href="/blog"
+              className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase"
             >
-            Bilgiler
+              Bilgiler
             </Link>
             
             <Link
@@ -183,7 +213,7 @@ export default function Header() {
               WHATSAPP
             </a>
 
-            {/* Phone Button - MEGA CTA */}
+            {/* Phone Button */}
             <a
               href={`tel:${siteConfig.phone}`}
               onClick={() => handlePhoneClick('header-desktop')}
@@ -215,9 +245,9 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden pb-6 pt-4 border-t border-gray-700">
-            <nav className="flex flex-col space-y-4">
+{isMenuOpen && (
+  <div className="lg:hidden pb-6 pt-4 border-t border-gray-700 max-h-[70vh] overflow-y-auto">
+    <nav className="flex flex-col space-y-4">
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
@@ -267,6 +297,15 @@ export default function Header() {
                   Tüm Şehirler →
                 </Link>
               </div>
+
+              {/* Blog link in mobile menu */}
+              <Link
+                href="/blog"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white hover:text-lime-400 transition font-bold text-base tracking-wide uppercase"
+              >
+                Bilgiler
+              </Link>
               
               <Link
                 href="/hakkimizda"
@@ -283,8 +322,9 @@ export default function Header() {
               >
                 İletişim
               </Link>
-
+  
               {/* Mobile CTA Buttons */}
+            {/*
               <div className="flex flex-col gap-3 pt-4">
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Merhaba, aracım için teklif almak istiyorum.')}`}
@@ -316,6 +356,8 @@ export default function Header() {
                   HEMEN ARA: {siteConfig.phoneDisplay}
                 </a>
               </div>
+*/}
+
             </nav>
           </div>
         )}

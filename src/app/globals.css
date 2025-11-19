@@ -23,27 +23,45 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-size: 15px; /* Reduced from 16px */
+  font-size: 15px; /* You can later change to 16px if you want bigger text */
   line-height: 1.6;
 }
 
-/* ===== IMPROVED TYPOGRAPHY - Smaller & More Spacing ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;   /* 🔒 prevent side-scroll + white bar */
+}
+
+/* Just to be safe, keep main from overflowing too */
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+
+/* ===== IMPROVED TYPOGRAPHY - Base defaults (only for elements without Tailwind classes) ===== */
 h1 {
-  font-size: 2.5rem; /* Reduced from 4rem+ */
+  font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-weight: 900;
 }
 
 h2 {
-  font-size: 2rem; /* Reduced from 3rem+ */
+  font-size: 2rem;
   line-height: 1.3;
   margin-bottom: 1.25rem;
   font-weight: 900;
 }
 
 h3 {
-  font-size: 1.5rem; /* Reduced from 2rem+ */
+  font-size: 1.5rem;
   line-height: 1.4;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -57,23 +75,26 @@ h4 {
 }
 
 p {
-  font-size: 0.95rem; /* Reduced from 1rem */
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 1rem;
 }
 
 /* ===== IMPROVED SPACING ===== */
+/* Use this container as your global page padding instead of px-4/px-6 everywhere */
 .container {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+
+.nav-trigger-btn {
+  padding: 0!important;              /* global button padding'ini iptal eder */
+  font-size: .95rem;       /* istersen bunu da sabit tutarsın */
+  font-weight: 700;
 }
 
-/* Mobile spacing */
+/* Mobile spacing for headings and text only */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -90,12 +111,9 @@ section {
   p {
     font-size: 0.9rem;
   }
-  
-  section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
 }
+
+/* IMPORTANT: we REMOVED the global "section { padding-top/bottom }" here */
 
 /* ===== WHATSAPP GREEN COLOR ===== */
 .bg-whatsapp {
@@ -124,12 +142,12 @@ section {
 }
 
 /* ===== IMPROVED BUTTON SIZES ===== */
-button,
+button.btn,
 a.btn,
 .button {
-  padding: 0.75rem 1.5rem; /* More reasonable padding */
-  font-size: 0.95rem;
-  font-weight: 700;
+    padding: .75rem 1.5rem;
+    font-size: .95rem;
+    font-weight: 700;
 }
 
 /* ===== IMPROVED ICON QUALITY ===== */
@@ -149,8 +167,13 @@ svg {
   height: 3rem;
 }
 
-/* ===== SMOOTH ANIMATIONS ===== */
-* {
+/* ===== SMOOTH ANIMATIONS (LIMITED) ===== */
+/* Don't animate EVERYTHING; just common interactive elements */
+button,
+a,
+input,
+textarea,
+select {
   transition: all 0.2s ease-in-out;
 }
 
@@ -164,7 +187,7 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* ===== LOADING STATES ===== */
+/* ===== LOADING / APPEAR ANIMATION UTIL ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -196,4 +219,12 @@ select:focus {
     padding: 0.625rem 1.25rem;
     font-size: 0.875rem;
   }
+}
+
+
+.floating-btn {
+  padding: 0 !important;           /* Tüm iç padding’i sıfırla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

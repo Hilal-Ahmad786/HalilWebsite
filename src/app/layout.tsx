@@ -8,11 +8,13 @@ import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import ConversionTracking from '@/components/analytics/ConversionTracking';
 import { siteConfig } from '@/config/site';
-import FloatingChatWidget from '@/components/layout/FloatingChatWidget';
 import CallPopupModal from '@/components/layout/CallPopupModal';
 
-const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] });
-
+const inter = Inter({ 
+  subsets: ['latin'], 
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+});
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -55,7 +57,6 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <FloatingButtons />
-        <FloatingChatWidget />
         <CallPopupModal />
       </body>
     </html>

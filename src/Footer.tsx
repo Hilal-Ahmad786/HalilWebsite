@@ -1,10 +1,31 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 
+
+const FooterSpacing = {
+  footer: "bg-gray-950 text-white py-section-y",
+  container: "container mx-auto",
+  
+  grid: "grid md:grid-cols-4 gap-lg mb-lg",
+  
+  // Brand section
+  brandLogo: "w-16 h-16 bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center font-black text-2xl mb-sm",
+  brandTitle: "text-2xl font-black mb-sm",
+  brandDescription: "text-gray-400",
+  
+  // Links sections
+  sectionTitle: "font-black text-base mb-sm text-lime-400",
+  linksList: "space-y-xs",
+  link: "text-gray-400 hover:text-lime-400 transition",
+  
+  // Bottom bar
+  bottomBar: "border-t border-gray-800 pt-lg text-center text-gray-400",
+};
+
 export default function Footer() {
   return (
     <footer className="bg-gray-950 text-white py-16">
-        <div className="container mx-auto">
+      <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>

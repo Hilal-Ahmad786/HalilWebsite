@@ -1,17 +1,38 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 
+
+const FooterSpacing = {
+  footer: "bg-gray-950 text-white py-section-y",
+  container: "container mx-auto",
+  
+  grid: "grid md:grid-cols-4 gap-lg mb-lg",
+  
+  // Brand section
+  brandLogo: "w-16 h-16 bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center font-black text-2xl mb-sm",
+  brandTitle: "text-2xl font-black mb-sm",
+  brandDescription: "text-gray-400",
+  
+  // Links sections
+  sectionTitle: "font-black text-base mb-sm text-lime-400",
+  linksList: "space-y-xs",
+  link: "text-gray-400 hover:text-lime-400 transition",
+  
+  // Bottom bar
+  bottomBar: "border-t border-gray-800 pt-lg text-center text-gray-400",
+};
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-white py-16">
-        <div className="container mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-gray-950 text-white py-section-y">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-4 gap-12 mb-lg">
           {/* Brand */}
           <div>
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center font-black text-2xl mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center font-black text-2xl mb-md">
               PA
             </div>
-            <h3 className="text-2xl font-black mb-3">PREMIUM AUTO</h3>
+            <h3 className="text-2xl font-black mb-sm">PREMIUM AUTO</h3>
             <p className="text-gray-400">
               Türkiye'nin en güvenilir araç alım merkezi
             </p>
@@ -19,8 +40,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-black text-lg mb-4 text-lime-400">HİZMETLER</h4>
-            <ul className="space-y-2">
+            <h4 className="font-black text-lg mb-md text-lime-400">HİZMETLER</h4>
+            <ul className="space-y-xs">
               {siteConfig.services.map((service) => (
                 <li key={service.id}>
                   <Link
@@ -36,8 +57,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-black text-lg mb-4 text-lime-400">HIZLI LİNKLER</h4>
-            <ul className="space-y-2">
+            <h4 className="font-black text-lg mb-md text-lime-400">HIZLI LİNKLER</h4>
+            <ul className="space-y-xs">
               <li>
                 <Link href="/hakkimizda" className="text-gray-400 hover:text-lime-400 transition">
                   Hakkımızda
@@ -53,8 +74,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-black text-lg mb-4 text-lime-400">İLETİŞİM</h4>
-            <ul className="space-y-3">
+            <h4 className="font-black text-lg mb-md text-lime-400">İLETİŞİM</h4>
+            <ul className="space-y-sm">
               <li>
                 <a
                   href={`tel:${siteConfig.phone}`}

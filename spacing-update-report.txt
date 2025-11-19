@@ -1,0 +1,56 @@
+
+SPACING UPDATE REPORT
+=====================
+Date: 2025-11-19T12:10:32.387Z
+
+Files Updated: 22
+
+Replacements Applied:
+- Section vertical padding
+- Section vertical padding
+- Remove container horizontal padding
+- Remove responsive container padding
+- Grid gaps
+- Grid gaps
+- Small gaps
+- Small gaps
+- Extra large margin bottom
+- Large margin bottom
+- Large margin bottom
+- Medium margin bottom
+- Medium margin bottom
+- Small margin bottom
+- Small margin bottom
+- Card padding
+- Medium padding
+- Small padding
+- Large button padding
+- Button padding
+- Button padding
+- Small button padding
+- Extra small button padding
+- Hero title size
+- Section title size
+- Subtitle size
+- Heading size
+- Subheading size
+- Hero section padding
+- Hero section padding
+- Hero section padding
+- Hero section padding
+- Vertical spacing
+- Small vertical spacing
+- Extra small vertical spacing
+- Extra large margin top
+- Large margin top
+- Large margin top
+- Medium margin top
+- Medium margin top
+
+Backup Location: ./spacing-backup/
+
+To restore a file:
+cp spacing-backup/[filename] src/[original-path]/[filename]
+
+To restore all files:
+cp spacing-backup/* src/
