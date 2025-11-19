@@ -274,9 +274,26 @@ export default function FloatingButtons() {
             onClick={handlePhoneClick}
             className="flex-1 flex flex-col items-center justify-center py-3 px-4 bg-lime-400 text-gray-900 hover:bg-lime-300 transition active:scale-95 relative overflow-hidden"
           >
-            <svg className="w-7 h-7 mb-1" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-            </svg>
+<svg
+  className="w-7 h-7"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  aria-hidden="true"
+>
+  <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+           19.8 19.8 0 0 1-8.6-3.1
+           19.5 19.5 0 0 1-6-6
+           19.8 19.8 0 0 1-3.1-8.6
+           A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7
+           c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9
+           a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4
+           c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
+</svg>
+
             <span className="text-xs font-black tracking-wider">HEMEN ARA</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 animate-shine"></div>
           </button>

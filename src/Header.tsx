@@ -231,9 +231,26 @@ const HeaderSpacing = {
                   "
                   aria-label="Hemen ara"
                 >
-                  <svg className="w-[clamp(16px,1.1vw,20px)] h-[clamp(16px,1.1vw,20px)]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
+<svg
+  className="w-7 h-7"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  aria-hidden="true"
+>
+  <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+           19.8 19.8 0 0 1-8.6-3.1
+           19.5 19.5 0 0 1-6-6
+           19.8 19.8 0 0 1-3.1-8.6
+           A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7
+           c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9
+           a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4
+           c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
+</svg>
+
                   Hemen Ara
                 </a>
               </div>
@@ -330,9 +347,26 @@ const HeaderSpacing = {
                     onClick={() => { handlePhoneClick('header-mobile'); setIsMenuOpen(false); }}
                     className="bg-lime-400 text-gray-900 px-6 py-3 font-black text-center hover:bg-lime-300 transition flex items-center justify-center gap-2 text-sm rounded-md"
                   >
-                    <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
+<svg
+  className="w-7 h-7"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  aria-hidden="true"
+>
+  <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+           19.8 19.8 0 0 1-8.6-3.1
+           19.5 19.5 0 0 1-6-6
+           19.8 19.8 0 0 1-3.1-8.6
+           A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7
+           c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9
+           a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4
+           c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
+</svg>
+
                     HEMEN ARA: {siteConfig.phoneDisplay}
                   </a>
                 </div>

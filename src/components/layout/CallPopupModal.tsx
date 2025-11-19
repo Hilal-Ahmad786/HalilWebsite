@@ -97,7 +97,7 @@ export default function CallPopupModal() {
                   Hoş geldiniz!
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-600 leading-snug">
-                  Müşteri temsilcimiz, aracınız için **en yüksek fiyatı** sunmaya hazır.
+                  Müşteri temsilcimiz, aracınız için <b>en yüksek fiyatı</b> sunmaya hazır.
                 </p>
               </div>
             </div>

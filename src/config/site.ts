@@ -4,10 +4,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://premiumauto.com.tr',
   
   // CRITICAL: Main conversion points
-  phone: process.env.NEXT_PUBLIC_PHONE || '+905557512220',
-  phoneDisplay: '0 555 751 22 20',
-  phoneClean: '05557512220', // For tracking
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905557512220',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+905345809315',
+  phoneDisplay: '0 534 580 93 15',
+  phoneClean: '05345809315', // For tracking
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905345809315',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@premiumauto.com.tr',
   
   // Business hours
