@@ -43,7 +43,7 @@ export default function HeroSection() {
             {/* Badge */}
             <div className="inline-block bg-lime-400/20 text-lime-400 px-6 py-3 mb-8 border-2 border-lime-400">
               <span className="font-black text-sm tracking-widest">
-                TÜRKİYE'NİN #1 ALIM MERKEZİ
+                TÜRKİYE'NİN ARAÇ ALIM MERKEZİ
               </span>
             </div>
 
