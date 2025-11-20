@@ -89,9 +89,7 @@ export default function CallPopupModal() {
           <div className="p-5 space-y-4 flex-1 overflow-y-auto">
             {/* Avatar + welcome */}
             <div className="flex items-center gap-4">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-fuchsia-500 text-white rounded-full flex items-center justify-center text-4xl shadow-lg">
-                👨‍💼
-              </div>
+              
               <div>
                 <h2 className="text-lg md:text-xl font-black text-gray-900 mb-1">
                   Hoş geldiniz!
