@@ -37,7 +37,7 @@
   name: 'CITYNAME',
   region: 'REGION', // Marmara, Ege, Akdeniz, İç Anadolu, Karadeniz, Doğu Anadolu, Güneydoğu Anadolu
   
-  metaTitle: 'CITYNAME Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+  metaTitle: 'CITYNAME Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
   metaDescription: 'CITYNAME\'da kazalı, hasarlı, pert ve hurda araç alımı. [Major districts] hizmet. 30 dakikada teklif. 0 (555) 123 45 67',
   keywords: [
     'CITYSLUG kazalı araç alan',

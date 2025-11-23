@@ -22,7 +22,7 @@ export default function FloatingButtons() {
   const handleWhatsAppClick = (location: string, message?: string) => {
     trackWhatsAppClick(location);
     const text =
-      message ?? 'Merhaba Premium Auto, aracım için teklif almak istiyorum.';
+      message ?? 'Merhaba Hasar Park, aracım için teklif almak istiyorum.';
     window.open(
       `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`,
       '_blank'
@@ -151,7 +151,7 @@ export default function FloatingButtons() {
                         PA
                       </div>
                       <div>
-                        <div className="font-bold text-xs leading-tight">Premium Auto</div>
+                        <div className="font-bold text-xs leading-tight">Hasar Park</div>
                         <div className="text-[10px] opacity-90">Müşteri Hizmetleri</div>
                       </div>
                     </div>

@@ -10,8 +10,8 @@ import ConversionTracking from '@/components/analytics/ConversionTracking';
 import { siteConfig } from '@/config/site';
 import CallPopupModal from '@/components/layout/CallPopupModal';
 
-const inter = Inter({ 
-  subsets: ['latin'], 
+const inter = Inter({
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
 });
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: 'Premium Auto' }],
-  creator: 'Premium Auto',
-  publisher: 'Premium Auto',
+  authors: [{ name: 'Hasar Park' }],
+  creator: 'Hasar Park',
+  publisher: 'Hasar Park',
   robots: {
     index: true,
     follow: true,

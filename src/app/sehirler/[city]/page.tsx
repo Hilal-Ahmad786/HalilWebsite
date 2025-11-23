@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   
   if (!city) {
     return {
-      title: 'Şehir Bulunamadı | Premium Auto',
+      title: 'Şehir Bulunamadı | Hasar Park',
     };
   }
 
@@ -329,7 +329,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: `Premium Auto ${city.name}`,
+            name: `Hasar Park ${city.name}`,
             description: city.metaDescription,
             telephone: siteConfig.phone,
             areaServed: {

@@ -63,7 +63,7 @@ export const citiesData: Record<string, CityData> = {
     name: 'İstanbul',
     region: 'Marmara',
 
-    metaTitle: 'İstanbul Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'İstanbul Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'İstanbul\'da kazalı, hasarlı, pert ve hurda araç alımı. Anadolu ve Avrupa yakası hizmet. 30 dakikada teklif, ücretsiz çekici. 0 (555) 123 45 67',
     keywords: [
       'istanbul kazalı araç alan',
@@ -194,7 +194,7 @@ export const citiesData: Record<string, CityData> = {
     name: 'Ankara',
     region: 'İç Anadolu',
 
-    metaTitle: 'Ankara Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'Ankara Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'Ankara\'da kazalı, hasarlı, pert ve hurda araç alımı. Çankaya, Keçiören, Yenimahalle tüm ilçelere hizmet. 30 dakikada teklif. 0 (555) 123 45 67',
     keywords: [
       'ankara kazalı araç alan',
@@ -317,7 +317,7 @@ export const citiesData: Record<string, CityData> = {
     name: 'İzmir',
     region: 'Ege',
 
-    metaTitle: 'İzmir Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'İzmir Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'İzmir\'de kazalı, hasarlı, pert ve hurda araç alımı. Konak, Karşıyaka, Bornova tüm ilçelere hizmet. Anında değerlendirme. 0 (555) 123 45 67',
     keywords: [
       'izmir kazalı araç alan',
@@ -441,7 +441,7 @@ export const citiesData: Record<string, CityData> = {
     name: 'Bursa',
     region: 'Marmara',
 
-    metaTitle: 'Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'Bursa\'da kazalı, hasarlı, pert ve hurda araç alımı. Osmangazi, Nilüfer, Yıldırım tüm ilçelere hizmet. 1 saatte nakit ödeme. 0 (555) 123 45 67',
     keywords: [
       'bursa kazalı araç alan',
@@ -555,7 +555,7 @@ export const citiesData: Record<string, CityData> = {
     name: 'Antalya',
     region: 'Akdeniz',
 
-    metaTitle: 'Antalya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'Antalya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'Antalya\'da kazalı, hasarlı, pert ve hurda araç alımı. Muratpaşa, Kepez, Konyaaltı, Alanya tüm ilçelere hizmet. 0 (555) 123 45 67',
     keywords: [
       'antalya kazalı araç alan',
@@ -669,7 +669,7 @@ export const citiesData: Record<string, CityData> = {
     name: 'Adana',
     region: 'Akdeniz',
 
-    metaTitle: 'Adana Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'Adana Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'Adana\'da kazalı, hasarlı, pert ve hurda araç alımı. Seyhan, Yüreğir, Çukurova tüm ilçelere hizmet. Anında nakit. 0 (555) 123 45 67',
     keywords: [
       'adana kazalı araç alan',
@@ -781,7 +781,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'konya',
     name: 'Konya',
     region: 'İç Anadolu',
-    metaTitle: 'Konya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaTitle: 'Konya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
     metaDescription: 'Konya\'da kazalı, hasarlı, pert ve hurda araç alımı. Selçuklu, Meram, Karatay tüm ilçelere hizmet. 0 (555) 123 45 67',
     keywords: ['konya kazalı araç', 'konya hasarlı araç', 'konya pert araç', 'selçuklu araç alım'],
     hero: {
@@ -807,7 +807,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'gaziantep',
     name: 'Gaziantep',
     region: 'Güneydoğu Anadolu',
-    metaTitle: 'Gaziantep Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Gaziantep Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Gaziantep\'te kazalı, hasarlı, pert araç alımı. Şehitkamil, Şahinbey tüm ilçeler. 0 (555) 123 45 67',
     keywords: ['gaziantep kazalı araç', 'gaziantep hasarlı araç', 'şehitkamil araç alım'],
     hero: {
@@ -833,7 +833,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'mersin',
     name: 'Mersin',
     region: 'Akdeniz',
-    metaTitle: 'Mersin Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Mersin Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Mersin\'de kazalı, hasarlı, pert araç alımı. Yenişehir, Mezitli, Tarsus tüm ilçeler. 0 (555) 123 45 67',
     keywords: ['mersin kazalı araç', 'mersin hasarlı araç', 'tarsus araç alım'],
     hero: {
@@ -859,7 +859,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'kayseri',
     name: 'Kayseri',
     region: 'İç Anadolu',
-    metaTitle: 'Kayseri Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Kayseri Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Kayseri\'de kazalı, hasarlı, pert araç alımı. Melikgazi, Kocasinan, Talas. 0 (555) 123 45 67',
     keywords: ['kayseri kazalı araç', 'kayseri hasarlı araç', 'melikgazi araç alım'],
     hero: {
@@ -885,7 +885,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'eskisehir',
     name: 'Eskişehir',
     region: 'İç Anadolu',
-    metaTitle: 'Eskişehir Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Eskişehir Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Eskişehir\'de kazalı, hasarlı, pert araç alımı. Odunpazarı, Tepebaşı. 0 (555) 123 45 67',
     keywords: ['eskişehir kazalı araç', 'eskişehir hasarlı araç', 'odunpazarı araç alım'],
     hero: {
@@ -911,7 +911,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'diyarbakir',
     name: 'Diyarbakır',
     region: 'Güneydoğu Anadolu',
-    metaTitle: 'Diyarbakır Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Diyarbakır Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Diyarbakır\'da kazalı, hasarlı, pert araç alımı. Bağlar, Kayapınar, Yenişehir. 0 (555) 123 45 67',
     keywords: ['diyarbakır kazalı araç', 'diyarbakır hasarlı araç', 'bağlar araç alım'],
     hero: {
@@ -937,7 +937,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'samsun',
     name: 'Samsun',
     region: 'Karadeniz',
-    metaTitle: 'Samsun Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Samsun Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Samsun\'da kazalı, hasarlı, pert araç alımı. İlkadım, Atakum, Canik. 0 (555) 123 45 67',
     keywords: ['samsun kazalı araç', 'samsun hasarlı araç', 'atakum araç alım'],
     hero: {
@@ -963,7 +963,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'denizli',
     name: 'Denizli',
     region: 'Ege',
-    metaTitle: 'Denizli Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Denizli Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Denizli\'de kazalı, hasarlı, pert araç alımı. Pamukkale, Merkezefendi. 0 (555) 123 45 67',
     keywords: ['denizli kazalı araç', 'denizli hasarlı araç', 'pamukkale araç alım'],
     hero: {
@@ -989,7 +989,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'sanliurfa',
     name: 'Şanlıurfa',
     region: 'Güneydoğu Anadolu',
-    metaTitle: 'Şanlıurfa Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Şanlıurfa Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Şanlıurfa\'da kazalı, hasarlı, pert araç alımı. Haliliye, Eyyübiye, Karaköprü. 0 (555) 123 45 67',
     keywords: ['şanlıurfa kazalı araç', 'urfa hasarlı araç', 'haliliye araç alım'],
     hero: {
@@ -1015,7 +1015,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'malatya',
     name: 'Malatya',
     region: 'Doğu Anadolu',
-    metaTitle: 'Malatya Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Malatya Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Malatya\'da kazalı, hasarlı, pert araç alımı. Battalgazi, Yeşilyurt. 0 (555) 123 45 67',
     keywords: ['malatya kazalı araç', 'malatya hasarlı araç', 'battalgazi araç alım'],
     hero: {
@@ -1041,7 +1041,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'kahramanmaras',
     name: 'Kahramanmaraş',
     region: 'Akdeniz',
-    metaTitle: 'Kahramanmaraş Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Kahramanmaraş Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Kahramanmaraş\'ta kazalı, hasarlı, pert araç alımı. Onikişubat, Dulkadiroğlu. 0 (555) 123 45 67',
     keywords: ['kahramanmaraş kazalı araç', 'maraş hasarlı araç', 'onikişubat araç alım'],
     hero: {
@@ -1067,7 +1067,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'erzurum',
     name: 'Erzurum',
     region: 'Doğu Anadolu',
-    metaTitle: 'Erzurum Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Erzurum Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Erzurum\'da kazalı, hasarlı, pert araç alımı. Yakutiye, Palandöken, Aziziye. 0 (555) 123 45 67',
     keywords: ['erzurum kazalı araç', 'erzurum hasarlı araç', 'yakutiye araç alım'],
     hero: {
@@ -1093,7 +1093,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'van',
     name: 'Van',
     region: 'Doğu Anadolu',
-    metaTitle: 'Van Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaTitle: 'Van Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park',
     metaDescription: 'Van\'da kazalı, hasarlı, pert araç alımı. İpekyolu, Tuşba, Edremit. 0 (555) 123 45 67',
     keywords: ['van kazalı araç', 'van hasarlı araç', 'ipekyolu araç alım'],
     hero: {

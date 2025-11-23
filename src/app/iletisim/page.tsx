@@ -6,8 +6,8 @@ import { siteConfig } from '@/config/site';
 import ContactForm from '@/components/ui/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'İletişim - Premium Auto | Bize Ulaşın',
-  description: 'Premium Auto ile iletişime geçin. Kazalı, hasarlı, pert ve hurda araç alımı için hemen arayın. 7/24 müşteri hizmetleri.',
+  title: 'İletişim - Hasar Park | Bize Ulaşın',
+  description: 'Hasar Park ile iletişime geçin. Kazalı, hasarlı, pert ve hurda araç alımı için hemen arayın. 7/24 müşteri hizmetleri.',
 };
 
 export default function ContactPage() {

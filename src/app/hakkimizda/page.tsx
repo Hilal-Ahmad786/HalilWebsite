@@ -5,8 +5,8 @@ import { siteConfig } from '@/config/site';
 import CTASection from '@/components/sections/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda - Premium Auto | Türkiye\'nin En Güvenilir Araç Alım Merkezi',
-  description: '20+ yıl tecrübe, 100.000+ mutlu müşteri. Premium Auto olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin lider firmasıyız.',
+  title: 'Hakkımızda - Hasar Park | Türkiye\'nin En Güvenilir Araç Alım Merkezi',
+  description: '20+ yıl tecrübe, 100.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin lider firmasıyız.',
 };
 
 export default function AboutPage() {
@@ -53,7 +53,7 @@ export default function AboutPage() {
 
           <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
             <p>
-              <strong className="text-gray-900">Premium Auto</strong>, 2000 yılından bu yana Türkiye'nin dört bir yanında kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 20 yılı aşkın tecrübemiz ve 100.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
+              <strong className="text-gray-900">Hasar Park</strong>, 2000 yılından bu yana Türkiye'nin dört bir yanında kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 20 yılı aşkın tecrübemiz ve 100.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
             </p>
 
             <p>
@@ -106,7 +106,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <h2 className="text-5xl font-black text-center mb-12 text-gray-900">
-            NEDEN <span className="text-purple-600">PREMIUM AUTO?</span>
+            NEDEN <span className="text-purple-600">HASAR PARK?</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">

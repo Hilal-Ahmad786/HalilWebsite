@@ -80,7 +80,7 @@ export default function Header() {
             <div className="relative w-48 h-16 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo.png"
-                alt="Premium Auto"
+                alt="Hasar Park"
                 fill
                 className="object-contain"
                 priority

@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="relative w-48 h-16 mb-4">
               <Image
                 src="/logo.png"
-                alt="Premium Auto"
+                alt="Hasar Park"
                 fill
                 className="object-contain object-left"
               />
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Premium Auto. Tüm hakları saklıdır.</p>
+          <p>&copy; 2025 Hasar Park. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>

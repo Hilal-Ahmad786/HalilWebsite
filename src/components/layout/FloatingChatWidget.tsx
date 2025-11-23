@@ -59,7 +59,7 @@ export default function FloatingChatWidget() {
                 PA
               </div>
               <div>
-                <div className="font-bold text-sm">Premium Auto</div>
+                <div className="font-bold text-sm">Hasar Park</div>
                 <div className="text-xs opacity-90">Müşteri Hizmetleri</div>
               </div>
             </div>

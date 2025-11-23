@@ -8,7 +8,7 @@ export default function WhyUs() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-purple-600/20 text-purple-600 px-6 py-3 mb-6 border-2 border-purple-600">
-            <span className="font-black text-sm tracking-widest">NEDEN PREMIUM AUTO?</span>
+            <span className="font-black text-sm tracking-widest">NEDEN HASAR PARK?</span>
           </div>
           
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">

@@ -62,8 +62,8 @@ export const servicesData: Record<string, ServiceData> = {
     icon: '🚗',
     color: 'lime',
     
-    metaTitle: 'Kazalı Araç Alımı | Anında Değerlendirme & En Yüksek Fiyat - Premium Auto',
-    metaDescription: 'Kazalı araç mı satmak istiyorsunuz? Premium Auto ile 30 dakikada teklif alın, en yüksek fiyat garantisi. Ücretsiz çekici, anında ödeme. 0 (555) 123 45 67',
+    metaTitle: 'Kazalı Araç Alımı | Anında Değerlendirme & En Yüksek Fiyat - Hasar Park',
+    metaDescription: 'Kazalı araç mı satmak istiyorsunuz? Hasar Park ile 30 dakikada teklif alın, en yüksek fiyat garantisi. Ücretsiz çekici, anında ödeme. 0 (555) 123 45 67',
     keywords: [
       'kazalı araç alan',
       'kazalı araç satmak',
@@ -179,7 +179,7 @@ export const servicesData: Record<string, ServiceData> = {
     icon: '🔧',
     color: 'purple',
     
-    metaTitle: 'Hasarlı Araç Alımı | Mekanik & Kaporta Hasarlı Araç Alan - Premium Auto',
+    metaTitle: 'Hasarlı Araç Alımı | Mekanik & Kaporta Hasarlı Araç Alan - Hasar Park',
     metaDescription: 'Hasarlı aracınızı en yüksek fiyata satın. Mekanik, kaporta, motor hasarlı tüm araçlar için anında teklif. Ücretsiz ekspertiz. 0 (555) 123 45 67',
     keywords: [
       'hasarlı araç alan',
@@ -295,7 +295,7 @@ export const servicesData: Record<string, ServiceData> = {
     icon: '⚠️',
     color: 'fuchsia',
     
-    metaTitle: 'Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Premium Auto',
+    metaTitle: 'Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Hasar Park',
     metaDescription: 'Pert raporlu aracınızı en yüksek fiyata satın. Sigorta pert çıkmış araçlar için özel değerlendirme. Anında ödeme. 0 (555) 123 45 67',
     keywords: [
       'pert araç alan',
@@ -410,7 +410,7 @@ export const servicesData: Record<string, ServiceData> = {
     icon: '♻️',
     color: 'lime',
     
-    metaTitle: 'Hurda Araç Alımı | Hurda Belgesi & En İyi Fiyat - Premium Auto',
+    metaTitle: 'Hurda Araç Alımı | Hurda Belgesi & En İyi Fiyat - Hasar Park',
     metaDescription: 'Hurda aracınızı resmi belgeli alıyoruz. Hurda belgesi işlemleri, en yüksek kilo fiyatı. Çevre dostu geri dönüşüm. 0 (555) 123 45 67',
     keywords: [
       'hurda araç alan',

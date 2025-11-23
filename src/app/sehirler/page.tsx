@@ -4,8 +4,8 @@ import { getAllCities, getCitiesByRegion } from '@/data/cities';
 import CTASection from '@/components/sections/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Hizmet Verdiğimiz Şehirler | Premium Auto - Türkiye Geneli Araç Alımı',
-  description: 'Premium Auto olarak Türkiye\'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz. Size en yakın şehri seçin.',
+  title: 'Hizmet Verdiğimiz Şehirler | Hasar Park - Türkiye Geneli Araç Alımı',
+  description: 'Hasar Park olarak Türkiye\'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz. Size en yakın şehri seçin.',
   keywords: ['türkiye araç alım', 'şehirler', 'il il araç alım', 'türkiye geneli hizmet'],
 };
 

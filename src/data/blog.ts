@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
 <p>Benzer hasarlı araçların satış fiyatlarını araştırın. Bu size gerçekçi bir fiyat beklentisi verecektir.</p>
 
 <h3>4. Profesyonel Alıcılarla Çalışın</h3>
-<p>Premium Auto gibi profesyonel alıcılar, size anında değerlendirme ve en yüksek fiyat garantisi sunar.</p>
+<p>Hasar Park gibi profesyonel alıcılar, size anında değerlendirme ve en yüksek fiyat garantisi sunar.</p>
 
 <h3>5. Gerekli Evrakları Hazırlayın</h3>
 <ul>
@@ -46,15 +46,15 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>En Yüksek Fiyatı Nasıl Alırsınız?</h2>
-<p>Birden fazla alıcıdan teklif alın ve karşılaştırın. Premium Auto, piyasa araştırması yaparak size en yüksek teklifi sunar.</p>
+<p>Birden fazla alıcıdan teklif alın ve karşılaştırın. Hasar Park, piyasa araştırması yaparak size en yüksek teklifi sunar.</p>
     `,
     image: '/images/blog/kazali-arac-satis.webp',
     category: 'Rehber',
-    author: 'Premium Auto Ekibi',
+    author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-05',
     readTime: '5 dk',
     tags: ['kazalı araç', 'araç satış', 'ipuçları'],
-    metaTitle: 'Kazalı Araç Satarken Dikkat Edilecekler | Premium Auto Blog',
+    metaTitle: 'Kazalı Araç Satarken Dikkat Edilecekler | Hasar Park Blog',
     metaDescription: 'Kazalı aracınızı en yüksek fiyata satmak için bilmeniz gereken tüm detaylar. Profesyonel ipuçları ve öneriler.',
   },
   {
@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
 <p>Genellikle aracın tamir maliyeti, piyasa değerinin %60-70'ini aştığında pert raporu düzenlenir.</p>
 
 <h3>Pert Raporlu Araç Satılır mı?</h3>
-<p>Evet! Pert raporlu araçlar yasal olarak satılabilir ve alınabilir. Premium Auto olarak pert araçlar için özel değerlendirme yapıyoruz.</p>
+<p>Evet! Pert raporlu araçlar yasal olarak satılabilir ve alınabilir. Hasar Park olarak pert araçlar için özel değerlendirme yapıyoruz.</p>
 
 <h3>Gerekli Evraklar</h3>
 <ul>
@@ -86,7 +86,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2025-01-03',
     readTime: '4 dk',
     tags: ['pert raporu', 'sigorta', 'yasal süreç'],
-    metaTitle: 'Pert Raporu Nedir, Nasıl Alınır? | Premium Auto',
+    metaTitle: 'Pert Raporu Nedir, Nasıl Alınır? | Hasar Park',
     metaDescription: 'Pert raporu hakkında tüm detaylar. Pert raporlu araç satışı ve alımı konusunda bilmeniz gerekenler.',
   },
   {
@@ -119,11 +119,11 @@ export const blogPosts: BlogPost[] = [
     `,
     image: '/images/blog/hurda-arac.webp',
     category: 'Rehber',
-    author: 'Premium Auto Ekibi',
+    author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-01',
     readTime: '3 dk',
     tags: ['hurda araç', 'hurda belgesi', 'süreç'],
-    metaTitle: 'Hurda Araç Teslim Süreci | Premium Auto Blog',
+    metaTitle: 'Hurda Araç Teslim Süreci | Hasar Park Blog',
     metaDescription: 'Hurda aracınızı teslim etme süreci hakkında detaylı bilgi. Ücretsiz çekici ve anında ödeme.',
   },
 ];

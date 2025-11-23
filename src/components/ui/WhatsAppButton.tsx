@@ -17,7 +17,7 @@ interface WhatsAppButtonProps {
 export default function WhatsAppButton({ 
   variant = 'primary',
   location = 'unknown',
-  message = 'Merhaba Premium Auto, aracım için teklif almak istiyorum.',
+  message = 'Merhaba Hasar Park, aracım için teklif almak istiyorum.',
   className = '',
   children 
 }: WhatsAppButtonProps) {

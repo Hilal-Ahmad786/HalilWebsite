@@ -33,7 +33,7 @@ export default function CallPopupModal() {
     setIsVisible(false);
     window.open(
       `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-        'Merhaba Premium Auto, aracım için teklif almak istiyorum.'
+        'Merhaba Hasar Park, aracım için teklif almak istiyorum.'
       )}`,
       '_blank'
     );

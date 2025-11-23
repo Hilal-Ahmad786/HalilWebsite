@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   
   if (!service) {
     return {
-      title: 'Sayfa Bulunamadı | Premium Auto',
+      title: 'Sayfa Bulunamadı | Hasar Park',
     };
   }
 
@@ -251,7 +251,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             serviceType: service.title,
             provider: {
               '@type': 'AutomotiveBusiness',
-              name: 'Premium Auto',
+              name: 'Hasar Park',
               telephone: siteConfig.phone,
             },
             areaServed: 'TR',

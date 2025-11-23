@@ -15,7 +15,7 @@ export default function HeroSection() {
     trackCTAClick('Hero WhatsApp CTA', 'hero');
     window.open(
       `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-        'Merhaba Premium Auto, aracım için teklif almak istiyorum.'
+        'Merhaba Hasar Park, aracım için teklif almak istiyorum.'
       )}`,
       '_blank'
     );

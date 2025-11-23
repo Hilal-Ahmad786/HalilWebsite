@@ -13,7 +13,7 @@ const config: Config = {
           DEFAULT: '#25D366',
           dark: '#20BA5A',
         },
-        // Premium Auto Brand Colors
+        // Hasar Park Brand Colors
         'primary-purple': {
           DEFAULT: '#9333EA',
           dark: '#7E22CE',

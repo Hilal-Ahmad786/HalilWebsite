@@ -1,8 +1,8 @@
-# 🚗 Premium Auto - Complete Setup Guide
+# 🚗 Hasar Park - Complete Setup Guide
 
 ## 📋 Project Overview
 
-Premium Auto is a conversion-focused website for buying damaged, crashed, and salvage vehicles in Turkey. Built with Next.js 14, TypeScript, and Tailwind CSS with aggressive CTAs and comprehensive analytics tracking.
+Hasar Park is a conversion-focused website for buying damaged, crashed, and salvage vehicles in Turkey. Built with Next.js 14, TypeScript, and Tailwind CSS with aggressive CTAs and comprehensive analytics tracking.
 
 ### Key Features
 - ✅ Dynamic service pages (kazalı, hasarlı, pert, hurda)
@@ -131,7 +131,7 @@ premium-auto/
 - Minimal shadows
 
 ### Key Differences from Ankara PERT
-| Feature | Ankara PERT | Premium Auto |
+| Feature | Ankara PERT | Hasar Park |
 |---------|-------------|--------------|
 | Colors | Orange + Blue | Purple + Lime |
 | Corners | Rounded | Sharp |
@@ -191,7 +191,7 @@ Edit `src/data/cities.ts`:
   name: 'Bursa',
   region: 'Marmara',
   
-  metaTitle: 'Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+  metaTitle: 'Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
   metaDescription: 'Bursa\'da kazalı araç alımı...',
   keywords: ['bursa kazalı araç alan', 'bursa araç alım', ...],
   
@@ -449,7 +449,7 @@ For questions or issues:
 
 ## 🎉 You're Ready!
 
-Your Premium Auto website is now fully configured and ready to generate leads!
+Your Hasar Park website is now fully configured and ready to generate leads!
 
 **Next Steps:**
 1. ✅ Complete `.env.local` configuration

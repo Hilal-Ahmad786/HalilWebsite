@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!post) {
     return {
-      title: 'Yazı Bulunamadı | Premium Auto',
+      title: 'Yazı Bulunamadı | Hasar Park',
     };
   }
 

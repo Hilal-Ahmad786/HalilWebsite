@@ -4,7 +4,7 @@ import { getAllPosts, getCategories } from '@/data/blog';
 import CTASection from '@/components/sections/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Blog & Bilgiler | Premium Auto - Araç Alım Rehberi',
+  title: 'Blog & Bilgiler | Hasar Park - Araç Alım Rehberi',
   description: 'Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilgilendirici yazılar, ipuçları ve rehberler.',
 };
 

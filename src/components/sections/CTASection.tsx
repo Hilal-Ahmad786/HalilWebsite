@@ -21,7 +21,7 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
     trackCTAClick(`CTA Section WhatsApp - ${variant}`, location);
     window.open(
       `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-        'Merhaba Premium Auto, aracım için teklif almak istiyorum.'
+        'Merhaba Hasar Park, aracım için teklif almak istiyorum.'
       )}`,
       '_blank'
     );

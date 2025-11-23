@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: 'Premium Auto',
+  name: 'Hasar Park',
   description: 'Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 20+ Yıl Tecrübe, 100.000+ Mutlu Müşteri.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://premiumauto.com.tr',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hasarpark.com.tr',
 
   // CRITICAL: Main conversion points
   phone: process.env.NEXT_PUBLIC_PHONE || '+905345809315',
   phoneDisplay: '0 534 580 93 15',
   phoneClean: '05345809315', // For tracking
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905345809315',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'info@premiumauto.com.tr',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'info@hasarpark.com.tr',
 
   // Business hours
   businessHours: {
@@ -19,8 +19,8 @@ export const siteConfig = {
 
   // Social media
   social: {
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/premiumauto',
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/premiumauto',
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/hasarpark',
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/hasarpark',
     twitter: process.env.NEXT_PUBLIC_TWITTER_URL || '',
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || '',
   },
@@ -168,7 +168,7 @@ export const siteConfig = {
     'araç alım',
     'en yüksek fiyat',
     'anında ödeme',
-    'premium auto',
+    'hasar park',
   ],
 
   // Conversion tracking

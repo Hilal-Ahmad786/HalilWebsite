@@ -9,7 +9,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Premium Auto - Kazalı, Hasarlı, Pert & Hurda Araç Alımı | En Yüksek Fiyat',
+  title: 'Hasar Park - Kazalı, Hasarlı, Pert & Hurda Araç Alımı | En Yüksek Fiyat',
   description:
     'Türkiye\'nin en güvenilir araç alım merkezi. Kazalı, hasarlı, pert ve hurda araçlar için anında değerlendirme ve en yüksek fiyat garantisi. 20+ yıl tecrübe, 100.000+ mutlu müşteri.',
   keywords: [
@@ -20,20 +20,20 @@ export const metadata: Metadata = {
     'araç alım',
     'en yüksek fiyat',
     'anında ödeme',
-    'premium auto',
+    'hasar park',
   ],
   openGraph: {
-    title: 'Premium Auto - En Yüksek Fiyat Garantisi',
+    title: 'Hasar Park - En Yüksek Fiyat Garantisi',
     description:
       'Kazalı, hasarlı, pert ve hurda araçlar için anında değerlendirme. 30 dakika içinde teklif alın!',
     url: 'https://premiumauto.com.tr',
-    siteName: 'Premium Auto',
+    siteName: 'Hasar Park',
     images: [
       {
         url: '/images/hero-bg.webp',
         width: 1200,
         height: 630,
-        alt: 'Premium Auto',
+        alt: 'Hasar Park',
       },
     ],
     locale: 'tr_TR',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Premium Auto - Araç Alım Uzmanı',
+    title: 'Hasar Park - Araç Alım Uzmanı',
     description: 'En yüksek fiyat garantisi ile araç alımı',
     images: ['/images/hero-bg.webp'],
   },
@@ -110,7 +110,7 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'AutomotiveBusiness',
-            name: 'Premium Auto',
+            name: 'Hasar Park',
             description:
               'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin en güvenilir merkezi',
             url: 'https://premiumauto.com.tr',
