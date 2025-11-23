@@ -2,21 +2,21 @@ export const siteConfig = {
   name: 'Premium Auto',
   description: 'Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 20+ Yıl Tecrübe, 100.000+ Mutlu Müşteri.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://premiumauto.com.tr',
-  
+
   // CRITICAL: Main conversion points
   phone: process.env.NEXT_PUBLIC_PHONE || '+905345809315',
   phoneDisplay: '0 534 580 93 15',
   phoneClean: '05345809315', // For tracking
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905345809315',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@premiumauto.com.tr',
-  
+
   // Business hours
   businessHours: {
     weekday: '09:00 - 22:00',
     weekend: '09:00 - 20:00',
     display: '7/24 Hizmet',
   },
-  
+
   // Social media
   social: {
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/premiumauto',
@@ -24,7 +24,7 @@ export const siteConfig = {
     twitter: process.env.NEXT_PUBLIC_TWITTER_URL || '',
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || '',
   },
-  
+
   // Services
   services: [
     {
@@ -60,7 +60,7 @@ export const siteConfig = {
       color: 'lime',
     },
   ],
-  
+
   // Key features for homepage
   features: [
     {
@@ -94,7 +94,7 @@ export const siteConfig = {
       description: '100.000+ mutlu müşteri',
     },
   ],
-  
+
   // Process steps
   process: [
     {
@@ -122,7 +122,7 @@ export const siteConfig = {
       description: 'Anında değerleme, noter işlemi ve nakit ödeme',
     },
   ],
-  
+
   // Stats for homepage
   stats: [
     {
@@ -146,14 +146,15 @@ export const siteConfig = {
       color: 'lime',
     },
   ],
-  
+
   // Coverage cities
   cities: [
     'İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Antalya', 'Adana',
     'Konya', 'Gaziantep', 'Mersin', 'Kayseri', 'Eskişehir', 'Diyarbakır',
-    'Kocaeli', 'Şanlıurfa', 'Samsun', 'Manisa', 'Balıkesir', 'Kahramanmaraş',
+    'Samsun', 'Denizli', 'Şanlıurfa', 'Malatya', 'Kahramanmaraş',
+    'Erzurum', 'Van', 'Kocaeli', 'Manisa', 'Balıkesir',
   ],
-  
+
   // SEO keywords
   keywords: [
     'kazalı araç alan',
@@ -169,7 +170,7 @@ export const siteConfig = {
     'anında ödeme',
     'premium auto',
   ],
-  
+
   // Conversion tracking
   tracking: {
     enableGTM: true,

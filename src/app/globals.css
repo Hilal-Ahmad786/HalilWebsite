@@ -23,7 +23,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-size: 15px; /* You can later change to 16px if you want bigger text */
+  font-size: 15px;
+  /* You can later change to 16px if you want bigger text */
   line-height: 1.6;
 }
 
@@ -33,7 +34,8 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;   /* 🔒 prevent side-scroll + white bar */
+  overflow-x: hidden;
+  /* 🔒 prevent side-scroll + white bar */
 }
 
 /* Just to be safe, keep main from overflowing too */
@@ -90,8 +92,10 @@ p {
 
 
 .nav-trigger-btn {
-  padding: 0!important;              /* global button padding'ini iptal eder */
-  font-size: .95rem;       /* istersen bunu da sabit tutarsın */
+  padding: 0 !important;
+  /* global button padding'ini iptal eder */
+  font-size: .95rem;
+  /* istersen bunu da sabit tutarsın */
   font-weight: 700;
 }
 
@@ -100,15 +104,15 @@ p {
   h1 {
     font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 1.75rem;
   }
-  
+
   h3 {
     font-size: 1.25rem;
   }
-  
+
   p {
     font-size: 0.9rem;
   }
@@ -146,9 +150,9 @@ p {
 button.btn,
 a.btn,
 .button {
-    padding: .75rem 1.5rem;
-    font-size: .95rem;
-    font-weight: 700;
+  padding: .75rem 1.5rem;
+  font-size: .95rem;
+  font-weight: 700;
 }
 
 /* ===== IMPROVED ICON QUALITY ===== */
@@ -194,6 +198,7 @@ select:focus {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -209,12 +214,12 @@ select:focus {
   body {
     font-size: 14px;
   }
-  
+
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   button,
   a.btn {
     padding: 0.625rem 1.25rem;
@@ -224,8 +229,73 @@ select:focus {
 
 
 .floating-btn {
-  padding: 0 !important;           /* Tüm iç padding’i sıfırla */
+  padding: 0 !important;
+  /* Tüm iç padding’i sıfırla */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.group:hover .group-hover\:animate-shine {
+  animation: shine 1s;
+}
+
+@keyframes float-pulse {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== MOBILE OPTIMIZATIONS EXTRA ===== */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px;
+  }
 }

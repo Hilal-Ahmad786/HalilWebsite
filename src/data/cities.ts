@@ -3,12 +3,12 @@ export interface CityData {
   slug: string;
   name: string;
   region: string;
-  
+
   // SEO
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
-  
+
   // Hero Section
   hero: {
     badge: string;
@@ -16,7 +16,7 @@ export interface CityData {
     titleHighlight: string;
     subtitle: string;
   };
-  
+
   // Service availability
   services: {
     kazali: boolean;
@@ -24,7 +24,7 @@ export interface CityData {
     pert: boolean;
     hurda: boolean;
   };
-  
+
   // City-specific info
   cityInfo: {
     population: string;
@@ -32,14 +32,14 @@ export interface CityData {
     responseTime: string;
     localOffice?: string;
   };
-  
+
   // Features for this city
   features: Array<{
     icon: string;
     title: string;
     description: string;
   }>;
-  
+
   // Testimonials
   testimonials: Array<{
     name: string;
@@ -48,7 +48,7 @@ export interface CityData {
     text: string;
     service: string;
   }>;
-  
+
   // FAQ
   faqs: Array<{
     question: string;
@@ -62,7 +62,7 @@ export const citiesData: Record<string, CityData> = {
     slug: 'istanbul',
     name: 'İstanbul',
     region: 'Marmara',
-    
+
     metaTitle: 'İstanbul Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
     metaDescription: 'İstanbul\'da kazalı, hasarlı, pert ve hurda araç alımı. Anadolu ve Avrupa yakası hizmet. 30 dakikada teklif, ücretsiz çekici. 0 (555) 123 45 67',
     keywords: [
@@ -76,21 +76,21 @@ export const citiesData: Record<string, CityData> = {
       'beyoğlu araç alım',
       'üsküdar araç alım',
     ],
-    
+
     hero: {
       badge: '🏙️ İSTANBUL ARAÇ ALIM',
       title: 'İSTANBUL\'DA ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Anadolu ve Avrupa Yakası\'nda kazalı, hasarlı, pert ve hurda araç alımı. 2 saat içinde ücretsiz ekspertiz ve teklif.',
     },
-    
+
     services: {
       kazali: true,
       hasarli: true,
       pert: true,
       hurda: true,
     },
-    
+
     cityInfo: {
       population: '15+ Milyon',
       coverage: [
@@ -106,7 +106,7 @@ export const citiesData: Record<string, CityData> = {
       responseTime: '2 saat içinde',
       localOffice: 'Kadıköy & Beylikdüzü Ofislerimiz',
     },
-    
+
     features: [
       {
         icon: '🚗',
@@ -139,7 +139,7 @@ export const citiesData: Record<string, CityData> = {
         description: 'İstanbul\'daki tüm noterlerle çalışıyoruz.',
       },
     ],
-    
+
     testimonials: [
       {
         name: 'Mehmet K.',
@@ -163,7 +163,7 @@ export const citiesData: Record<string, CityData> = {
         service: 'Pert Araç',
       },
     ],
-    
+
     faqs: [
       {
         question: 'İstanbul\'un hangi ilçelerine hizmet veriyorsunuz?',
@@ -187,13 +187,13 @@ export const citiesData: Record<string, CityData> = {
       },
     ],
   },
-  
+
   'ankara': {
     id: 'ankara',
     slug: 'ankara',
     name: 'Ankara',
     region: 'İç Anadolu',
-    
+
     metaTitle: 'Ankara Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
     metaDescription: 'Ankara\'da kazalı, hasarlı, pert ve hurda araç alımı. Çankaya, Keçiören, Yenimahalle tüm ilçelere hizmet. 30 dakikada teklif. 0 (555) 123 45 67',
     keywords: [
@@ -206,21 +206,21 @@ export const citiesData: Record<string, CityData> = {
       'yenimahalle araç alım',
       'mamak araç alım',
     ],
-    
+
     hero: {
       badge: '🏛️ ANKARA ARAÇ ALIM',
       title: 'ANKARA\'DA ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Ankara\'nın tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. 1 saat içinde ücretsiz ekspertiz.',
     },
-    
+
     services: {
       kazali: true,
       hasarli: true,
       pert: true,
       hurda: true,
     },
-    
+
     cityInfo: {
       population: '5.7 Milyon',
       coverage: [
@@ -233,7 +233,7 @@ export const citiesData: Record<string, CityData> = {
       responseTime: '1 saat içinde',
       localOffice: 'Çankaya Merkez Ofis',
     },
-    
+
     features: [
       {
         icon: '🚗',
@@ -266,7 +266,7 @@ export const citiesData: Record<string, CityData> = {
         description: 'Çankaya ofisimizden tüm Ankara\'ya ulaşım.',
       },
     ],
-    
+
     testimonials: [
       {
         name: 'Ali R.',
@@ -290,7 +290,7 @@ export const citiesData: Record<string, CityData> = {
         service: 'Hurda Araç',
       },
     ],
-    
+
     faqs: [
       {
         question: 'Ankara\'nın hangi ilçelerine hizmet veriyorsunuz?',
@@ -310,13 +310,13 @@ export const citiesData: Record<string, CityData> = {
       },
     ],
   },
-  
+
   'izmir': {
     id: 'izmir',
     slug: 'izmir',
     name: 'İzmir',
     region: 'Ege',
-    
+
     metaTitle: 'İzmir Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
     metaDescription: 'İzmir\'de kazalı, hasarlı, pert ve hurda araç alımı. Konak, Karşıyaka, Bornova tüm ilçelere hizmet. Anında değerlendirme. 0 (555) 123 45 67',
     keywords: [
@@ -329,21 +329,21 @@ export const citiesData: Record<string, CityData> = {
       'bornova araç alım',
       'buca araç alım',
     ],
-    
+
     hero: {
       badge: '🌊 İZMİR ARAÇ ALIM',
       title: 'İZMİR\'DE ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'İzmir\'in tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Sahil şeridinden Kemalpaşa\'ya kadar hizmet.',
     },
-    
+
     services: {
       kazali: true,
       hasarli: true,
       pert: true,
       hurda: true,
     },
-    
+
     cityInfo: {
       population: '4.4 Milyon',
       coverage: [
@@ -357,7 +357,7 @@ export const citiesData: Record<string, CityData> = {
       responseTime: '1 saat içinde',
       localOffice: 'Konak & Karşıyaka Ofisleri',
     },
-    
+
     features: [
       {
         icon: '🌊',
@@ -390,7 +390,7 @@ export const citiesData: Record<string, CityData> = {
         description: 'Konak ve Karşıyaka ofislerimiz.',
       },
     ],
-    
+
     testimonials: [
       {
         name: 'Cem A.',
@@ -414,7 +414,7 @@ export const citiesData: Record<string, CityData> = {
         service: 'Pert Araç',
       },
     ],
-    
+
     faqs: [
       {
         question: 'İzmir\'in hangi ilçelerine hizmet veriyorsunuz?',
@@ -434,6 +434,685 @@ export const citiesData: Record<string, CityData> = {
       },
     ],
   },
+
+  'bursa': {
+    id: 'bursa',
+    slug: 'bursa',
+    name: 'Bursa',
+    region: 'Marmara',
+
+    metaTitle: 'Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaDescription: 'Bursa\'da kazalı, hasarlı, pert ve hurda araç alımı. Osmangazi, Nilüfer, Yıldırım tüm ilçelere hizmet. 1 saatte nakit ödeme. 0 (555) 123 45 67',
+    keywords: [
+      'bursa kazalı araç alan',
+      'bursa hasarlı araç alan',
+      'bursa pert araç alan',
+      'bursa hurda araç alan',
+      'osmangazi araç alım',
+      'nilüfer araç alım',
+      'yıldırım araç alım',
+      'mudanya araç alım',
+    ],
+
+    hero: {
+      badge: '🏔️ BURSA ARAÇ ALIM',
+      title: 'BURSA\'DA ARACINIZ',
+      titleHighlight: 'EN YÜKSEK FİYATA',
+      subtitle: 'Bursa\'nın tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Yerinde ekspertiz ve anında ödeme.',
+    },
+
+    services: {
+      kazali: true,
+      hasarli: true,
+      pert: true,
+      hurda: true,
+    },
+
+    cityInfo: {
+      population: '3.1 Milyon',
+      coverage: [
+        'Osmangazi', 'Nilüfer', 'Yıldırım', 'Gemlik', 'İnegöl',
+        'Mudanya', 'Gürsu', 'Kestel', 'Yenişehir', 'Mustafakemalpaşa',
+        'Karacabey', 'Orhangazi', 'İznik', 'Keles', 'Orhaneli',
+        'Harmancık', 'Büyükorhan'
+      ],
+      responseTime: '1 saat içinde',
+      localOffice: 'Nilüfer & Osmangazi Ofisleri',
+    },
+
+    features: [
+      {
+        icon: '🏔️',
+        title: 'Tüm Bursa\'ya Hizmet',
+        description: 'Merkez ve çevre ilçelerin tamamına hizmet.',
+      },
+      {
+        icon: '⚡',
+        title: 'Hızlı Ekspertiz',
+        description: '1 saat içinde uzman ekibimiz yanınızda.',
+      },
+      {
+        icon: '💰',
+        title: 'Bursa\'nın En İyi Fiyatı',
+        description: 'Piyasa değerinin üzerinde teklifler.',
+      },
+      {
+        icon: '🚚',
+        title: 'Ücretsiz Çekici',
+        description: 'Bursa geneli ücretsiz araç çekimi.',
+      },
+      {
+        icon: '📄',
+        title: 'Hızlı Noter',
+        description: 'Tüm noterlerde anında devir işlemi.',
+      },
+      {
+        icon: '🏢',
+        title: 'Yerel Ofisler',
+        description: 'Nilüfer ve Osmangazi ofislerimiz.',
+      },
+    ],
+
+    testimonials: [
+      {
+        name: 'Ahmet Y.',
+        district: 'Nilüfer',
+        rating: 5,
+        text: 'Nilüfer\'de kaza yapan aracımı değerinde aldılar. Çok memnun kaldım.',
+        service: 'Kazalı Araç',
+      },
+      {
+        name: 'Seda B.',
+        district: 'Osmangazi',
+        rating: 5,
+        text: 'Osmangazi\'de pert aracımı sattım. İşlemler çok hızlıydı.',
+        service: 'Pert Araç',
+      },
+      {
+        name: 'Kemal T.',
+        district: 'İnegöl',
+        rating: 5,
+        text: 'İnegöl\'e kadar geldiler, hiç beklemedim. Teşekkürler.',
+        service: 'Hasarlı Araç',
+      },
+    ],
+
+    faqs: [
+      {
+        question: 'Bursa\'nın hangi ilçelerine geliyorsunuz?',
+        answer: 'Bursa\'nın tüm 17 ilçesine hizmet veriyoruz. Merkez ilçeler ve İnegöl, Gemlik gibi dış ilçeler dahildir.',
+      },
+      {
+        question: 'Bursa\'da ödeme nasıl oluyor?',
+        answer: 'Noter satışı ile eş zamanlı olarak banka hesabınıza nakit transfer yapıyoruz.',
+      },
+    ],
+  },
+
+  'antalya': {
+    id: 'antalya',
+    slug: 'antalya',
+    name: 'Antalya',
+    region: 'Akdeniz',
+
+    metaTitle: 'Antalya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaDescription: 'Antalya\'da kazalı, hasarlı, pert ve hurda araç alımı. Muratpaşa, Kepez, Konyaaltı, Alanya tüm ilçelere hizmet. 0 (555) 123 45 67',
+    keywords: [
+      'antalya kazalı araç alan',
+      'antalya hasarlı araç alan',
+      'antalya pert araç alan',
+      'antalya hurda araç alan',
+      'muratpaşa araç alım',
+      'kepez araç alım',
+      'konyaaltı araç alım',
+      'alanya araç alım',
+    ],
+
+    hero: {
+      badge: '☀️ ANTALYA ARAÇ ALIM',
+      title: 'ANTALYA\'DA ARACINIZ',
+      titleHighlight: 'EN YÜKSEK FİYATA',
+      subtitle: 'Antalya ve ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Turizm sezonu fark etmeksizin 7/24 hizmet.',
+    },
+
+    services: {
+      kazali: true,
+      hasarli: true,
+      pert: true,
+      hurda: true,
+    },
+
+    cityInfo: {
+      population: '2.6 Milyon',
+      coverage: [
+        'Muratpaşa', 'Kepez', 'Konyaaltı', 'Alanya', 'Manavgat',
+        'Serik', 'Aksu', 'Döşemealtı', 'Kemer', 'Kumluca',
+        'Finike', 'Kaş', 'Korkuteli', 'Gazipaşa', 'Elmalı',
+        'Demre', 'Akseki', 'Gündoğmuş', 'İbradı'
+      ],
+      responseTime: '1-2 saat içinde',
+      localOffice: 'Muratpaşa & Alanya Ofisleri',
+    },
+
+    features: [
+      {
+        icon: '☀️',
+        title: 'Tüm Antalya\'ya Hizmet',
+        description: 'Kaş\'tan Gazipaşa\'ya kadar hizmet.',
+      },
+      {
+        icon: '⚡',
+        title: 'Hızlı Değerleme',
+        description: 'Uzman ekibimizle hızlı fiyat teklifi.',
+      },
+      {
+        icon: '💰',
+        title: 'Antalya\'nın En İyi Fiyatı',
+        description: 'Bölgedeki en yüksek fiyat garantisi.',
+      },
+      {
+        icon: '🚚',
+        title: 'Ücretsiz Çekici',
+        description: 'Tüm ilçelerden ücretsiz araç alımı.',
+      },
+      {
+        icon: '📄',
+        title: 'Kolay Devir',
+        description: 'Noter işlemleri tarafımızca yapılır.',
+      },
+      {
+        icon: '🏢',
+        title: 'Merkezi Ofisler',
+        description: 'Muratpaşa ve Alanya şubelerimiz.',
+      },
+    ],
+
+    testimonials: [
+      {
+        name: 'Hakan Ç.',
+        district: 'Muratpaşa',
+        rating: 5,
+        text: 'Muratpaşa\'da aracımı sattım. Çok ilgililer, fiyat konusunda da yardımcı oldular.',
+        service: 'Kazalı Araç',
+      },
+      {
+        name: 'Merve K.',
+        district: 'Alanya',
+        rating: 5,
+        text: 'Alanya\'da tatilde kaza yaptım, aracı gelip aldılar. Çok büyük yükten kurtardılar.',
+        service: 'Hasarlı Araç',
+      },
+      {
+        name: 'Serdar A.',
+        district: 'Konyaaltı',
+        rating: 5,
+        text: 'Konyaaltı\'nda pert aracımı en iyi fiyata sattım. Tavsiye ederim.',
+        service: 'Pert Araç',
+      },
+    ],
+
+    faqs: [
+      {
+        question: 'Antalya\'nın turistik ilçelerine geliyor musunuz?',
+        answer: 'Evet, Kemer, Alanya, Kaş gibi tüm turistik ilçelere hizmet veriyoruz.',
+      },
+      {
+        question: 'Antalya dışına da hizmetiniz var mı?',
+        answer: 'Evet, çevre illere de (Burdur, Isparta) hizmet vermekteyiz.',
+      },
+    ],
+  },
+
+  'adana': {
+    id: 'adana',
+    slug: 'adana',
+    name: 'Adana',
+    region: 'Akdeniz',
+
+    metaTitle: 'Adana Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaDescription: 'Adana\'da kazalı, hasarlı, pert ve hurda araç alımı. Seyhan, Yüreğir, Çukurova tüm ilçelere hizmet. Anında nakit. 0 (555) 123 45 67',
+    keywords: [
+      'adana kazalı araç alan',
+      'adana hasarlı araç alan',
+      'adana pert araç alan',
+      'adana hurda araç alan',
+      'seyhan araç alım',
+      'yüreğir araç alım',
+      'çukurova araç alım',
+      'sarıçam araç alım',
+    ],
+
+    hero: {
+      badge: '🌶️ ADANA ARAÇ ALIM',
+      title: 'ADANA\'DA ARACINIZ',
+      titleHighlight: 'EN YÜKSEK FİYATA',
+      subtitle: 'Adana ve çevresinde kazalı, hasarlı, pert ve hurda araç alımı. 1 saat içinde adresinizdeyiz.',
+    },
+
+    services: {
+      kazali: true,
+      hasarli: true,
+      pert: true,
+      hurda: true,
+    },
+
+    cityInfo: {
+      population: '2.2 Milyon',
+      coverage: [
+        'Seyhan', 'Yüreğir', 'Çukurova', 'Sarıçam', 'Ceyhan',
+        'Kozan', 'İmamoğlu', 'Karataş', 'Karaisalı', 'Pozantı',
+        'Yumurtalık', 'Tufanbeyli', 'Feke', 'Aladağ', 'Saimbeyli'
+      ],
+      responseTime: '1 saat içinde',
+      localOffice: 'Seyhan Merkez Ofis',
+    },
+
+    features: [
+      {
+        icon: '🌶️',
+        title: 'Tüm Adana\'ya Hizmet',
+        description: 'Merkez ve taşra ilçelerin tamamı.',
+      },
+      {
+        icon: '⚡',
+        title: 'Hızlı İşlem',
+        description: '1 saat içinde ekspertiz ve teklif.',
+      },
+      {
+        icon: '💰',
+        title: 'Adana\'nın En İyi Fiyatı',
+        description: 'Bölge piyasasının üzerinde rakamlar.',
+      },
+      {
+        icon: '🚚',
+        title: 'Ücretsiz Çekici',
+        description: 'Adana içi ücretsiz çekici hizmeti.',
+      },
+      {
+        icon: '📄',
+        title: 'Güvenilir Devir',
+        description: 'Noter huzurunda güvenli satış.',
+      },
+      {
+        icon: '🏢',
+        title: 'Merkezi Konum',
+        description: 'Seyhan ofisimizle hizmetinizdeyiz.',
+      },
+    ],
+
+    testimonials: [
+      {
+        name: 'Murat D.',
+        district: 'Seyhan',
+        rating: 5,
+        text: 'Seyhan\'da kaza yapan aracımı hemen gelip aldılar. Ödemeyi peşin yaptılar.',
+        service: 'Kazalı Araç',
+      },
+      {
+        name: 'Ayşe T.',
+        district: 'Çukurova',
+        rating: 5,
+        text: 'Çukurova\'da hasarlı aracım için en iyi fiyatı verdiler. Memnun kaldım.',
+        service: 'Hasarlı Araç',
+      },
+      {
+        name: 'Mehmet K.',
+        district: 'Ceyhan',
+        rating: 5,
+        text: 'Ceyhan\'a kadar geldiler. Hizmet kalitesi çok iyi.',
+        service: 'Pert Araç',
+      },
+    ],
+
+    faqs: [
+      {
+        question: 'Adana\'nın hangi ilçelerine hizmet veriyorsunuz?',
+        answer: 'Adana\'nın 15 ilçesinin tamamına hizmet veriyoruz.',
+      },
+      {
+        question: 'Adana\'da ekspertiz ücretli mi?',
+        answer: 'Hayır, ekspertiz hizmetimiz tamamen ücretsizdir.',
+      },
+    ],
+  },
+
+  'konya': {
+    id: 'konya',
+    slug: 'konya',
+    name: 'Konya',
+    region: 'İç Anadolu',
+    metaTitle: 'Konya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Premium Auto',
+    metaDescription: 'Konya\'da kazalı, hasarlı, pert ve hurda araç alımı. Selçuklu, Meram, Karatay tüm ilçelere hizmet. 0 (555) 123 45 67',
+    keywords: ['konya kazalı araç', 'konya hasarlı araç', 'konya pert araç', 'selçuklu araç alım'],
+    hero: {
+      badge: '🌾 KONYA ARAÇ ALIM',
+      title: 'KONYA\'DA ARACINIZ',
+      titleHighlight: 'DEĞERİNDE ALINIR',
+      subtitle: 'Konya ve ilçelerinde her türlü hasarlı araç alımı.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '2.3 Milyon',
+      coverage: ['Selçuklu', 'Meram', 'Karatay', 'Ereğli', 'Akşehir', 'Beyşehir'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Selçuklu Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'gaziantep': {
+    id: 'gaziantep',
+    slug: 'gaziantep',
+    name: 'Gaziantep',
+    region: 'Güneydoğu Anadolu',
+    metaTitle: 'Gaziantep Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Gaziantep\'te kazalı, hasarlı, pert araç alımı. Şehitkamil, Şahinbey tüm ilçeler. 0 (555) 123 45 67',
+    keywords: ['gaziantep kazalı araç', 'gaziantep hasarlı araç', 'şehitkamil araç alım'],
+    hero: {
+      badge: '🏰 GAZİANTEP ARAÇ ALIM',
+      title: 'GAZİANTEP\'TE ARACINIZ',
+      titleHighlight: 'NAKİT ALINIR',
+      subtitle: 'Gaziantep genelinde hasarlı araçlarınızı yerinde alıyoruz.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '2.1 Milyon',
+      coverage: ['Şehitkamil', 'Şahinbey', 'Nizip', 'İslahiye'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Şehitkamil Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'mersin': {
+    id: 'mersin',
+    slug: 'mersin',
+    name: 'Mersin',
+    region: 'Akdeniz',
+    metaTitle: 'Mersin Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Mersin\'de kazalı, hasarlı, pert araç alımı. Yenişehir, Mezitli, Tarsus tüm ilçeler. 0 (555) 123 45 67',
+    keywords: ['mersin kazalı araç', 'mersin hasarlı araç', 'tarsus araç alım'],
+    hero: {
+      badge: '🍊 MERSİN ARAÇ ALIM',
+      title: 'MERSİN\'DE ARACINIZ',
+      titleHighlight: 'DEĞERİNDE SATILSIN',
+      subtitle: 'Mersin ve ilçelerinde hasarlı araç alım hizmeti.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1.9 Milyon',
+      coverage: ['Yenişehir', 'Mezitli', 'Akdeniz', 'Toroslar', 'Tarsus', 'Erdemli'],
+      responseTime: '1-2 saat içinde',
+      localOffice: 'Yenişehir Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'kayseri': {
+    id: 'kayseri',
+    slug: 'kayseri',
+    name: 'Kayseri',
+    region: 'İç Anadolu',
+    metaTitle: 'Kayseri Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Kayseri\'de kazalı, hasarlı, pert araç alımı. Melikgazi, Kocasinan, Talas. 0 (555) 123 45 67',
+    keywords: ['kayseri kazalı araç', 'kayseri hasarlı araç', 'melikgazi araç alım'],
+    hero: {
+      badge: '🗻 KAYSERİ ARAÇ ALIM',
+      title: 'KAYSERİ\'DE ARACINIZ',
+      titleHighlight: 'NAKİT ALINIR',
+      subtitle: 'Kayseri ve çevresinde hasarlı araçlarınızı değerlendiriyoruz.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1.4 Milyon',
+      coverage: ['Melikgazi', 'Kocasinan', 'Talas', 'Develi'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Melikgazi Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'eskisehir': {
+    id: 'eskisehir',
+    slug: 'eskisehir',
+    name: 'Eskişehir',
+    region: 'İç Anadolu',
+    metaTitle: 'Eskişehir Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Eskişehir\'de kazalı, hasarlı, pert araç alımı. Odunpazarı, Tepebaşı. 0 (555) 123 45 67',
+    keywords: ['eskişehir kazalı araç', 'eskişehir hasarlı araç', 'odunpazarı araç alım'],
+    hero: {
+      badge: '🌉 ESKİŞEHİR ARAÇ ALIM',
+      title: 'ESKİŞEHİR\'DE ARACINIZ',
+      titleHighlight: 'DEĞERİNDE ALINIR',
+      subtitle: 'Eskişehir genelinde hasarlı araç alım hizmeti.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '900 Bin',
+      coverage: ['Odunpazarı', 'Tepebaşı', 'Sivrihisar'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Odunpazarı Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'diyarbakir': {
+    id: 'diyarbakir',
+    slug: 'diyarbakir',
+    name: 'Diyarbakır',
+    region: 'Güneydoğu Anadolu',
+    metaTitle: 'Diyarbakır Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Diyarbakır\'da kazalı, hasarlı, pert araç alımı. Bağlar, Kayapınar, Yenişehir. 0 (555) 123 45 67',
+    keywords: ['diyarbakır kazalı araç', 'diyarbakır hasarlı araç', 'bağlar araç alım'],
+    hero: {
+      badge: '🏯 DİYARBAKIR ARAÇ ALIM',
+      title: 'DİYARBAKIR\'DA ARACINIZ',
+      titleHighlight: 'NAKİT ALINIR',
+      subtitle: 'Diyarbakır ve ilçelerinde hasarlı araç alımı.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1.8 Milyon',
+      coverage: ['Bağlar', 'Kayapınar', 'Yenişehir', 'Sur'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Kayapınar Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'samsun': {
+    id: 'samsun',
+    slug: 'samsun',
+    name: 'Samsun',
+    region: 'Karadeniz',
+    metaTitle: 'Samsun Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Samsun\'da kazalı, hasarlı, pert araç alımı. İlkadım, Atakum, Canik. 0 (555) 123 45 67',
+    keywords: ['samsun kazalı araç', 'samsun hasarlı araç', 'atakum araç alım'],
+    hero: {
+      badge: '🚢 SAMSUN ARAÇ ALIM',
+      title: 'SAMSUN\'DA ARACINIZ',
+      titleHighlight: 'DEĞERİNDE SATILSIN',
+      subtitle: 'Samsun ve Karadeniz bölgesinde hasarlı araç alımı.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1.3 Milyon',
+      coverage: ['İlkadım', 'Atakum', 'Canik', 'Tekkeköy', 'Bafra', 'Çarşamba'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Atakum Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'denizli': {
+    id: 'denizli',
+    slug: 'denizli',
+    name: 'Denizli',
+    region: 'Ege',
+    metaTitle: 'Denizli Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Denizli\'de kazalı, hasarlı, pert araç alımı. Pamukkale, Merkezefendi. 0 (555) 123 45 67',
+    keywords: ['denizli kazalı araç', 'denizli hasarlı araç', 'pamukkale araç alım'],
+    hero: {
+      badge: '🐓 DENİZLİ ARAÇ ALIM',
+      title: 'DENİZLİ\'DE ARACINIZ',
+      titleHighlight: 'NAKİT ALINIR',
+      subtitle: 'Denizli ve çevresinde hasarlı araçlarınızı alıyoruz.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1 Milyon',
+      coverage: ['Pamukkale', 'Merkezefendi', 'Çivril', 'Acıpayam'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Pamukkale Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'sanliurfa': {
+    id: 'sanliurfa',
+    slug: 'sanliurfa',
+    name: 'Şanlıurfa',
+    region: 'Güneydoğu Anadolu',
+    metaTitle: 'Şanlıurfa Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Şanlıurfa\'da kazalı, hasarlı, pert araç alımı. Haliliye, Eyyübiye, Karaköprü. 0 (555) 123 45 67',
+    keywords: ['şanlıurfa kazalı araç', 'urfa hasarlı araç', 'haliliye araç alım'],
+    hero: {
+      badge: '🕌 ŞANLIURFA ARAÇ ALIM',
+      title: 'ŞANLIURFA\'DA ARACINIZ',
+      titleHighlight: 'DEĞERİNDE ALINIR',
+      subtitle: 'Şanlıurfa ve ilçelerinde hasarlı araç alım hizmeti.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '2.1 Milyon',
+      coverage: ['Haliliye', 'Eyyübiye', 'Karaköprü', 'Siverek', 'Viranşehir'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Haliliye Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'malatya': {
+    id: 'malatya',
+    slug: 'malatya',
+    name: 'Malatya',
+    region: 'Doğu Anadolu',
+    metaTitle: 'Malatya Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Malatya\'da kazalı, hasarlı, pert araç alımı. Battalgazi, Yeşilyurt. 0 (555) 123 45 67',
+    keywords: ['malatya kazalı araç', 'malatya hasarlı araç', 'battalgazi araç alım'],
+    hero: {
+      badge: '🍑 MALATYA ARAÇ ALIM',
+      title: 'MALATYA\'DA ARACINIZ',
+      titleHighlight: 'NAKİT ALINIR',
+      subtitle: 'Malatya genelinde hasarlı araç alımı.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '800 Bin',
+      coverage: ['Battalgazi', 'Yeşilyurt', 'Doğanşehir'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Battalgazi Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'kahramanmaras': {
+    id: 'kahramanmaras',
+    slug: 'kahramanmaras',
+    name: 'Kahramanmaraş',
+    region: 'Akdeniz',
+    metaTitle: 'Kahramanmaraş Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Kahramanmaraş\'ta kazalı, hasarlı, pert araç alımı. Onikişubat, Dulkadiroğlu. 0 (555) 123 45 67',
+    keywords: ['kahramanmaraş kazalı araç', 'maraş hasarlı araç', 'onikişubat araç alım'],
+    hero: {
+      badge: '🍦 KAHRAMANMARAŞ ARAÇ ALIM',
+      title: 'MARAŞ\'TA ARACINIZ',
+      titleHighlight: 'DEĞERİNDE SATILSIN',
+      subtitle: 'Kahramanmaraş ve ilçelerinde hasarlı araç alımı.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1.1 Milyon',
+      coverage: ['Onikişubat', 'Dulkadiroğlu', 'Elbistan', 'Afşin'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Onikişubat Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'erzurum': {
+    id: 'erzurum',
+    slug: 'erzurum',
+    name: 'Erzurum',
+    region: 'Doğu Anadolu',
+    metaTitle: 'Erzurum Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Erzurum\'da kazalı, hasarlı, pert araç alımı. Yakutiye, Palandöken, Aziziye. 0 (555) 123 45 67',
+    keywords: ['erzurum kazalı araç', 'erzurum hasarlı araç', 'yakutiye araç alım'],
+    hero: {
+      badge: '⛷️ ERZURUM ARAÇ ALIM',
+      title: 'ERZURUM\'DA ARACINIZ',
+      titleHighlight: 'NAKİT ALINIR',
+      subtitle: 'Erzurum ve çevresinde hasarlı araçlarınızı alıyoruz.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '750 Bin',
+      coverage: ['Yakutiye', 'Palandöken', 'Aziziye', 'Horasan', 'Oltu'],
+      responseTime: '1 saat içinde',
+      localOffice: 'Yakutiye Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  },
+
+  'van': {
+    id: 'van',
+    slug: 'van',
+    name: 'Van',
+    region: 'Doğu Anadolu',
+    metaTitle: 'Van Kazalı, Hasarlı, Pert Araç Alımı | Premium Auto',
+    metaDescription: 'Van\'da kazalı, hasarlı, pert araç alımı. İpekyolu, Tuşba, Edremit. 0 (555) 123 45 67',
+    keywords: ['van kazalı araç', 'van hasarlı araç', 'ipekyolu araç alım'],
+    hero: {
+      badge: '🌊 VAN ARAÇ ALIM',
+      title: 'VAN\'DA ARACINIZ',
+      titleHighlight: 'DEĞERİNDE ALINIR',
+      subtitle: 'Van ve ilçelerinde hasarlı araç alım hizmeti.',
+    },
+    services: { kazali: true, hasarli: true, pert: true, hurda: true },
+    cityInfo: {
+      population: '1.1 Milyon',
+      coverage: ['İpekyolu', 'Tuşba', 'Edremit', 'Erciş'],
+      responseTime: '1 saat içinde',
+      localOffice: 'İpekyolu Ofis',
+    },
+    features: [],
+    testimonials: [],
+    faqs: [],
+  }
 };
 
 // Helper functions
@@ -457,9 +1136,9 @@ export const getCitiesByRegion = (region: string): CityData[] => {
 export const generateCityServiceUrls = () => {
   const cities = getAllCities();
   const services = ['kazali', 'hasarli', 'pert', 'hurda'];
-  
+
   const urls: Array<{ city: string; service: string; url: string }> = [];
-  
+
   cities.forEach(city => {
     services.forEach(service => {
       if (city.services[service as keyof typeof city.services]) {
@@ -471,6 +1150,6 @@ export const generateCityServiceUrls = () => {
       }
     });
   });
-  
+
   return urls;
 };

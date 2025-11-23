@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 import { getAllCities } from '@/data/cities';
 import { trackPhoneClick, trackWhatsAppClick, trackCTAClick } from '@/lib/analytics';
@@ -15,25 +16,25 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-  if (isMenuOpen) {
-    // Arka plan sayfanın scroll olmasını engelle
-    document.body.style.overflow = 'hidden';
-  } else {
-    // Menü kapanınca normale dön
-    document.body.style.overflow = '';
-  }
+    if (isMenuOpen) {
+      // Arka plan sayfanın scroll olmasını engelle
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Menü kapanınca normale dön
+      document.body.style.overflow = '';
+    }
 
-  // Güvenli cleanup
-  return () => {
-    document.body.style.overflow = '';
-  };
-}, [isMenuOpen]);
+    // Güvenli cleanup
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
 
   const handlePhoneClick = (location: string) => {
@@ -48,11 +49,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl'
-          : 'bg-gray-900/80 backdrop-blur-sm'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl'
+        : 'bg-gray-900/80 backdrop-blur-sm'
+        }`}
     >
       {/* Top Bar - Urgent Call Banner */}
       <div className="bg-gradient-to-r from-lime-400 to-lime-500 text-gray-900 py-2">
@@ -77,16 +77,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center font-black text-white text-xl transform group-hover:scale-110 transition">
-              PA
-            </div>
-            <div className="text-white">
-              <div className="font-black text-xl tracking-tight leading-none">
-                PREMIUM AUTO
-              </div>
-              <div className="text-xs text-lime-400 font-bold tracking-wider">
-                ARAÇ ALIM UZMANI
-              </div>
+            <div className="relative w-48 h-16 transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/logo.png"
+                alt="Premium Auto"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -98,13 +96,13 @@ export default function Header() {
             >
               Ana Sayfa
             </Link>
-            
+
             {/* Services Dropdown */}
             <div className="relative group">
-                
-              <button     
-              className="nav-trigger-btn text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center"
->
+
+              <button
+                className="nav-trigger-btn text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center"
+              >
                 Hizmetler
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path
@@ -114,7 +112,7 @@ export default function Header() {
                   />
                 </svg>
               </button>
-              
+
               {/* Dropdown Menu */}
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 {siteConfig.services.map((service) => (
@@ -138,8 +136,8 @@ export default function Header() {
             {/* Cities Dropdown */}
             <div className="relative group">
 
-              <button     
-              className="nav-trigger-btn text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center">
+              <button
+                className="nav-trigger-btn text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase flex items-center">
                 Şehirler
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path
@@ -149,7 +147,7 @@ export default function Header() {
                   />
                 </svg>
               </button>
-              
+
               <div className="absolute top-full left-0 mt-2 w-72 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
                 <div className="p-4 bg-purple-600 text-white font-bold">
                   Hizmet Verdiğimiz Şehirler
@@ -181,14 +179,14 @@ export default function Header() {
             >
               Bilgiler
             </Link>
-            
+
             <Link
               href="/hakkimizda"
               className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase"
             >
               Hakkımızda
             </Link>
-            
+
             <Link
               href="/iletisim"
               className="text-white hover:text-lime-400 transition font-bold text-sm tracking-wide uppercase"
@@ -208,7 +206,7 @@ export default function Header() {
               className="bg-success-green text-white px-5 py-3 font-bold text-sm tracking-wide hover:bg-success-green-dark transition flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
               </svg>
               WHATSAPP
             </a>
@@ -222,24 +220,17 @@ export default function Header() {
 
 
               <svg
-  className="w-7 h-7"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth={2}
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  aria-hidden="true"
->
-  <path d="M22 16.9v3a2 2 0 0 1-2.2 2
-           19.8 19.8 0 0 1-8.6-3.1
-           19.5 19.5 0 0 1-6-6
-           19.8 19.8 0 0 1-3.1-8.6
-           A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7
-           c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9
-           a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4
-           c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
-</svg>
+                className="w-7 h-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6 A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9 a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4 c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
+              </svg>
 
               HEMEN ARA
             </a>
@@ -264,9 +255,9 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-{isMenuOpen && (
-  <div className="lg:hidden pb-6 pt-4 border-t border-gray-700 max-h-[70vh] overflow-y-auto">
-    <nav className="flex flex-col space-y-4">
+        {isMenuOpen && (
+          <div className="lg:hidden pb-6 pt-4 border-t border-gray-700 max-h-[70vh] overflow-y-auto">
+            <nav className="flex flex-col space-y-4">
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
@@ -274,7 +265,7 @@ export default function Header() {
               >
                 Ana Sayfa
               </Link>
-              
+
               {/* Mobile Services */}
               <div className="space-y-2">
                 <div className="text-lime-400 font-bold text-sm tracking-wider uppercase mb-2">
@@ -325,7 +316,7 @@ export default function Header() {
               >
                 Bilgiler
               </Link>
-              
+
               <Link
                 href="/hakkimizda"
                 onClick={() => setIsMenuOpen(false)}
@@ -333,7 +324,7 @@ export default function Header() {
               >
                 Hakkımızda
               </Link>
-              
+
               <Link
                 href="/iletisim"
                 onClick={() => setIsMenuOpen(false)}
@@ -341,9 +332,9 @@ export default function Header() {
               >
                 İletişim
               </Link>
-  
+
               {/* Mobile CTA Buttons */}
-            {/*
+              {/*
               <div className="flex flex-col gap-3 pt-4">
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Merhaba, aracım için teklif almak istiyorum.')}`}

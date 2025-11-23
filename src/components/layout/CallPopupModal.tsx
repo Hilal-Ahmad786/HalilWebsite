@@ -89,7 +89,7 @@ export default function CallPopupModal() {
           <div className="p-5 space-y-4 flex-1 overflow-y-auto">
             {/* Avatar + welcome */}
             <div className="flex items-center gap-4">
-              
+
               <div>
                 <h2 className="text-lg md:text-xl font-black text-gray-900 mb-1">
                   Hoş geldiniz!
@@ -177,35 +177,7 @@ export default function CallPopupModal() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
 
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-
-        .animate-slideUp {
-          animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-      `}</style>
     </>
   );
 }
