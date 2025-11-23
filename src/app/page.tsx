@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Hasar Park - En Yüksek Fiyat Garantisi',
     description:
       'Kazalı, hasarlı, pert ve hurda araçlar için anında değerlendirme. 30 dakika içinde teklif alın!',
-    url: 'https://premiumauto.com.tr',
+    url: 'https://www.hasarpark.com/',
     siteName: 'Hasar Park',
     images: [
       {
