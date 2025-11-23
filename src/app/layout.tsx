@@ -7,6 +7,7 @@ import FloatingButtons from '@/components/layout/FloatingButtons';
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import ConversionTracking from '@/components/analytics/ConversionTracking';
+import JsonLd from '@/components/analytics/JsonLd';
 import { siteConfig } from '@/config/site';
 import CallPopupModal from '@/components/layout/CallPopupModal';
 
@@ -47,7 +48,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        {/* Analytics */}
+        {/* Analytics & SEO */}
+        <JsonLd />
         <GoogleTagManager />
         <GoogleAnalytics />
         <ConversionTracking />
