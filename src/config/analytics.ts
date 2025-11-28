@@ -1,7 +1,7 @@
 // src/config/analytics.ts
 export const analyticsConfig = {
   gtm: {
-    id: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-5ZQBQTK7',
+    id: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-5XKV2L3Z',
     enabled: true,
   },
   ga: {
