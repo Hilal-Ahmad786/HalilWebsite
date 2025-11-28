@@ -34,14 +34,26 @@ export default function ContactForm() {
       // Track the form submission
       trackFormSubmit('contact_form');
 
-      // Here you would normally send to your backend/API
-      // For now, just simulate success after 1 second
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Construct WhatsApp Message
+      const messageText = `*Yeni İletişim Formu Mesajı*\n\n` +
+        `👤 *İsim:* ${formData.name}\n` +
+        `📞 *Telefon:* ${formData.phone}\n` +
+        `📧 *E-posta:* ${formData.email || 'Belirtilmedi'}\n` +
+        `🚗 *Hizmet:* ${formData.service}\n` +
+        `📝 *Mesaj:* ${formData.message || 'Belirtilmedi'}`;
+
+      const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(messageText)}`;
+
+      // Simulate brief loading for UX
+      await new Promise(resolve => setTimeout(resolve, 800));
 
       // Show success message
       setSubmitStatus('success');
 
-      // Reset form
+      // Redirect to WhatsApp
+      window.location.href = whatsappUrl;
+
+      // Reset form (optional, as we are redirecting)
       setFormData({
         name: '',
         phone: '',
@@ -50,8 +62,6 @@ export default function ContactForm() {
         message: '',
       });
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');

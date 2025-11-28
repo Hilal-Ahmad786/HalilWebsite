@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
+import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 export default function Footer() {
   return (
@@ -56,6 +57,7 @@ export default function Footer() {
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('footer-social-icon')}
                 className="bg-gray-900 p-2 rounded hover:bg-[#25D366] hover:text-white transition-colors duration-300 group"
                 aria-label="WhatsApp"
               >
@@ -128,6 +130,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${siteConfig.phone}`}
+                  onClick={() => trackPhoneClick('footer-contact-list')}
                   className="group flex items-start gap-3 text-gray-400 hover:text-lime-400 transition-colors"
                 >
                   <div className="bg-gray-900 p-2 rounded group-hover:bg-lime-400 group-hover:text-gray-900 transition-colors">

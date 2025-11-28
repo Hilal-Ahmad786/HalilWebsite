@@ -4,6 +4,7 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import ContactForm from '@/components/ui/ContactForm';
+import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 export const metadata: Metadata = {
   title: 'İletişim - Hasar Park | Bize Ulaşın',
@@ -38,6 +39,7 @@ export default function ContactPage() {
             {/* Phone */}
             <a
               href={`tel:${siteConfig.phone}`}
+              onClick={() => trackPhoneClick('contact-page')}
               className="bg-lime-400 text-gray-900 p-8 text-center hover:bg-lime-300 transition group"
             >
               <svg className="w-16 h-16 mx-auto mb-4 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
@@ -53,6 +55,7 @@ export default function ContactPage() {
               href={`https://wa.me/${siteConfig.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('contact-page')}
               className="bg-success-green text-white p-8 text-center hover:bg-success-green-dark transition group"
             >
               <svg className="w-16 h-16 mx-auto mb-4 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">

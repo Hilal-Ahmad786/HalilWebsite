@@ -17,12 +17,12 @@ export default function ServicesGrid() {
           <div className="inline-block bg-purple-600/20 text-purple-600 px-6 py-3 mb-6 border-2 border-purple-600">
             <span className="font-black text-sm tracking-widest">HİZMETLERİMİZ</span>
           </div>
-          
+
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
             HANGİ ARAÇLARI
             <span className="block text-purple-600">SATIN ALIYORUZ?</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-bold">
             Tüm araç türleri için en yüksek fiyat garantisi ve anında ödeme
           </p>
@@ -81,19 +81,19 @@ export default function ServicesGrid() {
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-sm text-gray-700">
                     <svg className={`w-5 h-5 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="font-bold">En yüksek fiyat</span>
                   </li>
                   <li className="flex items-center gap-2 text-sm text-gray-700">
                     <svg className={`w-5 h-5 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="font-bold">Anında değerleme</span>
                   </li>
                   <li className="flex items-center gap-2 text-sm text-gray-700">
                     <svg className={`w-5 h-5 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="font-bold">Ücretsiz çekici</span>
                   </li>
@@ -113,7 +113,7 @@ export default function ServicesGrid() {
                   <div className="flex items-center justify-center gap-2 text-sm font-black text-gray-700">
                     <span>HEMEN TEKLİF AL</span>
                     <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </div>
                 </div>
@@ -129,19 +129,20 @@ export default function ServicesGrid() {
           </p>
           <a
             href={`tel:${siteConfig.phone}`}
+            onClick={() => trackCTAClick('Services Grid Bottom Phone', 'services-grid')}
             className="inline-flex items-center gap-3 bg-lime-400 text-gray-900 px-10 py-5 text-2xl font-black hover:bg-lime-300 transition-all transform hover:scale-105 shadow-xl"
           >
-<svg
-  className="w-7 h-7"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth={2}
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  aria-hidden="true"
->
-  <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+            <svg
+              className="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2
            19.8 19.8 0 0 1-8.6-3.1
            19.5 19.5 0 0 1-6-6
            19.8 19.8 0 0 1-3.1-8.6
@@ -149,7 +150,7 @@ export default function ServicesGrid() {
            c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9
            a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4
            c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
-</svg>
+            </svg>
 
             {siteConfig.phoneDisplay}
           </a>

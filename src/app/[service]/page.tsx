@@ -5,6 +5,7 @@ import ProcessSteps from '@/components/sections/ProcessSteps';
 import WhyUs from '@/components/sections/WhyUs';
 import CTASection from '@/components/sections/CTASection';
 import { siteConfig } from '@/config/site';
+import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 // Generate static paths at build time
 export async function generateStaticParams() {
@@ -80,6 +81,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <a
               href={`tel:${siteConfig.phone}`}
+              onClick={() => trackPhoneClick('service-hero')}
               className="bg-lime-400 text-gray-900 px-12 py-6 font-black text-2xl hover:bg-lime-300 transition flex items-center justify-center gap-4"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -91,6 +93,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Merhaba, ${service.title} için teklif almak istiyorum.`)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('service-hero')}
               className="border-4 border-lime-400 text-lime-400 px-12 py-6 font-black text-2xl hover:bg-lime-400 hover:text-gray-900 transition flex items-center justify-center gap-4"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
