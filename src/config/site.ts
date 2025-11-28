@@ -1,3 +1,4 @@
+// src/config/site.ts
 export const siteConfig = {
   name: 'Hasar Park',
   description: 'Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 20+ Yıl Tecrübe, 100.000+ Mutlu Müşteri.',
@@ -175,10 +176,10 @@ export const siteConfig = {
   tracking: {
     enableGTM: true,
     enableGA4: true,
-    enableGoogleAds: true,
+    enableGoogleAds: false, // Changed to false so GTM handles it
     enableFacebookPixel: true,
-    enablePhoneTracking: true, // CRITICAL
-    enableWhatsAppTracking: true, // CRITICAL
+    enablePhoneTracking: true,
+    enableWhatsAppTracking: true,
   },
 };
 

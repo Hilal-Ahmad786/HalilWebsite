@@ -1,20 +1,21 @@
+// src/config/analytics.ts
 export const analyticsConfig = {
   gtm: {
-    id: process.env.NEXT_PUBLIC_GTM_ID || '',
-    enabled: !!process.env.NEXT_PUBLIC_GTM_ID,
+    id: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-5ZQBQTK7',
+    enabled: true,
   },
   ga: {
-    id: process.env.NEXT_PUBLIC_GA_ID || '',
-    enabled: !!process.env.NEXT_PUBLIC_GA_ID,
+    id: process.env.NEXT_PUBLIC_GA_ID || 'G-LMBNJ7LPV8',
+    enabled: true,
   },
   googleAds: {
-    conversionId: process.env.NEXT_PUBLIC_ADS_CONVERSION_ID || '',
+    conversionId: '',
     conversionLabels: {
-      phone: process.env.NEXT_PUBLIC_ADS_PHONE_CONVERSION_LABEL || '',
-      whatsapp: process.env.NEXT_PUBLIC_ADS_WHATSAPP_CONVERSION_LABEL || '',
-      form: process.env.NEXT_PUBLIC_ADS_FORM_CONVERSION_LABEL || '',
+      phone: '',
+      whatsapp: '',
+      form: '',
     },
-    enabled: !!process.env.NEXT_PUBLIC_ADS_CONVERSION_ID,
+    enabled: false,
   },
   facebook: {
     pixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID || '',
