@@ -4,10 +4,10 @@ export const siteConfig = {
   description: 'Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 20+ Yıl Tecrübe, 100.000+ Mutlu Müşteri.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hasarpark.com.tr',
 
-  // CRITICAL: Main conversion points
+  // CRITICAL: Main conversion points for Hasar Park
   phone: process.env.NEXT_PUBLIC_PHONE || '+905303444097',
   phoneDisplay: '0 530 344 40 97',
-  phoneClean: '05303444097', // For tracking
+  phoneClean: '05303444097', // For tracking logic
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905303444097',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@hasarpark.com.tr',
 

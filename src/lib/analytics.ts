@@ -1,3 +1,4 @@
+// src/lib/analytics.ts
 import { analyticsConfig } from '@/config/analytics';
 
 // Type declarations
@@ -13,8 +14,8 @@ declare global {
 
 export const trackPhoneClick = (location: string = 'unknown') => {
   console.log('📞 Phone click tracked:', location);
-  
-  // Google Tag Manager
+
+  // Google Tag Manager (GTM handles GA4 & Ads tags)
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event: 'phone_click',
@@ -24,26 +25,8 @@ export const trackPhoneClick = (location: string = 'unknown') => {
       value: 150, // Lead value
     });
   }
-  
-  // Google Analytics 4
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'phone_click', {
-      event_category: 'conversion',
-      event_label: location,
-      value: 150,
-    });
-  }
-  
-  // Google Ads Conversion
-  if (analyticsConfig.googleAds.enabled && typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      send_to: `${analyticsConfig.googleAds.conversionId}/${analyticsConfig.googleAds.conversionLabels.phone}`,
-      value: 150,
-      currency: 'TRY',
-    });
-  }
-  
-  // Facebook Pixel
+
+  // Facebook Pixel (Kept separate)
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Contact', {
       content_name: 'Phone Click',
@@ -58,7 +41,7 @@ export const trackPhoneClick = (location: string = 'unknown') => {
 
 export const trackWhatsAppClick = (location: string = 'unknown') => {
   console.log('💬 WhatsApp click tracked:', location);
-  
+
   // Google Tag Manager
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
@@ -69,25 +52,7 @@ export const trackWhatsAppClick = (location: string = 'unknown') => {
       value: 120,
     });
   }
-  
-  // Google Analytics 4
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'whatsapp_click', {
-      event_category: 'conversion',
-      event_label: location,
-      value: 120,
-    });
-  }
-  
-  // Google Ads Conversion
-  if (analyticsConfig.googleAds.enabled && typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      send_to: `${analyticsConfig.googleAds.conversionId}/${analyticsConfig.googleAds.conversionLabels.whatsapp}`,
-      value: 120,
-      currency: 'TRY',
-    });
-  }
-  
+
   // Facebook Pixel
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Contact', {
@@ -103,7 +68,7 @@ export const trackWhatsAppClick = (location: string = 'unknown') => {
 
 export const trackFormSubmit = (formName: string = 'contact_form') => {
   console.log('📝 Form submit tracked:', formName);
-  
+
   // Google Tag Manager
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
@@ -114,25 +79,7 @@ export const trackFormSubmit = (formName: string = 'contact_form') => {
       value: 200,
     });
   }
-  
-  // Google Analytics 4
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'form_submit', {
-      event_category: 'conversion',
-      form_name: formName,
-      value: 200,
-    });
-  }
-  
-  // Google Ads Conversion
-  if (analyticsConfig.googleAds.enabled && typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      send_to: `${analyticsConfig.googleAds.conversionId}/${analyticsConfig.googleAds.conversionLabels.form}`,
-      value: 200,
-      currency: 'TRY',
-    });
-  }
-  
+
   // Facebook Pixel
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Lead', {
@@ -146,13 +93,14 @@ export const trackFormSubmit = (formName: string = 'contact_form') => {
 // ===== PAGE VIEW TRACKING =====
 
 export const trackPageView = (url: string) => {
-  // Google Analytics 4
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', analyticsConfig.ga.id, {
+  // Google Tag Manager Pageview (Optional if using "All Pages" trigger in GTM)
+  if (typeof window !== 'undefined' && window.dataLayer) {
+    window.dataLayer.push({
+      event: 'page_view',
       page_path: url,
     });
   }
-  
+
   // Facebook Pixel
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'PageView');
@@ -162,8 +110,8 @@ export const trackPageView = (url: string) => {
 // ===== SERVICE PAGE VIEW =====
 
 export const trackServiceView = (serviceName: string) => {
-  console.log('📄 Service view tracked:', serviceName);
-  
+  console.log('👁️ Service view tracked:', serviceName);
+
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event: 'service_view',
@@ -171,8 +119,8 @@ export const trackServiceView = (serviceName: string) => {
       service_name: serviceName,
     });
   }
-  
-  // Facebook Pixel - ViewContent
+
+  // Facebook Pixel
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'ViewContent', {
       content_name: serviceName,
@@ -184,8 +132,6 @@ export const trackServiceView = (serviceName: string) => {
 // ===== CTA CLICK TRACKING =====
 
 export const trackCTAClick = (ctaName: string, location: string) => {
-  console.log('🎯 CTA click tracked:', ctaName, location);
-  
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event: 'cta_click',
@@ -222,22 +168,22 @@ export const trackTimeOnPage = (seconds: number) => {
 
 export const initAnalytics = () => {
   console.log('🚀 Analytics initialized');
-  
-  // Set up scroll depth tracking
+
   if (typeof window !== 'undefined') {
+    // Scroll Tracking
     let maxScroll = 0;
     const scrollThresholds = [25, 50, 75, 90];
     const trackedDepths = new Set<number>();
-    
+
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-      
+
       if (scrollPercentage > maxScroll) {
         maxScroll = scrollPercentage;
-        
+
         scrollThresholds.forEach(threshold => {
           if (scrollPercentage >= threshold && !trackedDepths.has(threshold)) {
             trackedDepths.add(threshold);
@@ -246,19 +192,17 @@ export const initAnalytics = () => {
         });
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-  }
-  
-  // Set up time on page tracking
-  if (typeof window !== 'undefined') {
-    const intervals = [30, 60, 120, 300]; // 30s, 1m, 2m, 5m
+
+    // Time Tracking
+    const intervals = [30, 60, 120, 300];
     const trackedIntervals = new Set<number>();
     let startTime = Date.now();
-    
+
     const checkTimeOnPage = () => {
       const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
-      
+
       intervals.forEach(interval => {
         if (elapsedSeconds >= interval && !trackedIntervals.has(interval)) {
           trackedIntervals.add(interval);
@@ -266,8 +210,8 @@ export const initAnalytics = () => {
         }
       });
     };
-    
-    setInterval(checkTimeOnPage, 10000); // Check every 10 seconds
+
+    setInterval(checkTimeOnPage, 10000);
   }
 };
 
@@ -281,7 +225,7 @@ export const calculateLeadValue = (serviceType: string): number => {
     hurda: 100,
     default: 130,
   };
-  
+
   return values[serviceType] || values.default;
 };
 
@@ -289,7 +233,7 @@ export const calculateLeadValue = (serviceType: string): number => {
 
 export const trackError = (errorMessage: string, errorLocation: string) => {
   console.error('❌ Error tracked:', errorMessage, errorLocation);
-  
+
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event: 'error',

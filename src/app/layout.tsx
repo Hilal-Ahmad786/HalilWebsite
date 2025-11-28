@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -5,8 +6,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FloatingButtons from '@/components/layout/FloatingButtons';
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
-import ConversionTracking from '@/components/analytics/ConversionTracking';
 import JsonLd from '@/components/analytics/JsonLd';
 import { siteConfig } from '@/config/site';
 import CallPopupModal from '@/components/layout/CallPopupModal';
@@ -16,6 +15,7 @@ const inter = Inter({
   weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
 });
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -51,8 +51,7 @@ export default function RootLayout({
         {/* Analytics & SEO */}
         <JsonLd />
         <GoogleTagManager />
-        <GoogleAnalytics />
-        <ConversionTracking />
+        {/* REMOVED: GoogleAnalytics & ConversionTracking (GTM handles them now) */}
 
         {/* Layout */}
         <Header />
