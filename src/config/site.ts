@@ -4,10 +4,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hasarpark.com.tr',
 
   // CRITICAL: Main conversion points
-  phone: process.env.NEXT_PUBLIC_PHONE || '+905345809315',
-  phoneDisplay: '0 534 580 93 15',
-  phoneClean: '05345809315', // For tracking
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905345809315',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+905303444097',
+  phoneDisplay: '0 530 344 40 97',
+  phoneClean: '05303444097', // For tracking
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905303444097',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@hasarpark.com.tr',
 
   // Business hours

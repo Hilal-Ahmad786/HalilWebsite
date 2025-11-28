@@ -114,7 +114,7 @@ export default function HomePage() {
             description:
               'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin en güvenilir merkezi',
             url: 'https://premiumauto.com.tr',
-            telephone: '+905551234567',
+            telephone: '+905303444097',
             address: {
               '@type': 'PostalAddress',
               addressCountry: 'TR',
