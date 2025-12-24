@@ -38,8 +38,8 @@ Open `.env.local` and replace ALL placeholder values:
 NEXT_PUBLIC_SITE_URL=https://premiumauto.com.tr
 
 # Contact (CRITICAL - These drive conversions!)
-NEXT_PUBLIC_PHONE=+905551234567          # Replace with real number
-NEXT_PUBLIC_WHATSAPP=905551234567        # Replace with real number
+NEXT_PUBLIC_PHONE=+905303444097
+NEXT_PUBLIC_WHATSAPP=905303444097
 NEXT_PUBLIC_EMAIL=info@premiumauto.com.tr
 
 # Analytics IDs (Get from respective platforms)
@@ -345,7 +345,7 @@ All conversions are tracked across:
 - [ ] Verify WhatsApp redirects work
 
 ---
-
+x
 ## 🛠️ Common Issues & Solutions
 
 ### Issue: "npm run dev" fails

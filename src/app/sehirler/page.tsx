@@ -135,7 +135,7 @@ export default function CitiesIndexPage() {
                 Bu şehirlerden hizmet almak ister misiniz?
               </p>
               <p className="mt-2">
-                Hemen arayın, en kısa sürede hizmete açalım! 📞 0 (555) 123 45 67
+                Hemen arayın, en kısa sürede hizmete açalım! 📞
               </p>
             </div>
           </div>

@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
 <p>Hurda aracınızı teslim etmek düşündüğünüzden çok daha kolay!</p>
 
 <h3>Adım 1: Bizi Arayın</h3>
-<p>İlk adım basit: 0 (555) 123 45 67 numaralı telefondan bizi arayın.</p>
+<p>İlk adım basit: 0530 344 40 97 numaralı telefondan bizi arayın.</p>
 
 <h3>Adım 2: Ücretsiz Çekici</h3>
 <p>Aracınızın bulunduğu yere ücretsiz çekici gönderiyoruz.</p>
@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export function getAllPosts(): BlogPost[] {
-  return blogPosts.sort((a, b) => 
+  return blogPosts.sort((a, b) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 }

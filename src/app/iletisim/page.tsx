@@ -1,15 +1,10 @@
+'use client';
 
 // ===== FILE: src/app/iletisim/page.tsx =====
 
-import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import ContactForm from '@/components/ui/ContactForm';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
-
-export const metadata: Metadata = {
-  title: 'İletişim - Hasar Park | Bize Ulaşın',
-  description: 'Hasar Park ile iletişime geçin. Kazalı, hasarlı, pert ve hurda araç alımı için hemen arayın. 7/24 müşteri hizmetleri.',
-};
 
 export default function ContactPage() {
   return (
