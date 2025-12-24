@@ -5,12 +5,14 @@ export interface ServiceData {
   shortTitle: string;
   icon: string;
   color: 'lime' | 'purple' | 'fuchsia';
-  
+
   // SEO
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
-  
+
+
+
   // Hero Section
   hero: {
     badge: string;
@@ -19,14 +21,14 @@ export interface ServiceData {
     subtitle: string;
     image: string;
   };
-  
+
   // Features
   features: Array<{
     icon: string;
     title: string;
     description: string;
   }>;
-  
+
   // Process (optional override)
   customProcess?: Array<{
     number: number;
@@ -34,13 +36,13 @@ export interface ServiceData {
     title: string;
     description: string;
   }>;
-  
+
   // FAQ
   faqs: Array<{
     question: string;
     answer: string;
   }>;
-  
+
   // Content sections
   content: {
     whatWeAccept: string[];
@@ -61,7 +63,7 @@ export const servicesData: Record<string, ServiceData> = {
     shortTitle: 'Kazalı Araç',
     icon: '🚗',
     color: 'lime',
-    
+
     metaTitle: 'Kazalı Araç Alımı | Anında Değerlendirme & En Yüksek Fiyat - Hasar Park',
     metaDescription: 'Kazalı araç mı satmak istiyorsunuz? Hasar Park ile 30 dakikada teklif alın, en yüksek fiyat garantisi. Ücretsiz çekici, anında ödeme.',
     keywords: [
@@ -72,7 +74,7 @@ export const servicesData: Record<string, ServiceData> = {
       'kaza geçirmiş araç',
       'kazalı araç satan yerler',
     ],
-    
+
     hero: {
       badge: '🚗 KAZALI ARAÇ ALIMI',
       title: 'KAZALI ARACINIZ',
@@ -80,7 +82,7 @@ export const servicesData: Record<string, ServiceData> = {
       subtitle: 'Kaza geçirmiş her türlü araç için anında değerlendirme. 30 dakikada teklif, ücretsiz çekici, anında ödeme.',
       image: '/images/kazali-arac.webp',
     },
-    
+
     features: [
       {
         icon: '⚡',
@@ -113,7 +115,7 @@ export const servicesData: Record<string, ServiceData> = {
         description: '20+ yıl kazalı araç alım satım tecrübesi.',
       },
     ],
-    
+
     faqs: [
       {
         question: 'Kazalı araç alımında nasıl bir süreç işliyor?',
@@ -136,7 +138,7 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Evet, hasar derecesi ne olursa olsun tüm kazalı araçları alıyoruz. Sürülemez durumda olan araçlar için de ücretsiz çekici hizmetimiz mevcuttur.',
       },
     ],
-    
+
     content: {
       whatWeAccept: [
         'Ön çarpma hasarlı araçlar',
@@ -170,7 +172,7 @@ export const servicesData: Record<string, ServiceData> = {
       ],
     },
   },
-  
+
   'hasarli-arac-alim': {
     id: 'hasarli',
     slug: 'hasarli-arac-alim',
@@ -178,7 +180,7 @@ export const servicesData: Record<string, ServiceData> = {
     shortTitle: 'Hasarlı Araç',
     icon: '🔧',
     color: 'purple',
-    
+
     metaTitle: 'Hasarlı Araç Alımı | Mekanik & Kaporta Hasarlı Araç Alan - Hasar Park',
     metaDescription: 'Hasarlı aracınızı en yüksek fiyata satın. Mekanik, kaporta, motor hasarlı tüm araçlar için anında teklif. Ücretsiz ekspertiz.',
     keywords: [
@@ -188,7 +190,7 @@ export const servicesData: Record<string, ServiceData> = {
       'kaporta hasarlı araç',
       'motor hasarlı araç',
     ],
-    
+
     hero: {
       badge: '🔧 HASARLI ARAÇ ALIMI',
       title: 'HASARLI ARACINIZ',
@@ -196,7 +198,7 @@ export const servicesData: Record<string, ServiceData> = {
       subtitle: 'Mekanik, kaporta veya motor hasarlı tüm araçlar için profesyonel değerlendirme ve en yüksek fiyat.',
       image: '/images/hasarli-arac.webp',
     },
-    
+
     features: [
       {
         icon: '🔍',
@@ -229,7 +231,7 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Anında nakit veya EFT ile ödeme.',
       },
     ],
-    
+
     faqs: [
       {
         question: 'Hangi tür hasarlı araçları alıyorsunuz?',
@@ -252,7 +254,7 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Hayır, ekspertiz hizmetimiz tamamen ücretsizdir.',
       },
     ],
-    
+
     content: {
       whatWeAccept: [
         'Motor hasarlı araçlar',
@@ -286,7 +288,7 @@ export const servicesData: Record<string, ServiceData> = {
       ],
     },
   },
-  
+
   'pert-arac-alim': {
     id: 'pert',
     slug: 'pert-arac-alim',
@@ -294,7 +296,7 @@ export const servicesData: Record<string, ServiceData> = {
     shortTitle: 'Pert Araç',
     icon: '⚠️',
     color: 'fuchsia',
-    
+
     metaTitle: 'Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Hasar Park',
     metaDescription: 'Pert raporlu aracınızı en yüksek fiyata satın. Sigorta pert çıkmış araçlar için özel değerlendirme. Anında ödeme.',
     keywords: [
@@ -304,7 +306,7 @@ export const servicesData: Record<string, ServiceData> = {
       'sigorta pert',
       'kasko pert',
     ],
-    
+
     hero: {
       badge: '⚠️ PERT ARAÇ ALIMI',
       title: 'PERT ARACINIZ',
@@ -312,7 +314,7 @@ export const servicesData: Record<string, ServiceData> = {
       subtitle: 'Sigorta pert raporu çıkmış araçlar için özel değerlendirme. En yüksek fiyat ve güvenli işlem garantisi.',
       image: '/images/pert-arac.webp',
     },
-    
+
     features: [
       {
         icon: '📋',
@@ -345,7 +347,7 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Noter sonrası hemen ödeme alırsınız.',
       },
     ],
-    
+
     faqs: [
       {
         question: 'Pert araç nedir?',
@@ -368,7 +370,7 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Araç ruhsatı, pert raporu, kimlik fotokopisi ve noter işlemleri için gereken standart evraklar yeterlidir.',
       },
     ],
-    
+
     content: {
       whatWeAccept: [
         'Kasko pert raporlu araçlar',
@@ -401,7 +403,7 @@ export const servicesData: Record<string, ServiceData> = {
       ],
     },
   },
-  
+
   'hurda-arac-alim': {
     id: 'hurda',
     slug: 'hurda-arac-alim',
@@ -409,7 +411,7 @@ export const servicesData: Record<string, ServiceData> = {
     shortTitle: 'Hurda Araç',
     icon: '♻️',
     color: 'lime',
-    
+
     metaTitle: 'Hurda Araç Alımı | Hurda Belgesi & En İyi Fiyat - Hasar Park',
     metaDescription: 'Hurda aracınızı resmi belgeli alıyoruz. Hurda belgesi işlemleri, en yüksek kilo fiyatı. Çevre dostu geri dönüşüm.',
     keywords: [
@@ -419,7 +421,7 @@ export const servicesData: Record<string, ServiceData> = {
       'hurda araç fiyatı',
       'araç hurdaya çıkarma',
     ],
-    
+
     hero: {
       badge: '♻️ HURDA ARAÇ ALIMI',
       title: 'HURDA ARACINIZ',
@@ -427,7 +429,7 @@ export const servicesData: Record<string, ServiceData> = {
       subtitle: 'Kullanım ömrünü tamamlamış araçlar için resmi belgeli hurda işlemi. En yüksek kilo fiyatı ve çevre dostu geri dönüşüm.',
       image: '/images/hurda-arac.webp',
     },
-    
+
     features: [
       {
         icon: '📋',
@@ -460,7 +462,7 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Tartı sonrası hemen ödeme yapıyoruz.',
       },
     ],
-    
+
     faqs: [
       {
         question: 'Hurda araç işlemi nasıl yapılır?',
@@ -483,7 +485,7 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Hurda araç işlemi genellikle aynı gün içinde tamamlanır. Tartı, belge ve ödeme 2-3 saat içinde yapılır.',
       },
     ],
-    
+
     content: {
       whatWeAccept: [
         'Kullanım ömrü bitmiş araçlar',
