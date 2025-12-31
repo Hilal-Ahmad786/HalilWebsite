@@ -15,14 +15,25 @@ export interface CityData {
     title: string;
     titleHighlight: string;
     subtitle: string;
+    ctaPhoneText?: string;
+    ctaWhatsappText?: string;
+    customPhone?: string;
   };
 
-  // Service availability
+  // Service availability & details
   services: {
     kazali: boolean;
     hasarli: boolean;
     pert: boolean;
     hurda: boolean;
+  };
+
+  // Custom content for service cards (for explicit keywords)
+  servicesDetail?: {
+    kazali?: { title: string; description: string };
+    hasarli?: { title: string; description: string };
+    pert?: { title: string; description: string };
+    hurda?: { title: string; description: string };
   };
 
   // City-specific info
@@ -32,6 +43,12 @@ export interface CityData {
     responseTime: string;
     localOffice?: string;
   };
+
+  // Detailed District Info (for H3 blocks)
+  districtDetails?: Array<{
+    title: string;
+    description: string;
+  }>;
 
   // Features for this city
   features: Array<{
@@ -194,24 +211,29 @@ export const citiesData: Record<string, CityData> = {
     name: 'Ankara',
     region: 'İç Anadolu',
 
-    metaTitle: 'Ankara Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park',
-    metaDescription: 'Ankara\'da kazalı, hasarlı, pert ve hurda araç alımı. Çankaya, Keçiören, Yenimahalle tüm ilçelere hizmet. 30 dakikada teklif.',
+    metaTitle: 'Ankara Hasarlı Kazalı Pert Hurda Araç Alan | 30 DK Teklif | Hasar Park',
+    metaDescription: 'Ankara’da hasarlı/kazalı/pert/hurda araç alımı. 30 dk teklif, ücretsiz çekici, hızlı noter işlemi, anında ödeme. Çankaya-Keçiören-Etimesgut tüm ilçeler.',
     keywords: [
-      'ankara kazalı araç alan',
       'ankara hasarlı araç alan',
+      'ankara kazalı araç alan',
       'ankara pert araç alan',
       'ankara hurda araç alan',
-      'çankaya araç alım',
-      'keçiören araç alım',
-      'yenimahalle araç alım',
-      'mamak araç alım',
+      'ankara araç alım satım',
+      'ankara hasarlı araç firmaları',
+      'ankara pert araç yerleri',
+      'çankaya hasarlı araç',
+      'keçiören hasarlı araç',
+      'etimesgut hasarlı araç'
     ],
 
     hero: {
-      badge: '🏛️ ANKARA ARAÇ ALIM',
-      title: 'ANKARA\'DA ARACINIZ',
-      titleHighlight: 'EN YÜKSEK FİYATA',
-      subtitle: 'Ankara\'nın tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. 1 saat içinde ücretsiz ekspertiz.',
+      badge: '🏛️ ANKARA HASARLI ARAÇ ALIM',
+      title: 'Ankara Hasarlı, Kazalı,',
+      titleHighlight: 'Pert & Hurda Araç Alan',
+      subtitle: 'Hasarlı araç alım satım Ankara genelinde hızlı yürür. Fotoğraf gönderin, 30 dk içinde teklif alın. Ücretsiz çekici + noter + anında ödeme.',
+      ctaPhoneText: 'Hemen Ara',
+      ctaWhatsappText: 'Whatsapp',
+      customPhone: '05303444097',
     },
 
     services: {
@@ -221,34 +243,56 @@ export const citiesData: Record<string, CityData> = {
       hurda: true,
     },
 
+    servicesDetail: {
+      hasarli: {
+        title: 'Ankara Hasarlı Araç Alan',
+        description: 'Ankara hasarlı araç alan ekibimiz, kaporta/mekanik fark etmeksizin aracı yerinde görür. Hasarlı araç alan firmalar Ankara içinde şeffaf fiyat + ücretsiz çekici + noter süreç.'
+      },
+      kazali: {
+        title: 'Ankara Kazalı Araç Alan',
+        description: 'Kazalı araç alan Ankara için fotoğrafa göre ön fiyat, ekspertiz sonrası net teklif. Kazalı araç alan yerler Ankara arayanlara Çankaya-Keçiören-Etimesgut aynı gün hizmet.'
+      },
+      pert: {
+        title: 'Ankara Pert Araç Alan',
+        description: 'Pert araç alan Ankara için pert raporuna göre özel değerlendirme, yasal süreç bizden.'
+      },
+      hurda: {
+        title: 'Ankara Hurda Araç Alan',
+        description: 'Hurda araç alan Ankara ekibi hurda belgeli araçlarda ücretsiz çekici + hızlı işlem.'
+      }
+    },
+
     cityInfo: {
       population: '5.7 Milyon',
       coverage: [
         'Çankaya', 'Keçiören', 'Yenimahalle', 'Mamak', 'Etimesgut',
         'Sincan', 'Gölbaşı', 'Pursaklar', 'Altındağ', 'Kahramankazan',
-        'Çubuk', 'Polatlı', 'Beypazarı', 'Elmadağ', 'Akyurt',
-        'Kalecik', 'Haymana', 'Şereflikoçhisar', 'Kızılcahamam', 'Ayaş',
-        'Güdül', 'Çamlıdere', 'Nallıhan', 'Bala', 'Evren'
+        'Çubuk', 'Polatlı', 'Beypazarı', 'Elmadağ', 'Akyurt'
       ],
-      responseTime: '1 saat içinde',
+      responseTime: '30 dk içinde',
       localOffice: 'Çankaya Merkez Ofis',
     },
 
+    districtDetails: [
+      {
+        title: 'Çankaya hasarlı araç alan',
+        description: 'Merkez ofise yakın bölgede 1 saat içinde ekspertiz.'
+      },
+      {
+        title: 'Keçiören hasarlı araç alan',
+        description: 'Ücretsiz çekici ile adresten alım.'
+      },
+      {
+        title: 'Etimesgut hasarlı araç alan',
+        description: 'Aynı gün noter ve ödeme.'
+      }
+    ],
+
     features: [
       {
-        icon: '🚗',
-        title: 'Tüm İlçelere Hizmet',
-        description: '25 ilçede hızlı ve ücretsiz hizmet.',
-      },
-      {
         icon: '⚡',
-        title: '1 Saat İçinde Teklif',
+        title: '30 dk Teklif',
         description: 'Ankara\'da en hızlı değerlendirme.',
-      },
-      {
-        icon: '💰',
-        title: 'Ankara\'nın En İyi Fiyatı',
-        description: 'Başkentte en yüksek araç alım fiyatları.',
       },
       {
         icon: '🚚',
@@ -256,14 +300,9 @@ export const citiesData: Record<string, CityData> = {
         description: 'Ankara geneli ücretsiz çekme.',
       },
       {
-        icon: '📄',
-        title: 'Merkez Noter',
-        description: 'Kızılay noterlerinde hızlı işlem.',
-      },
-      {
-        icon: '🏢',
-        title: 'Merkezi Konum',
-        description: 'Çankaya ofisimizden tüm Ankara\'ya ulaşım.',
+        icon: '💰',
+        title: 'Noterde Anında Ödeme',
+        description: 'Güvenli ve hızlı para transferi.',
       },
     ],
 
@@ -293,16 +332,20 @@ export const citiesData: Record<string, CityData> = {
 
     faqs: [
       {
-        question: 'Ankara\'nın hangi ilçelerine hizmet veriyorsunuz?',
-        answer: 'Ankara\'nın 25 ilçesine hizmet veriyoruz. Çankaya, Keçiören, Yenimahalle, Mamak, Etimesgut başta olmak üzere tüm merkez ve çevre ilçelere ücretsiz çekici hizmetimiz var.',
+        question: 'Hasarlı araç alım satım Ankara için hangi evraklar lazım?',
+        answer: 'Ruhsat, kimlik ve (varsa) hasar geçmişi belgeleri yeterlidir. Noter satışı için ruhsat sahibi bizzat gelmelidir.',
       },
       {
-        question: 'Ankara\'da ne kadar sürede gelirsiniz?',
-        answer: 'Merkez ilçelerde 1 saat içinde, dış ilçelerde 2 saat içinde ekspertiz ekibimiz adresinize ulaşır.',
+        question: 'Hasarlı araç alan firmalar Ankara fiyatı neye göre belirler?',
+        answer: 'Aracın marka/modeli, hasar durumu, değişen parçalar ve piyasa değerine göre şeffaf fiyatlandırma yapılır.',
       },
       {
-        question: 'Ankara\'da hangi noterde işlem yapıyorsunuz?',
-        answer: 'Genellikle Kızılay bölgesindeki noterlerle çalışıyoruz. İsteğinize göre size yakın noterde de işlem yapabiliriz.',
+        question: 'Hasarlı araç alan yerler Ankara içinde aynı gün gelir misiniz?',
+        answer: 'Evet, Ankara içi tüm ilçelere aynı gün içerisinde, genellikle 1-2 saat içinde geliyoruz.',
+      },
+      {
+        question: 'Keçiören/Etimesgut’ta çekici ücretsiz mi?',
+        answer: 'Evet, Keçiören, Etimesgut ve Ankara\'nın tüm ilçelerinde çekici hizmetimiz tamamen ücretsizdir.',
       },
       {
         question: 'Sincan, Polatlı gibi uzak ilçelere de geliyor musunuz?',

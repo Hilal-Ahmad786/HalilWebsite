@@ -37,7 +37,7 @@ export default function CallButton({
       onClick={handleClick}
       className={`${baseClasses} ${variants[variant]} ${className}`}
     >
-      <svg className={variant === 'mega' ? 'w-8 h-8' : 'w-6 h-6'} fill="currentColor" viewBox="0 0 20 20">
+      <svg className={variant === 'mega' ? 'w-8 h-8' : 'w-6 h-6'} fill="currentColor" viewBox="0 0 24 24">
         <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6 A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9 a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4 c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
       </svg>
       {children || (variant === 'mega' ? 'HEMEN ARA' : 'ARA')}
