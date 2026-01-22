@@ -30,7 +30,7 @@ const popularCities = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white pb-20 md:pb-0">
       {/* Trust Badges Section */}
       <div className="border-b border-gray-800">
         <div className="container mx-auto px-6 py-10">

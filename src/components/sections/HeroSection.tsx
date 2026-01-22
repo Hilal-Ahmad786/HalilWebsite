@@ -43,39 +43,37 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="text-white">
             {/* Badge */}
-            <div className="inline-block bg-emerald-500/15 text-emerald-400 px-6 py-3 mb-8 rounded-full">
-              <span className="font-semibold text-sm tracking-wide">
+            <div className="inline-block bg-emerald-500/15 text-emerald-400 px-4 py-2 sm:px-6 sm:py-3 mb-6 sm:mb-8 rounded-full">
+              <span className="font-semibold text-xs sm:text-sm tracking-wide">
                 TÜRKİYE'NİN ARAÇ ALIM MERKEZİ
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Aracınız
               <span className="block text-emerald-400">Nakde Dönsün</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl mb-4 text-gray-300 font-medium">
+            <p className="text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 text-gray-300 font-medium">
               Kazalı • Hasarlı • Pert • Hurda
             </p>
 
-            <p className="text-lg mb-12 text-gray-400 leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-lg mb-8 sm:mb-12 text-gray-400 leading-relaxed max-w-xl">
               Anında değerlendirme, en yüksek fiyat garantisi ve 30 dakika içinde teklif.
               Ücretsiz çekici ve tüm evraklar bizden!
             </p>
 
             {/* CTA Buttons - PRIMARY CONVERSION */}
-            <div className="flex flex-col sm:flex-row gap-6 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-12">
               {/* Phone CTA - Orange gradient */}
               <button
                 onClick={handlePhoneClick}
-                className="group relative bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-5 font-semibold text-xl rounded-2xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-4 overflow-hidden shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1"
+                className="group relative bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-4 sm:px-8 sm:py-5 font-semibold text-base sm:text-xl rounded-xl sm:rounded-2xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-3 sm:gap-4 overflow-hidden shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1"
               >
-                <PhoneIcon className="w-7 h-7" strokeWidth={2} />
-
+                <PhoneIcon className="w-5 h-5 sm:w-7 sm:h-7" strokeWidth={2} />
                 <span>Hemen Ara</span>
-
                 {/* Shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 group-hover:animate-shine"></div>
               </button>
@@ -83,20 +81,20 @@ export default function HeroSection() {
               {/* WhatsApp CTA - Green */}
               <button
                 onClick={handleWhatsAppClick}
-                className="bg-[#25D366] text-white px-8 py-5 font-semibold text-xl rounded-2xl hover:bg-[#1da851] transition-all duration-300 flex items-center justify-center gap-4 shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-1"
+                className="bg-[#25D366] text-white px-6 py-4 sm:px-8 sm:py-5 font-semibold text-base sm:text-xl rounded-xl sm:rounded-2xl hover:bg-[#1da851] transition-all duration-300 flex items-center justify-center gap-3 sm:gap-4 shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-1"
               >
-                <WhatsAppIcon className="w-7 h-7" />
+                <WhatsAppIcon className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span>WhatsApp</span>
               </button>
             </div>
 
             {/* Phone Number - Always Visible */}
-            <div className="flex items-center gap-4 text-orange-400">
-              <PhoneIcon className="w-7 h-7" strokeWidth={2} />
+            <div className="flex items-center gap-3 sm:gap-4 text-orange-400">
+              <PhoneIcon className="w-5 h-5 sm:w-7 sm:h-7" strokeWidth={2} />
               <a
                 href={`tel:${siteConfig.phone}`}
                 onClick={handlePhoneClick}
-                className="text-2xl md:text-3xl font-bold hover:text-orange-300 transition"
+                className="text-xl sm:text-2xl md:text-3xl font-bold hover:text-orange-300 transition"
               >
                 {siteConfig.phoneDisplay}
               </a>

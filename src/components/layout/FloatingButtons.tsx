@@ -224,8 +224,6 @@ export default function FloatingButtons() {
         </div>
       </div>
 
-      {/* Mobile bottom padding spacer */}
-      <div className="md:hidden h-[72px]" />
     </>
   );
 }

@@ -310,9 +310,7 @@ select:focus {
   animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ===== MOBILE OPTIMIZATIONS EXTRA ===== */
-@media (max-width: 768px) {
-  body {
-    padding-bottom: 80px;
-  }
+/* ===== MOBILE SAFE AREA ===== */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
