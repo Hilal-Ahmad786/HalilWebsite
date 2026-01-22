@@ -14,16 +14,16 @@ export default function ServicesGrid() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-purple-600/20 text-purple-600 px-6 py-3 mb-6 border-2 border-purple-600">
-            <span className="font-black text-sm tracking-widest">HİZMETLERİMİZ</span>
+          <div className="inline-block bg-indigo-500/10 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <span className="font-semibold text-sm">Hizmetlerimiz</span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            HANGİ ARAÇLARI
-            <span className="block text-purple-600">SATIN ALIYORUZ?</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Hangi Araçları
+            <span className="block text-indigo-600">Satın Alıyoruz?</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-bold">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Tüm araç türleri için en yüksek fiyat garantisi ve anında ödeme
           </p>
         </div>
@@ -33,25 +33,25 @@ export default function ServicesGrid() {
           {siteConfig.services.map((service, index) => {
             const colorClasses = {
               lime: {
-                border: 'border-lime-400',
-                bg: 'bg-lime-400/10',
-                text: 'text-lime-600',
-                hover: 'hover:bg-lime-400/20',
-                button: 'bg-lime-400 text-gray-900 hover:bg-lime-300',
+                border: 'border-emerald-200',
+                bg: 'bg-emerald-50',
+                text: 'text-emerald-600',
+                hover: 'hover:border-emerald-300',
+                button: 'bg-emerald-500 text-white hover:bg-emerald-600',
               },
               purple: {
-                border: 'border-purple-600',
-                bg: 'bg-purple-600/10',
-                text: 'text-purple-600',
-                hover: 'hover:bg-purple-600/20',
-                button: 'bg-purple-600 text-white hover:bg-purple-700',
+                border: 'border-indigo-200',
+                bg: 'bg-indigo-50',
+                text: 'text-indigo-600',
+                hover: 'hover:border-indigo-300',
+                button: 'bg-indigo-500 text-white hover:bg-indigo-600',
               },
               fuchsia: {
-                border: 'border-fuchsia-600',
-                bg: 'bg-fuchsia-600/10',
-                text: 'text-fuchsia-600',
-                hover: 'hover:bg-fuchsia-600/20',
-                button: 'bg-fuchsia-600 text-white hover:bg-fuchsia-700',
+                border: 'border-violet-200',
+                bg: 'bg-violet-50',
+                text: 'text-violet-600',
+                hover: 'hover:border-violet-300',
+                button: 'bg-violet-500 text-white hover:bg-violet-600',
               },
             };
 
@@ -60,7 +60,7 @@ export default function ServicesGrid() {
             return (
               <div
                 key={service.id}
-                className={`group bg-white p-8 border-l-4 ${colors.border} shadow-md hover:shadow-2xl transition-all duration-300 hover:transform hover:-translate-y-2`}
+                className={`group bg-white p-8 rounded-2xl border ${colors.border} ${colors.hover} shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2`}
               >
                 {/* Icon */}
                 <div className={`text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
@@ -68,34 +68,34 @@ export default function ServicesGrid() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-black text-gray-900 mb-3 leading-tight">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-6 font-medium">
+                <p className="text-gray-600 mb-6">
                   {service.shortDesc}
                 </p>
 
                 {/* Features List */}
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className={`w-5 h-5 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-bold">En yüksek fiyat</span>
+                    <span>En yüksek fiyat</span>
                   </li>
-                  <li className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className={`w-5 h-5 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-bold">Anında değerleme</span>
+                    <span>Anında değerleme</span>
                   </li>
-                  <li className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className={`w-5 h-5 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-bold">Ücretsiz çekici</span>
+                    <span>Ücretsiz çekici</span>
                   </li>
                 </ul>
 
@@ -103,16 +103,16 @@ export default function ServicesGrid() {
                 <Link
                   href={`/${service.slug}`}
                   onClick={() => handleServiceClick(service.title)}
-                  className={`block w-full ${colors.button} px-6 py-4 font-black text-center transition-all duration-300 transform group-hover:scale-105`}
+                  className={`block w-full ${colors.button} px-6 py-3 font-semibold text-center rounded-xl transition-all duration-300`}
                 >
-                  DETAY & TEKLİF AL
+                  Detay & Teklif Al
                 </Link>
 
                 {/* Hover Accent */}
-                <div className={`mt-4 pt-4 border-t ${colors.border} opacity-0 group-hover:opacity-100 transition-opacity`}>
-                  <div className="flex items-center justify-center gap-2 text-sm font-black text-gray-700">
-                    <span>HEMEN TEKLİF AL</span>
-                    <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <div className="mt-4 pt-4 border-t border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center justify-center gap-2 text-sm font-medium text-gray-500">
+                    <span>Hemen teklif al</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -124,13 +124,13 @@ export default function ServicesGrid() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-xl text-gray-700 mb-6 font-bold">
+          <p className="text-lg text-gray-600 mb-6">
             Aracınız hangi kategoride? Hemen arayın, anında teklif alın!
           </p>
           <a
             href={`tel:${siteConfig.phone}`}
             onClick={() => trackCTAClick('Services Grid Bottom Phone', 'services-grid')}
-            className="inline-flex items-center gap-3 bg-lime-400 text-gray-900 px-10 py-5 text-2xl font-black hover:bg-lime-300 transition-all transform hover:scale-105 shadow-xl"
+            className="inline-flex items-center gap-3 bg-emerald-500 text-white px-8 py-4 text-lg font-semibold rounded-xl hover:bg-emerald-600 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-emerald-500/25"
           >
             <svg
               className="w-7 h-7"
@@ -142,14 +142,7 @@ export default function ServicesGrid() {
               strokeLinejoin="round"
               aria-hidden="true"
             >
-              <path d="M22 16.9v3a2 2 0 0 1-2.2 2
-           19.8 19.8 0 0 1-8.6-3.1
-           19.5 19.5 0 0 1-6-6
-           19.8 19.8 0 0 1-3.1-8.6
-           A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7
-           c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9
-           a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4
-           c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
             </svg>
 
             {siteConfig.phoneDisplay}

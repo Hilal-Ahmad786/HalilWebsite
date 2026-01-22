@@ -188,8 +188,25 @@ a:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid #A3E635;
+  outline: 2px solid #10B981;
   outline-offset: 2px;
+}
+
+/* ===== SOFT ROUNDED DESIGN SYSTEM ===== */
+/* Default border radius for common elements */
+.card,
+.panel,
+.box {
+  border-radius: 1rem;
+}
+
+/* Soft shadows */
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== LOADING / APPEAR ANIMATION UTIL ===== */

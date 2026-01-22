@@ -7,27 +7,29 @@ export default function WhyUs() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block bg-purple-600/20 text-purple-600 px-6 py-3 mb-6 border-2 border-purple-600">
-            <span className="font-black text-sm tracking-widest">NEDEN HASAR PARK?</span>
+          <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <span className="font-bold text-sm tracking-wide">NEDEN HASAR PARK?</span>
           </div>
-          
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            6 NEDEN
-            <span className="block text-purple-600">BİZİ TERCİH ETMELİSİNİZ</span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            6 Neden
+            <span className="block text-indigo-600">Bizi Tercih Etmelisiniz</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {siteConfig.features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-8 border-l-4 border-lime-400 shadow-md hover:shadow-2xl transition-all transform hover:-translate-y-2"
+              className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-2xl font-black text-gray-900 mb-3">
+              <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-3xl mb-4">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 font-medium">
+              <p className="text-gray-600">
                 {feature.description}
               </p>
             </div>

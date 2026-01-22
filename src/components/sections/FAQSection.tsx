@@ -32,12 +32,12 @@ export default function FAQSection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <div className="inline-block bg-fuchsia-600/20 text-fuchsia-600 px-6 py-3 mb-6 border-2 border-fuchsia-600">
-            <span className="font-black text-sm tracking-widest">SIK SORULAN SORULAR</span>
+          <div className="inline-block bg-violet-500/10 text-violet-600 px-6 py-3 mb-6 rounded-full">
+            <span className="font-semibold text-sm">Sık Sorulan Sorular</span>
           </div>
-          
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            MERAK EDİLENLER
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Merak Edilenler
           </h2>
         </div>
 
@@ -45,15 +45,15 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white border-l-4 border-purple-600 shadow-md overflow-hidden"
+              className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left p-6 font-bold text-gray-900 flex items-center justify-between hover:bg-gray-50 transition"
+                className="w-full text-left p-6 font-medium text-gray-900 flex items-center justify-between hover:bg-gray-50 transition"
               >
-                <span className="text-lg">{faq.question}</span>
+                <span className="text-base">{faq.question}</span>
                 <svg
-                  className={`w-6 h-6 transform transition-transform ${
+                  className={`w-5 h-5 text-gray-400 transform transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="currentColor"
@@ -64,7 +64,7 @@ export default function FAQSection() {
               </button>
 
               {openIndex === index && (
-                <div className="p-6 pt-0 text-gray-700 leading-relaxed">
+                <div className="p-6 pt-0 text-gray-600 leading-relaxed">
                   {faq.answer}
                 </div>
               )}

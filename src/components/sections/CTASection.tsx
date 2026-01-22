@@ -30,22 +30,22 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
   // Variant styles
   const variantStyles = {
     urgent: {
-      container: 'bg-gradient-to-r from-purple-600 to-fuchsia-600',
-      badge: 'bg-lime-400/20 text-lime-400 border-lime-400',
+      container: 'bg-gradient-to-br from-indigo-500 to-violet-500',
+      badge: 'bg-white/15 text-white',
       title: 'text-white',
-      subtitle: 'text-purple-100',
+      subtitle: 'text-indigo-100',
     },
     dark: {
-      container: 'bg-gray-900',
-      badge: 'bg-purple-600/20 text-purple-400 border-purple-400',
+      container: 'bg-gray-800',
+      badge: 'bg-indigo-500/15 text-indigo-300',
       title: 'text-white',
       subtitle: 'text-gray-400',
     },
     lime: {
-      container: 'bg-lime-400',
-      badge: 'bg-gray-900/20 text-gray-900 border-gray-900',
-      title: 'text-gray-900',
-      subtitle: 'text-gray-800',
+      container: 'bg-emerald-500',
+      badge: 'bg-white/20 text-white',
+      title: 'text-white',
+      subtitle: 'text-emerald-100',
     },
   };
 
@@ -69,22 +69,21 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className={`inline-block ${styles.badge} px-6 py-3 mb-8 border-2`}>
-            <span className="font-black text-sm tracking-widest flex items-center gap-2">
-              <span className="animate-pulse">🔥</span>
-              {variant === 'urgent' && 'HEMEN ARAYIN'}
-              {variant === 'dark' && 'EN YÜKSEK FİYAT'}
-              {variant === 'lime' && 'BUGÜN ÖZEL'}
+          <div className={`inline-block ${styles.badge} px-6 py-3 mb-8 rounded-full`}>
+            <span className="font-semibold text-sm flex items-center gap-2">
+              {variant === 'urgent' && 'Hemen Arayın'}
+              {variant === 'dark' && 'En Yüksek Fiyat'}
+              {variant === 'lime' && 'Bugün Özel'}
             </span>
           </div>
 
           {/* Title */}
-          <h2 className={`text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight ${styles.title}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${styles.title}`}>
             {title}
           </h2>
 
           {/* Subtitle */}
-          <p className={`text-xl md:text-2xl mb-12 font-bold ${styles.subtitle}`}>
+          <p className={`text-lg md:text-xl mb-12 ${styles.subtitle}`}>
             {subtitle}
           </p>
 
@@ -93,9 +92,9 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
             {/* Phone Button */}
             <button
               onClick={() => handlePhoneClick(`cta-section-${variant}`)}
-              className={`group relative px-12 py-6 font-black text-2xl tracking-wider transition-all duration-300 flex items-center gap-4 overflow-hidden shadow-2xl transform hover:scale-105 ${variant === 'lime'
-                ? 'bg-gray-900 text-white hover:bg-gray-800'
-                : 'bg-lime-400 text-gray-900 hover:bg-lime-300'
+              className={`group relative px-8 py-5 font-semibold text-lg rounded-xl transition-all duration-300 flex items-center gap-4 overflow-hidden shadow-lg transform hover:-translate-y-1 ${variant === 'lime'
+                ? 'bg-white text-emerald-600 hover:bg-gray-50'
+                : 'bg-white text-gray-900 hover:bg-gray-50'
                 }`}
             >
               <svg
@@ -111,21 +110,18 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
                 <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6 A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9 a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4 c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
               </svg>
 
-              <span>HEMEN ARA</span>
-
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 group-hover:animate-shine"></div>
+              <span>Hemen Ara</span>
             </button>
 
             {/* WhatsApp Button */}
             <button
               onClick={() => handleWhatsAppClick(`cta-section-${variant}`)}
-              className="group relative px-12 py-6 font-black text-2xl tracking-wider transition-all duration-300 flex items-center gap-4 bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="group relative px-8 py-5 font-semibold text-lg rounded-xl transition-all duration-300 flex items-center gap-4 bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg hover:-translate-y-1"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
               </svg>
-              <span>WHATSAPP</span>
+              <span>WhatsApp</span>
             </button>
           </div>
 
@@ -147,7 +143,7 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
             <a
               href={`tel:${siteConfig.phone}`}
               onClick={() => handlePhoneClick(`cta-section-${variant}-text`)}
-              className={`text-3xl md:text-4xl font-black hover:opacity-80 transition ${variant === 'lime' ? 'text-gray-900' : 'text-lime-400'
+              className={`text-2xl md:text-3xl font-bold hover:opacity-80 transition ${variant === 'lime' ? 'text-white' : 'text-white'
                 }`}
             >
               {siteConfig.phoneDisplay}

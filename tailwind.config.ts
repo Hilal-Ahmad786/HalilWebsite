@@ -13,25 +13,25 @@ const config: Config = {
           DEFAULT: '#25D366',
           dark: '#20BA5A',
         },
-        // Hasar Park Brand Colors
+        // Hasar Park Brand Colors - Softer, More Professional Palette
         'primary-purple': {
-          DEFAULT: '#9333EA',
-          dark: '#7E22CE',
-          light: '#A855F7',
+          DEFAULT: '#6366F1',  // Softer indigo
+          dark: '#4F46E5',
+          light: '#818CF8',
         },
         'accent-lime': {
-          DEFAULT: '#A3E635',
-          dark: '#84CC16',
-          light: '#BEF264',
+          DEFAULT: '#10B981',  // Softer emerald/teal
+          dark: '#059669',
+          light: '#34D399',
         },
         'secondary-fuchsia': {
-          DEFAULT: '#C026D3',
-          dark: '#A21CAF',
-          light: '#D946EF',
+          DEFAULT: '#8B5CF6',  // Softer violet
+          dark: '#7C3AED',
+          light: '#A78BFA',
         },
         'success-green': {
-          DEFAULT: '#16A34A',
-          dark: '#15803D',
+          DEFAULT: '#10B981',
+          dark: '#059669',
         },
         // Extend existing gray scale
         gray: {
@@ -62,7 +62,15 @@ const config: Config = {
         '30': '7.5rem',
       },
       borderRadius: {
-        none: '0',
+        'none': '0',
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
       },
       boxShadow: {
         'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
@@ -74,10 +82,10 @@ const config: Config = {
         'spin': 'spin 1s linear infinite',
       },
       backgroundImage: {
-        'gradient-purple': 'linear-gradient(135deg, #9333EA 0%, #C026D3 100%)',
-        'gradient-lime': 'linear-gradient(135deg, #A3E635 0%, #BEF264 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #111827 0%, #1F2937 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #111827 0%, #7E22CE 50%, #111827 100%)',
+        'gradient-purple': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+        'gradient-lime': 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
+        'gradient-dark': 'linear-gradient(145deg, #1F2937 0%, #374151 100%)',
+        'gradient-hero': 'linear-gradient(145deg, #1F2937 0%, #4F46E5 50%, #1F2937 100%)',
       },
     },
   },

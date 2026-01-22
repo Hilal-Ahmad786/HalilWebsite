@@ -4,23 +4,21 @@ import { siteConfig } from '@/config/site';
 
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
+    <section className="py-20 bg-gradient-to-br from-indigo-500 to-violet-500 text-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {siteConfig.stats.map((stat, index) => (
-<div
-  key={index}
-  className="transform hover:scale-105 md:hover:scale-110 transition-all duration-300"
->
-  {/* SAYILAR İÇİN RESPONSIVE FONT */}
-  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-2 sm:mb-3 text-lime-400">
-    {stat.value}
-  </div>
-  <div className="text-sm sm:text-base md:text-lg font-bold tracking-wider uppercase">
-    {stat.label}
-  </div>
-</div>
-
+            <div
+              key={index}
+              className="transform hover:scale-105 transition-all duration-300 p-6 rounded-2xl bg-white/10 backdrop-blur-sm"
+            >
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-white">
+                {stat.value}
+              </div>
+              <div className="text-sm sm:text-base font-medium text-indigo-100">
+                {stat.label}
+              </div>
+            </div>
           ))}
         </div>
       </div>

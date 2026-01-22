@@ -72,10 +72,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block font-bold mb-2 text-sm uppercase tracking-wide text-gray-900">
+        <label htmlFor="name" className="block font-semibold mb-2 text-sm text-gray-700">
           İsim Soyisim *
         </label>
         <input
@@ -85,14 +85,14 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border-2 border-gray-300 focus:border-purple-600 focus:outline-none transition"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition"
           placeholder="Adınız ve soyadınız"
         />
       </div>
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block font-bold mb-2 text-sm uppercase tracking-wide text-gray-900">
+        <label htmlFor="phone" className="block font-semibold mb-2 text-sm text-gray-700">
           Telefon *
         </label>
         <input
@@ -102,14 +102,14 @@ export default function ContactForm() {
           value={formData.phone}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border-2 border-gray-300 focus:border-purple-600 focus:outline-none transition"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition"
           placeholder="0530 344 40 97"
         />
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block font-bold mb-2 text-sm uppercase tracking-wide text-gray-900">
+        <label htmlFor="email" className="block font-semibold mb-2 text-sm text-gray-700">
           E-posta
         </label>
         <input
@@ -118,14 +118,14 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 border-2 border-gray-300 focus:border-purple-600 focus:outline-none transition"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition"
           placeholder="ornek@email.com"
         />
       </div>
 
       {/* Service Selection */}
       <div>
-        <label htmlFor="service" className="block font-bold mb-2 text-sm uppercase tracking-wide text-gray-900">
+        <label htmlFor="service" className="block font-semibold mb-2 text-sm text-gray-700">
           Hizmet Türü *
         </label>
         <select
@@ -134,7 +134,7 @@ export default function ContactForm() {
           value={formData.service}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border-2 border-gray-300 focus:border-purple-600 focus:outline-none transition bg-white"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition"
         >
           <option value="">Seçiniz...</option>
           <option value="kazali">Kazalı Araç Alımı</option>
@@ -146,7 +146,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block font-bold mb-2 text-sm uppercase tracking-wide text-gray-900">
+        <label htmlFor="message" className="block font-semibold mb-2 text-sm text-gray-700">
           Mesajınız
         </label>
         <textarea
@@ -155,7 +155,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="w-full px-4 py-3 border-2 border-gray-300 focus:border-purple-600 focus:outline-none transition resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition resize-none"
           placeholder="Aracınız hakkında detaylı bilgi verin..."
         />
       </div>
@@ -164,50 +164,50 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-lime-400 text-gray-900 px-8 py-4 font-black text-lg hover:bg-lime-300 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+        className="w-full bg-emerald-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-600 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg"
       >
         {isSubmitting ? (
           <>
-            <svg className="animate-spin h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
             </svg>
-            GÖNDERİLİYOR...
+            <span>Gönderiliyor...</span>
           </>
         ) : (
           <>
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
             </svg>
-            GÖNDER
+            <span>Gönder</span>
           </>
         )}
       </button>
 
       {/* Status Messages */}
       {submitStatus === 'success' && (
-        <div className="bg-lime-400 text-gray-900 p-4 font-bold text-center">
-          ✅ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
+        <div className="bg-emerald-100 text-emerald-700 p-4 rounded-xl font-medium text-center">
+          Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="bg-red-500 text-white p-4 font-bold text-center">
-          ❌ Bir hata oluştu. Lütfen direkt {siteConfig.phoneDisplay} numarasından bizi arayın.
+        <div className="bg-red-100 text-red-700 p-4 rounded-xl font-medium text-center">
+          Bir hata oluştu. Lütfen direkt {siteConfig.phoneDisplay} numarasından bizi arayın.
         </div>
       )}
 
       {/* Quick Call Option */}
-      <div className="text-center pt-4 border-t-2 border-gray-200">
-        <p className="text-gray-700 mb-4 font-bold">
+      <div className="text-center pt-4 border-t border-gray-100">
+        <p className="text-gray-600 mb-4">
           Hızlı görüşme için hemen arayın:
         </p>
         <a
           href={`tel:${siteConfig.phone}`}
-          className="inline-flex items-center gap-3 bg-purple-600 text-white px-8 py-4 font-black hover:bg-purple-700 transition"
+          className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-600 transition"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

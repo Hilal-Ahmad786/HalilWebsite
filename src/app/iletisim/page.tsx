@@ -4,45 +4,158 @@
 
 import { siteConfig } from '@/config/site';
 import ContactForm from '@/components/ui/ContactForm';
+import TrustBadges from '@/components/ui/TrustBadges';
+import SocialProof from '@/components/ui/SocialProof';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+import { PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
 
 export default function ContactPage() {
+  const contactStats = [
+    { value: '7/24', label: 'Kesintisiz Destek' },
+    { value: '30dk', label: 'Ortalama Yanıt' },
+    { value: '81 İl', label: 'Hizmet Bölgesi' },
+    { value: '%100', label: 'Memnuniyet' },
+  ];
+
   return (
     <div className="contact-page">
-      {/* Hero */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 pt-32 pb-20">
-        <div className="container mx-auto px-6 relative z-10 text-white text-center">
-          <div className="inline-block bg-lime-400/20 text-lime-400 px-6 py-3 mb-8 border-2 border-lime-400">
-            <span className="font-black text-sm tracking-widest">İLETİŞİM</span>
+      {/* Hero - Matching Homepage Style */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          />
+        </div>
+
+        {/* Diagonal Accent */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white">
+              {/* Badge */}
+              <div className="inline-block bg-emerald-500/15 text-emerald-400 px-6 py-3 mb-8 rounded-full">
+                <span className="font-semibold text-sm tracking-wide">İLETİŞİM</span>
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Bize
+                <span className="block text-emerald-400">Ulaşın</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed max-w-xl">
+                7/24 müşteri hizmetleri ile her zaman yanınızdayız.
+                Hemen arayın, anında teklif alın!
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  onClick={() => trackPhoneClick('contact-hero')}
+                  className="group bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-5 font-semibold text-xl rounded-2xl hover:from-orange-600 hover:to-amber-600 transition-all flex items-center justify-center gap-4 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1"
+                >
+                  <PhoneIcon className="w-7 h-7" strokeWidth={2} />
+                  <span>Hemen Ara</span>
+                </a>
+
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Merhaba, bilgi almak istiyorum.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('contact-hero')}
+                  className="bg-[#25D366] text-white px-8 py-5 font-semibold text-xl rounded-2xl hover:bg-[#1da851] transition-all flex items-center justify-center gap-4 shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-1"
+                >
+                  <WhatsAppIcon className="w-7 h-7" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+
+              {/* Phone Number Display */}
+              <div className="flex items-center gap-4 text-orange-400">
+                <PhoneIcon className="w-7 h-7" strokeWidth={2} />
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  onClick={() => trackPhoneClick('contact-hero-number')}
+                  className="text-2xl md:text-3xl font-bold hover:text-orange-300 transition"
+                >
+                  {siteConfig.phoneDisplay}
+                </a>
+              </div>
+            </div>
+
+            {/* Right Side - Stats Cards */}
+            <div className="grid grid-cols-2 gap-6">
+              {contactStats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 border border-white/10"
+                >
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-300 font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-black mb-6">
-            BİZE
-            <span className="block text-lime-400">ULAŞIN</span>
-          </h1>
+          {/* Social Proof */}
+          <div className="mt-16">
+            <SocialProof variant="dark" />
+          </div>
+        </div>
 
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-            7/24 müşteri hizmetleri ile her zaman yanınızdayız
-          </p>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <svg
+            className="w-6 h-6 text-emerald-400/70"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-10 bg-gray-50 border-b border-gray-100">
+        <div className="container mx-auto px-6">
+          <TrustBadges variant="light" />
         </div>
       </section>
 
       {/* Contact Methods */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* Phone */}
             <a
               href={`tel:${siteConfig.phone}`}
               onClick={() => trackPhoneClick('contact-page')}
-              className="bg-lime-400 text-gray-900 p-8 text-center hover:bg-lime-300 transition group"
+              className="bg-gradient-to-br from-orange-500 to-amber-500 text-white p-8 rounded-2xl text-center hover:from-orange-600 hover:to-amber-600 transition group shadow-lg"
             >
-              <svg className="w-16 h-16 mx-auto mb-4 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6 A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9 a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4 c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />
-              </svg>
-              <div className="text-sm font-bold mb-2 uppercase tracking-wider">TELEFON</div>
-              <div className="text-3xl font-black">{siteConfig.phoneDisplay}</div>
-              <div className="text-sm mt-2">7/24 Destek</div>
+              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                <PhoneIcon className="w-8 h-8" strokeWidth={2} />
+              </div>
+              <div className="text-sm font-medium mb-2 opacity-90">Telefon</div>
+              <div className="text-2xl font-bold">{siteConfig.phoneDisplay}</div>
+              <div className="text-sm mt-2 opacity-75">7/24 Destek</div>
             </a>
 
             {/* WhatsApp */}
@@ -51,37 +164,44 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick('contact-page')}
-              className="bg-success-green text-white p-8 text-center hover:bg-success-green-dark transition group"
+              className="bg-[#25D366] text-white p-8 rounded-2xl text-center hover:bg-[#20bd5a] transition group shadow-lg"
             >
-              <svg className="w-16 h-16 mx-auto mb-4 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-              </svg>
-              <div className="text-sm font-bold mb-2 uppercase tracking-wider">WHATSAPP</div>
-              <div className="text-3xl font-black">{siteConfig.phoneDisplay}</div>
-              <div className="text-sm mt-2">Hızlı Mesaj</div>
+              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                <WhatsAppIcon className="w-8 h-8" />
+              </div>
+              <div className="text-sm font-medium mb-2 opacity-90">WhatsApp</div>
+              <div className="text-2xl font-bold">{siteConfig.phoneDisplay}</div>
+              <div className="text-sm mt-2 opacity-75">Hızlı Mesaj</div>
             </a>
 
             {/* Email */}
             <a
               href={`mailto:${siteConfig.email}`}
-              className="bg-purple-600 text-white p-8 text-center hover:bg-purple-700 transition group"
+              className="bg-indigo-600 text-white p-8 rounded-2xl text-center hover:bg-indigo-700 transition group shadow-lg"
             >
-              <svg className="w-16 h-16 mx-auto mb-4 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-              </svg>
-              <div className="text-sm font-bold mb-2 uppercase tracking-wider">E-POSTA</div>
-              <div className="text-xl font-black break-all">{siteConfig.email}</div>
-              <div className="text-sm mt-2">24 Saat İçinde Yanıt</div>
+              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+              <div className="text-sm font-medium mb-2 opacity-90">E-Posta</div>
+              <div className="text-lg font-bold break-all">{siteConfig.email}</div>
+              <div className="text-sm mt-2 opacity-75">24 Saat İçinde Yanıt</div>
             </a>
           </div>
 
           {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
-            <div className="bg-gray-50 p-8 md:p-12 border-l-4 border-lime-400">
-              <h2 className="text-4xl font-black mb-8 text-gray-900 text-center">
-                İLETİŞİM FORMU
-              </h2>
+            <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100">
+              <div className="text-center mb-8">
+                <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-4 rounded-full">
+                  <span className="font-bold text-sm tracking-wide">İLETİŞİM FORMU</span>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">
+                  Bize Mesaj Gönderin
+                </h2>
+              </div>
 
               <ContactForm />
             </div>
@@ -90,33 +210,37 @@ export default function ContactPage() {
       </section>
 
       {/* Service Hours */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-black mb-8">
-            HİZMET SAATLERİMİZ
+          <div className="inline-block bg-white/20 px-6 py-3 mb-8 rounded-full backdrop-blur-sm">
+            <span className="font-bold text-sm tracking-wide">HİZMET SAATLERİMİZ</span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-10">
+            Her Zaman Yanınızdayız
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div>
-              <div className="text-5xl mb-3">📞</div>
-              <div className="font-bold text-lg mb-2">Telefon Destek</div>
-              <div className="text-lime-400 text-2xl font-black">7/24</div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl">📞</div>
+              <div className="font-medium mb-2">Telefon Destek</div>
+              <div className="text-emerald-400 text-2xl font-bold">7/24</div>
             </div>
 
-            <div>
-              <div className="text-5xl mb-3">💬</div>
-              <div className="font-bold text-lg mb-2">WhatsApp</div>
-              <div className="text-lime-400 text-2xl font-black">7/24</div>
+            <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl">💬</div>
+              <div className="font-medium mb-2">WhatsApp</div>
+              <div className="text-emerald-400 text-2xl font-bold">7/24</div>
             </div>
 
-            <div>
-              <div className="text-5xl mb-3">📧</div>
-              <div className="font-bold text-lg mb-2">E-posta</div>
-              <div className="text-lime-400 text-2xl font-black">24 Saat</div>
+            <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl">📧</div>
+              <div className="font-medium mb-2">E-posta</div>
+              <div className="text-emerald-400 text-2xl font-bold">24 Saat</div>
             </div>
           </div>
 
-          <p className="mt-8 text-xl">
+          <p className="mt-10 text-lg opacity-90">
             Hafta sonu ve resmi tatillerde de hizmetinizdeyiz!
           </p>
         </div>
