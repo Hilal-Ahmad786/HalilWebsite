@@ -18,6 +18,7 @@ export interface CityData {
     ctaPhoneText?: string;
     ctaWhatsappText?: string;
     customPhone?: string;
+    image?: string;
   };
 
   // Service availability & details
@@ -99,6 +100,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'İSTANBUL\'DA ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Anadolu ve Avrupa Yakası\'nda kazalı, hasarlı, pert ve hurda araç alımı. 2 saat içinde ücretsiz ekspertiz ve teklif.',
+      image: '/images/cities/istanbul.png',
     },
 
     services: {
@@ -234,6 +236,7 @@ export const citiesData: Record<string, CityData> = {
       ctaPhoneText: 'Hemen Ara',
       ctaWhatsappText: 'Whatsapp',
       customPhone: '05303444097',
+      image: '/images/cities/ankara.png',
     },
 
     services: {
@@ -378,6 +381,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'İZMİR\'DE ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'İzmir\'in tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Sahil şeridinden Kemalpaşa\'ya kadar hizmet.',
+      image: '/images/cities/izmir.png',
     },
 
     services: {
@@ -502,6 +506,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'BURSA\'DA ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Bursa\'nın tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Yerinde ekspertiz ve anında ödeme.',
+      image: '/images/cities/bursa.png',
     },
 
     services: {
@@ -616,6 +621,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'ANTALYA\'DA ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Antalya ve ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Turizm sezonu fark etmeksizin 7/24 hizmet.',
+      image: '/images/cities/antalya.png',
     },
 
     services: {
@@ -730,6 +736,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'ADANA\'DA ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Adana ve çevresinde kazalı, hasarlı, pert ve hurda araç alımı. 1 saat içinde adresinizdeyiz.',
+      image: '/images/cities/adana.png',
     },
 
     services: {
@@ -832,6 +839,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'KONYA\'DA ARACINIZ',
       titleHighlight: 'DEĞERİNDE ALINIR',
       subtitle: 'Konya ve ilçelerinde her türlü hasarlı araç alımı.',
+      image: '/images/cities/konya.png',
     },
     services: { kazali: true, hasarli: true, pert: true, hurda: true },
     cityInfo: {
@@ -858,6 +866,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'GAZİANTEP\'TE ARACINIZ',
       titleHighlight: 'NAKİT ALINIR',
       subtitle: 'Gaziantep genelinde hasarlı araçlarınızı yerinde alıyoruz.',
+      image: '/images/cities/gaziantep.png',
     },
     services: { kazali: true, hasarli: true, pert: true, hurda: true },
     cityInfo: {
@@ -884,6 +893,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'MERSİN\'DE ARACINIZ',
       titleHighlight: 'DEĞERİNDE SATILSIN',
       subtitle: 'Mersin ve ilçelerinde hasarlı araç alım hizmeti.',
+      image: '/images/cities/mersin.png',
     },
     services: { kazali: true, hasarli: true, pert: true, hurda: true },
     cityInfo: {
@@ -910,6 +920,7 @@ export const citiesData: Record<string, CityData> = {
       title: 'KAYSERİ\'DE ARACINIZ',
       titleHighlight: 'NAKİT ALINIR',
       subtitle: 'Kayseri ve çevresinde hasarlı araçlarınızı değerlendiriyoruz.',
+      image: '/images/cities/kayseri.png',
     },
     services: { kazali: true, hasarli: true, pert: true, hurda: true },
     cityInfo: {

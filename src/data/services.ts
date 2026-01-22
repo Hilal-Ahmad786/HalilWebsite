@@ -80,7 +80,7 @@ export const servicesData: Record<string, ServiceData> = {
       title: 'KAZALI ARACINIZ',
       titleHighlight: 'EN YÜKSEK FİYATA',
       subtitle: 'Kaza geçirmiş her türlü araç için anında değerlendirme. 30 dakikada teklif, ücretsiz çekici, anında ödeme.',
-      image: '/images/kazali-arac.webp',
+      image: '/images/kazali-arac.png',
     },
 
     features: [
@@ -196,7 +196,7 @@ export const servicesData: Record<string, ServiceData> = {
       title: 'HASARLI ARACINIZ',
       titleHighlight: 'ANINDA NAKDE',
       subtitle: 'Mekanik, kaporta veya motor hasarlı tüm araçlar için profesyonel değerlendirme ve en yüksek fiyat.',
-      image: '/images/hasarli-arac.webp',
+      image: '/images/hasarli-arac.png',
     },
 
     features: [
@@ -312,7 +312,7 @@ export const servicesData: Record<string, ServiceData> = {
       title: 'PERT ARACINIZ',
       titleHighlight: 'DEĞERİNDE SATIN',
       subtitle: 'Sigorta pert raporu çıkmış araçlar için özel değerlendirme. En yüksek fiyat ve güvenli işlem garantisi.',
-      image: '/images/pert-arac.webp',
+      image: '/images/pert-arac.png',
     },
 
     features: [
@@ -427,7 +427,7 @@ export const servicesData: Record<string, ServiceData> = {
       title: 'HURDA ARACINIZ',
       titleHighlight: 'ÇEVRECİ ÇÖZÜM',
       subtitle: 'Kullanım ömrünü tamamlamış araçlar için resmi belgeli hurda işlemi. En yüksek kilo fiyatı ve çevre dostu geri dönüşüm.',
-      image: '/images/hurda-arac.webp',
+      image: '/images/hurda-arac.png',
     },
 
     features: [

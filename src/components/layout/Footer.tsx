@@ -287,7 +287,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="flex items-center group"
             >
-              <span className="text-gray-500 mr-2 group-hover:text-amber-500 transition-colors text-xs">Developed by</span>
+              <span className="text-gray-500 mr-2 group-hover:text-amber-500 transition-colors text-xs">Geliştiren</span>
               <div className="flex items-center text-amber-600 group-hover:text-amber-500 transition-colors">
                 {/* Custom Crescent Icon */}
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 -rotate-12">

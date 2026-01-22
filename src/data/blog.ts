@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En Yüksek Fiyatı Nasıl Alırsınız?</h2>
 <p>Birden fazla alıcıdan teklif alın ve karşılaştırın. Hasar Park, piyasa araştırması yaparak size en yüksek teklifi sunar.</p>
     `,
-    image: '/images/blog/kazali-arac-satis.webp',
+    image: '/images/blog/kazali-arac-satis.png',
     category: 'Rehber',
     author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-05',
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
   <li>Kimlik belgesi</li>
 </ul>
     `,
-    image: '/images/blog/pert-raporu.webp',
+    image: '/images/blog/pert-raporu.png',
     category: 'Bilgi',
     author: 'Hukuk Ekibi',
     publishedAt: '2025-01-03',
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Hurda Belgesi Ne İşe Yarar?</h2>
 <p>Hurda belgesi ile aracınızın trafikten kaydı silinir ve MTV ödemeleriniz sona erer.</p>
     `,
-    image: '/images/blog/hurda-arac.webp',
+    image: '/images/blog/hurda-arac.png',
     category: 'Rehber',
     author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-01',
