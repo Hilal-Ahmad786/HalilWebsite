@@ -103,7 +103,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition"
-          placeholder="0530 344 40 97"
+          placeholder="+90 534 580 93 15"
         />
       </div>
 

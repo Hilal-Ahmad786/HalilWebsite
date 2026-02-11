@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
 <p>Hurda aracınızı teslim etmek düşündüğünüzden çok daha kolay!</p>
 
 <h3>Adım 1: Bizi Arayın</h3>
-<p>İlk adım basit: 0530 344 40 97 numaralı telefondan bizi arayın.</p>
+<p>İlk adım basit: +90 534 580 93 15 numaralı telefondan bizi arayın.</p>
 
 <h3>Adım 2: Ücretsiz Çekici</h3>
 <p>Aracınızın bulunduğu yere ücretsiz çekici gönderiyoruz.</p>

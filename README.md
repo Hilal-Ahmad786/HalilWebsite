@@ -38,8 +38,8 @@ Open `.env.local` and replace ALL placeholder values:
 NEXT_PUBLIC_SITE_URL=https://premiumauto.com.tr
 
 # Contact (CRITICAL - These drive conversions!)
-NEXT_PUBLIC_PHONE=+905303444097
-NEXT_PUBLIC_WHATSAPP=905303444097
+NEXT_PUBLIC_PHONE=+905345809315
+NEXT_PUBLIC_WHATSAPP=905345809315
 NEXT_PUBLIC_EMAIL=info@premiumauto.com.tr
 
 # Analytics IDs (Get from respective platforms)

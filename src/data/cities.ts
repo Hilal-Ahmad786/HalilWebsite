@@ -235,7 +235,7 @@ export const citiesData: Record<string, CityData> = {
       subtitle: 'Hasarlı araç alım satım Ankara genelinde hızlı yürür. Fotoğraf gönderin, 30 dk içinde teklif alın. Ücretsiz çekici + noter + anında ödeme.',
       ctaPhoneText: 'Hemen Ara',
       ctaWhatsappText: 'Whatsapp',
-      customPhone: '05303444097',
+      customPhone: '05345809315',
       image: '/images/cities/ankara.png',
     },
 
