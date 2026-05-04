@@ -61,7 +61,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
   return (
     <div className={`service-page service-${service.id}`}>
       {/* Hero Section - Matching Homepage Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0">
           {service.hero.image ? (
@@ -85,7 +85,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/10 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -280,6 +280,93 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </div>
       </section>
 
+      {/* Pricing by Vehicle Type */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <div className={`inline-block ${colors.bg} ${colors.text} px-6 py-3 mb-6 rounded-full`}>
+              <span className="font-bold text-sm tracking-wide">ARAÇ TÜRÜNE GÖRE FİYAT</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Hangi Araçta <span className="text-indigo-600">Ne Kadar?</span>
+            </h2>
+          </div>
+          <div className="space-y-3">
+            {service.content.pricing.byVehicleType.map((item, i) => (
+              <div key={i} className="flex items-center justify-between bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                <span className="font-semibold text-gray-800">{item.type}</span>
+                <span className={`font-bold ${colors.text} text-sm bg-gray-50 px-4 py-2 rounded-lg`}>{item.priceRange}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm text-gray-500 mt-4">* Fiyatlar günlük piyasa koşullarına göre değişkenlik gösterebilir. Kesin fiyat için bizi arayın.</p>
+        </div>
+      </section>
+
+      {/* Common Mistakes */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-red-50 text-red-600 px-6 py-3 mb-6 rounded-full">
+              <span className="font-bold text-sm tracking-wide">SIK YAPILAN HATALAR</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Bunları <span className="text-red-500">Yapmayın</span>
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {service.commonMistakes.map((item, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900 mb-1">❌ {item.mistake}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">✅ {item.tip}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Stories */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <div className={`inline-block ${colors.bg} ${colors.text} px-6 py-3 mb-6 rounded-full`}>
+              <span className="font-bold text-sm tracking-wide">MÜŞTERİ HİKAYELERİ</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Gerçek <span className="text-emerald-600">Deneyimler</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {service.customerStories.map((story, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-700">
+                    {story.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">{story.name}</div>
+                    <div className="text-sm text-gray-500">{story.city} • {story.vehicleType}</div>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4 italic">"{story.story}"</p>
+                <div className="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded-lg">
+                  <p className="text-emerald-700 text-sm font-semibold">Sonuç: {story.result}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <WhyUs />
 
@@ -327,6 +414,36 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </div>
       </section>
 
+      {/* Internal Linking - Other Services */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Diğer <span className="text-indigo-600">Hizmetlerimiz</span>
+            </h2>
+            <p className="text-gray-600 mt-3">Aracınızın durumuna göre size en uygun hizmeti seçin</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {service.content.relatedServices.map((related, i) => (
+              <a
+                key={i}
+                href={`/${related.slug}`}
+                className="group bg-gray-50 hover:bg-emerald-50 border border-gray-100 hover:border-emerald-200 p-6 rounded-2xl transition-all hover:-translate-y-1"
+              >
+                <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 mb-2">{related.title}</h3>
+                <p className="text-sm text-gray-600">{related.description}</p>
+                <div className="flex items-center gap-1 mt-3 text-emerald-600 text-sm font-semibold">
+                  <span>Detay</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <CTASection
         title="BUGÜN ARAYIN - YARIN ÖDEME ALIN"
@@ -334,26 +451,54 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         variant="dark"
       />
 
-      {/* Schema Markup */}
+      {/* Service Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Service',
-            serviceType: service.title,
+            name: service.title,
+            description: service.metaDescription,
             provider: {
               '@type': 'AutomotiveBusiness',
               name: 'Hasar Park',
               telephone: siteConfig.phone,
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.9',
+                reviewCount: '100000',
+              },
             },
             areaServed: 'TR',
-            description: service.metaDescription,
+            availableChannel: {
+              '@type': 'ServiceChannel',
+              serviceUrl: `${siteConfig.url}/${service.slug}`,
+            },
             offers: {
               '@type': 'Offer',
               priceCurrency: 'TRY',
               availability: 'https://schema.org/InStock',
             },
+          }),
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: service.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
           }),
         }}
       />

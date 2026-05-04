@@ -62,7 +62,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   return (
     <div className={`city-page city-${city.id}`}>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-900 pt-32 pb-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0">
           {city.hero.image ? (
@@ -86,7 +86,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-600/20 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/10 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -501,21 +501,51 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         variant="lime"
       />
 
-      {/* Schema Markup */}
+      {/* LocalBusiness Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
+            '@type': 'AutomotiveBusiness',
             name: `Hasar Park ${city.name}`,
             description: city.metaDescription,
             telephone: siteConfig.phone,
+            url: siteConfig.url,
             areaServed: {
               '@type': 'City',
               name: city.name,
             },
-            openingHours: 'Mo-Su 00:00-23:59',
+            openingHoursSpecification: {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              opens: '00:00',
+              closes: '23:59',
+            },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.9',
+              reviewCount: '100000',
+            },
+          }),
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: city.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
           }),
         }}
       />

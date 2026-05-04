@@ -9,9 +9,9 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Hasar Park - Kazalı, Hasarlı, Pert & Hurda Araç Alımı | En Yüksek Fiyat',
+  title: 'Kazalı & Hasarlı Araç Alımı | En Yüksek Fiyat - Hasar Park',
   description:
-    'Türkiye\'nin en güvenilir araç alım merkezi. Kazalı, hasarlı, pert ve hurda araçlar için anında değerlendirme ve en yüksek fiyat garantisi. 20+ yıl tecrübe, 100.000+ mutlu müşteri.',
+    'Kazalı, hasarlı, pert ve hurda araçlarınızı en yüksek fiyata satın. Anında teklif, ücretsiz çekici, tüm evraklar bizden. 7/24 hizmet, 100K+ müşteri.',
   keywords: [
     'kazalı araç alan',
     'hasarlı araç alan',
@@ -111,20 +111,26 @@ export default function HomePage() {
             '@context': 'https://schema.org',
             '@type': 'AutomotiveBusiness',
             name: 'Hasar Park',
-            description:
-              'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin en güvenilir merkezi',
-            url: 'https://premiumauto.com.tr',
+            description: 'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin en güvenilir merkezi',
+            url: 'https://hasarpark.com.tr',
             telephone: '+905345809315',
             address: {
               '@type': 'PostalAddress',
               addressCountry: 'TR',
+              addressRegion: 'Türkiye',
             },
-            openingHours: 'Mo-Su 00:00-23:59',
-            priceRange: '₺₺',
+            areaServed: 'TR',
+            openingHoursSpecification: {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              opens: '00:00',
+              closes: '23:59',
+            },
+            priceRange: 'Varies',
             aggregateRating: {
               '@type': 'AggregateRating',
               ratingValue: '4.9',
-              reviewCount: '1250',
+              reviewCount: '100000',
             },
           }),
         }}

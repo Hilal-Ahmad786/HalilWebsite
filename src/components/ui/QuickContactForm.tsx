@@ -14,12 +14,16 @@ export default function QuickContactForm({ variant = 'light', title = 'Hızlı T
     name: '',
     phone: '',
     service: '',
+    brand: '',
+    year: '',
+    damage: '',
+    contactMethod: 'phone',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isDark = variant === 'dark';
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -33,23 +37,33 @@ export default function QuickContactForm({ variant = 'light', title = 'Hızlı T
     try {
       trackFormSubmit('quick_contact_form');
 
-      const messageText = `*Hızlı Teklif Talebi*\n\n` +
+      const messageText = `*Araç Teklif Talebi*\n\n` +
         `👤 *İsim:* ${formData.name}\n` +
         `📞 *Telefon:* ${formData.phone}\n` +
-        `🚗 *Hizmet:* ${formData.service}`;
+        `🚗 *Hizmet:* ${formData.service}\n` +
+        (formData.brand ? `🏷️ *Marka/Model:* ${formData.brand}\n` : '') +
+        (formData.year ? `📅 *Yıl:* ${formData.year}\n` : '') +
+        (formData.damage ? `⚠️ *Hasar Açıklaması:* ${formData.damage}\n` : '') +
+        `📬 *İletişim Tercihi:* ${formData.contactMethod === 'phone' ? 'Telefon' : formData.contactMethod === 'whatsapp' ? 'WhatsApp' : 'E-posta'}`;
 
       const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(messageText)}`;
 
       await new Promise(resolve => setTimeout(resolve, 500));
-      window.location.href = whatsappUrl;
+      window.open(whatsappUrl, '_blank');
 
-      setFormData({ name: '', phone: '', service: '' });
+      setFormData({ name: '', phone: '', service: '', brand: '', year: '', damage: '', contactMethod: 'phone' });
     } catch (error) {
       console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  const inputClass = `w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
+    isDark
+      ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
+      : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500'
+  }`;
 
   return (
     <div className={`p-6 md:p-8 rounded-2xl ${isDark ? 'bg-gray-800' : 'bg-white shadow-lg border border-gray-100'}`}>
@@ -58,36 +72,29 @@ export default function QuickContactForm({ variant = 'light', title = 'Hızlı T
       </h3>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Adınız Soyadınız"
-            className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
-              isDark
-                ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
-                : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500'
-            }`}
-          />
-        </div>
-
-        <div>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            placeholder="Telefon Numaranız"
-            className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
-              isDark
-                ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
-                : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500'
-            }`}
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Adınız Soyadınız"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              placeholder="Telefon Numaranız"
+              className={inputClass}
+            />
+          </div>
         </div>
 
         <div>
@@ -96,18 +103,74 @@ export default function QuickContactForm({ variant = 'light', title = 'Hızlı T
             value={formData.service}
             onChange={handleChange}
             required
-            className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
-              isDark
-                ? 'bg-gray-700 border-gray-600 text-white'
-                : 'bg-gray-50 border-gray-200 text-gray-900'
-            }`}
+            className={inputClass}
           >
-            <option value="">Hizmet Seçin</option>
+            <option value="">Araç Türü Seçin</option>
             <option value="Kazalı Araç">Kazalı Araç</option>
             <option value="Hasarlı Araç">Hasarlı Araç</option>
             <option value="Pert Araç">Pert Araç</option>
             <option value="Hurda Araç">Hurda Araç</option>
           </select>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <input
+              type="text"
+              name="brand"
+              value={formData.brand}
+              onChange={handleChange}
+              placeholder="Marka & Model (ör: BMW 3 Serisi)"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="year"
+              value={formData.year}
+              onChange={handleChange}
+              placeholder="Model Yılı (ör: 2019)"
+              maxLength={4}
+              className={inputClass}
+            />
+          </div>
+        </div>
+
+        <div>
+          <textarea
+            name="damage"
+            value={formData.damage}
+            onChange={handleChange}
+            placeholder="Hasar Açıklaması (ör: Sol ön çarpma, motor çalışmıyor)"
+            rows={2}
+            className={`${inputClass} resize-none`}
+          />
+        </div>
+
+        <div>
+          <label className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+            İletişim Tercihi
+          </label>
+          <div className="flex gap-3">
+            {[
+              { value: 'phone', label: 'Telefon' },
+              { value: 'whatsapp', label: 'WhatsApp' },
+              { value: 'email', label: 'E-posta' },
+            ].map((opt) => (
+              <label key={opt.value} className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value={opt.value}
+                  checked={formData.contactMethod === opt.value}
+                  onChange={handleChange}
+                  className="accent-emerald-500"
+                />
+                <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{opt.label}</span>
+              </label>
+            ))}
+          </div>
         </div>
 
         <button

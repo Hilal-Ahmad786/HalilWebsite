@@ -16,7 +16,7 @@ export default function ServicesPage() {
   return (
     <div className="services-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -28,7 +28,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/10 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -117,24 +117,32 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {siteConfig.services.map((service) => (
+            {[
+              { ...siteConfig.services[0], borderColor: 'border-l-emerald-500', iconBg: 'bg-emerald-50', textColor: 'text-emerald-600', badge: '⚡ 30 Dakika' },
+              { ...siteConfig.services[1], borderColor: 'border-l-orange-500', iconBg: 'bg-orange-50', textColor: 'text-orange-600', badge: '🔍 Ücretsiz Ekspertiz' },
+              { ...siteConfig.services[2], borderColor: 'border-l-sky-500', iconBg: 'bg-sky-50', textColor: 'text-sky-600', badge: '📋 Özel Değerlendirme' },
+              { ...siteConfig.services[3], borderColor: 'border-l-teal-500', iconBg: 'bg-teal-50', textColor: 'text-teal-600', badge: '♻️ Resmi Belgeli' },
+            ].map((service) => (
               <Link
                 key={service.id}
                 href={`/${service.slug}`}
-                className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
+                className={`group bg-white p-8 rounded-2xl border border-gray-100 border-l-4 ${service.borderColor} shadow-md hover:shadow-2xl transition-all hover:-translate-y-2`}
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-violet-100 rounded-2xl flex items-center justify-center text-5xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <div className={`w-20 h-20 ${service.iconBg} rounded-2xl flex items-center justify-center text-5xl flex-shrink-0 group-hover:scale-110 transition-transform`}>
                     {service.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition">
+                    <div className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 ${service.iconBg} ${service.textColor}`}>
+                      {service.badge}
+                    </div>
+                    <h3 className={`text-2xl font-bold text-gray-900 mb-3 group-hover:${service.textColor} transition`}>
                       {service.title}
                     </h3>
                     <p className="text-gray-600 mb-4 leading-relaxed">
                       {service.shortDesc}
                     </p>
-                    <div className="flex items-center gap-2 text-indigo-600 font-semibold group-hover:gap-4 transition-all">
+                    <div className={`flex items-center gap-2 ${service.textColor} font-semibold group-hover:gap-4 transition-all`}>
                       <span>Detaylı Bilgi</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

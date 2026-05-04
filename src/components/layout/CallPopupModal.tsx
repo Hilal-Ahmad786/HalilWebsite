@@ -10,16 +10,43 @@ export default function CallPopupModal() {
 
   useEffect(() => {
     const modalShown = sessionStorage.getItem('callPopupShown');
+    if (modalShown || hasShown) return;
 
-    if (!modalShown && !hasShown) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-        setHasShown(true);
-        sessionStorage.setItem('callPopupShown', 'true');
-      }, 5000);
+    const showModal = () => {
+      setIsVisible(true);
+      setHasShown(true);
+      sessionStorage.setItem('callPopupShown', 'true');
+    };
 
-      return () => clearTimeout(timer);
-    }
+    // Delay trigger — 15 seconds
+    const timer = setTimeout(showModal, 15000);
+
+    // Exit intent — mouse leaves top of viewport
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 10 && !sessionStorage.getItem('callPopupShown')) {
+        clearTimeout(timer);
+        showModal();
+      }
+    };
+
+    // 50% scroll trigger
+    const handleScroll = () => {
+      const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrolled >= 0.5 && !sessionStorage.getItem('callPopupShown')) {
+        clearTimeout(timer);
+        window.removeEventListener('scroll', handleScroll);
+        showModal();
+      }
+    };
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [hasShown]);
 
   const handlePhoneClick = () => {
@@ -61,7 +88,7 @@ export default function CallPopupModal() {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Slim gradient header */}
-          <div className="relative bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-5 py-3">
+          <div className="relative text-white px-5 py-3" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 100%)' }}>
             <div className="flex items-center justify-between gap-3">
               <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                 ÜCRETSİZ EKSPERTİZ • ANINDA TEKLİF
@@ -101,13 +128,13 @@ export default function CallPopupModal() {
             </div>
 
             {/* Kısa mesaj bloğu */}
-            <div className="bg-indigo-50 border-l-4 border-indigo-500 p-3 rounded-xl">
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded-xl">
               <p className="text-gray-800 font-semibold text-sm mb-1">
                 🎉 Şu an arayanlar için özel öncelik!
               </p>
               <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                 Hemen arayın,{' '}
-                <span className="font-bold text-indigo-600">
+                <span className="font-bold text-emerald-600">
                   30 dakika içinde net ve yüksek teklif
                 </span>{' '}
                 alın. Ücretsiz çekici ve tüm evraklar bizden.
