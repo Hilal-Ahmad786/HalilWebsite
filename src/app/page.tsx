@@ -66,7 +66,9 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Stats Section - Build Trust */}
-      <StatsSection />
+      <div id="anasayfa-icerigi" className="scroll-mt-24">
+        <StatsSection />
+      </div>
 
       {/* Urgent CTA Banner - 1st Conversion Point */}
       <CTASection

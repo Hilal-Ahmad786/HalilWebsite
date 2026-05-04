@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { getPostBySlug, getPostSlugs, getAllPosts } from '@/data/blog';
 import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
@@ -130,26 +131,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-emerald-400/70"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Content */}
-      <section className="py-16 bg-white">
+      <section id="sayfa-icerigi" className="py-16 bg-white scroll-mt-24">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-100 shadow-sm mb-10">

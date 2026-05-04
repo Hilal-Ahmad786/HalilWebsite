@@ -8,6 +8,7 @@ import TrustBadges from '@/components/ui/TrustBadges';
 import SocialProof from '@/components/ui/SocialProof';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 import { MailIcon, PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function ContactPage() {
   const contactStats = [
@@ -115,26 +116,11 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-emerald-400/70"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Trust Badges */}
-      <section className="py-10 bg-gray-50 border-b border-gray-100">
+      <section id="sayfa-icerigi" className="py-10 bg-gray-50 border-b border-gray-100 scroll-mt-24">
         <div className="container mx-auto px-6">
           <TrustBadges variant="light" />
         </div>

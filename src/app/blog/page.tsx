@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getAllPosts, getCategories } from '@/data/blog';
 import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export const metadata: Metadata = {
   title: 'Blog & Bilgiler | Hasar Park - Araç Alım Rehberi',
@@ -84,26 +85,11 @@ export default function BlogPage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-emerald-400/70"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Categories */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section id="sayfa-icerigi" className="py-8 bg-white border-b border-gray-100 scroll-mt-24">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap gap-3 justify-center">
             <button className="px-5 py-2.5 bg-indigo-600 text-white font-semibold text-sm rounded-full">
