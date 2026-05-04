@@ -7,6 +7,7 @@ import CTASection from '@/components/sections/CTASection';
 import HeroCTAButtons from '@/components/ui/HeroCTAButtons';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
+import QuickContactForm from '@/components/ui/QuickContactForm';
 import { siteConfig } from '@/config/site';
 
 // Generate static paths at build time
@@ -213,6 +214,13 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         subtitle="Tek bir telefonla başlayın, 24 saat içinde paranızı alın"
         variant="urgent"
       />
+
+      {/* Lead Capture Form */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <QuickContactForm title={`${service.shortTitle} İçin Hızlı Teklif Alın`} />
+        </div>
+      </section>
 
       {/* What We Accept */}
       <section className="py-20 bg-gray-50">

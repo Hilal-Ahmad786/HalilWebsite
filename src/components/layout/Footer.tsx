@@ -261,11 +261,26 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 bg-gray-950">
         <div className="container mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm text-center md:text-left">
+          <div className="grid gap-4 text-center lg:grid-cols-3 lg:items-center">
+            <p className="text-gray-500 text-sm text-center">
               &copy; {new Date().getFullYear()} {siteConfig.name}. Tüm hakları saklıdır.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-500">
+            <a
+              href="https://paksoft.com.tr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center group"
+            >
+              <span className="text-gray-500 mr-2 group-hover:text-emerald-400 transition-colors text-xs">Geliştiren</span>
+              <div className="flex items-center text-emerald-500 group-hover:text-emerald-400 transition-colors">
+                {/* Custom Crescent Icon */}
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 -rotate-12">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.85 0 3.58-.5 5.08-1.38-.7.13-1.42.21-2.16.21-5.52 0-10-4.48-10-10S9.42 2.83 14.92 2.83c.74 0 1.46.08 2.16.21C15.58 2.5 13.85 2 12 2z" />
+                </svg>
+                <span className="font-bold text-sm tracking-wide ml-0.5">PakSoft</span>
+              </div>
+            </a>
+            <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm text-gray-500 lg:flex-nowrap lg:justify-end lg:whitespace-nowrap">
               <Link href="/gizlilik-politikasi" className="hover:text-emerald-400 transition-colors">
                 Gizlilik Politikası
               </Link>
@@ -279,23 +294,6 @@ export default function Footer() {
                 KVKK
               </Link>
             </div>
-          </div>
-          <div className="mt-2 flex justify-center items-center gap-2 border-t border-gray-800/50 pt-4">
-            <a
-              href="https://paksoft.com.tr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center group"
-            >
-              <span className="text-gray-500 mr-2 group-hover:text-amber-500 transition-colors text-xs">Geliştiren</span>
-              <div className="flex items-center text-amber-600 group-hover:text-amber-500 transition-colors">
-                {/* Custom Crescent Icon */}
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 -rotate-12">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.85 0 3.58-.5 5.08-1.38-.7.13-1.42.21-2.16.21-5.52 0-10-4.48-10-10S9.42 2.83 14.92 2.83c.74 0 1.46.08 2.16.21C15.58 2.5 13.85 2 12 2z" />
-                </svg>
-                <span className="font-bold text-sm tracking-wide ml-0.5">PakSoft</span>
-              </div>
-            </a>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import WhyUs from '@/components/sections/WhyUs';
 import CTASection from '@/components/sections/CTASection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import FAQSection from '@/components/sections/FAQSection';
+import QuickContactForm from '@/components/ui/QuickContactForm';
 
 export const metadata: Metadata = {
   title: 'Kazalı & Hasarlı Araç Alımı | En Yüksek Fiyat - Hasar Park',
@@ -26,11 +27,11 @@ export const metadata: Metadata = {
     title: 'Hasar Park - En Yüksek Fiyat Garantisi',
     description:
       'Kazalı, hasarlı, pert ve hurda araçlar için anında değerlendirme. 30 dakika içinde teklif alın!',
-    url: 'https://www.hasarpark.com/',
+    url: 'https://hasarpark.com/',
     siteName: 'Hasar Park',
     images: [
       {
-        url: '/images/hero-bg.webp',
+        url: '/images/kazali-arac.png',
         width: 1200,
         height: 630,
         alt: 'Hasar Park',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hasar Park - Araç Alım Uzmanı',
     description: 'En yüksek fiyat garantisi ile araç alımı',
-    images: ['/images/hero-bg.webp'],
+    images: ['/images/kazali-arac.png'],
   },
   robots: {
     index: true,
@@ -80,6 +81,13 @@ export default function HomePage() {
       {/* Process Steps - How It Works */}
       <ProcessSteps />
 
+      {/* Lead Capture Form */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <QuickContactForm title="Aracınız İçin Hızlı Teklif Alın" />
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <WhyUs />
 
@@ -112,7 +120,7 @@ export default function HomePage() {
             '@type': 'AutomotiveBusiness',
             name: 'Hasar Park',
             description: 'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin en güvenilir merkezi',
-            url: 'https://hasarpark.com.tr',
+            url: 'https://hasarpark.com',
             telephone: '+905345809315',
             address: {
               '@type': 'PostalAddress',
