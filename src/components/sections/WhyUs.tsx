@@ -1,6 +1,7 @@
 'use client';
 
 import { siteConfig } from '@/config/site';
+import { ModernIcon } from '@/components/ui/Icons';
 
 export default function WhyUs() {
   return (
@@ -23,8 +24,8 @@ export default function WhyUs() {
               key={index}
               className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
-              <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-3xl mb-4">
-                {feature.icon}
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+                <ModernIcon name={feature.icon} label={feature.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {feature.title}

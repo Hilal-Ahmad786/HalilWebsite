@@ -3,7 +3,7 @@
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick, trackWhatsAppClick, trackCTAClick } from '@/lib/analytics';
 import SocialProof from '@/components/ui/SocialProof';
-import { PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
+import { ModernIcon, PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
 
 export default function HeroSection() {
   const handlePhoneClick = () => {
@@ -135,7 +135,9 @@ export default function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {siteConfig.features.slice(0, 4).map((feature, index) => (
               <div key={index} className="text-white p-4 rounded-xl hover:bg-white/5 transition-colors">
-                <div className="text-3xl mb-3">{feature.icon}</div>
+                <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
+                  <ModernIcon name={feature.icon} label={feature.title} className="h-5 w-5" />
+                </div>
                 <div className="font-semibold text-base mb-1">{feature.title}</div>
                 <div className="text-sm text-gray-400">{feature.description}</div>
               </div>

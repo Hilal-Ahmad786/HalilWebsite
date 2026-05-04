@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+import { ModernIcon, ShieldCheckIcon } from '@/components/ui/Icons';
 
 export default function CallPopupModal() {
   const [isVisible, setIsVisible] = useState(false);
@@ -130,7 +131,7 @@ export default function CallPopupModal() {
             {/* Kısa mesaj bloğu */}
             <div className="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded-xl">
               <p className="text-gray-800 font-semibold text-sm mb-1">
-                🎉 Şu an arayanlar için özel öncelik!
+                Şu an arayanlar için özel öncelik!
               </p>
               <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                 Hemen arayın,{' '}
@@ -173,13 +174,15 @@ export default function CallPopupModal() {
             {/* Benefits – daha küçük ve aşağıda */}
             <div className="space-y-1.5 text-xs text-gray-700 mt-2">
               {[
-                { icon: '⚡', text: '30 dakika içinde net fiyat teklifi' },
-                { icon: '💰', text: 'Piyasanın üzerinde alım fırsatı' },
-                { icon: '🚚', text: 'Ücretsiz çekici, yerinizden teslim' },
-                { icon: '📄', text: 'Noter ve tescil işlemleri tamamen bizden' },
+                { icon: 'anında teklif', text: '30 dakika içinde net fiyat teklifi' },
+                { icon: 'fiyat', text: 'Piyasanın üzerinde alım fırsatı' },
+                { icon: 'çekici teslim', text: 'Ücretsiz çekici, yerinizden teslim' },
+                { icon: 'noter belge', text: 'Noter ve tescil işlemleri tamamen bizden' },
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <span className="text-lg">{benefit.icon}</span>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600">
+                    <ModernIcon name={benefit.icon} label={benefit.text} className="h-6 w-6" />
+                  </span>
                   <span>{benefit.text}</span>
                 </div>
               ))}
@@ -196,8 +199,9 @@ export default function CallPopupModal() {
 
           {/* Trust footer */}
           <div className="bg-gray-50 px-5 py-3 text-center border-t border-gray-200">
-            <p className="text-[11px] sm:text-xs text-gray-600">
-              🔒 Güvenli ve Gizli • <span className="font-bold">20+ Yıl Tecrübe</span> • 100K+ Mutlu Müşteri
+            <p className="inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs text-gray-600">
+              <ShieldCheckIcon className="h-4 w-4 text-emerald-600" />
+              <span>Güvenli ve Gizli • <span className="font-bold">20+ Yıl Tecrübe</span> • 100K+ Mutlu Müşteri</span>
             </p>
           </div>
         </div>

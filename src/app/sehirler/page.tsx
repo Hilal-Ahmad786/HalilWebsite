@@ -4,6 +4,7 @@ import { getAllCities, getCitiesByRegion } from '@/data/cities';
 import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
+import { DocumentIcon, ModernIcon, TruckIcon, ZapIcon, BanknotesIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'Hizmet Verdiğimiz Şehirler | Hasar Park - Türkiye Geneli Araç Alımı',
@@ -164,8 +165,8 @@ export default function CitiesIndexPage() {
                 className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-violet-100 rounded-2xl flex items-center justify-center text-5xl mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    {city.name === 'İstanbul' ? '🏙️' : city.name === 'Ankara' ? '🏛️' : '🌊'}
+                  <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-violet-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform overflow-visible">
+                    <ModernIcon name="şehir" label={city.name} className="h-16 w-16 scale-125" strokeWidth={2.25} />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition">{city.name}</h3>
                   <div className="text-emerald-600 text-sm font-semibold mb-4">
@@ -286,19 +287,19 @@ export default function CitiesIndexPage() {
               <h3 className="text-2xl font-bold mb-6 text-gray-900">81 İl</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-xl">🚚</div>
+                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><TruckIcon className="h-5 w-5" /></div>
                   <span>Her ile ücretsiz çekici</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-xl">⚡</div>
+                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><ZapIcon className="h-5 w-5" /></div>
                   <span>24 saat içinde ekspertiz</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-xl">💰</div>
+                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><BanknotesIcon className="h-5 w-5" /></div>
                   <span>En yüksek fiyat garantisi</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-xl">📄</div>
+                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><DocumentIcon className="h-5 w-5" /></div>
                   <span>Tüm evrak işlemleri</span>
                 </li>
               </ul>

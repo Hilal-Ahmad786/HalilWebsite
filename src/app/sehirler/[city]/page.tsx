@@ -8,6 +8,7 @@ import CTASection from '@/components/sections/CTASection';
 import HeroCTAButtons from '@/components/ui/HeroCTAButtons';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
+import { ModernIcon } from '@/components/ui/Icons';
 
 // Generate static paths at build time
 export async function generateStaticParams() {
@@ -53,10 +54,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
     .map(([service, _]) => service);
 
   const serviceInfo = {
-    kazali: { title: 'Kazalı Araç Alımı', icon: '🚗', color: 'emerald' },
-    hasarli: { title: 'Hasarlı Araç Alımı', icon: '🔧', color: 'indigo' },
-    pert: { title: 'Pert Araç Alımı', icon: '⚠️', color: 'violet' },
-    hurda: { title: 'Hurda Araç Alımı', icon: '♻️', color: 'emerald' },
+    kazali: { title: 'Kazalı Araç Alımı', icon: 'kazalı araç', color: 'emerald' },
+    hasarli: { title: 'Hasarlı Araç Alımı', icon: 'hasarlı araç', color: 'indigo' },
+    pert: { title: 'Pert Araç Alımı', icon: 'pert araç', color: 'violet' },
+    hurda: { title: 'Hurda Araç Alımı', icon: 'hurda araç', color: 'emerald' },
   };
 
   return (
@@ -94,7 +95,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             <div className="text-white text-left">
               {/* Badge */}
               <div className="inline-block bg-emerald-500/20 text-emerald-400 px-6 py-3 mb-8 rounded-full backdrop-blur-sm">
-                <span className="font-bold text-sm tracking-wide">{city.hero.badge}</span>
+                <span className="font-bold text-sm tracking-wide">
+                  {city.hero.badge.replace(/^[^\wığüşöçİĞÜŞÖÇ]+/, '').trim()}
+                </span>
               </div>
 
               {/* Title */}
@@ -239,8 +242,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all"
                   >
                     <div className="flex items-start gap-5">
-                      <div className={`w-16 h-16 ${colorClass} rounded-xl flex items-center justify-center text-4xl flex-shrink-0`}>
-                        {service.icon}
+                      <div className={`w-16 h-16 ${colorClass} rounded-xl flex items-center justify-center flex-shrink-0 overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-indigo-600' : 'text-violet-600'}`}>
+                        <ModernIcon name={service.icon} label={service.title} className="h-14 w-14 scale-125" strokeWidth={2.25} />
                       </div>
                       <div>
                         <h2 className="text-2xl font-bold mb-3 text-gray-900">{detail.title}</h2>
@@ -267,8 +270,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   href={`/${serviceKey}-arac-alim`}
                   className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
                 >
-                  <div className={`w-14 h-14 ${colorClass} rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
-                    {service.icon}
+                  <div className={`w-14 h-14 ${colorClass} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-indigo-600' : 'text-violet-600'}`}>
+                    <ModernIcon name={service.icon} label={service.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">
                     {service.title}
@@ -337,8 +340,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 key={index}
                 className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
               >
-                <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-3xl mb-4">
-                  {feature.icon}
+                <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+                  <ModernIcon name={feature.icon} label={feature.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {feature.title}

@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick, trackCTAClick } from '@/lib/analytics';
+import { ModernIcon } from '@/components/ui/Icons';
 
 export default function ProcessSteps() {
   const handlePhoneClick = () => {
@@ -56,8 +57,8 @@ export default function ProcessSteps() {
               {/* Step Card */}
               <div className="bg-white/8 backdrop-blur-sm p-4 pt-8 sm:p-8 sm:pt-12 rounded-xl sm:rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 h-full border border-white/10">
                 {/* Icon */}
-                <div className="text-2xl sm:text-4xl mb-2 sm:mb-4 transform group-hover:scale-110 transition-transform">
-                  {step.icon}
+                <div className="mb-2 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 transform group-hover:scale-110 transition-transform overflow-visible">
+                  <ModernIcon name={step.icon} label={step.title} className="h-9 w-9 sm:h-11 sm:w-11 scale-125" strokeWidth={2.25} />
                 </div>
 
                 {/* Title */}

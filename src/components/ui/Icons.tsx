@@ -6,6 +6,118 @@ interface IconProps {
   strokeWidth?: number;
 }
 
+interface ModernIconProps extends IconProps {
+  name?: string;
+  label?: string;
+}
+
+export function ModernIcon({ name = '', label = '', className = "w-6 h-6", strokeWidth = 1.75 }: ModernIconProps) {
+  const value = `${name} ${label}`.toLowerCase();
+
+  if (value.includes('hasarlı') || value.includes('mekanik') || value.includes('kaporta') || value.includes('🔧')) {
+    return <ToolIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('pert') || value.includes('sigorta') || value.includes('⚠️')) {
+    return <AlertTriangleIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('hurda') || value.includes('geri') || value.includes('♻️')) {
+    return <RecycleIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('çekici') || value.includes('teslim') || value.includes('🚚')) {
+    return <TruckIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('evrak') || value.includes('noter') || value.includes('belge') || value.includes('📄')) {
+    return <DocumentIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('bilgi') || value.includes('mesaj')) {
+    return <ChatBubbleIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('ödeme') || value.includes('fiyat') || value.includes('nakit') || value.includes('💰') || value.includes('💳') || value.includes('💵')) {
+    return <BanknotesIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('teklif') || value.includes('anında') || value.includes('değerleme') || value.includes('⚡')) {
+    return <ZapIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('foto') || value.includes('📸')) {
+    return <CameraIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('arayın') || value.includes('telefon') || value.includes('📞')) {
+    return <PhoneIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('hemen satın') || value.includes('tamam') || value.includes('✅')) {
+    return <CheckCircleIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('tecrübe') || value.includes('garanti') || value.includes('🏆')) {
+    return <AwardIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('şehir') || value.includes('il') || value.includes('bölge') || value.includes('🏙️') || value.includes('🏛️')) {
+    return <MapPinIcon className={className} strokeWidth={strokeWidth} />;
+  }
+  if (value.includes('kazalı') || value.includes('kaza') || value.includes('🚗')) {
+    return <CarCrashIcon className={className} strokeWidth={strokeWidth} />;
+  }
+
+  return <CheckCircleIcon className={className} strokeWidth={strokeWidth} />;
+}
+
+export function ToolIcon({ className = "w-6 h-6", strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L3 18l3 3 6.5-6.5a4 4 0 0 0 5.2-5.2l-2.9 2.9-3-3 2.9-2.9z" />
+    </svg>
+  );
+}
+
+export function CameraIcon({ className = "w-6 h-6", strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14.5 4 16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l1.5-3h5z" />
+      <circle cx="12" cy="13" r="3.5" />
+    </svg>
+  );
+}
+
+export function CarCrashIcon({ className = "w-6 h-6", strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 13.5 6.8 8.8A3 3 0 0 1 9.6 7h4.8a3 3 0 0 1 2.8 1.8l1.8 4.7" />
+      <path d="M4 14h16" />
+      <path d="M6 17h.01" />
+      <path d="M18 17h.01" />
+      <path d="M6 14v4a2 2 0 0 0 2 2h1" />
+      <path d="M18 14v4a2 2 0 0 1-2 2h-1" />
+      <path d="m12 3-1 2 2 1-1 2" />
+      <path d="m20 5-2 1 1 2-2 1" />
+    </svg>
+  );
+}
+
+export function ChatBubbleIcon({ className = "w-6 h-6", strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 11.5a7.5 7.5 0 0 1-10.9 6.7L4 20l1.8-5.2A7.5 7.5 0 1 1 21 11.5z" />
+      <path d="M8.5 11.5h.01" />
+      <path d="M12 11.5h.01" />
+      <path d="M15.5 11.5h.01" />
+    </svg>
+  );
+}
+
+export function BotIcon({ className = "w-6 h-6", strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v3" />
+      <path d="M8 3h8" />
+      <rect x="4" y="7" width="16" height="12" rx="4" />
+      <path d="M8 12h.01" />
+      <path d="M16 12h.01" />
+      <path d="M9.5 15.5a5 5 0 0 0 5 0" />
+      <path d="M4 13H2" />
+      <path d="M22 13h-2" />
+    </svg>
+  );
+}
+
 // Phone icon - for call CTAs
 export function PhoneIcon({ className = "w-6 h-6", strokeWidth = 1.5 }: IconProps) {
   return (

@@ -8,6 +8,7 @@ import HeroCTAButtons from '@/components/ui/HeroCTAButtons';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
 import QuickContactForm from '@/components/ui/QuickContactForm';
+import { ModernIcon } from '@/components/ui/Icons';
 import { siteConfig } from '@/config/site';
 
 // Generate static paths at build time
@@ -94,7 +95,9 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <div className="text-white">
               {/* Badge */}
               <div className="inline-block bg-emerald-500/15 text-emerald-400 px-6 py-3 mb-8 rounded-full">
-                <span className="font-semibold text-sm tracking-wide">{service.hero.badge}</span>
+                <span className="font-semibold text-sm tracking-wide">
+                  {service.hero.badge.replace(/^[^\wığüşöçİĞÜŞÖÇ]+/, '').trim()}
+                </span>
               </div>
 
               {/* Title */}
@@ -197,8 +200,8 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                 key={index}
                 className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
               >
-                <div className={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center text-3xl mb-4`}>
-                  {feature.icon}
+                <div className={`w-14 h-14 ${colors.bg} ${colors.text} rounded-xl flex items-center justify-center mb-4 overflow-visible`}>
+                  <ModernIcon name={feature.icon} label={feature.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -332,8 +335,8 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                     </svg>
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 mb-1">❌ {item.mistake}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">✅ {item.tip}</p>
+                    <p className="font-bold text-gray-900 mb-1">Hata: {item.mistake}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">Çözüm: {item.tip}</p>
                   </div>
                 </div>
               </div>

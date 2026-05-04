@@ -7,7 +7,7 @@ import ContactForm from '@/components/ui/ContactForm';
 import TrustBadges from '@/components/ui/TrustBadges';
 import SocialProof from '@/components/ui/SocialProof';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
-import { PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
+import { MailIcon, PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
 
 export default function ContactPage() {
   const contactStats = [
@@ -222,19 +222,25 @@ export default function ContactPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl">📞</div>
+              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <PhoneIcon className="w-7 h-7 text-white" strokeWidth={2} />
+              </div>
               <div className="font-medium mb-2">Telefon Destek</div>
               <div className="text-emerald-400 text-2xl font-bold">7/24</div>
             </div>
 
             <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl">💬</div>
+              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <WhatsAppIcon className="w-7 h-7 text-white" />
+              </div>
               <div className="font-medium mb-2">WhatsApp</div>
               <div className="text-emerald-400 text-2xl font-bold">7/24</div>
             </div>
 
             <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl">📧</div>
+              <div className="w-14 h-14 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <MailIcon className="w-7 h-7 text-white" strokeWidth={2} />
+              </div>
               <div className="font-medium mb-2">E-posta</div>
               <div className="text-emerald-400 text-2xl font-bold">24 Saat</div>
             </div>

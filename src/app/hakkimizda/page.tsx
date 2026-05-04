@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/site';
 import CTASection from '@/components/sections/CTASection';
 import TrustBadges from '@/components/ui/TrustBadges';
 import SocialProof from '@/components/ui/SocialProof';
+import { ModernIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'Hakkımızda - Hasar Park | Türkiye\'nin En Güvenilir Araç Alım Merkezi',
@@ -142,7 +143,9 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-all">
-              <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-3xl mb-4">🤝</div>
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+                <ModernIcon name="garanti" className="w-12 h-12 scale-125" strokeWidth={2.25} />
+              </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Güven</h3>
               <p className="text-gray-600">
                 Şeffaf ve dürüst fiyatlandırma ile müşterilerimizin güvenini kazanıyoruz.
@@ -150,7 +153,9 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-all">
-              <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-3xl mb-4">⚡</div>
+              <div className="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+                <ModernIcon name="anında" className="w-12 h-12 scale-125" strokeWidth={2.25} />
+              </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Hız</h3>
               <p className="text-gray-600">
                 30 dakikada değerlendirme, aynı gün ödeme ile zamandan tasarruf sağlıyoruz.
@@ -158,7 +163,9 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-all">
-              <div className="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center text-3xl mb-4">💪</div>
+              <div className="w-14 h-14 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+                <ModernIcon name="tecrübe" className="w-12 h-12 scale-125" strokeWidth={2.25} />
+              </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Profesyonellik</h3>
               <p className="text-gray-600">
                 20+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.
@@ -183,7 +190,9 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {siteConfig.features.map((feature, index) => (
               <div key={index} className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">{feature.icon}</div>
+                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 overflow-visible">
+                  <ModernIcon name={feature.icon} label={feature.title} className="w-11 h-11 scale-125" strokeWidth={2.25} />
+                </div>
                 <div>
                   <h3 className="text-lg font-bold mb-2 text-gray-900">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>

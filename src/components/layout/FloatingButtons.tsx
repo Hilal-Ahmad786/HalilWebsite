@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
-import { PhoneIcon, WhatsAppIcon, XMarkIcon, ArrowRightIcon } from '@/components/ui/Icons';
+import { PhoneIcon, WhatsAppIcon, XMarkIcon, ArrowRightIcon, ModernIcon, BotIcon } from '@/components/ui/Icons';
 
 export default function FloatingButtons() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,11 +30,11 @@ export default function FloatingButtons() {
   };
 
   const quickMessages = [
-    { id: 1, icon: '🚗', title: 'Kazalı Araç', message: 'Merhaba, kazalı aracım için teklif almak istiyorum.' },
-    { id: 2, icon: '🔧', title: 'Hasarlı Araç', message: 'Merhaba, hasarlı aracım için teklif almak istiyorum.' },
-    { id: 3, icon: '⚠️', title: 'Pert Araç', message: 'Merhaba, pert raporlu aracım için teklif almak istiyorum.' },
-    { id: 4, icon: '♻️', title: 'Hurda Araç', message: 'Merhaba, hurda aracım için teklif almak istiyorum.' },
-    { id: 5, icon: '💬', title: 'Genel Bilgi', message: 'Merhaba, araç alım hizmetiniz hakkında bilgi almak istiyorum.' },
+    { id: 1, icon: 'kazalı araç', title: 'Kazalı Araç', message: 'Merhaba, kazalı aracım için teklif almak istiyorum.' },
+    { id: 2, icon: 'hasarlı araç', title: 'Hasarlı Araç', message: 'Merhaba, hasarlı aracım için teklif almak istiyorum.' },
+    { id: 3, icon: 'pert araç', title: 'Pert Araç', message: 'Merhaba, pert raporlu aracım için teklif almak istiyorum.' },
+    { id: 4, icon: 'hurda araç', title: 'Hurda Araç', message: 'Merhaba, hurda aracım için teklif almak istiyorum.' },
+    { id: 5, icon: 'bilgi', title: 'Genel Bilgi', message: 'Merhaba, araç alım hizmetiniz hakkında bilgi almak istiyorum.' },
   ];
 
   const handleQuickMessage = (message: string) => {
@@ -136,7 +136,9 @@ export default function FloatingButtons() {
                           onClick={() => handleQuickMessage(msg.message)}
                           className="w-full text-left px-4 py-3 bg-white hover:bg-indigo-50 rounded-xl border border-gray-100 hover:border-indigo-200 transition flex items-center gap-3 group"
                         >
-                          <span className="text-xl">{msg.icon}</span>
+                          <span className="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                            <ModernIcon name={msg.icon} label={msg.title} className="w-7 h-7" strokeWidth={2} />
+                          </span>
                           <span className="font-medium text-gray-700 group-hover:text-indigo-600 text-sm">
                             {msg.title}
                           </span>
@@ -173,9 +175,7 @@ export default function FloatingButtons() {
                 {isChatOpen ? (
                   <XMarkIcon className="w-6 h-6" strokeWidth={2} />
                 ) : (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
+                  <BotIcon className="w-7 h-7" strokeWidth={2} />
                 )}
 
                 {!isChatOpen && (

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { trackCTAClick } from '@/lib/analytics';
+import { ModernIcon } from '@/components/ui/Icons';
 
 export default function ServicesGrid() {
   const handleServiceClick = (serviceName: string) => {
@@ -63,8 +64,8 @@ export default function ServicesGrid() {
                 className={`group bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl border ${colors.border} ${colors.hover} shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2`}
               >
                 {/* Icon */}
-                <div className={`text-4xl sm:text-6xl mb-3 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
-                  {service.icon}
+                <div className={`${colors.bg} ${colors.text} mb-3 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl transform group-hover:scale-110 transition-transform duration-300 overflow-visible`}>
+                  <ModernIcon name={service.icon} label={service.title} className="h-10 w-10 sm:h-14 sm:w-14 scale-125" strokeWidth={2.25} />
                 </div>
 
                 {/* Title */}

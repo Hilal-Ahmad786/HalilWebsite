@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 import { getAllCities } from '@/data/cities';
 import { trackPhoneClick, trackWhatsAppClick, trackCTAClick } from '@/lib/analytics';
-import { PhoneIcon, WhatsAppIcon, MenuIcon, XMarkIcon, ChevronDownIcon } from '@/components/ui/Icons';
+import { ModernIcon, PhoneIcon, WhatsAppIcon, MenuIcon, XMarkIcon, ChevronDownIcon } from '@/components/ui/Icons';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,7 +117,9 @@ export default function Header() {
                     className="block px-5 py-4 hover:bg-gray-50 transition"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xl">{service.icon}</span>
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                        <ModernIcon name={service.icon} label={service.title} className="h-5 w-5" />
+                      </span>
                       <div>
                         <div className="font-medium text-gray-900">{service.title}</div>
                         <div className="text-xs text-gray-500">{service.shortDesc}</div>
@@ -254,7 +256,9 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white/80 hover:text-emerald-400 transition pl-4 py-2"
                   >
-                    <span className="mr-2">{service.icon}</span>
+                    <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/10 text-emerald-400 align-middle">
+                      <ModernIcon name={service.icon} label={service.title} className="h-4 w-4" />
+                    </span>
                     {service.title}
                   </Link>
                 ))}

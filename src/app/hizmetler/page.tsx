@@ -5,6 +5,7 @@ import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
 import ProcessSteps from '@/components/sections/ProcessSteps';
+import { ModernIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'Hizmetlerimiz | Hasar Park - Kazalı, Hasarlı, Pert, Hurda Araç Alımı',
@@ -118,10 +119,10 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
-              { ...siteConfig.services[0], borderColor: 'border-l-emerald-500', iconBg: 'bg-emerald-50', textColor: 'text-emerald-600', badge: '⚡ 30 Dakika' },
-              { ...siteConfig.services[1], borderColor: 'border-l-orange-500', iconBg: 'bg-orange-50', textColor: 'text-orange-600', badge: '🔍 Ücretsiz Ekspertiz' },
-              { ...siteConfig.services[2], borderColor: 'border-l-sky-500', iconBg: 'bg-sky-50', textColor: 'text-sky-600', badge: '📋 Özel Değerlendirme' },
-              { ...siteConfig.services[3], borderColor: 'border-l-teal-500', iconBg: 'bg-teal-50', textColor: 'text-teal-600', badge: '♻️ Resmi Belgeli' },
+              { ...siteConfig.services[0], borderColor: 'border-l-emerald-500', iconBg: 'bg-emerald-50', textColor: 'text-emerald-600', badge: '30 Dakika' },
+              { ...siteConfig.services[1], borderColor: 'border-l-orange-500', iconBg: 'bg-orange-50', textColor: 'text-orange-600', badge: 'Ücretsiz Ekspertiz' },
+              { ...siteConfig.services[2], borderColor: 'border-l-sky-500', iconBg: 'bg-sky-50', textColor: 'text-sky-600', badge: 'Özel Değerlendirme' },
+              { ...siteConfig.services[3], borderColor: 'border-l-teal-500', iconBg: 'bg-teal-50', textColor: 'text-teal-600', badge: 'Resmi Belgeli' },
             ].map((service) => (
               <Link
                 key={service.id}
@@ -129,8 +130,8 @@ export default function ServicesPage() {
                 className={`group bg-white p-8 rounded-2xl border border-gray-100 border-l-4 ${service.borderColor} shadow-md hover:shadow-2xl transition-all hover:-translate-y-2`}
               >
                 <div className="flex items-start gap-6">
-                  <div className={`w-20 h-20 ${service.iconBg} rounded-2xl flex items-center justify-center text-5xl flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                    {service.icon}
+                  <div className={`w-20 h-20 ${service.iconBg} ${service.textColor} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform overflow-visible`}>
+                    <ModernIcon name={service.icon} label={service.title} className="h-16 w-16 scale-125" strokeWidth={2.25} />
                   </div>
                   <div className="flex-1">
                     <div className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 ${service.iconBg} ${service.textColor}`}>
@@ -181,8 +182,8 @@ export default function ServicesPage() {
                 key={index}
                 className="bg-white p-6 rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-all text-center"
               >
-                <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-                  {feature.icon}
+                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 overflow-visible">
+                  <ModernIcon name={feature.icon} label={feature.title} className="h-14 w-14 scale-125" strokeWidth={2.25} />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {feature.title}
