@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Kazalı Araç Satışında Yapılan Yaygın Hatalar</h2>
 <p>En yaygın hata, aracı tamir ettirdikten sonra satmaya çalışmaktır. Çoğu zaman tamir maliyeti aracın piyasa değerini aşar ve bu yaklaşım ekonomik açıdan mantıklı değildir. İkinci yaygın hata ise sadece tanıdıklara satmaya çalışmak; profesyonel alıcılar genellikle çok daha iyi fiyat teklifleri sunar.</p>
     `,
-    image: '/images/blog/kazali-arac-satis.png',
+    image: '/images/blog/kazali-arac-satis-rehberi.png',
     category: 'Rehber',
     author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-05',
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Pert Araç Sahibi Ne Yapmalı?</h2>
 <p>Sigorta şirketinin teklifini sorgulamadan kabul etmeden önce bağımsız bir değerlendirme yaptırın. Hasar Park'ı arayın; sigorta teklifinin üzerinde bir fiyat alıp alamayacağınızı öğrenin. Çoğu zaman aracı kendiniz satmak sigorta tazminatından daha kazançlı olabilir.</p>
     `,
-    image: '/images/blog/pert-raporu.png',
+    image: '/images/blog/pert-raporu-belgesi.png',
     category: 'Bilgi',
     author: 'Hukuk Ekibi',
     publishedAt: '2025-01-03',
@@ -134,7 +134,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Hurda Belgesi Ne İşe Yarar?</h2>
 <p>Hurda belgesi ile aracınızın trafikten kaydı silinir, MTV (Motorlu Taşıtlar Vergisi) ödemeleri sona erer, araç muayene yükümlülüğü kalkar ve trafik sigortası yenileme zorunluluğu ortadan kalkar. Bunun yanı sıra bazı devlet destekli araç yenileme programlarında hurda belgesi, yeni araç alımında indirim imkânı sunmaktadır.</p>
     `,
-    image: '/images/blog/hurda-arac.png',
+    image: '/images/blog/hurda-arac-teslim.png',
     category: 'Rehber',
     author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-01',
@@ -170,7 +170,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Ne Yapmalısınız?</h2>
 <p>Önce ücretsiz değerlendirme yaptırın, ardından tamir maliyetiyle karşılaştırın. Hasar Park'ı arayın; 30 dakika içinde hasarlı aracınız için net teklif alın ve en doğru kararı verin.</p>
     `,
-    image: '/images/blog/kazali-arac-satis.png',
+    image: '/images/blog/hasarli-arac-deger-kaybi.png',
     category: 'Bilgi',
     author: 'Hasar Park Uzman Ekibi',
     publishedAt: '2025-01-10',
@@ -206,7 +206,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Ekspertiz Sonrası Ne Yapmalısınız?</h2>
 <p>Ekspertiz raporu elinizde olduğunda, hasarlı aracınızı satmak için en uygun zamandasınız demektir. Hasar Park'ı arayın; ekspertiz raporunuzu paylaşın ve 30 dakika içinde size en yüksek fiyat teklifini sunalım. Ekspertiz raporu olmasa da değerlendirme yapıyoruz.</p>
     `,
-    image: '/images/blog/pert-raporu.png',
+    image: '/images/blog/arac-ekspertiz-sureci.png',
     category: 'Rehber',
     author: 'Teknik Ekip',
     publishedAt: '2025-01-15',
@@ -246,7 +246,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Kaza Sonrası Araç Satışı</h2>
 <p>Sigorta sürecini beklemek istemiyorsanız doğrudan kazalı araç alıcılarıyla görüşebilirsiniz. Hasar Park, sigorta sürecinizin herhangi bir aşamasında aracınızı değerlendirerek en yüksek teklifi sunar. Ücretsiz ekspertiz, çekici ve tüm evrak işlemleri bizden.</p>
     `,
-    image: '/images/blog/kazali-arac-satis.png',
+    image: '/images/blog/sigorta-hasar-islemleri.png',
     category: 'Rehber',
     author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-18',
@@ -286,7 +286,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Hasar Park'tan Pert Araç Satın Alabilir Misiniz?</h2>
 <p>Hasar Park esas olarak pert araç alan bir şirkettir; pert araç satmıyoruz. Pert aracınızı en yüksek fiyata Hasar Park'a satabilirsiniz. Tüm yasal süreçler, evraklar ve çekici hizmetimizden ücretsiz yararlanırsınız.</p>
     `,
-    image: '/images/blog/pert-raporu.png',
+    image: '/images/blog/pert-arac-yatirimi.png',
     category: 'Bilgi',
     author: 'Hasar Park Uzman Ekibi',
     publishedAt: '2025-01-20',
@@ -328,7 +328,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Hasar Park ile En Yüksek Fiyatı Garantileyin</h2>
 <p>Hasar Park, 20+ yıllık tecrübesiyle hasarlı araç alımında Türkiye'nin en yüksek fiyatlarını sunmaktadır. Ücretsiz ekspertiz, anında teklif, ücretsiz çekici ve noter işlemleri dahil eksiksiz hizmet. Hemen arayın: +90 534 580 93 15</p>
     `,
-    image: '/images/blog/kazali-arac-satis.png',
+    image: '/images/blog/en-yuksek-fiyata-arac-satisi.png',
     category: 'Strateji',
     author: 'Hasar Park Ekibi',
     publishedAt: '2025-01-25',
@@ -369,7 +369,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Neden Hasar Park'ı Seçmelisiniz?</h2>
 <p>Resmi belgeli hurda araç işletmesi olarak Hasar Park; şeffaf tartım süreci, güncel piyasa fiyatları ve anında ödeme garantisiyle Türkiye genelinde hizmet vermektedir. Ücretsiz çekici ve tüm evrak işlemleri dahildir.</p>
     `,
-    image: '/images/blog/hurda-arac.png',
+    image: '/images/blog/hurda-demir-fiyatlari.png',
     category: 'Bilgi',
     author: 'Hasar Park Uzman Ekibi',
     publishedAt: '2025-02-01',
@@ -406,7 +406,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Ücretsiz ekspertiz için +90 534 580 93 15 numarayı arayın. 30 dakikada net teklif, aynı gün çekici hizmeti ve anında ödeme.</p>
     `,
-    image: '/images/blog/kazali-arac-satis.png',
+    image: '/images/blog/motor-arizasi-tamir.png',
     category: 'Rehber',
     author: 'Teknik Ekip',
     publishedAt: '2025-02-05',
@@ -448,7 +448,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Hasar Park ile Zahmetsiz Satış</h2>
 <p>Hasar Park, noter sürecinin tamamını sizin adınıza yönetir. Tek yapmanız gereken aracınızı teslim etmek; geri kalan her şey bizden. Randevu, evrak hazırlığı, noter ziyareti ve tescil işlemleri dahil eksiksiz hizmet sunuyoruz.</p>
     `,
-    image: '/images/blog/pert-raporu.png',
+    image: '/images/blog/noter-arac-devir.png',
     category: 'Rehber',
     author: 'Hukuk Ekibi',
     publishedAt: '2025-02-10',
@@ -485,7 +485,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Hasar Sonrası En İyi Karar: Satmak</h2>
 <p>Ciddi hasar geçirmiş araçlarda zaman geçtikçe değer kaybı derinleşir. En hızlı ve karlı çözüm, hasarlı aracı profesyonel bir alıcıya satmaktır. Hasar Park ile 30 dakika içinde en güncel ve en yüksek teklifi alın; değer kaybı daha da büyümeden önce doğru kararı verin.</p>
     `,
-    image: '/images/blog/hurda-arac.png',
+    image: '/images/blog/ikinci-el-deger-koruma.png',
     category: 'Bilgi',
     author: 'Hasar Park Uzman Ekibi',
     publishedAt: '2025-02-15',

@@ -1,6 +1,5 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -9,12 +8,6 @@ import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import JsonLd from '@/components/analytics/JsonLd';
 import { siteConfig } from '@/config/site';
 import CallPopupModal from '@/components/layout/CallPopupModal';
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -47,7 +40,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={inter.className}>
+      <body>
         {/* Analytics & SEO */}
         <JsonLd />
         <GoogleTagManager />

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getPostSlugs, getAllPosts } from '@/data/blog';
@@ -151,6 +152,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
+            <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-100 shadow-sm mb-10">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+
             {/* Article Content */}
             <div
               className="prose prose-lg max-w-none
@@ -201,8 +213,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   href={`/blog/${relatedPost.slug}`}
                   className="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all border border-gray-100 overflow-hidden"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-4xl">
-                    📝
+                  <div className="relative aspect-video overflow-hidden bg-gray-100">
+                    <Image
+                      src={relatedPost.image}
+                      alt={relatedPost.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
                   <div className="p-5">
                     <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-indigo-600 transition">

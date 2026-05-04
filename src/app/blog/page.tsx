@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getAllPosts, getCategories } from '@/data/blog';
 import CTASection from '@/components/sections/CTASection';
@@ -131,10 +132,14 @@ export default function BlogPage() {
                 className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 overflow-hidden"
               >
                 {/* Image */}
-                <div className="aspect-video bg-gradient-to-br from-indigo-500 to-violet-500 overflow-hidden relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-white text-5xl">
-                    📝
-                  </div>
+                <div className="aspect-video bg-gray-100 overflow-hidden relative">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
 
                 {/* Content */}
