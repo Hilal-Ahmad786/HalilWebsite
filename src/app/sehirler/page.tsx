@@ -37,7 +37,7 @@ export default function CitiesIndexPage() {
   return (
     <div className="cities-index-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-28 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div

@@ -8,6 +8,7 @@ import CTASection from '@/components/sections/CTASection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import QuickContactForm from '@/components/ui/QuickContactForm';
+import TrustProofSection from '@/components/sections/TrustProofSection';
 
 export const metadata: Metadata = {
   title: 'Kazalı & Hasarlı Araç Alımı | En Yüksek Fiyat - Hasar Park',
@@ -69,6 +70,8 @@ export default function HomePage() {
       <div id="anasayfa-icerigi" className="scroll-mt-24">
         <StatsSection />
       </div>
+
+      <TrustProofSection />
 
       {/* Urgent CTA Banner - 1st Conversion Point */}
       <CTASection

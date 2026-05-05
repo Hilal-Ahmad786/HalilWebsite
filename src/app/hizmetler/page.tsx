@@ -5,6 +5,7 @@ import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
 import ProcessSteps from '@/components/sections/ProcessSteps';
+import TrustProofSection from '@/components/sections/TrustProofSection';
 import { ModernIcon } from '@/components/ui/Icons';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
@@ -18,7 +19,7 @@ export default function ServicesPage() {
   return (
     <div className="services-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-28 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -87,6 +88,8 @@ export default function ServicesPage() {
           <TrustBadges variant="light" />
         </div>
       </section>
+
+      <TrustProofSection />
 
       {/* Services Grid */}
       <section className="py-20 bg-white">

@@ -23,8 +23,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  /* You can later change to 16px if you want bigger text */
+  font-size: 16px;
   line-height: 1.6;
 }
 

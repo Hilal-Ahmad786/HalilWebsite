@@ -16,16 +16,16 @@ export default function BlogPage() {
   const categories = getCategories();
 
   const blogStats = [
-    { value: '50+', label: 'Bilgilendirici Yazı' },
-    { value: '10K+', label: 'Aylık Okuyucu' },
-    { value: '4', label: 'Kategori' },
-    { value: '5dk', label: 'Ort. Okuma Süresi' },
+    { value: posts.length.toString(), label: 'Yayınlanmış Rehber' },
+    { value: categories.length.toString(), label: 'Konu Kategorisi' },
+    { value: '5 dk', label: 'Ort. Okuma Süresi' },
+    { value: '2025', label: 'Güncel İçerikler' },
   ];
 
   return (
     <div className="blog-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+      <section className="relative min-h-[82svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-emerald-950 pt-28 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -37,7 +37,7 @@ export default function BlogPage() {
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -92,16 +92,16 @@ export default function BlogPage() {
       <section id="sayfa-icerigi" className="py-8 bg-white border-b border-gray-100 scroll-mt-24">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap gap-3 justify-center">
-            <button className="px-5 py-2.5 bg-indigo-600 text-white font-semibold text-sm rounded-full">
+            <span className="px-5 py-2.5 bg-emerald-600 text-white font-semibold text-sm rounded-full">
               Tümü
-            </button>
+            </span>
             {categories.map((category) => (
-              <button
+              <span
                 key={category}
-                className="px-5 py-2.5 bg-gray-100 text-gray-700 font-semibold text-sm rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition"
+                className="px-5 py-2.5 bg-gray-100 text-gray-700 font-semibold text-sm rounded-full"
               >
                 {category}
-              </button>
+              </span>
             ))}
           </div>
         </div>
@@ -131,12 +131,12 @@ export default function BlogPage() {
                 {/* Content */}
                 <div className="p-6">
                   {/* Category */}
-                  <div className="inline-block bg-indigo-100 text-indigo-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                  <div className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
                     {post.category}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-indigo-600 transition">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-700 transition">
                     {post.title}
                   </h3>
 

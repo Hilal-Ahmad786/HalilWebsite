@@ -5,6 +5,7 @@ import { getCityBySlug, getCitySlugs } from '@/data/cities';
 import { siteConfig } from '@/config/site';
 import ProcessSteps from '@/components/sections/ProcessSteps';
 import CTASection from '@/components/sections/CTASection';
+import TrustProofSection from '@/components/sections/TrustProofSection';
 import HeroCTAButtons from '@/components/ui/HeroCTAButtons';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
@@ -64,7 +65,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   return (
     <div className={`city-page city-${city.id}`}>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-28 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0">
           {city.hero.image ? (
@@ -199,6 +200,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           <TrustBadges variant="light" />
         </div>
       </section>
+
+      <TrustProofSection />
 
       {/* Services Available in City */}
       <section className="py-20 bg-white">

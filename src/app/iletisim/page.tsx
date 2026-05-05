@@ -6,6 +6,7 @@ import { siteConfig } from '@/config/site';
 import ContactForm from '@/components/ui/ContactForm';
 import TrustBadges from '@/components/ui/TrustBadges';
 import SocialProof from '@/components/ui/SocialProof';
+import TrustProofSection from '@/components/sections/TrustProofSection';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 import { MailIcon, PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
@@ -21,7 +22,7 @@ export default function ContactPage() {
   return (
     <div className="contact-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-28 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -125,6 +126,8 @@ export default function ContactPage() {
           <TrustBadges variant="light" />
         </div>
       </section>
+
+      <TrustProofSection />
 
       {/* Contact Methods */}
       <section className="py-20 bg-white">

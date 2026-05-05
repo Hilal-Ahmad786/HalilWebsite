@@ -200,25 +200,25 @@ export default function FloatingButtons() {
       </div>
 
       {/* MOBILE BOTTOM BAR - Thumb-friendly design */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 safe-area-bottom overflow-hidden">
         <div className="bg-gray-900/95 backdrop-blur-lg border-t border-gray-800">
-          <div className="flex items-stretch">
+          <div className="grid grid-cols-2 items-stretch">
             {/* WhatsApp - Left Half */}
             <button
               onClick={() => handleWhatsAppClick('floating-button-mobile')}
-              className="flex-1 flex flex-col items-center justify-center py-4 px-4 bg-[#25D366] text-white active:bg-[#20bd5a] transition-colors"
+              className="min-w-0 flex flex-col items-center justify-center py-3.5 px-2 bg-[#25D366] text-white active:bg-[#20bd5a] transition-colors"
             >
-              <WhatsAppIcon className="w-7 h-7 mb-1" />
-              <span className="text-xs font-semibold">WhatsApp</span>
+              <WhatsAppIcon className="w-6 h-6 mb-1" />
+              <span className="text-[11px] font-semibold leading-none">WhatsApp</span>
             </button>
 
             {/* Phone - Right Half - Orange gradient */}
             <button
               onClick={() => handlePhoneClick('floating-button-mobile')}
-              className="flex-1 flex flex-col items-center justify-center py-4 px-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white active:from-orange-600 active:to-amber-600 transition-colors"
+              className="min-w-0 flex flex-col items-center justify-center py-3.5 px-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white active:from-orange-600 active:to-amber-600 transition-colors"
             >
               <PhoneIcon className="w-6 h-6 mb-1" strokeWidth={2} />
-              <span className="text-xs font-semibold">Hemen Ara</span>
+              <span className="text-[11px] font-semibold leading-none">Hemen Ara</span>
             </button>
           </div>
         </div>

@@ -1,21 +1,10 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
 interface SocialProofProps {
   variant?: 'light' | 'dark';
   showRecent?: boolean;
+  recentCount?: number;
 }
 
-export default function SocialProof({ variant = 'light', showRecent = true }: SocialProofProps) {
-  const [recentCount, setRecentCount] = useState(0);
-
-  useEffect(() => {
-    // Simulate recent activity counter
-    const random = Math.floor(Math.random() * 5) + 12;
-    setRecentCount(random);
-  }, []);
-
+export default function SocialProof({ variant = 'light', showRecent = true, recentCount = 14 }: SocialProofProps) {
   const isDark = variant === 'dark';
 
   return (
@@ -66,7 +55,7 @@ export default function SocialProof({ variant = 'light', showRecent = true }: So
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-sm">
-              Son 24 saatte <span className="font-bold text-emerald-500">{recentCount}</span> araç alındı
+              Son 24 saatte <span className="font-bold text-emerald-500">{recentCount}</span> araç değerlendirildi
             </span>
           </div>
         </>

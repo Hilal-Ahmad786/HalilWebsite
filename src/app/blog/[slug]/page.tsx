@@ -6,6 +6,8 @@ import { getPostBySlug, getPostSlugs, getAllPosts } from '@/data/blog';
 import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import { ArrowRightIcon, BanknotesIcon, PhoneIcon, WhatsAppIcon } from '@/components/ui/Icons';
+import { siteConfig } from '@/config/site';
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
@@ -48,10 +50,78 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     { value: post.tags.length + '+', label: 'Konu' },
   ];
 
+  const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const articleImageUrl = `${siteConfig.url}${post.image}`;
+  const serviceLinks = [
+    { href: '/kazali-arac-alim', label: 'Kazalı Araç' },
+    { href: '/hasarli-arac-alim', label: 'Hasarlı Araç' },
+    { href: '/pert-arac-alim', label: 'Pert Araç' },
+    { href: '/hurda-arac-alim', label: 'Hurda Araç' },
+  ];
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.metaDescription || post.excerpt,
+    image: articleImageUrl,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': articleUrl,
+    },
+    keywords: post.tags.join(', '),
+  };
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Ana Sayfa',
+        item: siteConfig.url,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${siteConfig.url}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: articleUrl,
+      },
+    ],
+  };
+
   return (
     <article className="blog-post-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-32 pb-20">
+      <section className="relative min-h-[64svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-emerald-950 pt-28 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -63,7 +133,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-3 gap-12 items-center">
@@ -149,6 +219,57 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               />
             </div>
 
+            <div className="mb-10 rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-7 shadow-sm">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white">
+                  <BanknotesIcon className="h-7 w-7" strokeWidth={1.8} />
+                </div>
+                <div>
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wide text-emerald-700">
+                    Ücretsiz Ön Teklif
+                  </p>
+                  <h2 className="mb-3 text-2xl font-bold text-gray-900">
+                    Aracınız için bugün net fiyat aralığı öğrenin
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    Fotoğraf, ruhsat bilgisi ve hasar durumunu paylaşın; kazalı, hasarlı, pert veya hurda aracınız için aynı gün teklif hazırlayalım.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    className="group flex items-center justify-between rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm font-semibold text-gray-800 transition hover:border-emerald-300 hover:text-emerald-700 hover:shadow-sm"
+                  >
+                    {service.label}
+                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.8} />
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-gray-800"
+                >
+                  <PhoneIcon className="h-5 w-5" strokeWidth={1.8} />
+                  {siteConfig.phoneDisplay}
+                </a>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-700"
+                >
+                  <WhatsAppIcon className="h-5 w-5" />
+                  WhatsApp'tan Teklif Al
+                </a>
+              </div>
+            </div>
+
             {/* Article Content */}
             <div
               className="prose prose-lg max-w-none
@@ -168,7 +289,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {post.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-indigo-50 text-indigo-600 text-sm font-medium rounded-full"
+                    className="px-4 py-2 bg-emerald-50 text-emerald-700 text-sm font-medium rounded-full"
                   >
                     #{tag}
                   </span>
@@ -184,11 +305,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
-              <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+              <div className="inline-block bg-emerald-100 text-emerald-700 px-6 py-3 mb-6 rounded-full">
                 <span className="font-bold text-sm tracking-wide">İLGİLİ YAZILAR</span>
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
-                İlginizi <span className="text-indigo-600">Çekebilir</span>
+                İlginizi <span className="text-emerald-700">Çekebilir</span>
               </h2>
             </div>
 
@@ -209,7 +330,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-indigo-600 transition">
+                    <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-emerald-700 transition">
                       {relatedPost.title}
                     </h3>
                     <p className="text-sm text-gray-500 mt-2">{relatedPost.readTime} okuma</p>
