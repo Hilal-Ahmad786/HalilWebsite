@@ -65,7 +65,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
   return (
     <div className={`service-page service-${service.id}`}>
       {/* Hero Section - Matching Homepage Style */}
-      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-28 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-40 md:pt-44 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0">
           {service.hero.image ? (

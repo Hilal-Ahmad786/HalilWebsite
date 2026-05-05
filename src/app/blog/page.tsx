@@ -25,7 +25,7 @@ export default function BlogPage() {
   return (
     <div className="blog-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[82svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-emerald-950 pt-28 pb-16">
+      <section className="relative min-h-[82svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-emerald-950 pt-40 md:pt-44 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div

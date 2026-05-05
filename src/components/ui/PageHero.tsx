@@ -20,7 +20,7 @@ export default function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 pt-32 pb-20">
+    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 pt-40 md:pt-44 pb-20">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 via-transparent to-emerald-900/10" />
 

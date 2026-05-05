@@ -25,7 +25,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-28 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
+    <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-40 md:pt-44 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
