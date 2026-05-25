@@ -125,7 +125,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <nav aria-label="Hizmetlerimiz">
             <h4 className="font-semibold text-base mb-6 text-white flex items-center gap-2">
               <span className="w-1 h-5 bg-emerald-500 rounded-full" />
               Hizmetlerimiz
@@ -135,6 +135,7 @@ export default function Footer() {
                 <li key={service.id}>
                   <Link
                     href={`/${service.slug}`}
+                    title={service.title}
                     className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
@@ -143,56 +144,56 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Kurumsal & Hızlı Linkler */}
-          <div>
+          <nav aria-label="Kurumsal">
             <h4 className="font-semibold text-base mb-6 text-white flex items-center gap-2">
               <span className="w-1 h-5 bg-emerald-500 rounded-full" />
               Kurumsal
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
+                <Link href="/" title="Ana Sayfa" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
                   <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
                   Ana Sayfa
                 </Link>
               </li>
               <li>
-                <Link href="/hakkimizda" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
+                <Link href="/hakkimizda" title="Hakkımızda" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
                   <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
                   Hakkımızda
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
+                <Link href="/blog" title="Bilgi Merkezi" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
                   <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
                   Bilgi Merkezi
                 </Link>
               </li>
               <li>
-                <Link href="/sehirler" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
+                <Link href="/sehirler" title="Hizmet Bölgeleri" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
                   <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
                   Hizmet Bölgeleri
                 </Link>
               </li>
               <li>
-                <Link href="/iletisim" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
+                <Link href="/iletisim" title="İletişim" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
                   <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
                   İletişim
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap.xml" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
+                <Link href="/sitemap.xml" title="Site Haritası" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
                   <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
                   Site Haritası
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Popular Cities */}
-          <div>
+          <nav aria-label="Popüler Şehirler">
             <h4 className="font-semibold text-base mb-6 text-white flex items-center gap-2">
               <span className="w-1 h-5 bg-emerald-500 rounded-full" />
               Popüler Şehirler
@@ -202,6 +203,7 @@ export default function Footer() {
                 <li key={city.slug}>
                   <Link
                     href={`/sehirler/${city.slug}`}
+                    title={`${city.name} Araç Alımı`}
                     className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
@@ -212,6 +214,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/sehirler"
+                  title="Tüm Şehirler"
                   className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium flex items-center gap-1"
                 >
                   Tüm Şehirler
@@ -219,7 +222,7 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Info Bar */}
@@ -280,49 +283,27 @@ export default function Footer() {
                 <span className="font-bold text-sm tracking-wide ml-0.5">PakSoft</span>
               </div>
             </a>
-            <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm text-gray-500 lg:flex-nowrap lg:justify-end lg:whitespace-nowrap">
-              <Link href="/gizlilik-politikasi" className="hover:text-emerald-400 transition-colors">
+            <nav aria-label="Yasal Linkler" className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-500 lg:flex-nowrap lg:justify-end lg:whitespace-nowrap">
+              <Link href="/gizlilik-politikasi" title="Gizlilik Politikası" className="hover:text-emerald-400 transition-colors">
                 Gizlilik Politikası
               </Link>
-              <Link href="/kullanim-sartlari" className="hover:text-emerald-400 transition-colors">
+              <Link href="/kullanim-sartlari" title="Kullanım Şartları" className="hover:text-emerald-400 transition-colors">
                 Kullanım Şartları
               </Link>
-              <Link href="/cerez-politikasi" className="hover:text-emerald-400 transition-colors">
+              <Link href="/cerez-politikasi" title="Çerez Politikası" className="hover:text-emerald-400 transition-colors">
                 Çerez Politikası
               </Link>
-              <Link href="/kvkk" className="hover:text-emerald-400 transition-colors">
+              <Link href="/kvkk" title="KVKK Aydınlatma Metni" className="hover:text-emerald-400 transition-colors">
                 KVKK
               </Link>
-            </div>
+              <Link href="/sitemap.xml" title="Site Haritası" className="hover:text-emerald-400 transition-colors">
+                Site Haritası
+              </Link>
+            </nav>
           </div>
         </div>
       </div>
 
-      {/* Schema.org LocalBusiness */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'AutomotiveBusiness',
-            name: siteConfig.name,
-            description: 'Türkiye\'nin en güvenilir hasarlı, kazalı ve pert araç alım merkezi',
-            url: 'https://hasarpark.com',
-            telephone: siteConfig.phone,
-            email: siteConfig.email,
-            openingHours: 'Mo-Su 00:00-23:59',
-            priceRange: '₺₺₺',
-            areaServed: {
-              '@type': 'Country',
-              name: 'Turkey',
-            },
-            sameAs: [
-              siteConfig.social.facebook,
-              siteConfig.social.instagram,
-            ].filter(Boolean),
-          }),
-        }}
-      />
     </footer>
   );
 }
