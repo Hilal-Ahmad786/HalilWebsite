@@ -39,6 +39,9 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
       title: city.metaTitle,
       description: city.metaDescription,
     },
+    alternates: {
+      canonical: `/sehirler/${city.slug}`,
+    },
   };
 }
 

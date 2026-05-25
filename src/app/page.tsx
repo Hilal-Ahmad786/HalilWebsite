@@ -13,7 +13,7 @@ import TrustProofSection from '@/components/sections/TrustProofSection';
 export const metadata: Metadata = {
   title: 'Kazalı & Hasarlı Araç Alımı | En Yüksek Fiyat - Hasar Park',
   description:
-    'Kazalı, hasarlı, pert ve hurda araçlarınızı en yüksek fiyata satın. Anında teklif, ücretsiz çekici, tüm evraklar bizden. 7/24 hizmet, 100K+ müşteri.',
+    'Türkiye\'nin 1 numaralı hasarlı araç alım merkezi. Kazalı, pert ve hurda araçlarınız için 30 dakikada nakit ödeme ve ücretsiz çekici hizmetiyle en iyi fiyatı alın.',
   keywords: [
     'kazalı araç alan',
     'hasarlı araç alan',
@@ -122,29 +122,49 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'AutomotiveBusiness',
-            name: 'Hasar Park',
-            description: 'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin en güvenilir merkezi',
-            url: 'https://hasarpark.com',
-            telephone: '+905345809315',
-            address: {
-              '@type': 'PostalAddress',
-              addressCountry: 'TR',
-              addressRegion: 'Türkiye',
-            },
-            areaServed: 'TR',
-            openingHoursSpecification: {
-              '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-              opens: '00:00',
-              closes: '23:59',
-            },
-            priceRange: 'Varies',
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.9',
-              reviewCount: '100000',
-            },
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Kazalı araç alımında nasıl bir süreç işliyor?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Önce bizi arayarak aracınız hakkında bilgi veriyorsunuz. Sonra fotoğrafları WhatsApp üzerinden gönderiyorsunuz. 30 dakika içinde size en yüksek fiyat teklifini sunuyoruz. Teklifi kabul ederseniz, ücretsiz çekici ile aracınızı alıyor ve noter işlemlerini tamamladıktan sonra anında ödeme yapıyoruz.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Ücretsiz çekici hizmeti hangi illeri kapsıyor?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Türkiye\'nin tüm illerine ücretsiz çekici hizmeti veriyoruz. İstanbul, Ankara, İzmir başta olmak üzere her şehirden araçları alabiliyoruz.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Ödeme nasıl yapılıyor?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Noter işlemleri tamamlandıktan sonra anında nakit veya EFT ile ödeme yapıyoruz. Ödeme için hiçbir ek masraf veya gecikme yoktur.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Hangi tür araçları alıyorsunuz?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Kazalı, hasarlı, pert ve hurda olmak üzere tüm araç türlerini alıyoruz. Marka, model ve yıl fark etmeksizin değerlendirme yapıyoruz.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Ekspertiz ücreti var mı?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Hayır, ekspertiz hizmetimiz tamamen ücretsizdir. Aracınızı yerinde değerlendirip size en iyi teklifi sunuyoruz.',
+                },
+              },
+            ],
           }),
         }}
       />

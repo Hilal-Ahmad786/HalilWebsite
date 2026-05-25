@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Hasar Park' }],
   creator: 'Hasar Park',
   publisher: 'Hasar Park',
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,

@@ -41,6 +41,9 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
       description: service.metaDescription,
       images: [service.hero.image],
     },
+    alternates: {
+      canonical: `/${service.slug}`,
+    },
   };
 }
 
