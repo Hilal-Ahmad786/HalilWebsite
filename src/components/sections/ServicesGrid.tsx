@@ -1,10 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 import { trackCTAClick } from '@/lib/analytics';
 import { ModernIcon } from '@/components/ui/Icons';
 import SectionLabel from '@/components/ui/SectionLabel';
+
+// Real damage photos already in /public/images, keyed by service id
+const serviceImages: Record<string, string> = {
+  kazali: '/images/kazali-arac.png',
+  hasarli: '/images/hasarli-arac.png',
+  pert: '/images/pert-arac.png',
+  hurda: '/images/hurda-arac.png',
+};
 
 export default function ServicesGrid() {
   const handleServiceClick = (serviceName: string) => {
@@ -60,62 +69,54 @@ export default function ServicesGrid() {
             return (
               <div
                 key={service.id}
-                className={`group bg-white p-4 sm:p-8 rounded-2xl border ${colors.border} ${colors.hover} shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+                className={`group bg-white rounded-2xl border ${colors.border} ${colors.hover} shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col`}
               >
-                {/* Icon */}
-                <div className={`${colors.bg} ${colors.text} mb-3 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl transform group-hover:scale-110 transition-transform duration-300 overflow-visible`}>
-                  <ModernIcon name={service.icon} label={service.title} className="h-10 w-10 sm:h-14 sm:w-14 scale-125" strokeWidth={2.25} />
+                {/* Real damage photo */}
+                <div className="relative h-32 sm:h-44 w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={serviceImages[service.id] ?? '/images/kazali-arac.png'}
+                    alt={`${service.title} - Hasar Park`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/55 via-gray-900/5 to-transparent" />
+                  {/* Icon badge */}
+                  <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-white/95 text-emerald-600 shadow-sm overflow-visible">
+                    <ModernIcon name={service.icon} label={service.title} className="h-7 w-7 sm:h-9 sm:w-9 scale-110" strokeWidth={2.25} />
+                  </div>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
-                  {service.title}
-                </h3>
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h3 className="text-base sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2 leading-tight">
+                    {service.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-xs sm:text-base text-gray-600 mb-3 sm:mb-6 line-clamp-2 sm:line-clamp-none">
-                  {service.shortDesc}
-                </p>
+                  <p className="text-xs sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-none">
+                    {service.shortDesc}
+                  </p>
 
-                {/* Features List - Hidden on mobile */}
-                <ul className="hidden sm:block space-y-2 mb-6">
-                  <li className="flex items-center gap-2 text-sm text-gray-600">
-                    <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>En yüksek fiyat</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-gray-600">
-                    <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Anında değerleme</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-gray-600">
-                    <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Ücretsiz çekici</span>
-                  </li>
-                </ul>
+                  {/* Features List - Hidden on mobile */}
+                  <ul className="hidden sm:block space-y-2 mb-5">
+                    {['En yüksek fiyat', 'Anında değerleme', 'Ücretsiz çekici'].map((feat) => (
+                      <li key={feat} className="flex items-center gap-2 text-sm text-gray-600">
+                        <svg className={`w-4 h-4 ${colors.text} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* CTA Button */}
-                <Link
-                  href={`/${service.slug}`}
-                  onClick={() => handleServiceClick(service.title)}
-                  className={`block w-full ${colors.button} px-3 py-2 sm:px-6 sm:py-3 font-semibold text-center text-xs sm:text-base rounded-lg sm:rounded-xl transition-all duration-300`}
-                >
-                  Detay Al
-                </Link>
-
-                {/* Hover Accent - Hidden on mobile */}
-                <div className="hidden sm:block mt-4 pt-4 border-t border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="flex items-center justify-center gap-2 text-sm font-medium text-gray-500">
-                    <span>Hemen teklif al</span>
-                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  {/* CTA Button */}
+                  <Link
+                    href={`/${service.slug}`}
+                    onClick={() => handleServiceClick(service.title)}
+                    className={`mt-auto block w-full ${colors.button} px-3 py-2 sm:px-5 sm:py-3 font-semibold text-center text-xs sm:text-base rounded-xl transition-all duration-300`}
+                  >
+                    Detay Al
+                  </Link>
                 </div>
               </div>
             );
