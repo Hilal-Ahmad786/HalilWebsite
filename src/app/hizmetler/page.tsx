@@ -95,11 +95,11 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">ARAÇ ALIM HİZMETLERİ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Tüm <span className="text-indigo-600">Hizmetlerimiz</span>
+              Tüm <span className="text-emerald-600">Hizmetlerimiz</span>
             </h2>
             <p className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
               Her türlü hasarlı aracınız için profesyonel çözümler sunuyoruz
@@ -193,11 +193,11 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-violet-100 text-violet-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">ARAÇ TÜRLERİ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hangi Araçları <span className="text-violet-600">Alıyoruz?</span>
+              Hangi Araçları <span className="text-emerald-600">Alıyoruz?</span>
             </h2>
           </div>
 

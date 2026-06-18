@@ -22,7 +22,7 @@ export default function ContactPage() {
   return (
     <div className="contact-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-40 md:pt-44 pb-16">
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1A1F3A] via-[#252B4A] to-[#1A1F3A] pt-40 md:pt-44 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -34,7 +34,7 @@ export default function ContactPage() {
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -166,7 +166,7 @@ export default function ContactPage() {
             {/* Email */}
             <a
               href={`mailto:${siteConfig.email}`}
-              className="bg-indigo-600 text-white p-8 rounded-2xl text-center hover:bg-indigo-700 transition group shadow-lg"
+              className="bg-emerald-600 text-white p-8 rounded-2xl text-center hover:bg-emerald-700 transition group shadow-lg"
             >
               <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 transition-transform">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -184,7 +184,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto">
             <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100">
               <div className="text-center mb-8">
-                <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-4 rounded-full">
+                <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-4 rounded-full">
                   <span className="font-bold text-sm tracking-wide">İLETİŞİM FORMU</span>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900">
@@ -199,7 +199,7 @@ export default function ContactPage() {
       </section>
 
       {/* Service Hours */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-emerald-600 to-emerald-600 text-white">
         <div className="container mx-auto px-6 text-center">
           <div className="inline-block bg-white/20 px-6 py-3 mb-8 rounded-full backdrop-blur-sm">
             <span className="font-bold text-sm tracking-wide">HİZMET SAATLERİMİZ</span>

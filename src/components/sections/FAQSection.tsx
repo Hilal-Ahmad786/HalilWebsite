@@ -32,7 +32,7 @@ export default function FAQSection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <div className="inline-block bg-violet-500/10 text-violet-600 px-6 py-3 mb-6 rounded-full">
+          <div className="inline-block bg-emerald-500/10 text-emerald-600 px-6 py-3 mb-6 rounded-full">
             <span className="font-semibold text-sm">Sık Sorulan Sorular</span>
           </div>
 

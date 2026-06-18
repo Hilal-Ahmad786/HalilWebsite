@@ -158,7 +158,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
               {/* Coverage */}
               <div className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/15 transition-all transform hover:-translate-y-1">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-400 mb-2 leading-none">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-2 leading-none">
                   {city.cityInfo.coverage.length}+
                 </div>
                 <div className="text-sm text-gray-300 font-medium">
@@ -210,12 +210,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">HİZMETLERİMİZ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {city.name}'da{' '}
-              <span className="text-indigo-600">Hizmetlerimiz</span>
+              <span className="text-emerald-600">Hizmetlerimiz</span>
             </h2>
           </div>
 
@@ -223,7 +223,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             {availableServices.map((serviceKey) => {
               const service = serviceInfo[serviceKey as keyof typeof serviceInfo];
               const detail = city.servicesDetail?.[serviceKey as keyof typeof city.servicesDetail];
-              const colorClass = service.color === 'emerald' ? 'bg-emerald-100' : service.color === 'indigo' ? 'bg-indigo-100' : 'bg-violet-100';
+              const colorClass = service.color === 'emerald' ? 'bg-emerald-100' : service.color === 'indigo' ? 'bg-emerald-100' : 'bg-emerald-100';
 
               if (detail) {
                 // If detailed content exists (for Ankara), render explicit H2 sections
@@ -234,7 +234,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all"
                   >
                     <div className="flex items-start gap-5">
-                      <div className={`w-16 h-16 ${colorClass} rounded-xl flex items-center justify-center flex-shrink-0 overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-indigo-600' : 'text-violet-600'}`}>
+                      <div className={`w-16 h-16 ${colorClass} rounded-xl flex items-center justify-center flex-shrink-0 overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-emerald-600' : 'text-emerald-600'}`}>
                         <ModernIcon name={service.icon} label={service.title} className="h-14 w-14 scale-125" strokeWidth={2.25} />
                       </div>
                       <div>
@@ -242,7 +242,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         <p className="text-gray-600 leading-relaxed mb-4">{detail.description}</p>
                         <Link
                           href={`/${serviceKey}-arac-alim`}
-                          className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-800 transition"
+                          className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-800 transition"
                         >
                           Detaylı Bilgi
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,7 +262,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   href={`/${serviceKey}-arac-alim`}
                   className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
                 >
-                  <div className={`w-14 h-14 ${colorClass} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-indigo-600' : 'text-violet-600'}`}>
+                  <div className={`w-14 h-14 ${colorClass} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-emerald-600' : 'text-emerald-600'}`}>
                     <ModernIcon name={service.icon} label={service.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">
@@ -271,7 +271,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   <p className="text-gray-600 mb-4">
                     {city.name}'da en yüksek fiyat
                   </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-indigo-600 group-hover:text-indigo-800">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-800">
                     <span>Detay</span>
                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -293,7 +293,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <span className="font-bold text-sm tracking-wide">İLÇE HİZMETLERİ</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                İlçeye Göre <span className="text-indigo-600">Hizmet</span>
+                İlçeye Göre <span className="text-emerald-600">Hizmet</span>
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -318,11 +318,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">AVANTAJLARIMIZ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              {city.name}'da <span className="text-indigo-600">Neden Biz?</span>
+              {city.name}'da <span className="text-emerald-600">Neden Biz?</span>
             </h2>
           </div>
 
@@ -408,11 +408,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">HİZMET BÖLGELERİ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hizmet Verdiğimiz <span className="text-indigo-600">İlçeler</span>
+              Hizmet Verdiğimiz <span className="text-emerald-600">İlçeler</span>
             </h2>
           </div>
 
@@ -435,8 +435,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             {city.cityInfo.localOffice && (
               <div className="mt-8 text-center">
                 <div className="inline-flex items-center gap-3 bg-gray-50 px-6 py-4 rounded-xl">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
@@ -457,11 +457,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-violet-100 text-violet-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">SIK SORULAN SORULAR</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              {city.name} İçin <span className="text-indigo-600">SSS</span>
+              {city.name} İçin <span className="text-emerald-600">SSS</span>
             </h2>
           </div>
 
@@ -473,8 +473,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               >
                 <summary className="p-6 font-semibold text-gray-900 text-lg cursor-pointer hover:bg-gray-50 transition flex items-center justify-between">
                   <span>{faq.question}</span>
-                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-open:bg-indigo-100 transition-colors">
-                    <svg className="w-5 h-5 text-gray-500 group-open:text-indigo-600 transform group-open:rotate-180 transition-all" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-open:bg-emerald-100 transition-colors">
+                    <svg className="w-5 h-5 text-gray-500 group-open:text-emerald-600 transform group-open:rotate-180 transition-all" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </div>

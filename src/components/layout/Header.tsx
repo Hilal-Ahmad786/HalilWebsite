@@ -129,7 +129,7 @@ export default function Header() {
                 ))}
                 <Link
                   href="/hizmetler"
-                  className="block p-4 bg-gray-50 text-center font-medium text-indigo-600 hover:bg-gray-100 transition border-t"
+                  className="block p-4 bg-gray-50 text-center font-medium text-emerald-600 hover:bg-gray-100 transition border-t"
                 >
                   Tüm Hizmetler →
                 </Link>
@@ -147,7 +147,7 @@ export default function Header() {
               </Link>
 
               <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
-                <div className="p-4 bg-indigo-500 text-white font-medium rounded-t-xl">
+                <div className="p-4 bg-emerald-500 text-white font-medium rounded-t-xl">
                   Hizmet Verdiğimiz Şehirler
                 </div>
                 <div className="grid grid-cols-2 gap-1 p-3">
@@ -155,7 +155,7 @@ export default function Header() {
                     <Link
                       key={city.id}
                       href={`/sehirler/${city.slug}`}
-                      className="px-3 py-2 hover:bg-gray-50 rounded-lg transition text-sm text-gray-700 hover:text-indigo-600"
+                      className="px-3 py-2 hover:bg-gray-50 rounded-lg transition text-sm text-gray-700 hover:text-emerald-600"
                     >
                       {city.name}
                     </Link>
@@ -163,7 +163,7 @@ export default function Header() {
                 </div>
                 <Link
                   href="/sehirler"
-                  className="block p-4 bg-gray-50 text-center font-medium text-indigo-600 hover:bg-gray-100 transition border-t rounded-b-xl"
+                  className="block p-4 bg-gray-50 text-center font-medium text-emerald-600 hover:bg-gray-100 transition border-t rounded-b-xl"
                 >
                   Tüm Şehirler →
                 </Link>

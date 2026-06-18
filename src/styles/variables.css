@@ -144,13 +144,13 @@ body {
 
 /* ===== SELECTION ===== */
 ::selection {
-  background-color: var(--primary-purple-light);
+  background-color: var(--accent-lime); /* emerald brand accent */
   color: white;
 }
 
 /* ===== FOCUS STYLES ===== */
 :focus-visible {
-  outline: 2px solid var(--primary-purple);
+  outline: 2px solid var(--accent-lime); /* emerald brand accent */
   outline-offset: 2px;
 }
 

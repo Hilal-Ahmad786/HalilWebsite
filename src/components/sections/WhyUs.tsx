@@ -8,13 +8,13 @@ export default function WhyUs() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+          <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
             <span className="font-bold text-sm tracking-wide">NEDEN HASAR PARK?</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             6 Neden
-            <span className="block text-indigo-600">Bizi Tercih Etmelisiniz</span>
+            <span className="block text-emerald-600">Bizi Tercih Etmelisiniz</span>
           </h2>
         </div>
 

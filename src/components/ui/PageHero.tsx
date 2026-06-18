@@ -22,7 +22,7 @@ export default function PageHero({
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 pt-40 md:pt-44 pb-20">
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 via-transparent to-emerald-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/10 to-gray-900/30" />
 
       {/* Subtle pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -35,7 +35,7 @@ export default function PageHero({
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10 text-white text-center">

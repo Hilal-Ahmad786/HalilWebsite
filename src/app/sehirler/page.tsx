@@ -37,7 +37,7 @@ export default function CitiesIndexPage() {
   return (
     <div className="cities-index-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-40 md:pt-44 pb-16">
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1A1F3A] via-[#252B4A] to-[#1A1F3A] pt-40 md:pt-44 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -49,7 +49,7 @@ export default function CitiesIndexPage() {
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -135,11 +135,11 @@ export default function CitiesIndexPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">AKTİF ŞEHİRLER</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Başlıca <span className="text-indigo-600">Şehirler</span>
+              Başlıca <span className="text-emerald-600">Şehirler</span>
             </h2>
           </div>
 
@@ -151,10 +151,10 @@ export default function CitiesIndexPage() {
                 className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-violet-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform overflow-visible">
+                  <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform overflow-visible">
                     <ModernIcon name="şehir" label={city.name} className="h-16 w-16 scale-125" strokeWidth={2.25} />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition">{city.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition">{city.name}</h3>
                   <div className="text-emerald-600 text-sm font-semibold mb-4">
                     {city.cityInfo.coverage.length}+ İlçe Hizmeti
                   </div>
@@ -162,7 +162,7 @@ export default function CitiesIndexPage() {
                     <div className="text-sm mb-2">Nüfus: {city.cityInfo.population}</div>
                     <div className="text-sm">Yanıt Süresi: {city.cityInfo.responseTime}</div>
                   </div>
-                  <div className="mt-6 flex items-center justify-center gap-2 text-indigo-600 font-semibold group-hover:gap-4 transition-all">
+                  <div className="mt-6 flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-4 transition-all">
                     <span>Detaylı Bilgi</span>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -188,11 +188,11 @@ export default function CitiesIndexPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-violet-100 text-violet-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">YAKINDA</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hizmete Açılacak <span className="text-violet-600">Şehirler</span>
+              Hizmete Açılacak <span className="text-emerald-600">Şehirler</span>
             </h2>
           </div>
 
@@ -244,11 +244,11 @@ export default function CitiesIndexPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">HİZMET KAPSAMI</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Türkiye Geneli <span className="text-indigo-600">Kapsam</span>
+              Türkiye Geneli <span className="text-emerald-600">Kapsam</span>
             </h2>
           </div>
 
@@ -273,19 +273,19 @@ export default function CitiesIndexPage() {
               <h3 className="text-2xl font-bold mb-6 text-gray-900">81 İl</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><TruckIcon className="h-5 w-5" /></div>
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><TruckIcon className="h-5 w-5" /></div>
                   <span>Her ile ücretsiz çekici</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><ZapIcon className="h-5 w-5" /></div>
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><ZapIcon className="h-5 w-5" /></div>
                   <span>24 saat içinde ekspertiz</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><BanknotesIcon className="h-5 w-5" /></div>
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><BanknotesIcon className="h-5 w-5" /></div>
                   <span>En yüksek fiyat garantisi</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center"><DocumentIcon className="h-5 w-5" /></div>
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><DocumentIcon className="h-5 w-5" /></div>
                   <span>Tüm evrak işlemleri</span>
                 </li>
               </ul>

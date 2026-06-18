@@ -54,7 +54,7 @@ export default function FloatingChatWidget() {
       {isOpen && (
         <div className="mb-4 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 animate-fadeIn overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white p-4 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#1A1F3A] to-[#252B4A] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center font-black text-lg">
                 HP
@@ -85,15 +85,15 @@ export default function FloatingChatWidget() {
                 <button
                   key={msg.id}
                   onClick={() => handleQuickMessage(msg.message)}
-                  className="w-full text-left p-3 bg-white hover:bg-indigo-50 border border-gray-200 hover:border-indigo-300 rounded-xl transition flex items-center gap-3 group"
+                  className="w-full text-left p-3 bg-white hover:bg-emerald-50 border border-gray-200 hover:border-emerald-300 rounded-xl transition flex items-center gap-3 group"
                 >
-                  <span className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                  <span className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
                     <ModernIcon name={msg.icon} label={msg.title} className="w-7 h-7" strokeWidth={2} />
                   </span>
-                  <span className="text-sm font-semibold text-gray-800 group-hover:text-indigo-600">
+                  <span className="text-sm font-semibold text-gray-800 group-hover:text-emerald-600">
                     {msg.title}
                   </span>
-                  <ArrowRightIcon className="w-4 h-4 ml-auto text-gray-400 group-hover:text-indigo-600 transform group-hover:translate-x-1 transition-transform" strokeWidth={2} />
+                  <ArrowRightIcon className="w-4 h-4 ml-auto text-gray-400 group-hover:text-emerald-600 transform group-hover:translate-x-1 transition-transform" strokeWidth={2} />
                 </button>
               ))}
             </div>
@@ -111,7 +111,7 @@ export default function FloatingChatWidget() {
           {/* Footer */}
           <div className="bg-gray-100 px-4 py-3 text-center">
             <p className="text-xs text-gray-600">
-              Genellikle <span className="font-bold text-indigo-600">5 dakika</span> içinde yanıt veriyoruz
+              Genellikle <span className="font-bold text-emerald-600">5 dakika</span> içinde yanıt veriyoruz
             </p>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function FloatingChatWidget() {
       {/* Chat Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 text-white flex items-center justify-center shadow-2xl hover:from-indigo-600 hover:to-violet-600 transition-all transform hover:scale-110 ${
+        className={`w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1A1F3A] to-[#252B4A] text-white flex items-center justify-center shadow-2xl hover:from-[#252B4A] hover:to-[#1A1F3A] transition-all transform hover:scale-110 ${
           isOpen ? 'rotate-0' : 'animate-pulse'
         }`}
         aria-label="Chat"

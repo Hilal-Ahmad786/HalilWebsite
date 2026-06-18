@@ -30,14 +30,14 @@ export default function CTASection({ title, subtitle, variant = 'urgent' }: CTAS
   // Variant styles
   const variantStyles = {
     urgent: {
-      container: 'bg-gradient-to-br from-indigo-500 to-violet-500',
-      badge: 'bg-white/15 text-white',
+      container: 'bg-gradient-to-br from-[#1A1F3A] to-[#252B4A]',
+      badge: 'bg-emerald-500/15 text-emerald-300',
       title: 'text-white',
-      subtitle: 'text-indigo-100',
+      subtitle: 'text-gray-300',
     },
     dark: {
       container: 'bg-gray-800',
-      badge: 'bg-indigo-500/15 text-indigo-300',
+      badge: 'bg-emerald-500/15 text-emerald-300',
       title: 'text-white',
       subtitle: 'text-gray-400',
     },

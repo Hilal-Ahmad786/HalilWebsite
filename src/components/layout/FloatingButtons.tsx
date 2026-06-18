@@ -104,7 +104,7 @@ export default function FloatingButtons() {
               {isChatOpen && (
                 <div className="absolute right-full mr-3 bottom-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 animate-fadeIn overflow-hidden">
                   {/* Header */}
-                  <div className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-4 py-3 flex items-center justify-between">
+                  <div className="bg-gradient-to-r from-[#1A1F3A] to-[#252B4A] text-white px-4 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-sm">
                         HP
@@ -134,15 +134,15 @@ export default function FloatingButtons() {
                         <button
                           key={msg.id}
                           onClick={() => handleQuickMessage(msg.message)}
-                          className="w-full text-left px-4 py-3 bg-white hover:bg-indigo-50 rounded-xl border border-gray-100 hover:border-indigo-200 transition flex items-center gap-3 group"
+                          className="w-full text-left px-4 py-3 bg-white hover:bg-emerald-50 rounded-xl border border-gray-100 hover:border-emerald-200 transition flex items-center gap-3 group"
                         >
-                          <span className="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                          <span className="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
                             <ModernIcon name={msg.icon} label={msg.title} className="w-7 h-7" strokeWidth={2} />
                           </span>
-                          <span className="font-medium text-gray-700 group-hover:text-indigo-600 text-sm">
+                          <span className="font-medium text-gray-700 group-hover:text-emerald-600 text-sm">
                             {msg.title}
                           </span>
-                          <ArrowRightIcon className="w-4 h-4 ml-auto text-gray-300 group-hover:text-indigo-500 transform group-hover:translate-x-1 transition-transform" strokeWidth={2} />
+                          <ArrowRightIcon className="w-4 h-4 ml-auto text-gray-300 group-hover:text-emerald-500 transform group-hover:translate-x-1 transition-transform" strokeWidth={2} />
                         </button>
                       ))}
                     </div>
@@ -158,7 +158,7 @@ export default function FloatingButtons() {
 
                   <div className="bg-white px-4 py-3 border-t border-gray-100 text-center">
                     <p className="text-xs text-gray-500">
-                      Genellikle <span className="font-semibold text-indigo-600">5 dakika</span> içinde yanıt veriyoruz
+                      Genellikle <span className="font-semibold text-emerald-600">5 dakika</span> içinde yanıt veriyoruz
                     </p>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export default function FloatingButtons() {
                 onClick={() => setIsChatOpen((prev) => !prev)}
                 onMouseEnter={() => setShowTooltip('chat')}
                 onMouseLeave={() => setShowTooltip(null)}
-                className={`relative w-14 h-14 bg-gradient-to-br from-indigo-500 to-violet-500 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300`}
+                className={`relative w-14 h-14 bg-gradient-to-br from-[#1A1F3A] to-[#252B4A] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300`}
                 aria-label="Chat"
               >
                 {isChatOpen ? (

@@ -59,8 +59,8 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
   // Determine accent color class based on service color
   const colorClasses = {
     lime: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
-    purple: { bg: 'bg-indigo-100', text: 'text-indigo-600', border: 'border-indigo-200' },
-    fuchsia: { bg: 'bg-violet-100', text: 'text-violet-600', border: 'border-violet-200' },
+    purple: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
+    fuchsia: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
   };
 
   const colors = colorClasses[service.color];
@@ -182,7 +182,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {service.shortTitle} Alımında{' '}
-              <span className="text-indigo-600">Neden Biz?</span>
+              <span className="text-emerald-600">Neden Biz?</span>
             </h2>
           </div>
 
@@ -221,11 +221,11 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">ARAÇ TÜRLERİ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hangi Araçları <span className="text-indigo-600">Alıyoruz?</span>
+              Hangi Araçları <span className="text-emerald-600">Alıyoruz?</span>
             </h2>
           </div>
 
@@ -291,7 +291,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               <span className="font-bold text-sm tracking-wide">ARAÇ TÜRÜNE GÖRE FİYAT</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hangi Araçta <span className="text-indigo-600">Ne Kadar?</span>
+              Hangi Araçta <span className="text-emerald-600">Ne Kadar?</span>
             </h2>
           </div>
           <div className="space-y-3">
@@ -384,7 +384,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-violet-100 text-violet-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">SIK SORULAN SORULAR</span>
             </div>
 
@@ -401,8 +401,8 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               >
                 <summary className="p-6 font-semibold text-gray-900 text-lg cursor-pointer hover:bg-gray-50 transition flex items-center justify-between">
                   <span>{faq.question}</span>
-                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-open:bg-indigo-100 transition-colors">
-                    <svg className="w-5 h-5 text-gray-500 group-open:text-indigo-600 transform group-open:rotate-180 transition-all" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-open:bg-emerald-100 transition-colors">
+                    <svg className="w-5 h-5 text-gray-500 group-open:text-emerald-600 transform group-open:rotate-180 transition-all" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -422,7 +422,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Diğer <span className="text-indigo-600">Hizmetlerimiz</span>
+              Diğer <span className="text-emerald-600">Hizmetlerimiz</span>
             </h2>
             <p className="text-gray-600 mt-3">Aracınızın durumuna göre size en uygun hizmeti seçin</p>
           </div>

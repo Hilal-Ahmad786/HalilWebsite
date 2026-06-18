@@ -92,7 +92,7 @@ export default function Footer() {
                   href={siteConfig.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 transition-all duration-300 group"
+                  className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-emerald-600 hover:to-pink-500 transition-all duration-300 group"
                   aria-label="Instagram"
                 >
                   <InstagramIcon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />

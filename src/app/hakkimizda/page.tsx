@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-indigo-900/80 to-gray-800 pt-40 md:pt-44 pb-16">
+      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1A1F3A] via-[#252B4A] to-[#1A1F3A] pt-40 md:pt-44 pb-16">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -29,7 +29,7 @@ export default function AboutPage() {
         </div>
 
         {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-indigo-500/15 to-transparent transform skew-x-12"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -91,11 +91,11 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">HİKAYEMİZ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Bizim <span className="text-indigo-600">Hikayemiz</span>
+              Bizim <span className="text-emerald-600">Hikayemiz</span>
             </h2>
           </div>
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-all">
-              <div className="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
                 <ModernIcon name="anında" className="w-12 h-12 scale-125" strokeWidth={2.25} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Hız</h3>
@@ -149,7 +149,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-all">
-              <div className="w-14 h-14 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
                 <ModernIcon name="tecrübe" className="w-12 h-12 scale-125" strokeWidth={2.25} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Profesyonellik</h3>
@@ -165,11 +165,11 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-indigo-100 text-indigo-600 px-6 py-3 mb-6 rounded-full">
+            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
               <span className="font-bold text-sm tracking-wide">AVANTAJLARIMIZ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Neden <span className="text-indigo-600">Hasar Park?</span>
+              Neden <span className="text-emerald-600">Hasar Park?</span>
             </h2>
           </div>
 

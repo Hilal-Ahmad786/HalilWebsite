@@ -15,13 +15,13 @@ export default function ServicesGrid() {
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-16">
-          <div className="inline-block bg-indigo-500/10 text-indigo-600 px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6 rounded-full">
+          <div className="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6 rounded-full">
             <span className="font-semibold text-xs sm:text-sm">Hizmetlerimiz</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Hangi Araçları
-            <span className="block text-indigo-600">Satın Alıyoruz?</span>
+            <span className="block text-emerald-600">Satın Alıyoruz?</span>
           </h2>
 
           <p className="text-sm sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -41,18 +41,18 @@ export default function ServicesGrid() {
                 button: 'bg-emerald-500 text-white hover:bg-emerald-600',
               },
               purple: {
-                border: 'border-indigo-200',
-                bg: 'bg-indigo-50',
-                text: 'text-indigo-600',
-                hover: 'hover:border-indigo-300',
-                button: 'bg-indigo-500 text-white hover:bg-indigo-600',
+                border: 'border-emerald-200',
+                bg: 'bg-emerald-50',
+                text: 'text-emerald-600',
+                hover: 'hover:border-emerald-300',
+                button: 'bg-emerald-500 text-white hover:bg-emerald-600',
               },
               fuchsia: {
-                border: 'border-violet-200',
-                bg: 'bg-violet-50',
-                text: 'text-violet-600',
-                hover: 'hover:border-violet-300',
-                button: 'bg-violet-500 text-white hover:bg-violet-600',
+                border: 'border-emerald-200',
+                bg: 'bg-emerald-50',
+                text: 'text-emerald-600',
+                hover: 'hover:border-emerald-300',
+                button: 'bg-emerald-500 text-white hover:bg-emerald-600',
               },
             };
 
