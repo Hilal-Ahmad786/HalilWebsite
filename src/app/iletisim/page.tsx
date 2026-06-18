@@ -1,5 +1,6 @@
 'use client';
 
+import SectionLabel from "@/components/ui/SectionLabel";
 // ===== FILE: src/app/iletisim/page.tsx =====
 
 import { siteConfig } from '@/config/site';
@@ -48,7 +49,7 @@ export default function ContactPage() {
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Bize
-                <span className="block text-emerald-400">Ulaşın</span>
+                <span className="block text-lime-400">Ulaşın</span>
               </h1>
 
               {/* Subheadline */}
@@ -184,9 +185,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto">
             <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100">
               <div className="text-center mb-8">
-                <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-4 rounded-full">
-                  <span className="font-bold text-sm tracking-wide">İLETİŞİM FORMU</span>
-                </div>
+                <SectionLabel>İLETİŞİM FORMU</SectionLabel>
                 <h2 className="text-3xl font-bold text-gray-900">
                   Bize Mesaj Gönderin
                 </h2>

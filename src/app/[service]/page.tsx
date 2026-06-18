@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               {/* Title */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 {service.hero.title}
-                <span className="block text-emerald-400">{service.hero.titleHighlight}</span>
+                <span className="block text-lime-400">{service.hero.titleHighlight}</span>
               </h1>
 
               {/* Subtitle */}

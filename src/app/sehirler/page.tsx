@@ -1,3 +1,4 @@
+import SectionLabel from "@/components/ui/SectionLabel";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllCities, getCitiesByRegion } from '@/data/cities';
@@ -63,7 +64,7 @@ export default function CitiesIndexPage() {
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Türkiye Geneli
-                <span className="block text-emerald-400">Araç Alım Hizmeti</span>
+                <span className="block text-lime-400">Araç Alım Hizmeti</span>
               </h1>
 
               {/* Subheadline */}
@@ -135,9 +136,7 @@ export default function CitiesIndexPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">AKTİF ŞEHİRLER</span>
-            </div>
+            <SectionLabel>AKTİF ŞEHİRLER</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Başlıca <span className="text-emerald-600">Şehirler</span>
             </h2>
@@ -188,9 +187,7 @@ export default function CitiesIndexPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">YAKINDA</span>
-            </div>
+            <SectionLabel>YAKINDA</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Hizmete Açılacak <span className="text-emerald-600">Şehirler</span>
             </h2>
@@ -244,9 +241,7 @@ export default function CitiesIndexPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">HİZMET KAPSAMI</span>
-            </div>
+            <SectionLabel>HİZMET KAPSAMI</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Türkiye Geneli <span className="text-emerald-600">Kapsam</span>
             </h2>

@@ -51,7 +51,7 @@ export default function BlogPage() {
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Araç Alım
-                <span className="block text-emerald-400">Rehberi</span>
+                <span className="block text-lime-400">Rehberi</span>
               </h1>
 
               {/* Subheadline */}

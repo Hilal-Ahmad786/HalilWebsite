@@ -53,7 +53,7 @@ export default function HeroSection() {
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Aracınız
-              <span className="block text-emerald-400">Nakde Dönsün</span>
+              <span className="block text-lime-400">Nakde Dönsün</span>
             </h1>
 
             {/* Subheadline */}

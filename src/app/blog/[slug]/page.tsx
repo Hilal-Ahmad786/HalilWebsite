@@ -1,3 +1,4 @@
+import SectionLabel from "@/components/ui/SectionLabel";
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -305,9 +306,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
-              <div className="inline-block bg-emerald-100 text-emerald-700 px-6 py-3 mb-6 rounded-full">
-                <span className="font-bold text-sm tracking-wide">İLGİLİ YAZILAR</span>
-              </div>
+              <SectionLabel>İLGİLİ YAZILAR</SectionLabel>
               <h2 className="text-3xl font-bold text-gray-900">
                 İlginizi <span className="text-emerald-700">Çekebilir</span>
               </h2>

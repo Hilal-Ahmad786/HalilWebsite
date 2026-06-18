@@ -1,3 +1,4 @@
+import SectionLabel from "@/components/ui/SectionLabel";
 // ===== FILE: src/app/hakkimizda/page.tsx =====
 
 import { Metadata } from 'next';
@@ -43,7 +44,7 @@ export default function AboutPage() {
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Türkiye'nin
-                <span className="block text-emerald-400">En Güvenilir Firması</span>
+                <span className="block text-lime-400">En Güvenilir Firması</span>
               </h1>
 
               {/* Subheadline */}
@@ -91,9 +92,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">HİKAYEMİZ</span>
-            </div>
+            <SectionLabel>HİKAYEMİZ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Bizim <span className="text-emerald-600">Hikayemiz</span>
             </h2>
@@ -119,9 +118,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">DEĞERLERİMİZ</span>
-            </div>
+            <SectionLabel>DEĞERLERİMİZ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Temel Değerlerimiz
             </h2>
@@ -165,9 +162,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">AVANTAJLARIMIZ</span>
-            </div>
+            <SectionLabel>AVANTAJLARIMIZ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Neden <span className="text-emerald-600">Hasar Park?</span>
             </h2>

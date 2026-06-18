@@ -1,3 +1,4 @@
+import SectionLabel from "@/components/ui/SectionLabel";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
@@ -45,7 +46,7 @@ export default function ServicesPage() {
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Araç Alım
-                <span className="block text-emerald-400">Hizmetlerimiz</span>
+                <span className="block text-lime-400">Hizmetlerimiz</span>
               </h1>
 
               {/* Subheadline */}
@@ -95,9 +96,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">ARAÇ ALIM HİZMETLERİ</span>
-            </div>
+            <SectionLabel>ARAÇ ALIM HİZMETLERİ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Tüm <span className="text-emerald-600">Hizmetlerimiz</span>
             </h2>
@@ -157,9 +156,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">NEDEN BİZ?</span>
-            </div>
+            <SectionLabel>NEDEN BİZ?</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Hasar Park <span className="text-emerald-600">Avantajları</span>
             </h2>
@@ -193,9 +190,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">ARAÇ TÜRLERİ</span>
-            </div>
+            <SectionLabel>ARAÇ TÜRLERİ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Hangi Araçları <span className="text-emerald-600">Alıyoruz?</span>
             </h2>

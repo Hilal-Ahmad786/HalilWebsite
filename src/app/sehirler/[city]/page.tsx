@@ -1,3 +1,4 @@
+import SectionLabel from "@/components/ui/SectionLabel";
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -108,7 +109,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               {/* Title */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 {city.hero.title}
-                <span className="block text-emerald-400">{city.hero.titleHighlight}</span>
+                <span className="block text-lime-400">{city.hero.titleHighlight}</span>
               </h1>
 
               {/* Subtitle */}
@@ -210,9 +211,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">HİZMETLERİMİZ</span>
-            </div>
+            <SectionLabel>HİZMETLERİMİZ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {city.name}'da{' '}
               <span className="text-emerald-600">Hizmetlerimiz</span>
@@ -289,9 +288,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
-              <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-                <span className="font-bold text-sm tracking-wide">İLÇE HİZMETLERİ</span>
-              </div>
+              <SectionLabel>İLÇE HİZMETLERİ</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                 İlçeye Göre <span className="text-emerald-600">Hizmet</span>
               </h2>
@@ -318,9 +315,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">AVANTAJLARIMIZ</span>
-            </div>
+            <SectionLabel>AVANTAJLARIMIZ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {city.name}'da <span className="text-emerald-600">Neden Biz?</span>
             </h2>
@@ -351,9 +346,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">MÜŞTERİ YORUMLARI</span>
-            </div>
+            <SectionLabel>MÜŞTERİ YORUMLARI</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {city.name}'dan <span className="text-emerald-600">Yorumlar</span>
             </h2>
@@ -408,9 +401,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">HİZMET BÖLGELERİ</span>
-            </div>
+            <SectionLabel>HİZMET BÖLGELERİ</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Hizmet Verdiğimiz <span className="text-emerald-600">İlçeler</span>
             </h2>
@@ -457,9 +448,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">SIK SORULAN SORULAR</span>
-            </div>
+            <SectionLabel>SIK SORULAN SORULAR</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {city.name} İçin <span className="text-emerald-600">SSS</span>
             </h2>
