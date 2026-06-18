@@ -1,7 +1,7 @@
 // src/config/site.ts
 export const siteConfig = {
   name: 'Hasar Park',
-  description: 'Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 20+ Yıl Tecrübe, 100.000+ Mutlu Müşteri.',
+  description: 'Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 100.000+ Mutlu Müşteri.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hasarpark.com',
 
   // CRITICAL: Main conversion points for Hasar Park
@@ -91,7 +91,7 @@ export const siteConfig = {
     },
     {
       icon: '🏆',
-      title: '20+ Yıl Tecrübe',
+      title: '7+ Yıl Tecrübe',
       description: '100.000+ mutlu müşteri',
     },
   ],
@@ -127,7 +127,7 @@ export const siteConfig = {
   // Stats for homepage
   stats: [
     {
-      value: '20+',
+      value: '7+',
       label: 'YIL TECRÜBE',
       color: 'lime',
     },

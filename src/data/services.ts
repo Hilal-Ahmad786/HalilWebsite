@@ -129,7 +129,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         icon: '🏆',
         title: 'Tecrübeli Ekip',
-        description: '20+ yıl kazalı araç alım satım tecrübesi.',
+        description: '7+ yıl kazalı araç alım satım tecrübesi.',
       },
     ],
 
@@ -140,7 +140,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         question: 'Hangi tür kazalı araçları alıyorsunuz?',
-        answer: 'Hasar türü veya boyutundan bağımsız olarak tüm kazalı araçları alıyoruz. Ön çarpma, yan çarpma, arkadan çarpma, devrilme ve takla atmış araçların tamamı alım kapsamımızdadır. Motor hasarlı, şanzıman hasarlı, diferansiyel hasarlı, kaporta hasarlı, hava yastığı patlamış ve şasi hasarlı araçlar da değerlendiriyoruz. Sürülemez durumda, hareket edemeyen veya yangın geçirmiş araçlar için de ücretsiz çekici ile yerinden alım yapıyoruz. 20+ yıllık tecrübemizle karşılaşmadığımız hasar türü neredeyse kalmamıştır.',
+        answer: 'Hasar türü veya boyutundan bağımsız olarak tüm kazalı araçları alıyoruz. Ön çarpma, yan çarpma, arkadan çarpma, devrilme ve takla atmış araçların tamamı alım kapsamımızdadır. Motor hasarlı, şanzıman hasarlı, diferansiyel hasarlı, kaporta hasarlı, hava yastığı patlamış ve şasi hasarlı araçlar da değerlendiriyoruz. Sürülemez durumda, hareket edemeyen veya yangın geçirmiş araçlar için de ücretsiz çekici ile yerinden alım yapıyoruz. 7+ yıllık tecrübemizle karşılaşmadığımız hasar türü neredeyse kalmamıştır.',
       },
       {
         question: 'Kazalı araç için ne kadar ödeme yapıyorsunuz?',
@@ -224,7 +224,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       whyChooseUs: [
         'Türkiye\'nin en yüksek kazalı araç fiyatlarını veriyoruz',
-        '20+ yıl kazalı araç alım satım tecrübesi',
+        '7+ yıl kazalı araç alım satım tecrübesi',
         'Her marka ve model için profesyonel değerlendirme',
         'Şeffaf ve güvenilir işlem süreci',
         'Tüm Türkiye\'de ücretsiz çekici hizmeti',
@@ -300,7 +300,7 @@ export const servicesData: Record<string, ServiceData> = {
     faqs: [
       {
         question: 'Hangi tür hasarlı araçları alıyorsunuz?',
-        answer: 'Motor hasarlı, şanzıman hasarlı, kaporta hasarlı, elektrik sistemi hasarlı, fren sistemi arızalı, süspansiyon hasarlı, diferansiyel hasarlı ve tüm mekanik hasarlı araçları alıyoruz. Tek bir parçası arızalı araçtan kapsamlı çoklu hasara kadar her durumu değerlendiriyoruz. Aracın çalışıp çalışmaması da fark etmez; hareket edemeyen araçlarınızı ücretsiz çekici ile istediğiniz noktadan teslim alıyoruz. 20 yılı aşkın tecrübemizle hangi hasar türü olursa olsun size adil ve en yüksek fiyatı sunuyoruz.',
+        answer: 'Motor hasarlı, şanzıman hasarlı, kaporta hasarlı, elektrik sistemi hasarlı, fren sistemi arızalı, süspansiyon hasarlı, diferansiyel hasarlı ve tüm mekanik hasarlı araçları alıyoruz. Tek bir parçası arızalı araçtan kapsamlı çoklu hasara kadar her durumu değerlendiriyoruz. Aracın çalışıp çalışmaması da fark etmez; hareket edemeyen araçlarınızı ücretsiz çekici ile istediğiniz noktadan teslim alıyoruz. 7 yılı aşkın tecrübemizle hangi hasar türü olursa olsun size adil ve en yüksek fiyatı sunuyoruz.',
       },
       {
         question: 'Motor arızalı araç için de alım yapıyor musunuz?',
@@ -407,7 +407,7 @@ export const servicesData: Record<string, ServiceData> = {
     color: 'fuchsia',
 
     metaTitle: 'Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Hasar Park',
-    metaDescription: 'Sigorta pert raporlu araçlar için özel değerlendirme. 20+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.',
+    metaDescription: 'Sigorta pert raporlu araçlar için özel değerlendirme. 7+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.',
     keywords: [
       'pert araç alan',
       'pert araç satmak',
@@ -428,7 +428,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         icon: '📋',
         title: 'Pert Raporu Uzmanı',
-        description: 'Pert raporu olan araçlarda 20+ yıl tecrübe.',
+        description: 'Pert raporu olan araçlarda 7+ yıl tecrübe.',
       },
       {
         icon: '💰',
@@ -464,7 +464,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         question: 'Pert raporlu araç satılır mı?',
-        answer: 'Evet, pert raporlu araçlar Türkiye\'de yasal olarak satılabilir ve alınabilir. Pert raporu bir araç satış engeli oluşturmaz; aksine araç için özel bir statü tanımlar. Satış işlemi noterde gerçekleştirilir ve pert bilgisi resmi kayıtlara geçer. Alıcı bu durumdan haberdar olarak işlem yapar. Hasar Park olarak pert araç alımında 20 yılı aşkın tecrübemizle tüm yasal süreçleri sizin adınıza yürütüyoruz. Pert raporunuz olsun ya da olmasın, sigorta sürecinin hangi aşamasında olduğunuzdan bağımsız olarak aracınızı değerlendiriyor ve en yüksek teklifi sunuyoruz.',
+        answer: 'Evet, pert raporlu araçlar Türkiye\'de yasal olarak satılabilir ve alınabilir. Pert raporu bir araç satış engeli oluşturmaz; aksine araç için özel bir statü tanımlar. Satış işlemi noterde gerçekleştirilir ve pert bilgisi resmi kayıtlara geçer. Alıcı bu durumdan haberdar olarak işlem yapar. Hasar Park olarak pert araç alımında 7 yılı aşkın tecrübemizle tüm yasal süreçleri sizin adınıza yürütüyoruz. Pert raporunuz olsun ya da olmasın, sigorta sürecinin hangi aşamasında olduğunuzdan bağımsız olarak aracınızı değerlendiriyor ve en yüksek teklifi sunuyoruz.',
       },
       {
         question: 'Pert aracın değeri ne kadardır?',
@@ -542,7 +542,7 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       whyChooseUs: [
-        'Pert araç alımında 20+ yıl tecrübe',
+        'Pert araç alımında 7+ yıl tecrübe',
         'En yüksek pert araç fiyatları',
         'Tüm yasal işlemler bizden',
         'Hızlı değerlendirme ve ödeme',

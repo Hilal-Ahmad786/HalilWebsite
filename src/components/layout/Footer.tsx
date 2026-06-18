@@ -53,7 +53,7 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Türkiye'nin en güvenilir hasarlı, kazalı ve pert araç alım merkezi.
-              20+ yıllık tecrübe, 100.000+ mutlu müşteri ile 7/24 hizmetinizdeyiz.
+              7+ yıllık tecrübe, 100.000+ mutlu müşteri ile 7/24 hizmetinizdeyiz.
             </p>
 
             {/* Contact Info Quick */}

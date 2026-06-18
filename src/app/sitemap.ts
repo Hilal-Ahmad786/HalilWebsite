@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { siteConfig } from '@/config/site';
 import { getAllCities } from '@/data/cities';
 import { getAllServices } from '@/data/services';
+import { getAllPosts } from '@/data/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = siteConfig.url;
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Static routes
     const routes = [
         '',
+        '/hizmetler',
         '/hakkimizda',
         '/iletisim',
         '/blog',
@@ -19,6 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: currentDate,
         changeFrequency: 'daily' as const,
         priority: route === '' ? 1 : 0.8,
+    }));
+
+    // Blog posts
+    const posts = getAllPosts().map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
     }));
 
     // Service routes
@@ -37,5 +47,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...routes, ...services, ...cities];
+    return [...routes, ...services, ...cities, ...posts];
 }

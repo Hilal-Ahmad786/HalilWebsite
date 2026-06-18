@@ -12,6 +12,33 @@ declare global {
 
 
 
+// ===== GOOGLE ADS CONVERSION HELPER =====
+// Fires a gtag conversion straight to Google Ads when an AW- conversion ID and
+// the matching label are configured. No-ops cleanly when GTM owns conversions
+// (empty env) so nothing ever double-counts.
+
+type AdsConversionType = 'phone' | 'whatsapp' | 'form';
+
+const fireAdsConversion = (type: AdsConversionType, value: number) => {
+  const { conversionId, conversionLabels } = analyticsConfig.googleAds;
+  const label = conversionLabels[type];
+
+  if (
+    !conversionId ||
+    !label ||
+    typeof window === 'undefined' ||
+    typeof window.gtag !== 'function'
+  ) {
+    return;
+  }
+
+  window.gtag('event', 'conversion', {
+    send_to: `${conversionId}/${label}`,
+    value,
+    currency: 'TRY',
+  });
+};
+
 // ===== PHONE TRACKING - PRIMARY CONVERSION =====
 
 export const trackPhoneClick = (location: string = 'unknown') => {
@@ -27,6 +54,9 @@ export const trackPhoneClick = (location: string = 'unknown') => {
       value: 150, // Lead value
     });
   }
+
+  // Google Ads (only when AW- ID + label configured)
+  fireAdsConversion('phone', 150);
 
   // Facebook Pixel (Kept separate)
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
@@ -55,6 +85,9 @@ export const trackWhatsAppClick = (location: string = 'unknown') => {
     });
   }
 
+  // Google Ads (only when AW- ID + label configured)
+  fireAdsConversion('whatsapp', 120);
+
   // Facebook Pixel
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Contact', {
@@ -81,6 +114,9 @@ export const trackFormSubmit = (formName: string = 'contact_form') => {
       value: 200,
     });
   }
+
+  // Google Ads (only when AW- ID + label configured)
+  fireAdsConversion('form', 200);
 
   // Facebook Pixel
   if (analyticsConfig.facebook.enabled && typeof window !== 'undefined' && window.fbq) {

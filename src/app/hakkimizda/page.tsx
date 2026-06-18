@@ -10,7 +10,7 @@ import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export const metadata: Metadata = {
   title: 'Hakkımızda - Hasar Park | Türkiye\'nin En Güvenilir Araç Alım Merkezi',
-  description: '20+ yıl tecrübe, 100.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin lider firmasıyız.',
+  description: '7+ yıl tecrübe, 100.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye\'nin lider firmasıyız.',
 };
 
 export default function AboutPage() {
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
               {/* Subheadline */}
               <p className="text-xl md:text-2xl mb-12 text-gray-300 leading-relaxed max-w-xl">
-                20+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma.
+                7+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma.
                 100.000+ mutlu müşteri ile Türkiye'nin lideriyiz.
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
 
           <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
             <p>
-              <strong className="text-gray-900">Hasar Park</strong>, 2000 yılından bu yana Türkiye'nin dört bir yanında kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 20 yılı aşkın tecrübemiz ve 100.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
+              <strong className="text-gray-900">Hasar Park</strong>, 2018 yılından bu yana Türkiye'nin dört bir yanında kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 7 yılı aşkın tecrübemiz ve 100.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
             </p>
 
             <p>
@@ -154,7 +154,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Profesyonellik</h3>
               <p className="text-gray-600">
-                20+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.
+                7+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.
               </p>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
       {/* CTA */}
       <CTASection
         title="BİZİMLE ÇALIŞIN"
-        subtitle="20 yıllık tecrübemizden faydalanın, en yüksek fiyatı alın"
+        subtitle="7 yıllık tecrübemizden faydalanın, en yüksek fiyatı alın"
         variant="lime"
       />
     </div>

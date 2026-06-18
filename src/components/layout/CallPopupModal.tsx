@@ -201,7 +201,7 @@ export default function CallPopupModal() {
           <div className="bg-gray-50 px-5 py-3 text-center border-t border-gray-200">
             <p className="inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs text-gray-600">
               <ShieldCheckIcon className="h-4 w-4 text-emerald-600" />
-              <span>Güvenli ve Gizli • <span className="font-bold">20+ Yıl Tecrübe</span> • 100K+ Mutlu Müşteri</span>
+              <span>Güvenli ve Gizli • <span className="font-bold">7+ Yıl Tecrübe</span> • 100K+ Mutlu Müşteri</span>
             </p>
           </div>
         </div>

@@ -49,7 +49,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>En Yüksek Fiyatı Nasıl Alırsınız?</h2>
-<p>Birden fazla alıcıdan teklif alın ve karşılaştırın. Hasar Park, 20+ yıllık tecrübesiyle piyasa araştırması yaparak size her zaman en yüksek teklifi sunar. Üstelik ücretsiz çekici, noter işlemi ve anında ödeme ile süreç tamamen zahmetsizdir.</p>
+<p>Birden fazla alıcıdan teklif alın ve karşılaştırın. Hasar Park, 7+ yıllık tecrübesiyle piyasa araştırması yaparak size her zaman en yüksek teklifi sunar. Üstelik ücretsiz çekici, noter işlemi ve anında ödeme ile süreç tamamen zahmetsizdir.</p>
 
 <h2>Kazalı Araç Satışında Yapılan Yaygın Hatalar</h2>
 <p>En yaygın hata, aracı tamir ettirdikten sonra satmaya çalışmaktır. Çoğu zaman tamir maliyeti aracın piyasa değerini aşar ve bu yaklaşım ekonomik açıdan mantıklı değildir. İkinci yaygın hata ise sadece tanıdıklara satmaya çalışmak; profesyonel alıcılar genellikle çok daha iyi fiyat teklifleri sunar.</p>
@@ -165,7 +165,7 @@ export const blogPosts: BlogPost[] = [
 <p>Elektrik arızaları, modern araçlarda giderek daha karmaşık ve maliyetli hale gelmektedir. ECU (motor kontrol ünitesi) veya airbag sistemi arızaları değeri %20-35 oranında düşürebilir. Hibrit veya elektrikli araçlarda pil sistemi hasarı ise çok daha büyük değer kayıplarına neden olur.</p>
 
 <h2>Hasarlı Araç Satışında En İyi Strateji</h2>
-<p>Hasarlı araçları tamir ettirmeden doğrudan satmak çoğu zaman daha mantıklıdır. Tamir maliyeti ile satış fiyatı karşılaştırıldığında, çoğu durumda hasarlı aracı olduğu gibi satmak daha yüksek net gelir sağlar. Hasar Park, hasarlı araç alımında 20+ yıllık tecrübesiyle size adil ve en yüksek fiyatı sunar.</p>
+<p>Hasarlı araçları tamir ettirmeden doğrudan satmak çoğu zaman daha mantıklıdır. Tamir maliyeti ile satış fiyatı karşılaştırıldığında, çoğu durumda hasarlı aracı olduğu gibi satmak daha yüksek net gelir sağlar. Hasar Park, hasarlı araç alımında 7+ yıllık tecrübesiyle size adil ve en yüksek fiyatı sunar.</p>
 
 <h2>Ne Yapmalısınız?</h2>
 <p>Önce ücretsiz değerlendirme yaptırın, ardından tamir maliyetiyle karşılaştırın. Hasar Park'ı arayın; 30 dakika içinde hasarlı aracınız için net teklif alın ve en doğru kararı verin.</p>
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
 <p>Sigorta şirketinin ilk teklifi her zaman en iyi teklif değildir. Bağımsız değerlendirme yaptırmak ve itiraz haklarınızı kullanmak daha yüksek tazminat almanızı sağlayabilir.</p>
 
 <h2>Hasar Park ile En Yüksek Fiyatı Garantileyin</h2>
-<p>Hasar Park, 20+ yıllık tecrübesiyle hasarlı araç alımında Türkiye'nin en yüksek fiyatlarını sunmaktadır. Ücretsiz ekspertiz, anında teklif, ücretsiz çekici ve noter işlemleri dahil eksiksiz hizmet. Hemen arayın: +90 534 580 93 15</p>
+<p>Hasar Park, 7+ yıllık tecrübesiyle hasarlı araç alımında Türkiye'nin en yüksek fiyatlarını sunmaktadır. Ücretsiz ekspertiz, anında teklif, ücretsiz çekici ve noter işlemleri dahil eksiksiz hizmet. Hemen arayın: +90 534 580 93 15</p>
     `,
     image: '/images/blog/en-yuksek-fiyata-arac-satisi.png',
     category: 'Strateji',

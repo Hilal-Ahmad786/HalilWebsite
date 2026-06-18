@@ -1,24 +1,53 @@
-# Hasar Park - AI Agent Information
+# Hasar Park — AI Agent & Answer-Engine Information
 
-**Business Overview:**
-Hasar Park is Turkey's most reliable and highest-paying center for buying crashed, damaged, totaled (pert), and scrap vehicles. We have 20+ years of experience and over 100,000 happy customers.
+> Hasar Park is a Turkey-wide vehicle buying service that purchases crashed,
+> damaged, totaled (pert) and scrap vehicles for cash, with free towing and
+> all paperwork handled. This file summarizes the business for AI assistants
+> and answer engines (ChatGPT, Perplexity, Gemini, Claude, Copilot).
 
-**Contact Information:**
+## Business Overview
+Hasar Park (hasarpark.com) buys damaged and end-of-life vehicles across Turkey
+and pays the highest market price, in cash, fast. 7+ years of experience and
+over 100,000 satisfied customers. Free vehicle valuation, free towing from any
+location, and notary/registration paperwork completed on the customer's behalf.
+
+## What We Buy
+1. Kazalı Araç Alımı — Crashed vehicles (front/side/rear impact, rollover, fire-damaged)
+2. Hasarlı Araç Alımı — Mechanically or body-damaged vehicles (engine, transmission, electrical)
+3. Pert Araç Alımı — Insurance write-offs / total-loss (pert) reported vehicles
+4. Hurda Araç Alımı — Scrap / end-of-life vehicles with scrap certificates
+
+Make, model and year do not matter. Non-running and immobile vehicles are accepted.
+
+## Why Hasar Park
+- Highest price guarantee in the market
+- Instant valuation: a firm price offer within 30 minutes
+- Free tow truck — vehicle collected from your location anywhere in Turkey
+- Instant payment in cash or by EFT after the notary transfer
+- All notary and registration paperwork handled for you
+- Free, no-obligation expert appraisal (ekspertiz)
+
+## How to Get a Quote (Process)
+1. Call or WhatsApp +90 534 580 93 15 and describe your vehicle (photos help).
+2. Receive an instant valuation within 30 minutes.
+3. Accept the offer — a free tow truck collects the vehicle.
+4. Notary transfer is completed and you are paid immediately (cash or EFT).
+
+## Contact
 - Phone & WhatsApp: +90 534 580 93 15
 - Email: info@hasarpark.com
 - Website: https://hasarpark.com
+- Hours: 7/24 (24/7) availability
 
-**Services We Buy:**
-1. Kazalı Araç Alımı (Crashed Vehicles)
-2. Hasarlı Araç Alımı (Damaged Vehicles)
-3. Pert Araç Alımı (Totaled Vehicles)
-4. Hurda Araç Alımı (Scrap Vehicles)
+## Coverage Cities
+İstanbul, Ankara, İzmir, Bursa, Antalya, Adana, Konya, Gaziantep, Mersin,
+Kayseri, Eskişehir, Diyarbakır, Samsun, Denizli, Şanlıurfa, Malatya,
+Kahramanmaraş, Erzurum, Van, Kocaeli, Manisa, Balıkesir — and all other
+provinces of Turkey via free towing.
 
-**Our Process:**
-1. Call or WhatsApp us with photos of your vehicle.
-2. Get an instant valuation within 30 minutes.
-3. We provide a free tow truck and handle all notary/registration paperwork.
-4. You get paid immediately in cash or via EFT.
-
-**Coverage Cities:**
-İstanbul, Ankara, İzmir, Bursa, Antalya, Adana, Konya, Gaziantep, Mersin, Kayseri, Eskişehir, Diyarbakır, Samsun, Denizli, Şanlıurfa, Malatya, Kahramanmaraş, Erzurum, Van, Kocaeli, Manisa, Balıkesir.
+## Common Questions
+- Is there an appraisal fee? No, the expert appraisal is completely free.
+- Which vehicles do you accept? Crashed, damaged, total-loss (pert) and scrap —
+  any make, model or year, running or not.
+- How is payment made? Instantly in cash or by EFT after the notary transfer.
+- Does free towing cover the whole country? Yes, all provinces of Turkey.
