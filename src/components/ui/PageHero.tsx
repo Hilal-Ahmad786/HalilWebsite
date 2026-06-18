@@ -49,7 +49,7 @@ export default function PageHero({
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           {title}
           {titleHighlight && (
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-400">
               {titleHighlight}
             </span>
           )}

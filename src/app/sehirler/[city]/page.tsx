@@ -179,7 +179,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
               {/* Support */}
               <div className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/15 transition-all transform hover:-translate-y-1">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-sky-400 mb-2 leading-none">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-2 leading-none">
                   7/24
                 </div>
                 <div className="text-sm text-gray-300 font-medium">

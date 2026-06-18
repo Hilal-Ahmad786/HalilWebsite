@@ -1,7 +1,16 @@
 import SectionLabel from "@/components/ui/SectionLabel";
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site';
+
+// Real damage photos already in /public/images, keyed by service id
+const serviceImages: Record<string, string> = {
+  kazali: '/images/kazali-arac.png',
+  hasarli: '/images/hasarli-arac.png',
+  pert: '/images/pert-arac.png',
+  hurda: '/images/hurda-arac.png',
+};
 import CTASection from '@/components/sections/CTASection';
 import SocialProof from '@/components/ui/SocialProof';
 import TrustBadges from '@/components/ui/TrustBadges';
@@ -105,38 +114,49 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {[
-              { ...siteConfig.services[0], borderColor: 'border-l-emerald-500', iconBg: 'bg-emerald-50', textColor: 'text-emerald-600', badge: '30 Dakika' },
-              { ...siteConfig.services[1], borderColor: 'border-l-orange-500', iconBg: 'bg-orange-50', textColor: 'text-orange-600', badge: 'Ücretsiz Ekspertiz' },
-              { ...siteConfig.services[2], borderColor: 'border-l-sky-500', iconBg: 'bg-sky-50', textColor: 'text-sky-600', badge: 'Özel Değerlendirme' },
-              { ...siteConfig.services[3], borderColor: 'border-l-teal-500', iconBg: 'bg-teal-50', textColor: 'text-teal-600', badge: 'Resmi Belgeli' },
+              { ...siteConfig.services[0], badge: '30 Dakika' },
+              { ...siteConfig.services[1], badge: 'Ücretsiz Ekspertiz' },
+              { ...siteConfig.services[2], badge: 'Özel Değerlendirme' },
+              { ...siteConfig.services[3], badge: 'Resmi Belgeli' },
             ].map((service) => (
               <Link
                 key={service.id}
                 href={`/${service.slug}`}
-                className={`group bg-white p-8 rounded-2xl border border-gray-100 border-l-4 ${service.borderColor} shadow-md hover:shadow-2xl transition-all hover:-translate-y-1`}
+                className="group flex overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-sm hover:shadow-lg hover:border-emerald-200 transition-all hover:-translate-y-1"
               >
-                <div className="flex items-start gap-6">
-                  <div className={`w-20 h-20 ${service.iconBg} ${service.textColor} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform overflow-visible`}>
-                    <ModernIcon name={service.icon} label={service.title} className="h-16 w-16 scale-125" strokeWidth={2.25} />
+                {/* Real damage photo */}
+                <div className="relative w-28 sm:w-44 flex-shrink-0 overflow-hidden bg-gray-100">
+                  <Image
+                    src={serviceImages[service.id] ?? '/images/kazali-arac.png'}
+                    alt={`${service.title} - Hasar Park`}
+                    fill
+                    sizes="(max-width: 768px) 40vw, 220px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/10" />
+                  <div className="absolute bottom-2 left-2 flex h-9 w-9 items-center justify-center rounded-xl bg-white/95 text-emerald-600 shadow-sm overflow-visible">
+                    <ModernIcon name={service.icon} label={service.title} className="h-7 w-7 scale-110" strokeWidth={2.25} />
                   </div>
-                  <div className="flex-1">
-                    <div className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 ${service.iconBg} ${service.textColor}`}>
-                      {service.badge}
-                    </div>
-                    <h3 className={`text-2xl font-bold text-gray-900 mb-3 group-hover:${service.textColor} transition`}>
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      {service.shortDesc}
-                    </p>
-                    <div className={`flex items-center gap-2 ${service.textColor} font-semibold group-hover:gap-4 transition-all`}>
-                      <span>Detaylı Bilgi</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 p-5 sm:p-7">
+                  <div className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 bg-emerald-50 text-emerald-700">
+                    {service.badge}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
+                    {service.shortDesc}
+                  </p>
+                  <div className="flex items-center gap-2 text-emerald-600 font-semibold group-hover:gap-4 transition-all">
+                    <span>Detaylı Bilgi</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
               </Link>
