@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { trackCTAClick } from '@/lib/analytics';
 import { ModernIcon } from '@/components/ui/Icons';
+import SectionLabel from '@/components/ui/SectionLabel';
 
 export default function ServicesGrid() {
   const handleServiceClick = (serviceName: string) => {
@@ -15,11 +16,9 @@ export default function ServicesGrid() {
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-16">
-          <div className="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6 rounded-full">
-            <span className="font-semibold text-xs sm:text-sm">Hizmetlerimiz</span>
-          </div>
+          <SectionLabel>Hizmetlerimiz</SectionLabel>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight">
             Hangi Araçları
             <span className="block text-emerald-600">Satın Alıyoruz?</span>
           </h2>
@@ -34,21 +33,21 @@ export default function ServicesGrid() {
           {siteConfig.services.map((service, index) => {
             const colorClasses = {
               lime: {
-                border: 'border-emerald-200',
+                border: 'border-gray-200/80',
                 bg: 'bg-emerald-50',
                 text: 'text-emerald-600',
                 hover: 'hover:border-emerald-300',
                 button: 'bg-emerald-500 text-white hover:bg-emerald-600',
               },
               purple: {
-                border: 'border-emerald-200',
+                border: 'border-gray-200/80',
                 bg: 'bg-emerald-50',
                 text: 'text-emerald-600',
                 hover: 'hover:border-emerald-300',
                 button: 'bg-emerald-500 text-white hover:bg-emerald-600',
               },
               fuchsia: {
-                border: 'border-emerald-200',
+                border: 'border-gray-200/80',
                 bg: 'bg-emerald-50',
                 text: 'text-emerald-600',
                 hover: 'hover:border-emerald-300',
@@ -61,7 +60,7 @@ export default function ServicesGrid() {
             return (
               <div
                 key={service.id}
-                className={`group bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl border ${colors.border} ${colors.hover} shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2`}
+                className={`group bg-white p-4 sm:p-8 rounded-2xl border ${colors.border} ${colors.hover} shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
               >
                 {/* Icon */}
                 <div className={`${colors.bg} ${colors.text} mb-3 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl transform group-hover:scale-110 transition-transform duration-300 overflow-visible`}>

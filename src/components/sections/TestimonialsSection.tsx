@@ -1,5 +1,7 @@
 'use client';
 
+import SectionLabel from '@/components/ui/SectionLabel';
+
 export default function TestimonialsSection() {
   const testimonials = [
     {
@@ -29,11 +31,9 @@ export default function TestimonialsSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block bg-emerald-500/10 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-            <span className="font-semibold text-sm">Mutlu Müşterilerimiz</span>
-          </div>
+          <SectionLabel>Mutlu Müşterilerimiz</SectionLabel>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
             Gerçek Yorumlar,
             <span className="block text-emerald-600">Gerçek Memnuniyet</span>
           </h2>
@@ -43,7 +43,7 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative hover:shadow-md transition-shadow"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200/80 relative hover:shadow-lg hover:border-emerald-200 transition-all"
             >
               {/* Quote Icon */}
               <div className="absolute top-4 right-6 text-5xl text-gray-100 font-bold">

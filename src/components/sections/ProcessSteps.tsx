@@ -3,6 +3,7 @@
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick, trackCTAClick } from '@/lib/analytics';
 import { ModernIcon } from '@/components/ui/Icons';
+import SectionLabel from '@/components/ui/SectionLabel';
 
 export default function ProcessSteps() {
   const handlePhoneClick = () => {
@@ -25,11 +26,9 @@ export default function ProcessSteps() {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-16">
-          <div className="inline-block bg-emerald-500/15 text-emerald-400 px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6 rounded-full">
-            <span className="font-semibold text-xs sm:text-sm">Nasıl Çalışır?</span>
-          </div>
+          <SectionLabel tone="dark">Nasıl Çalışır?</SectionLabel>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight">
             4 Adımda
             <span className="block text-emerald-400">Nakde Çevirin</span>
           </h2>
@@ -55,7 +54,7 @@ export default function ProcessSteps() {
               </div>
 
               {/* Step Card */}
-              <div className="bg-white/8 backdrop-blur-sm p-4 pt-8 sm:p-8 sm:pt-12 rounded-xl sm:rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 h-full border border-white/10">
+              <div className="bg-white/8 backdrop-blur-sm p-4 pt-8 sm:p-8 sm:pt-12 rounded-xl sm:rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 h-full border border-white/10">
                 {/* Icon */}
                 <div className="mb-2 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 transform group-hover:scale-110 transition-transform overflow-visible">
                   <ModernIcon name={step.icon} label={step.title} className="h-9 w-9 sm:h-11 sm:w-11 scale-125" strokeWidth={2.25} />

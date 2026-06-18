@@ -66,7 +66,7 @@ export default function BlogPage() {
               {blogStats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 border border-white/10"
+                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
                 >
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
                     {stat.value}

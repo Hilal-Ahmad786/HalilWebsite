@@ -231,7 +231,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   <div
                     key={serviceKey}
                     id={serviceKey}
-                    className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all"
+                    className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all"
                   >
                     <div className="flex items-start gap-5">
                       <div className={`w-16 h-16 ${colorClass} rounded-xl flex items-center justify-center flex-shrink-0 overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-emerald-600' : 'text-emerald-600'}`}>
@@ -260,7 +260,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <Link
                   key={serviceKey}
                   href={`/${serviceKey}-arac-alim`}
-                  className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+                  className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1"
                 >
                   <div className={`w-14 h-14 ${colorClass} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-visible ${service.color === 'emerald' ? 'text-emerald-600' : service.color === 'indigo' ? 'text-emerald-600' : 'text-emerald-600'}`}>
                     <ModernIcon name={service.icon} label={service.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
@@ -330,7 +330,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             {city.features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1"
               >
                 <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 overflow-visible">
                   <ModernIcon name={feature.icon} label={feature.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import SectionLabel from '@/components/ui/SectionLabel';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -32,11 +33,9 @@ export default function FAQSection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <div className="inline-block bg-emerald-500/10 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-            <span className="font-semibold text-sm">Sık Sorulan Sorular</span>
-          </div>
+          <SectionLabel>Sık Sorulan Sorular</SectionLabel>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
             Merak Edilenler
           </h2>
         </div>

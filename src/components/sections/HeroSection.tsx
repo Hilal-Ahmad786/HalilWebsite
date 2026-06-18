@@ -133,7 +133,7 @@ export default function HeroSection() {
 
               <div
                 key={index}
-                className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 border border-white/10"
+                className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}

@@ -60,7 +60,7 @@ export default function ServicesPage() {
               {siteConfig.stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 border border-white/10"
+                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
                 >
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
                     {stat.value}
@@ -116,7 +116,7 @@ export default function ServicesPage() {
               <Link
                 key={service.id}
                 href={`/${service.slug}`}
-                className={`group bg-white p-8 rounded-2xl border border-gray-100 border-l-4 ${service.borderColor} shadow-md hover:shadow-2xl transition-all hover:-translate-y-2`}
+                className={`group bg-white p-8 rounded-2xl border border-gray-100 border-l-4 ${service.borderColor} shadow-md hover:shadow-2xl transition-all hover:-translate-y-1`}
               >
                 <div className="flex items-start gap-6">
                   <div className={`w-20 h-20 ${service.iconBg} ${service.textColor} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform overflow-visible`}>

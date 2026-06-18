@@ -11,6 +11,7 @@ import QuickContactForm from '@/components/ui/QuickContactForm';
 import TrustProofSection from '@/components/sections/TrustProofSection';
 import { ModernIcon } from '@/components/ui/Icons';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import SectionLabel from '@/components/ui/SectionLabel';
 import { siteConfig } from '@/config/site';
 
 // Generate static paths at build time
@@ -142,7 +143,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               {siteConfig.stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-2 border border-white/10"
+                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
                 >
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
                     {stat.value}
@@ -177,9 +178,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className={`inline-block ${colors.bg} ${colors.text} px-6 py-3 mb-6 rounded-full`}>
-              <span className="font-bold text-sm tracking-wide">AVANTAJLARIMIZ</span>
-            </div>
+            <SectionLabel>Avantajlarımız</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {service.shortTitle} Alımında{' '}
               <span className="text-emerald-600">Neden Biz?</span>
@@ -190,7 +189,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             {service.features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1"
               >
                 <div className={`w-14 h-14 ${colors.bg} ${colors.text} rounded-xl flex items-center justify-center mb-4 overflow-visible`}>
                   <ModernIcon name={feature.icon} label={feature.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
@@ -221,9 +220,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">ARAÇ TÜRLERİ</span>
-            </div>
+            <SectionLabel>Araç Türleri</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Hangi Araçları <span className="text-emerald-600">Alıyoruz?</span>
             </h2>
@@ -254,9 +251,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className={`inline-block ${colors.bg} ${colors.text} px-6 py-3 mb-6 rounded-full`}>
-              <span className="font-bold text-sm tracking-wide">FİYATLANDIRMA</span>
-            </div>
+            <SectionLabel>Fiyatlandırma</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               {service.content.pricing.title}
             </h2>
@@ -287,9 +282,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className={`inline-block ${colors.bg} ${colors.text} px-6 py-3 mb-6 rounded-full`}>
-              <span className="font-bold text-sm tracking-wide">ARAÇ TÜRÜNE GÖRE FİYAT</span>
-            </div>
+            <SectionLabel>Araç Türüne Göre Fiyat</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Hangi Araçta <span className="text-emerald-600">Ne Kadar?</span>
             </h2>
@@ -310,8 +303,10 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-red-50 text-red-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">SIK YAPILAN HATALAR</span>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-red-400/70" aria-hidden="true" />
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-red-600">Sık Yapılan Hatalar</span>
+              <span className="h-px w-8 bg-red-400/70" aria-hidden="true" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Bunları <span className="text-red-500">Yapmayın</span>
@@ -341,9 +336,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className={`inline-block ${colors.bg} ${colors.text} px-6 py-3 mb-6 rounded-full`}>
-              <span className="font-bold text-sm tracking-wide">MÜŞTERİ HİKAYELERİ</span>
-            </div>
+            <SectionLabel>Müşteri Hikayeleri</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Gerçek <span className="text-emerald-600">Deneyimler</span>
             </h2>
@@ -384,9 +377,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-emerald-100 text-emerald-600 px-6 py-3 mb-6 rounded-full">
-              <span className="font-bold text-sm tracking-wide">SIK SORULAN SORULAR</span>
-            </div>
+            <SectionLabel>Sık Sorulan Sorular</SectionLabel>
 
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Merak Edilenler

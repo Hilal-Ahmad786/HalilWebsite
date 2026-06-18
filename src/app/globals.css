@@ -70,6 +70,11 @@ main {
 
 
 /* ===== IMPROVED TYPOGRAPHY - Base defaults (only for elementsdd without Tailwind classes) ===== */
+/* Tight tracking on display headings reads as intentional/branded, not default */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
 h1 {
   font-size: 2.5rem;
   line-height: 1.2;
@@ -194,13 +199,26 @@ svg {
 }
 
 /* ===== SMOOTH ANIMATIONS (LIMITED) ===== */
-/* Don't animate EVERYTHING; just common interactive elements */
+/* Animate only what changes on interaction (not "all") — calmer, snappier feel */
 button,
 a,
 input,
 textarea,
 select {
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ===== IMPROVED FOCUS STATES ===== */
