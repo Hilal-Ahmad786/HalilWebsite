@@ -1,9 +1,18 @@
 // src/app/layout.tsx
 import type { Metadata, Viewport } from 'next';
+import { Manrope } from 'next/font/google';
 import './globals.css';
+import TopBar from '@/components/layout/TopBar';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FloatingButtons from '@/components/layout/FloatingButtons';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+});
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import GoogleAdsConversion from '@/components/analytics/GoogleAdsConversion';
 import JsonLd from '@/components/analytics/JsonLd';
@@ -13,7 +22,7 @@ import CallPopupModal from '@/components/layout/CallPopupModal';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#1A1F3A',
+  themeColor: '#0b1b31',
   colorScheme: 'light',
 };
 
@@ -74,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr">
+    <html lang="tr" className={manrope.variable}>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
@@ -87,6 +96,7 @@ export default function RootLayout({
         {/* GA4 is handled inside GTM */}
 
         {/* Layout */}
+        <TopBar />
         <Header />
         <main className="min-h-screen pb-20 md:pb-0">{children}</main>
         <Footer />

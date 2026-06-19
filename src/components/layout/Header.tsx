@@ -3,355 +3,135 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { ChevronDown, Phone, Menu } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { getAllCities } from '@/data/cities';
+import { mainNav } from '@/data/navigation';
 import { trackPhoneClick, trackWhatsAppClick, trackCTAClick } from '@/lib/analytics';
-import { ModernIcon, PhoneIcon, WhatsAppIcon, MenuIcon, XMarkIcon, ChevronDownIcon } from '@/components/ui/Icons';
+import { WhatsAppIcon } from '@/components/ui/Icons';
+import Button from '@/components/shared/Button';
+import MobileNavigation from '@/components/layout/MobileNavigation';
+import { cn } from '@/lib/cn';
+
+const waHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+  'Merhaba, aracım için teklif almak istiyorum.'
+)}`;
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const cities = getAllCities();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      // Arka plan sayfanın scroll olmasını engelle
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Menü kapanınca normale dön
-      document.body.style.overflow = '';
-    }
-
-    // Güvenli cleanup
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMenuOpen]);
-
-
-  const handlePhoneClick = (location: string) => {
-    trackPhoneClick(location);
-    trackCTAClick('Phone Call', location);
-  };
-
-  const handleWhatsAppClick = (location: string) => {
-    trackWhatsAppClick(location);
-    trackCTAClick('WhatsApp', location);
-  };
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl'
-        : 'bg-gray-900/80 backdrop-blur-sm'
-        }`}
+      className={cn(
+        'sticky top-0 z-50 bg-navy-900 transition-shadow',
+        scrolled && 'shadow-[0_6px_24px_rgba(7,20,38,0.35)]'
+      )}
     >
-      {/* Top Bar - Urgent Call Banner */}
-      <div className="bg-emerald-500 text-white py-2">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-center gap-4 text-sm font-medium">
-            <span className="hidden sm:inline">Hemen arayın, anında teklif alın</span>
-            <span className="sm:hidden">Hemen arayın</span>
-            <a
-              href={`tel:${siteConfig.phone}`}
-              onClick={() => handlePhoneClick('header-top-banner')}
-              className="font-semibold hover:underline"
-            >
-              {siteConfig.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      </div>
+      <div className="container-page flex h-[70px] items-center justify-between gap-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center" aria-label="Hasar Park ana sayfa">
+          <Image src="/logo.png" alt="Hasar Park" width={176} height={56} className="h-12 w-auto object-contain" priority />
+        </Link>
 
-      {/* Main Header */}
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-48 h-16 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/logo.png"
-                alt="Hasar Park"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <Link
-              href="/"
-              className="text-white hover:text-emerald-400 transition font-medium text-sm"
-            >
-              Ana Sayfa
-            </Link>
-
-            {/* Services Dropdown */}
-            <div className="relative group">
-
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Ana menü">
+          {mainNav.map((item) => (
+            <div key={item.href} className="group relative">
               <Link
-                href="/hizmetler"
-                className="nav-trigger-btn text-white hover:text-emerald-400 transition font-medium text-sm flex items-center gap-1"
+                href={item.href}
+                className={cn(
+                  'relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[14.5px] font-semibold transition-colors',
+                  isActive(item.href) ? 'text-brand-green' : 'text-white/85 hover:text-white'
+                )}
               >
-                Hizmetler
-                <ChevronDownIcon className="w-4 h-4" strokeWidth={2} />
+                {item.label}
+                {item.children && <ChevronDown className="h-4 w-4 opacity-70" aria-hidden="true" />}
+                {isActive(item.href) && (
+                  <span className="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-brand-green" />
+                )}
               </Link>
 
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
-                {siteConfig.services.map((service) => (
-                  <Link
-                    key={service.id}
-                    href={`/${service.slug}`}
-                    className="block px-5 py-4 hover:bg-gray-50 transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
-                        <ModernIcon name={service.icon} label={service.title} className="h-5 w-5" />
-                      </span>
-                      <div>
-                        <div className="font-medium text-gray-900">{service.title}</div>
-                        <div className="text-xs text-gray-500">{service.shortDesc}</div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-                <Link
-                  href="/hizmetler"
-                  className="block p-4 bg-gray-50 text-center font-medium text-emerald-600 hover:bg-gray-100 transition border-t"
-                >
-                  Tüm Hizmetler →
-                </Link>
-              </div>
-            </div>
-
-            {/* Cities Dropdown */}
-            <div className="relative group">
-
-              <Link
-                href="/sehirler"
-                className="nav-trigger-btn text-white hover:text-emerald-400 transition font-medium text-sm flex items-center gap-1">
-                Şehirler
-                <ChevronDownIcon className="w-4 h-4" strokeWidth={2} />
-              </Link>
-
-              <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
-                <div className="p-4 bg-emerald-500 text-white font-medium rounded-t-xl">
-                  Hizmet Verdiğimiz Şehirler
-                </div>
-                <div className="grid grid-cols-2 gap-1 p-3">
-                  {cities.map((city) => (
+              {item.children && (
+                <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-2xl border border-line bg-white p-2 opacity-0 shadow-soft-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  {item.children.map((c) => (
                     <Link
-                      key={city.id}
-                      href={`/sehirler/${city.slug}`}
-                      className="px-3 py-2 hover:bg-gray-50 rounded-lg transition text-sm text-gray-700 hover:text-emerald-600"
+                      key={c.href}
+                      href={c.href}
+                      className="block rounded-xl px-3 py-2.5 hover:bg-surface-alt transition-colors"
                     >
-                      {city.name}
+                      <span className="block text-[14px] font-semibold text-ink">{c.label}</span>
+                      {c.desc && <span className="block text-[12px] text-ink-muted">{c.desc}</span>}
                     </Link>
                   ))}
                 </div>
-                <Link
-                  href="/sehirler"
-                  className="block p-4 bg-gray-50 text-center font-medium text-emerald-600 hover:bg-gray-100 transition border-t rounded-b-xl"
-                >
-                  Tüm Şehirler →
-                </Link>
-              </div>
+              )}
             </div>
+          ))}
+        </nav>
 
-            {/* Blog link (Bilgiler) */}
-            <Link
-              href="/blog"
-              className="text-white hover:text-emerald-400 transition font-medium text-sm"
-            >
-              Bilgiler
-            </Link>
-
-            <Link
-              href="/hakkimizda"
-              className="text-white hover:text-emerald-400 transition font-medium text-sm"
-            >
-              Hakkımızda
-            </Link>
-
-            <Link
-              href="/iletisim"
-              className="text-white hover:text-emerald-400 transition font-medium text-sm"
-            >
-              İletişim
-            </Link>
-          </nav>
-
-          {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* WhatsApp Button - Green */}
-            <a
-              href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Merhaba, aracım için teklif almak istiyorum.')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleWhatsAppClick('header-desktop')}
-              className="bg-[#25D366] text-white px-4 py-2.5 font-medium text-sm hover:bg-[#20bd5a] transition flex items-center gap-2 rounded-lg"
-            >
-              <WhatsAppIcon className="w-5 h-5" />
-              WhatsApp
-            </a>
-
-            {/* Phone Button - Orange gradient */}
-            <a
-              href={`tel:${siteConfig.phone}`}
-              onClick={() => handlePhoneClick('header-desktop')}
-              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-5 py-2.5 font-medium text-sm hover:from-orange-600 hover:to-amber-600 transition flex items-center gap-2 rounded-lg"
-            >
-              <PhoneIcon className="w-5 h-5" strokeWidth={2} />
-              Hemen Ara
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-white p-2"
-            aria-label="Menu"
+        {/* Desktop CTAs */}
+        <div className="hidden lg:flex items-center gap-2.5">
+          <Button
+            href={waHref}
+            external
+            variant="whatsapp"
+            size="sm"
+            icon={WhatsAppIcon}
+            onClick={() => {
+              trackWhatsAppClick('header');
+              trackCTAClick('WhatsApp', 'header');
+            }}
           >
-            {isMenuOpen ? (
-              <XMarkIcon className="w-8 h-8" strokeWidth={2} />
-            ) : (
-              <MenuIcon className="w-8 h-8" strokeWidth={2} />
-            )}
-          </button>
+            WhatsApp
+          </Button>
+          <Button
+            href={`tel:${siteConfig.phone}`}
+            variant="purple"
+            size="sm"
+            icon={Phone}
+            onClick={() => {
+              trackPhoneClick('header');
+              trackCTAClick('Phone', 'header');
+            }}
+          >
+            Hemen Ara
+          </Button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden pb-6 pt-4 border-t border-gray-700 max-h-[70vh] overflow-y-auto">
-            <nav className="flex flex-col space-y-4">
-              <Link
-                href="/"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-emerald-400 transition font-medium text-base"
-              >
-                Ana Sayfa
-              </Link>
-
-              {/* Mobile Services */}
-              <div className="space-y-2">
-                <div className="text-emerald-400 font-medium text-sm mb-2">
-                  Hizmetler
-                </div>
-                {siteConfig.services.map((service) => (
-                  <Link
-                    key={service.id}
-                    href={`/${service.slug}`}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block text-white/80 hover:text-emerald-400 transition pl-4 py-2"
-                  >
-                    <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/10 text-emerald-400 align-middle">
-                      <ModernIcon name={service.icon} label={service.title} className="h-4 w-4" />
-                    </span>
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Mobile Cities */}
-              <div className="space-y-2">
-                <div className="text-emerald-400 font-medium text-sm mb-2">
-                  Şehirler
-                </div>
-                {cities.slice(0, 5).map((city) => (
-                  <Link
-                    key={city.id}
-                    href={`/sehirler/${city.slug}`}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block text-white/80 hover:text-emerald-400 transition pl-4 py-2"
-                  >
-                    {city.name}
-                  </Link>
-                ))}
-                <Link
-                  href="/sehirler"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block text-emerald-400 hover:text-emerald-300 transition pl-4 py-2 font-medium"
-                >
-                  Tüm Şehirler →
-                </Link>
-              </div>
-
-              {/* Blog link in mobile menu */}
-              <Link
-                href="/blog"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-emerald-400 transition font-medium text-base"
-              >
-                Bilgiler
-              </Link>
-
-              <Link
-                href="/hakkimizda"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-emerald-400 transition font-medium text-base"
-              >
-                Hakkımızda
-              </Link>
-
-              <Link
-                href="/iletisim"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-emerald-400 transition font-medium text-base"
-              >
-                İletişim
-              </Link>
-
-              {/* Mobile CTA Buttons */}
-              {/*
-              <div className="flex flex-col gap-3 pt-4">
-                <a
-                  href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Merhaba, aracım için teklif almak istiyorum.')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    handleWhatsAppClick('header-mobile');
-                    setIsMenuOpen(false);
-                  }}
-                  className="bg-success-green text-white px-6 py-4 font-bold text-center hover:bg-success-green-dark transition flex items-center justify-center gap-2"
-                >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                  </svg>
-                  WHATSAPP
-                </a>
-
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  onClick={() => {
-                    handlePhoneClick('header-mobile');
-                    setIsMenuOpen(false);
-                  }}
-                  className="bg-lime-400 text-gray-900 px-6 py-4 font-black text-center hover:bg-lime-300 transition flex items-center justify-center gap-2"
-                >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6 A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9 a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4 c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z"/>
-                  </svg>
-                  HEMEN ARA: {siteConfig.phoneDisplay}
-                </a>
-              </div>
-*/}
-
-            </nav>
-          </div>
-        )}
+        {/* Mobile actions */}
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <a
+            href={`tel:${siteConfig.phone}`}
+            onClick={() => trackPhoneClick('header-mobile')}
+            aria-label="Hemen ara"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green text-navy-950"
+          >
+            <Phone className="h-5 w-5" />
+          </a>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Menüyü aç"
+            aria-expanded={menuOpen}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-white hover:bg-white/10"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
       </div>
+
+      <MobileNavigation open={menuOpen} onClose={() => setMenuOpen(false)} isActive={isActive} />
     </header>
   );
 }

@@ -1,309 +1,156 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import { Phone, Mail, Clock } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
-import TrustBadges from '@/components/ui/TrustBadges';
-import {
-  PhoneIcon,
-  MailIcon,
-  MapPinIcon,
-  FacebookIcon,
-  InstagramIcon,
-  WhatsAppIcon,
-  YouTubeIcon,
-  ClockIcon,
-  ShieldCheckIcon,
-  ArrowRightIcon,
-} from '@/components/ui/Icons';
+import { getAllCities } from '@/data/cities';
 
-// Popular cities for footer links
-const popularCities = [
-  { name: 'İstanbul', slug: 'istanbul' },
-  { name: 'Ankara', slug: 'ankara' },
-  { name: 'İzmir', slug: 'izmir' },
-  { name: 'Bursa', slug: 'bursa' },
-  { name: 'Antalya', slug: 'antalya' },
-  { name: 'Konya', slug: 'konya' },
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z" />
+    </svg>
+  );
+}
+
+const quickLinks = [
+  { label: 'Ana Sayfa', href: '/' },
+  { label: 'Hizmetler', href: '/hizmetler' },
+  { label: 'Şehirler', href: '/sehirler' },
+  { label: 'Hakkımızda', href: '/hakkimizda' },
+  { label: 'İletişim', href: '/iletisim' },
+];
+
+const legalLinks = [
+  { label: 'KVKK', href: '/kvkk' },
+  { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi' },
+  { label: 'Kullanım Şartları', href: '/kullanim-sartlari' },
 ];
 
 export default function Footer() {
+  const cities = getAllCities().slice(0, 5);
+  const year = 2026;
+
   return (
-    <footer className="bg-gray-900 text-white pb-20 md:pb-0">
-      {/* Trust Badges Section */}
-      <div className="border-b border-gray-800">
-        <div className="container mx-auto px-6 py-10">
-          <TrustBadges variant="dark" />
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Brand & Social */}
-          <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="block relative w-44 h-14">
-              <Image
-                src="/logo.png"
-                alt="Hasar Park"
-                fill
-                className="object-contain object-left"
-              />
-            </Link>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Türkiye'nin en güvenilir hasarlı, kazalı ve pert araç alım merkezi.
-              7+ yıllık tecrübe, 100.000+ mutlu müşteri ile 7/24 hizmetinizdeyiz.
-            </p>
-
-            {/* Contact Info Quick */}
-            <div className="space-y-3">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                onClick={() => trackPhoneClick('footer-brand')}
-                className="flex items-center gap-3 text-emerald-400 hover:text-emerald-300 transition-colors group"
-              >
-                <div className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
-                  <PhoneIcon className="w-5 h-5" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500">7/24 Çağrı Merkezi</div>
-                  <div className="font-semibold">{siteConfig.phoneDisplay}</div>
-                </div>
-              </a>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-3 pt-2">
-              {siteConfig.social.facebook && (
-                <a
-                  href={siteConfig.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#1877F2] transition-all duration-300 group"
-                  aria-label="Facebook"
-                >
-                  <FacebookIcon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-                </a>
-              )}
-
-              {siteConfig.social.instagram && (
-                <a
-                  href={siteConfig.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:bg-emerald-600 transition-all duration-300 group"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-                </a>
-              )}
-
-              <a
-                href={`https://wa.me/${siteConfig.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick('footer-social-icon')}
-                className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#25D366] transition-all duration-300 group"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppIcon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-              </a>
-
-              {siteConfig.social.youtube && (
-                <a
-                  href={siteConfig.social.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#FF0000] transition-all duration-300 group"
-                  aria-label="YouTube"
-                >
-                  <YouTubeIcon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-                </a>
-              )}
-            </div>
-          </div>
-
-          {/* Services */}
-          <nav aria-label="Hizmetlerimiz">
-            <h4 className="font-semibold text-base mb-6 text-white flex items-center gap-2">
-              <span className="w-1 h-5 bg-emerald-500 rounded-full" />
-              Hizmetlerimiz
-            </h4>
-            <ul className="space-y-3">
-              {siteConfig.services.map((service) => (
-                <li key={service.id}>
-                  <Link
-                    href={`/${service.slug}`}
-                    title={service.title}
-                    className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group"
-                  >
-                    <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Kurumsal & Hızlı Linkler */}
-          <nav aria-label="Kurumsal">
-            <h4 className="font-semibold text-base mb-6 text-white flex items-center gap-2">
-              <span className="w-1 h-5 bg-emerald-500 rounded-full" />
-              Kurumsal
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" title="Ana Sayfa" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
-                  <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                  Ana Sayfa
-                </Link>
-              </li>
-              <li>
-                <Link href="/hakkimizda" title="Hakkımızda" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
-                  <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                  Hakkımızda
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" title="Bilgi Merkezi" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
-                  <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                  Bilgi Merkezi
-                </Link>
-              </li>
-              <li>
-                <Link href="/sehirler" title="Hizmet Bölgeleri" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
-                  <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                  Hizmet Bölgeleri
-                </Link>
-              </li>
-              <li>
-                <Link href="/iletisim" title="İletişim" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
-                  <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                  İletişim
-                </Link>
-              </li>
-              <li>
-                <Link href="/sitemap.xml" title="Site Haritası" className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group">
-                  <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                  Site Haritası
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* Popular Cities */}
-          <nav aria-label="Popüler Şehirler">
-            <h4 className="font-semibold text-base mb-6 text-white flex items-center gap-2">
-              <span className="w-1 h-5 bg-emerald-500 rounded-full" />
-              Popüler Şehirler
-            </h4>
-            <ul className="space-y-3">
-              {popularCities.map((city) => (
-                <li key={city.slug}>
-                  <Link
-                    href={`/sehirler/${city.slug}`}
-                    title={`${city.name} Araç Alımı`}
-                    className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-2 group"
-                  >
-                    <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" strokeWidth={2} />
-                    {city.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  href="/sehirler"
-                  title="Tüm Şehirler"
-                  className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium flex items-center gap-1"
-                >
-                  Tüm Şehirler
-                  <ArrowRightIcon className="w-4 h-4" strokeWidth={2} />
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        {/* Info Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-center gap-3 text-gray-400">
-              <div className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center">
-                <ClockIcon className="w-5 h-5 text-emerald-400" strokeWidth={1.5} />
-              </div>
-              <div>
-                <div className="text-xs text-gray-500">Çalışma Saatleri</div>
-                <div className="text-sm text-white">7/24 Açık</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 text-gray-400">
-              <div className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center">
-                <MapPinIcon className="w-5 h-5 text-emerald-400" strokeWidth={1.5} />
-              </div>
-              <div>
-                <div className="text-xs text-gray-500">Hizmet Bölgesi</div>
-                <div className="text-sm text-white">81 İl, Tüm Türkiye</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 text-gray-400">
-              <div className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center">
-                <ShieldCheckIcon className="w-5 h-5 text-emerald-400" strokeWidth={1.5} />
-              </div>
-              <div>
-                <div className="text-xs text-gray-500">Güvenli Ödeme</div>
-                <div className="text-sm text-white">256-bit SSL Şifreleme</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800 bg-gray-950">
-        <div className="container mx-auto px-6 py-6">
-          <div className="grid gap-4 text-center lg:grid-cols-3 lg:items-center">
-            <p className="text-gray-500 text-sm text-center">
-              &copy; {new Date().getFullYear()} {siteConfig.name}. Tüm hakları saklıdır.
+    <footer className="bg-navy-900 text-white/75">
+      <div className="container-page py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          {/* Brand */}
+          <div>
+            <Image src="/logo.png" alt="Hasar Park" width={176} height={56} className="h-12 w-auto object-contain" />
+            <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-white/65">
+              Kazalı, hasarlı, pert ve hurda araç alımında Türkiye geneline hizmet veren güvenilir
+              merkez. 7/24 hizmetinizdeyiz.
             </p>
             <a
-              href="https://paksoft.com.tr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center group"
+              href={`tel:${siteConfig.phone}`}
+              className="mt-4 inline-flex items-center gap-2 text-[15px] font-bold text-brand-green hover:text-white transition-colors"
             >
-              <span className="text-gray-500 mr-2 group-hover:text-emerald-400 transition-colors text-xs">Geliştiren</span>
-              <div className="flex items-center text-emerald-500 group-hover:text-emerald-400 transition-colors">
-                {/* Custom Crescent Icon */}
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 -rotate-12">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.85 0 3.58-.5 5.08-1.38-.7.13-1.42.21-2.16.21-5.52 0-10-4.48-10-10S9.42 2.83 14.92 2.83c.74 0 1.46.08 2.16.21C15.58 2.5 13.85 2 12 2z" />
-                </svg>
-                <span className="font-bold text-sm tracking-wide ml-0.5">PakSoft</span>
-              </div>
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {siteConfig.phoneDisplay}
             </a>
-            <nav aria-label="Yasal Linkler" className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-500 lg:flex-nowrap lg:justify-end lg:whitespace-nowrap">
-              <Link href="/gizlilik-politikasi" title="Gizlilik Politikası" className="hover:text-emerald-400 transition-colors">
-                Gizlilik Politikası
-              </Link>
-              <Link href="/kullanim-sartlari" title="Kullanım Şartları" className="hover:text-emerald-400 transition-colors">
-                Kullanım Şartları
-              </Link>
-              <Link href="/cerez-politikasi" title="Çerez Politikası" className="hover:text-emerald-400 transition-colors">
-                Çerez Politikası
-              </Link>
-              <Link href="/kvkk" title="KVKK Aydınlatma Metni" className="hover:text-emerald-400 transition-colors">
-                KVKK
-              </Link>
-              <Link href="/sitemap.xml" title="Site Haritası" className="hover:text-emerald-400 transition-colors">
-                Site Haritası
-              </Link>
-            </nav>
+            <div className="mt-4 flex gap-2.5">
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 hover:bg-brand-green hover:text-navy-950 transition-colors"
+              >
+                <FacebookIcon className="h-4 w-4" />
+              </a>
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 hover:bg-brand-green hover:text-navy-950 transition-colors"
+              >
+                <InstagramIcon className="h-4 w-4" />
+              </a>
+            </div>
           </div>
+
+          {/* Quick links */}
+          <FooterCol title="Hızlı Linkler" links={quickLinks} />
+
+          {/* Services */}
+          <FooterCol
+            title="Hizmetlerimiz"
+            links={siteConfig.services.map((s) => ({ label: s.title, href: `/${s.slug}` }))}
+          />
+
+          {/* Cities + contact */}
+          <div>
+            <h3 className="mb-4 text-[13px] font-bold uppercase tracking-[0.1em] text-white">Popüler Şehirler</h3>
+            <ul className="space-y-2.5 text-[14px]">
+              {cities.map((c) => (
+                <li key={c.id}>
+                  <Link href={`/sehirler/${c.slug}`} className="hover:text-brand-green transition-colors">
+                    {c.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/sehirler" className="font-semibold text-brand-green hover:text-white transition-colors">
+                  Tüm Şehirler →
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact strip */}
+        <div className="mt-12 grid gap-4 border-t border-white/10 pt-8 text-[14px] sm:grid-cols-3">
+          <a href={`tel:${siteConfig.phone}`} className="inline-flex items-center gap-2 hover:text-brand-green transition-colors">
+            <Phone className="h-4 w-4 text-brand-green" aria-hidden="true" /> {siteConfig.phoneDisplay}
+          </a>
+          <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-2 hover:text-brand-green transition-colors">
+            <Mail className="h-4 w-4 text-brand-green" aria-hidden="true" /> {siteConfig.email}
+          </a>
+          <span className="inline-flex items-center gap-2">
+            <Clock className="h-4 w-4 text-brand-green" aria-hidden="true" /> 7/24 Hizmetinizdeyiz
+          </span>
         </div>
       </div>
 
+      {/* Bottom row */}
+      <div className="border-t border-white/10">
+        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-[13px] text-white/55 sm:flex-row">
+          <p>© {year} Hasar Park. Tüm hakları saklıdır.</p>
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Yasal">
+            {legalLinks.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-brand-green transition-colors">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
     </footer>
+  );
+}
+
+function FooterCol({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  return (
+    <div>
+      <h3 className="mb-4 text-[13px] font-bold uppercase tracking-[0.1em] text-white">{title}</h3>
+      <ul className="space-y-2.5 text-[14px]">
+        {links.map((l) => (
+          <li key={l.href}>
+            <Link href={l.href} className="hover:text-brand-green transition-colors">
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

@@ -81,7 +81,7 @@ export default function FloatingButtons() {
                 onClick={() => handlePhoneClick('floating-button')}
                 onMouseEnter={() => setShowTooltip('phone')}
                 onMouseLeave={() => setShowTooltip(null)}
-                className="relative w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                className="relative w-14 h-14 bg-gradient-to-br from-brand-purple to-brand-purple-dark text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
                 style={{ animation: isVisible ? 'float-pulse 3s ease-in-out infinite' : 'none' }}
                 aria-label="Hemen Ara"
               >
@@ -90,7 +90,7 @@ export default function FloatingButtons() {
                 {showTooltip === 'phone' && (
                   <div className="absolute right-full mr-3 bg-gray-900 text-white px-4 py-3 rounded-xl whitespace-nowrap animate-fadeIn">
                     <div className="text-sm font-medium mb-1">Hemen Ara</div>
-                    <div className="text-orange-400 text-sm font-semibold">{siteConfig.phoneDisplay}</div>
+                    <div className="text-brand-green text-sm font-semibold">{siteConfig.phoneDisplay}</div>
                     <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full">
                       <div className="border-8 border-transparent border-l-gray-900" />
                     </div>
@@ -215,7 +215,7 @@ export default function FloatingButtons() {
             {/* Phone - Right Half - Orange gradient */}
             <button
               onClick={() => handlePhoneClick('floating-button-mobile')}
-              className="min-w-0 flex flex-col items-center justify-center py-3.5 px-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white active:from-orange-600 active:to-amber-600 transition-colors"
+              className="min-w-0 flex flex-col items-center justify-center py-3.5 px-2 bg-gradient-to-r from-brand-purple to-brand-purple-dark text-white active:brightness-110 transition-colors"
             >
               <PhoneIcon className="w-6 h-6 mb-1" strokeWidth={2} />
               <span className="text-[11px] font-semibold leading-none">Hemen Ara</span>
