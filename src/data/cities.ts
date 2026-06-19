@@ -82,7 +82,7 @@ export const citiesData: Record<string, CityData> = {
     region: 'Marmara',
 
     metaTitle: 'İstanbul Araç Alımı | 2 Saatte Teklif - Hasar Park',
-    metaDescription: 'İstanbul\'da kazalı, hasarlı, pert ve hurda araç alımı. 40+ ilçeye hizmet, 2 saat içinde teklif. Ücretsiz çekici, anında ödeme, 100K+ müşteri.',
+    metaDescription: 'İstanbul\'da kazalı, hasarlı, pert ve hurda araç alımı. 40+ ilçeye hizmet, 2 saat içinde teklif. Ücretsiz çekici, anında ödeme, 10K+ müşteri.',
     keywords: [
       'istanbul kazalı araç alan',
       'istanbul hasarlı araç alan',

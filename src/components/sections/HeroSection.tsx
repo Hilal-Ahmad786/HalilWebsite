@@ -102,7 +102,7 @@ export default function HeroSection() {
                 <span className="text-sm sm:text-base font-bold text-white">4.9/5</span>
               </div>
               <span className="text-sm sm:text-base text-gray-300">
-                <span className="font-semibold text-white">100.000+</span> memnun müşteri
+                <span className="font-semibold text-white">10.000+</span> memnun müşteri
               </span>
               <span className="hidden sm:inline-flex items-center gap-1.5 text-sm text-emerald-400 font-medium">
                 <span className="relative flex h-2 w-2">

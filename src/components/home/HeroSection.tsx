@@ -83,7 +83,7 @@ export default function HeroSection() {
               <span className="text-[15px] font-extrabold text-ink">4.9/5</span>
             </div>
             <span className="text-[15px] text-ink-soft">
-              <span className="font-bold text-ink">100.000+</span> memnun müşteri
+              <span className="font-bold text-ink">10.000+</span> memnun müşteri
             </span>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function HeroSection() {
               <Star className="h-5 w-5 fill-current" />
             </div>
             <div>
-              <div className="text-[18px] font-extrabold leading-none text-ink">100.000+</div>
+              <div className="text-[18px] font-extrabold leading-none text-ink">10.000+</div>
               <div className="text-[12px] text-ink-muted">Memnun müşteri</div>
             </div>
           </div>

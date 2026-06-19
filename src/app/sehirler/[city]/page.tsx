@@ -206,7 +206,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         description: city.metaDescription, telephone: siteConfig.phone, url: siteConfig.url,
         areaServed: { '@type': 'City', name: city.name },
         openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '100000' },
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '10000' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',

@@ -9,7 +9,7 @@ import { ModernIcon } from '@/components/ui/Icons';
 export const metadata: Metadata = {
   title: "Hakkımızda | Türkiye'nin En Güvenilir Araç Alım Merkezi",
   description:
-    "7+ yıl tecrübe, 100.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye'nin lider firmasıyız.",
+    "7+ yıl tecrübe, 10.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye'nin lider firmasıyız.",
   alternates: { canonical: '/hakkimizda' },
 };
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
         eyebrow="Hakkımızda"
         title="Türkiye'nin"
         highlight="En Güvenilir Firması"
-        subtitle="7+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma. 100.000+ mutlu müşteri ile Türkiye'nin lideriyiz."
+        subtitle="7+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma. 10.000+ mutlu müşteri ile Türkiye'nin lideriyiz."
         showStats
       />
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <p>
               <strong className="text-ink">Hasar Park</strong>, 2018 yılından bu yana Türkiye'nin dört bir yanında
               kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 7 yılı aşkın tecrübemiz ve
-              100.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
+              10.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
             </p>
             <p>
               Müşteri memnuniyetini her şeyin üstünde tutan yaklaşımımız, şeffaf fiyatlandırma politikamız ve

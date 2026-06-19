@@ -24,7 +24,7 @@ export default function SocialProof({ variant = 'light', showRecent = true, rece
           ))}
         </div>
         <span className="text-sm">
-          <span className="font-bold text-emerald-500">100.000+</span> mutlu müşteri
+          <span className="font-bold text-emerald-500">10.000+</span> mutlu müşteri
         </span>
       </div>
 

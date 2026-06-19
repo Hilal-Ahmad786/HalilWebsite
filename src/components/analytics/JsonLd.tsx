@@ -83,8 +83,8 @@ export default function JsonLd() {
             ratingValue: '4.9',
             bestRating: '5',
             worstRating: '1',
-            ratingCount: '100000',
-            reviewCount: '100000',
+            ratingCount: '10000',
+            reviewCount: '10000',
         },
         review: sampleReviews,
         openingHoursSpecification: {
