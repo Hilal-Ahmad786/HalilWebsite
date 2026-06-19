@@ -7,6 +7,7 @@ import { WhatsAppIcon } from '@/components/ui/Icons';
 import Container from '@/components/shared/Container';
 import Button from '@/components/shared/Button';
 import AssetImage from '@/components/shared/AssetImage';
+import { ctaImage } from '@/data/homeContent';
 
 const waHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
   'Merhaba Hasar Park, aracım için teklif almak istiyorum.'
@@ -64,7 +65,7 @@ export default function FinalCTASection() {
 
             <div className="relative hidden lg:block">
               <AssetImage
-                src="/images/cta/cta-car.webp"
+                src={ctaImage}
                 alt="Hasar Park ile aracını satan müşteri"
                 width={460}
                 height={300}

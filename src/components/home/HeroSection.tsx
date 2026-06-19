@@ -7,6 +7,7 @@ import { WhatsAppIcon } from '@/components/ui/Icons';
 import Button from '@/components/shared/Button';
 import Container from '@/components/shared/Container';
 import AssetImage from '@/components/shared/AssetImage';
+import { heroImage } from '@/data/homeContent';
 
 const waHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
   'Merhaba Hasar Park, aracım için teklif almak istiyorum.'
@@ -94,7 +95,7 @@ export default function HeroSection() {
           <div className="pointer-events-none absolute -bottom-8 left-6 h-28 w-28 rounded-full border-[12px] border-brand-green/20" aria-hidden="true" />
 
           <AssetImage
-            src="/images/hero/hero-damaged-car.webp"
+            src={heroImage}
             alt="Hasarlı aracını Hasar Park üzerinden satan müşteri aracı"
             width={900}
             height={560}

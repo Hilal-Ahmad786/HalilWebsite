@@ -1,124 +1,58 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Calendar, Clock } from 'lucide-react';
 import { getAllPosts, getCategories } from '@/data/blog';
-import CTASection from '@/components/sections/CTASection';
-import SocialProof from '@/components/ui/SocialProof';
-import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import Container from '@/components/shared/Container';
+import PageHero from '@/components/shared/PageHero';
+import CTABanner from '@/components/shared/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'Blog & Bilgiler | Hasar Park - Araç Alım Rehberi',
+  title: 'Blog & Bilgiler | Araç Alım Rehberi',
   description: 'Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilgilendirici yazılar, ipuçları ve rehberler.',
+  alternates: { canonical: '/blog' },
 };
 
 export default function BlogPage() {
   const posts = getAllPosts();
   const categories = getCategories();
 
-  const blogStats = [
-    { value: posts.length.toString(), label: 'Yayınlanmış Rehber' },
-    { value: categories.length.toString(), label: 'Konu Kategorisi' },
-    { value: '5 dk', label: 'Ort. Okuma Süresi' },
-    { value: '2025', label: 'Güncel İçerikler' },
-  ];
-
   return (
     <div className="blog-page">
-      {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[82svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-emerald-950 pt-40 md:pt-44 pb-16">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
-
-        {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-white">
-              {/* Badge */}
-              <div className="inline-block bg-emerald-500/15 text-emerald-400 px-6 py-3 mb-8 rounded-full">
-                <span className="font-semibold text-sm tracking-wide">BİLGİLER & BLOG</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Araç Alım
-                <span className="block text-lime-400">Rehberi</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-xl md:text-2xl mb-12 text-gray-300 leading-relaxed max-w-xl">
-                Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilmeniz gereken her şey.
-                Uzman içeriklerimizle doğru kararlar verin.
-              </p>
-            </div>
-
-            {/* Right Side - Stats Cards */}
-            <div className="grid grid-cols-2 gap-6">
-              {blogStats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
-                >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm text-gray-300 font-medium">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Social Proof */}
-          <div className="mt-16">
-            <SocialProof variant="dark" />
-          </div>
-        </div>
-
-        <ScrollIndicator />
-      </section>
+      <PageHero
+        breadcrumbs={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Blog' }]}
+        eyebrow="Bilgiler & Blog"
+        title="Araç Alım"
+        highlight="Rehberi"
+        subtitle="Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilmeniz gereken her şey. Uzman içeriklerimizle doğru kararlar verin."
+        showCTAs={false}
+      />
 
       {/* Categories */}
-      <section id="sayfa-icerigi" className="py-8 bg-white border-b border-gray-100 scroll-mt-24">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap gap-3 justify-center">
-            <span className="px-5 py-2.5 bg-emerald-600 text-white font-semibold text-sm rounded-full">
-              Tümü
-            </span>
-            {categories.map((category) => (
-              <span
-                key={category}
-                className="px-5 py-2.5 bg-gray-100 text-gray-700 font-semibold text-sm rounded-full"
-              >
-                {category}
+      <section className="border-b border-line bg-surface py-6">
+        <Container>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            <span className="rounded-full bg-brand-green px-4 py-2 text-[13px] font-semibold text-navy-950">Tümü</span>
+            {categories.map((c) => (
+              <span key={c} className="rounded-full border border-line bg-white px-4 py-2 text-[13px] font-semibold text-ink-soft">
+                {c}
               </span>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Blog Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Grid */}
+      <section className="section bg-surface-alt">
+        <Container>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 overflow-hidden"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-brand-green/40"
               >
-                {/* Image */}
-                <div className="aspect-video bg-gray-100 overflow-hidden relative">
+                <div className="relative aspect-video overflow-hidden bg-surface-alt">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -127,36 +61,19 @@ export default function BlogPage() {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  {/* Category */}
-                  <div className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                <div className="flex flex-1 flex-col p-5">
+                  <span className="inline-block w-fit rounded-full bg-brand-green-soft px-3 py-1 text-[11.5px] font-semibold text-brand-green-dark">
                     {post.category}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-700 transition">
-                    {post.title}
-                  </h3>
-
-                  {/* Excerpt */}
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-
-                  {/* Meta */}
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                  </span>
+                  <h3 className="mt-3 line-clamp-2 text-[17px] font-bold text-ink group-hover:text-brand-green-dark">{post.title}</h3>
+                  <p className="mt-1.5 line-clamp-2 text-[13.5px] text-ink-soft">{post.excerpt}</p>
+                  <div className="mt-4 flex items-center gap-4 border-t border-line pt-3 text-[12px] text-ink-muted">
+                    <span className="inline-flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
                       {new Date(post.publishedAt).toLocaleDateString('tr-TR')}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                    <span className="inline-flex items-center gap-1">
+                      <Clock className="h-3.5 w-3.5" aria-hidden="true" />
                       {post.readTime}
                     </span>
                   </div>
@@ -164,15 +81,10 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* CTA */}
-      <CTASection
-        title="SORULARINIZ MI VAR?"
-        subtitle="Hemen arayın, uzman ekibimiz size yardımcı olsun"
-        variant="lime"
-      />
+      <CTABanner title="Sorularınız" highlight="mı Var?" subtitle="Hemen arayın, uzman ekibimiz size yardımcı olsun." source="blog-cta" />
     </div>
   );
 }
