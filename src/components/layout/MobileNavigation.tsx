@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { X, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
@@ -21,6 +22,10 @@ const waHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
 )}`;
 
 export default function MobileNavigation({ open, onClose, isActive }: Props) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -28,25 +33,35 @@ export default function MobileNavigation({ open, onClose, isActive }: Props) {
     };
   }, [open]);
 
-  return (
+  // Close on Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, onClose]);
+
+  if (!mounted) return null;
+
+  const ui = (
     <div className={cn('lg:hidden', open ? 'pointer-events-auto' : 'pointer-events-none')} aria-hidden={!open}>
       {/* Overlay */}
       <div
         onClick={onClose}
         className={cn(
-          'fixed inset-0 z-50 bg-navy-950/60 backdrop-blur-sm transition-opacity',
+          'fixed inset-0 z-[90] bg-navy-950/60 backdrop-blur-sm transition-opacity duration-300',
           open ? 'opacity-100' : 'opacity-0'
         )}
       />
       {/* Drawer */}
       <aside
         className={cn(
-          'fixed right-0 top-0 z-50 flex h-dvh w-[86%] max-w-sm flex-col bg-white transition-transform duration-300',
+          'fixed right-0 top-0 z-[100] flex h-dvh w-[86%] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 will-change-transform',
           open ? 'translate-x-0' : 'translate-x-full'
         )}
         aria-label="Mobil menü"
       >
-        <div className="flex items-center justify-between border-b border-line px-5 h-[70px]">
+        <div className="flex h-[70px] items-center justify-between border-b border-line px-5">
           <span className="text-[15px] font-extrabold text-ink">Menü</span>
           <button
             type="button"
@@ -89,7 +104,7 @@ export default function MobileNavigation({ open, onClose, isActive }: Props) {
           ))}
         </nav>
 
-        <div className="grid grid-cols-2 gap-2.5 border-t border-line p-4 safe-area-bottom">
+        <div className="safe-area-bottom grid grid-cols-2 gap-2.5 border-t border-line p-4">
           <Button
             href={waHref}
             external
@@ -117,4 +132,6 @@ export default function MobileNavigation({ open, onClose, isActive }: Props) {
       </aside>
     </div>
   );
+
+  return createPortal(ui, document.body);
 }
