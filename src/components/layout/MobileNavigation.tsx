@@ -104,7 +104,7 @@ export default function MobileNavigation({ open, onClose, isActive }: Props) {
           </Button>
           <Button
             href={`tel:${siteConfig.phone}`}
-            variant="purple"
+            variant="primary"
             icon={Phone}
             onClick={() => {
               trackPhoneClick('mobile-menu');

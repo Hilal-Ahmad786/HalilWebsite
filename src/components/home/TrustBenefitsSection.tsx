@@ -33,11 +33,11 @@ export default function TrustBenefitsSection() {
           {benefits.map((b) => (
             <div
               key={b.title}
-              className="rounded-2xl border border-line bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40"
+              className="flex flex-col items-center rounded-2xl border border-line bg-white p-5 text-center shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40"
             >
-              <IconBox icon={b.icon} tone="green" />
-              <h3 className="mt-4 text-[17px] font-bold text-ink">{b.title}</h3>
-              <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">{b.description}</p>
+              <IconBox icon={b.icon} tone="green" size="lg" />
+              <h3 className="mt-4 text-[16px] font-bold text-ink">{b.title}</h3>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-soft">{b.description}</p>
             </div>
           ))}
         </div>

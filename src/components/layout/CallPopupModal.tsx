@@ -147,7 +147,7 @@ export default function CallPopupModal() {
               {/* Telefon CTA */}
               <button
                 onClick={handlePhoneClick}
-                className="w-full bg-gradient-to-r from-brand-purple to-brand-purple-dark text-white px-6 py-3.5 rounded-xl font-black text-lg hover:brightness-110 transition flex items-center justify-center gap-3 shadow-xl transform hover:scale-[1.02]"
+                className="w-full bg-gradient-to-r from-brand-green to-brand-green-dark text-navy-950 px-6 py-3.5 rounded-xl font-black text-lg hover:brightness-110 transition flex items-center justify-center gap-3 shadow-xl transform hover:scale-[1.02]"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6 A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9 a16 16 0 0 0 6 6l1.5-1.3a2 2 0 0 1 2.1-.4 c.9.3 1.7.5 2.6.7A2 2 0 0 1 22 16.9z" />

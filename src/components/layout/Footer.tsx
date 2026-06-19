@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, Clock } from 'lucide-react';
+import { Phone, Mail, Clock, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { getAllCities } from '@/data/cities';
 
@@ -39,85 +39,79 @@ export default function Footer() {
   const year = 2026;
 
   return (
-    <footer className="bg-navy-900 text-white/75">
-      <div className="container-page py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          {/* Brand */}
+    <footer className="bg-navy-900 text-white/70">
+      {/* lime accent edge */}
+      <div className="h-1 w-full bg-gradient-to-r from-brand-green via-brand-green to-brand-purple" />
+
+      {/* CTA band */}
+      <div className="border-b border-white/10">
+        <div className="container-page flex flex-col items-center justify-between gap-4 py-7 sm:flex-row">
           <div>
-            <Image src="/logo.png" alt="Hasar Park" width={176} height={56} className="h-12 w-auto object-contain" />
-            <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-white/65">
-              Kazalı, hasarlı, pert ve hurda araç alımında Türkiye geneline hizmet veren güvenilir
-              merkez. 7/24 hizmetinizdeyiz.
-            </p>
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="mt-4 inline-flex items-center gap-2 text-[15px] font-bold text-brand-green hover:text-white transition-colors"
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              {siteConfig.phoneDisplay}
-            </a>
-            <div className="mt-4 flex gap-2.5">
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 hover:bg-brand-green hover:text-navy-950 transition-colors"
-              >
-                <FacebookIcon className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 hover:bg-brand-green hover:text-navy-950 transition-colors"
-              >
-                <InstagramIcon className="h-4 w-4" />
-              </a>
-            </div>
+            <p className="text-[19px] font-extrabold text-white">Aracınızı bugün nakde dönüştürün</p>
+            <p className="text-[14px] text-white/60">Ücretsiz ekspertiz · 30 dakikada teklif · anında ödeme</p>
           </div>
+          <a
+            href={`tel:${siteConfig.phone}`}
+            className="inline-flex h-12 items-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark px-6 text-[15px] font-bold text-navy-950 shadow-soft transition hover:brightness-[1.05]"
+          >
+            <Phone className="h-[18px] w-[18px]" aria-hidden="true" />
+            {siteConfig.phoneDisplay}
+          </a>
+        </div>
+      </div>
 
-          {/* Quick links */}
-          <FooterCol title="Hızlı Linkler" links={quickLinks} />
-
-          {/* Services */}
-          <FooterCol
-            title="Hizmetlerimiz"
-            links={siteConfig.services.map((s) => ({ label: s.title, href: `/${s.slug}` }))}
-          />
-
-          {/* Cities + contact */}
-          <div>
-            <h3 className="mb-4 text-[13px] font-bold uppercase tracking-[0.1em] text-white">Popüler Şehirler</h3>
-            <ul className="space-y-2.5 text-[14px]">
-              {cities.map((c) => (
-                <li key={c.id}>
-                  <Link href={`/sehirler/${c.slug}`} className="hover:text-brand-green transition-colors">
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/sehirler" className="font-semibold text-brand-green hover:text-white transition-colors">
-                  Tüm Şehirler →
-                </Link>
-              </li>
-            </ul>
+      {/* Columns */}
+      <div className="container-page grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr]">
+        {/* Brand */}
+        <div>
+          <Image src="/logo.png" alt="Hasar Park" width={176} height={56} className="h-12 w-auto object-contain" />
+          <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-white/60">
+            Kazalı, hasarlı, pert ve hurda araç alımında Türkiye geneline hizmet veren güvenilir merkez.
+            7/24 hizmetinizdeyiz.
+          </p>
+          <div className="mt-5 flex gap-2.5">
+            <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-green hover:text-navy-950">
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-green hover:text-navy-950">
+              <InstagramIcon className="h-4 w-4" />
+            </a>
           </div>
         </div>
 
-        {/* Contact strip */}
-        <div className="mt-12 grid gap-4 border-t border-white/10 pt-8 text-[14px] sm:grid-cols-3">
-          <a href={`tel:${siteConfig.phone}`} className="inline-flex items-center gap-2 hover:text-brand-green transition-colors">
-            <Phone className="h-4 w-4 text-brand-green" aria-hidden="true" /> {siteConfig.phoneDisplay}
-          </a>
-          <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-2 hover:text-brand-green transition-colors">
-            <Mail className="h-4 w-4 text-brand-green" aria-hidden="true" /> {siteConfig.email}
-          </a>
-          <span className="inline-flex items-center gap-2">
-            <Clock className="h-4 w-4 text-brand-green" aria-hidden="true" /> 7/24 Hizmetinizdeyiz
-          </span>
+        <FooterCol title="Hızlı Linkler" links={quickLinks} />
+        <FooterCol title="Hizmetlerimiz" links={siteConfig.services.map((s) => ({ label: s.title, href: `/${s.slug}` }))} />
+
+        {/* Contact + cities */}
+        <div>
+          <FooterHeading>İletişim</FooterHeading>
+          <ul className="space-y-3 text-[14px]">
+            <li>
+              <a href={`tel:${siteConfig.phone}`} className="inline-flex items-center gap-2 hover:text-brand-green transition-colors">
+                <Phone className="h-4 w-4 text-brand-green" aria-hidden="true" /> {siteConfig.phoneDisplay}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-2 hover:text-brand-green transition-colors">
+                <Mail className="h-4 w-4 text-brand-green" aria-hidden="true" /> {siteConfig.email}
+              </a>
+            </li>
+            <li className="inline-flex items-center gap-2">
+              <Clock className="h-4 w-4 text-brand-green" aria-hidden="true" /> 7/24 Hizmetinizdeyiz
+            </li>
+          </ul>
+          <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1.5 text-[13px] text-white/55">
+            {cities.map((c) => (
+              <Link key={c.id} href={`/sehirler/${c.slug}`} className="hover:text-brand-green transition-colors">
+                {c.name}
+              </Link>
+            ))}
+            <Link href="/sehirler" className="inline-flex items-center gap-0.5 font-semibold text-brand-green">
+              Tümü <ArrowRight className="h-3 w-3" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -131,6 +125,15 @@ export default function Footer() {
                 {l.label}
               </Link>
             ))}
+            <a
+              href="https://paksoft.com.tr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 text-white/45 transition-colors hover:text-white"
+            >
+              Geliştiren
+              <span className="font-bold text-white/70 group-hover:text-brand-green">PakSoft</span>
+            </a>
           </nav>
         </div>
       </div>
@@ -138,14 +141,23 @@ export default function Footer() {
   );
 }
 
+function FooterHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="mb-4 flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.1em] text-white">
+      <span className="h-3 w-1 rounded-full bg-brand-green" aria-hidden="true" />
+      {children}
+    </h3>
+  );
+}
+
 function FooterCol({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
-      <h3 className="mb-4 text-[13px] font-bold uppercase tracking-[0.1em] text-white">{title}</h3>
+      <FooterHeading>{title}</FooterHeading>
       <ul className="space-y-2.5 text-[14px]">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="hover:text-brand-green transition-colors">
+            <Link href={l.href} className="transition-colors hover:text-brand-green">
               {l.label}
             </Link>
           </li>

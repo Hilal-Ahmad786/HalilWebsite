@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ImageIcon } from 'lucide-react';
+import { Car } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
 /**
@@ -57,15 +57,18 @@ export default function AssetImage({
       aria-label={alt}
       style={{ aspectRatio: `${width} / ${height}` }}
       className={cn(
-        'flex w-full flex-col items-center justify-center gap-2 border-2 border-dashed border-brand-purple/30',
-        'bg-gradient-to-br from-brand-purple-soft/60 to-brand-green-soft/50 text-center px-4',
+        'relative flex w-full items-center justify-center overflow-hidden border border-line',
+        'bg-gradient-to-br from-surface-alt via-white to-brand-green-pale',
         rounded,
         wrapperClassName
       )}
     >
-      <ImageIcon className="h-7 w-7 text-brand-purple/70" aria-hidden="true" />
-      <span className="text-[13px] font-semibold text-ink-soft leading-snug">{alt}</span>
-      <span className="text-[11px] font-mono text-ink-muted break-all">{src}</span>
+      <div className="flex flex-col items-center gap-2 px-4 text-center">
+        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-green-dark shadow-soft">
+          <Car className="h-6 w-6" aria-hidden="true" />
+        </span>
+        <span className="text-[12.5px] font-semibold text-ink-soft leading-snug">{alt}</span>
+      </div>
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 bg-navy-900 transition-shadow',
+        'sticky top-0 z-50 bg-navy-900 text-white transition-shadow',
         scrolled && 'shadow-[0_6px_24px_rgba(7,20,38,0.35)]'
       )}
     >
@@ -52,7 +52,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   'relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[14.5px] font-semibold transition-colors',
-                  isActive(item.href) ? 'text-brand-green' : 'text-white/85 hover:text-white'
+                  isActive(item.href) ? 'text-brand-green' : 'text-white hover:text-brand-green'
                 )}
               >
                 {item.label}
@@ -97,7 +97,7 @@ export default function Header() {
           </Button>
           <Button
             href={`tel:${siteConfig.phone}`}
-            variant="purple"
+            variant="primary"
             size="sm"
             icon={Phone}
             onClick={() => {

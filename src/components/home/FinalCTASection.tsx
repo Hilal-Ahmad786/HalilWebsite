@@ -46,7 +46,7 @@ export default function FinalCTASection() {
                 <Button
                   href={waHref}
                   external
-                  variant="purple"
+                  variant="whatsapp"
                   size="lg"
                   icon={WhatsAppIcon}
                   onClick={() => {
