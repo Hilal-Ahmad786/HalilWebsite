@@ -52,7 +52,8 @@
   --radius-btn: 11px;
 }
 
-/* ===== BASE ===== */
+/* ===== BASE (layered so Tailwind utilities like text-white win) ===== */
+@layer base {
 * {
   box-sizing: border-box;
 }
@@ -97,6 +98,7 @@ a {
 }
 :focus:not(:focus-visible) {
   outline: none;
+}
 }
 
 /* ===== CONTROLLED DESKTOP CONTAINER (max 1180) ===== */
