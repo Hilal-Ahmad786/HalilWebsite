@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import LegalLayout from '@/components/shared/LegalLayout';
 
 export const metadata: Metadata = {
   title: 'Gizlilik Politikası',
@@ -11,11 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="py-32 bg-gray-50 min-h-screen">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <div className="bg-white p-10 md:p-16 rounded-3xl shadow-sm border border-gray-100">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Gizlilik Politikası</h1>
-          
+    <LegalLayout title="Gizlilik Politikası">
           <div className="prose prose-emerald max-w-none text-gray-600 leading-relaxed space-y-6">
             <p>
               Son güncellenme tarihi: {new Date().toLocaleDateString('tr-TR')}
@@ -78,8 +75,6 @@ export default function PrivacyPolicyPage() {
               <p><strong>Çalışma Saatleri:</strong> 7/24 Hizmet</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+    </LegalLayout>
   );
 }
