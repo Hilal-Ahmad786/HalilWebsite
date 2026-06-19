@@ -1,300 +1,135 @@
-import SectionLabel from "@/components/ui/SectionLabel";
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllCities, getCitiesByRegion } from '@/data/cities';
-import CTASection from '@/components/sections/CTASection';
-import SocialProof from '@/components/ui/SocialProof';
-import TrustBadges from '@/components/ui/TrustBadges';
-import { DocumentIcon, ModernIcon, TruckIcon, ZapIcon, BanknotesIcon } from '@/components/ui/Icons';
-import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import { MapPin, ArrowRight, Truck, Zap, Wallet, FileText, Check } from 'lucide-react';
+import { getAllCities } from '@/data/cities';
+import Container from '@/components/shared/Container';
+import SectionHeader from '@/components/shared/SectionHeader';
+import PageHero from '@/components/shared/PageHero';
+import CTABanner from '@/components/shared/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'Hizmet Verdiğimiz Şehirler | Hasar Park - Türkiye Geneli Araç Alımı',
-  description: 'Hasar Park olarak Türkiye\'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz. Size en yakın şehri seçin.',
+  title: 'Hizmet Verdiğimiz Şehirler | Türkiye Geneli Araç Alımı',
+  description:
+    "Hasar Park olarak Türkiye'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz. Size en yakın şehri seçin.",
   keywords: ['türkiye araç alım', 'şehirler', 'il il araç alım', 'türkiye geneli hizmet'],
+  alternates: { canonical: '/sehirler' },
 };
+
+const regions = ['Marmara', 'Ege', 'Akdeniz', 'İç Anadolu', 'Karadeniz', 'Doğu Anadolu', 'Güneydoğu Anadolu'];
+const comingSoon = [
+  'Bursa', 'Antalya', 'Adana', 'Konya', 'Gaziantep', 'Şanlıurfa', 'Mersin', 'Kayseri', 'Eskişehir', 'Diyarbakır',
+  'Samsun', 'Denizli', 'Malatya', 'Kahramanmaraş', 'Erzurum', 'Van', 'Trabzon', 'Kocaeli', 'Balıkesir', 'Manisa',
+  'Aydın', 'Tekirdağ', 'Sivas', 'Ordu', 'Isparta',
+];
+const coverage = [
+  { icon: Truck, text: 'Her ile ücretsiz çekici' },
+  { icon: Zap, text: '24 saat içinde ekspertiz' },
+  { icon: Wallet, text: 'En yüksek fiyat garantisi' },
+  { icon: FileText, text: 'Tüm evrak işlemleri' },
+];
 
 export default function CitiesIndexPage() {
   const allCities = getAllCities();
 
-  // Group cities by region
-  const regions = [
-    { name: 'Marmara', slug: 'marmara' },
-    { name: 'Ege', slug: 'ege' },
-    { name: 'Akdeniz', slug: 'akdeniz' },
-    { name: 'İç Anadolu', slug: 'ic-anadolu' },
-    { name: 'Karadeniz', slug: 'karadeniz' },
-    { name: 'Doğu Anadolu', slug: 'dogu-anadolu' },
-    { name: 'Güneydoğu Anadolu', slug: 'guneydogu-anadolu' },
-  ];
-
-  const cityStats = [
-    { value: '81 İl', label: 'Hizmet Bölgesi' },
-    { value: '7/24', label: 'Kesintisiz Destek' },
-    { value: '30dk', label: 'Yanıt Süresi' },
-    { value: '%100', label: 'Memnuniyet' },
-  ];
-
   return (
     <div className="cities-index-page">
-      {/* Hero - Matching Homepage Style */}
-      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1A1F3A] via-[#252B4A] to-[#1A1F3A] pt-40 md:pt-44 pb-16">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
+      <PageHero
+        breadcrumbs={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Şehirler' }]}
+        eyebrow="Hizmet Bölgeleri"
+        title="Türkiye Geneli"
+        highlight="Araç Alım Hizmeti"
+        subtitle="81 ilde kazalı, hasarlı, pert ve hurda araç alımı. Size en yakın şehri seçin, anında teklif alın."
+        showStats
+      />
 
-        {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/15 to-transparent transform skew-x-12"></div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-white">
-              {/* Badge */}
-              <div className="inline-block bg-emerald-500/15 text-emerald-400 px-6 py-3 mb-8 rounded-full">
-                <span className="font-semibold text-sm tracking-wide">HİZMET VERDİĞİMİZ ŞEHİRLER</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Türkiye Geneli
-                <span className="block text-lime-400">Araç Alım Hizmeti</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed max-w-xl">
-                81 İlde kazalı, hasarlı, pert ve hurda araç alımı.
-                Size en yakın şehri seçin, anında teklif alın.
-              </p>
-
-              {/* Features */}
-              <div className="flex flex-wrap items-center gap-4 text-gray-300">
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  Ücretsiz Çekici
-                </span>
-                <span className="text-emerald-400">•</span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  Anında Değerlendirme
-                </span>
-                <span className="text-emerald-400">•</span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  En Yüksek Fiyat
-                </span>
-              </div>
-            </div>
-
-            {/* Right Side - Stats Cards */}
-            <div className="grid grid-cols-2 gap-6">
-              {cityStats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
-                >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm text-gray-300 font-medium">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Social Proof */}
-          <div className="mt-16">
-            <SocialProof variant="dark" />
-          </div>
-        </div>
-
-        <ScrollIndicator />
-      </section>
-
-      {/* Trust Badges */}
-      <section id="sayfa-icerigi" className="py-10 bg-gray-50 border-b border-gray-100 scroll-mt-24">
-        <div className="container mx-auto px-6">
-          <TrustBadges variant="light" />
-        </div>
-      </section>
-
-      {/* Main Cities - Featured */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionLabel>AKTİF ŞEHİRLER</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Başlıca <span className="text-emerald-600">Şehirler</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+      {/* Featured cities */}
+      <section className="section bg-surface">
+        <Container>
+          <SectionHeader eyebrow="Aktif Şehirler" title="Başlıca" highlight="Şehirler" />
+          <div className="grid gap-5 md:grid-cols-3">
             {allCities.map((city) => (
               <Link
                 key={city.id}
                 href={`/sehirler/${city.slug}`}
-                className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1"
+                className="group rounded-2xl border border-line bg-white p-6 text-center shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-brand-green/40"
               >
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform overflow-visible">
-                    <ModernIcon name="şehir" label={city.name} className="h-16 w-16 scale-125" strokeWidth={2.25} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition">{city.name}</h3>
-                  <div className="text-emerald-600 text-sm font-semibold mb-4">
-                    {city.cityInfo.coverage.length}+ İlçe Hizmeti
-                  </div>
-                  <div className="border-t border-gray-100 pt-4 mt-4 text-gray-600">
-                    <div className="text-sm mb-2">Nüfus: {city.cityInfo.population}</div>
-                    <div className="text-sm">Yanıt Süresi: {city.cityInfo.responseTime}</div>
-                  </div>
-                  <div className="mt-6 flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-4 transition-all">
-                    <span>Detaylı Bilgi</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-green-soft text-brand-green-dark">
+                  <MapPin className="h-7 w-7" aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 text-[20px] font-bold text-ink group-hover:text-brand-green-dark">{city.name}</h3>
+                <div className="text-[13px] font-semibold text-brand-green-dark">{city.cityInfo.coverage.length}+ İlçe Hizmeti</div>
+                <div className="mt-4 border-t border-line pt-4 text-[13px] text-ink-soft">
+                  <div>Nüfus: {city.cityInfo.population}</div>
+                  <div className="mt-1">Yanıt Süresi: {city.cityInfo.responseTime}</div>
                 </div>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-brand-green-dark">
+                  Detaylı Bilgi <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </span>
               </Link>
             ))}
           </div>
-
-          <div className="text-center bg-emerald-50 p-8 rounded-2xl max-w-2xl mx-auto">
-            <p className="text-lg text-gray-700 font-semibold mb-2">
-              Yakında daha fazla şehir eklenecek!
-            </p>
-            <p className="text-gray-600">
-              Şu anda İstanbul, Ankara ve İzmir'de hizmet veriyoruz.
-            </p>
+          <div className="mx-auto mt-8 max-w-2xl rounded-2xl bg-brand-green-pale p-6 text-center">
+            <p className="text-[16px] font-semibold text-ink">Yakında daha fazla şehir eklenecek!</p>
+            <p className="mt-1 text-[14px] text-ink-soft">Şu anda İstanbul, Ankara ve İzmir'de hizmet veriyoruz.</p>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Coming Soon Cities */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-12">
-            <SectionLabel>YAKINDA</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hizmete Açılacak <span className="text-emerald-600">Şehirler</span>
-            </h2>
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
-              {[
-                'Bursa', 'Antalya', 'Adana', 'Konya', 'Gaziantep',
-                'Şanlıurfa', 'Mersin', 'Kayseri', 'Eskişehir', 'Diyarbakır',
-                'Samsun', 'Denizli', 'Adapazarı', 'Malatya', 'Kahramanmaraş',
-                'Erzurum', 'Van', 'Batman', 'Elazığ', 'Erzincan',
-                'Trabzon', 'Kocaeli', 'Balıkesir', 'Manisa', 'Aydın',
-                'Tekirdağ', 'Çorum', 'Tokat', 'Afyon', 'Sivas',
-                'Ordu', 'Kütahya', 'Isparta', 'Uşak', 'Edirne',
-              ].map((city, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 p-3 bg-gray-50 rounded-xl border border-gray-100"
-                >
-                  <div className="w-6 h-6 bg-emerald-100 rounded-md flex items-center justify-center flex-shrink-0">
-                    <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <span className="font-medium text-gray-700 text-sm">{city}</span>
+      {/* Coming soon */}
+      <section className="section bg-surface-alt">
+        <Container className="max-w-5xl">
+          <SectionHeader eyebrow="Yakında" title="Hizmete Açılacak" highlight="Şehirler" />
+          <div className="rounded-2xl border border-line bg-white p-6 shadow-soft">
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-5">
+              {comingSoon.map((c) => (
+                <div key={c} className="flex items-center gap-2 rounded-lg border border-line bg-surface-alt px-3 py-2.5">
+                  <MapPin className="h-4 w-4 flex-shrink-0 text-brand-purple" aria-hidden="true" />
+                  <span className="text-[13px] font-medium text-ink">{c}</span>
                 </div>
               ))}
             </div>
-
-            <div className="mt-8 text-center">
-              <p className="font-semibold text-gray-700">
-                Bu şehirlerden hizmet almak ister misiniz?
-              </p>
-              <p className="mt-2 text-gray-600">
-                Hemen arayın, en kısa sürede hizmete açalım!
-              </p>
-            </div>
+            <p className="mt-6 text-center text-[14px] text-ink-soft">
+              Bu şehirlerden hizmet almak ister misiniz? <span className="font-semibold text-ink">Hemen arayın</span>, en kısa sürede hizmete açalım!
+            </p>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* CTA */}
-      <CTASection
-        title="ŞEHRİNİZ LİSTEDE YOK MU?"
-        subtitle="Bizi arayın, Türkiye'nin her yerine gidiyoruz!"
-        variant="lime"
-      />
+      <CTABanner title="Şehriniz Listede" highlight="Yok mu?" subtitle="Bizi arayın, Türkiye'nin her yerine gidiyoruz!" source="sehirler-cta1" />
 
-      {/* Turkey Coverage Map Description */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <SectionLabel>HİZMET KAPSAMI</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Türkiye Geneli <span className="text-emerald-600">Kapsam</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">7 Bölge</h3>
-              <ul className="space-y-3">
-                {regions.map((region, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                      </svg>
-                    </div>
-                    <span className="font-medium text-gray-700">{region.name}</span>
+      {/* Coverage */}
+      <section className="section bg-surface">
+        <Container className="max-w-4xl">
+          <SectionHeader eyebrow="Hizmet Kapsamı" title="Türkiye Geneli" highlight="Kapsam" />
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-2xl border border-line bg-white p-7 shadow-soft">
+              <h3 className="text-[20px] font-bold text-ink">7 Bölge</h3>
+              <ul className="mt-5 space-y-3">
+                {regions.map((r) => (
+                  <li key={r} className="flex items-center gap-3 text-[14.5px] text-ink-soft">
+                    <Check className="h-5 w-5 text-brand-green-dark" aria-hidden="true" /> {r}
                   </li>
                 ))}
               </ul>
             </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">81 İl</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><TruckIcon className="h-5 w-5" /></div>
-                  <span>Her ile ücretsiz çekici</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><ZapIcon className="h-5 w-5" /></div>
-                  <span>24 saat içinde ekspertiz</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><BanknotesIcon className="h-5 w-5" /></div>
-                  <span>En yüksek fiyat garantisi</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><DocumentIcon className="h-5 w-5" /></div>
-                  <span>Tüm evrak işlemleri</span>
-                </li>
+            <div className="rounded-2xl border border-line bg-white p-7 shadow-soft">
+              <h3 className="text-[20px] font-bold text-ink">81 İl</h3>
+              <ul className="mt-5 space-y-3">
+                {coverage.map(({ icon: Icon, text }) => (
+                  <li key={text} className="flex items-center gap-3 text-[14.5px] text-ink-soft">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-green-soft text-brand-green-dark">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    {text}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Final CTA */}
-      <CTASection
-        title="BUGÜN ARAYIN"
-        subtitle="Hangi şehirde olursanız olun, yanınızdayız!"
-        variant="urgent"
-      />
+      <CTABanner title="Bugün Arayın," highlight="Yanınızdayız!" subtitle="Hangi şehirde olursanız olun, size geliyoruz." source="sehirler-cta2" />
     </div>
   );
 }
