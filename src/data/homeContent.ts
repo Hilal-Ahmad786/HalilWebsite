@@ -59,17 +59,17 @@ export const reasons: Reason[] = [
   { icon: BadgeCheck, title: '7+ Yıl Tecrübe', description: '100.000+ mutlu müşteri.' },
 ];
 
-/* ---- Service images (real photos in /public/newimages) ---- */
+/* ---- Service images (transparent cars in /public/cars) ---- */
 export const serviceImages: Record<string, string> = {
-  kazali: '/newimages/damaged-gray-sedan-front-left.png',
-  hasarli: '/newimages/side-damaged-silver-station-wagon-front-right.png',
-  pert: '/newimages/severely-damaged-white-luxury-sedan-front-left.png',
-  hurda: '/newimages/rusty-scrap-brown-sedan-front-right.png',
+  kazali: '/cars/damaged-gray-sedan-front-left.png',
+  hasarli: '/cars/side-damaged-silver-station-wagon-front-right.png',
+  pert: '/cars/severely-damaged-white-luxury-sedan-front-left.png',
+  hurda: '/cars/rusty-scrap-brown-sedan-front-right.png',
 };
 
 /* ---- Hero + CTA images ---- */
-export const heroImage = '/newimages/front-damaged-black-suv-front-right.png';
-export const ctaImage = '/newimages/undamaged-black-luxury-sedan-front-left.png';
+export const heroImage = '/cars/front-damaged-black-suv-front-right.png';
+export const ctaImage = '/cars/undamaged-black-luxury-sedan-front-left.png';
 
 /* ---- Homepage testimonials (real, on-site) ---- */
 export interface Testimonial {
