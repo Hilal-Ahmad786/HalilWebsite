@@ -90,7 +90,7 @@ export default function PageHero({
           {subtitle && <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft">{subtitle}</p>}
 
           {showCTAs && (
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row [&>a]:w-full sm:[&>a]:w-auto">
               <Button href={`tel:${siteConfig.phone}`} variant="primary" size="lg" icon={Phone} onClick={() => trackPhoneClick('page-hero')}>
                 Hemen Ara
               </Button>
@@ -116,7 +116,7 @@ export default function PageHero({
 
         {image && (
           <div className="relative mt-8 lg:mt-0">
-            <div className="pointer-events-none absolute -right-4 -top-4 h-32 w-32 rounded-full border-[12px] border-brand-purple/15" aria-hidden="true" />
+            <div className="pointer-events-none absolute -right-4 -top-4 hidden h-32 w-32 rounded-full border-[12px] border-brand-purple/15 sm:block" aria-hidden="true" />
             <AssetImage src={image.src} alt={image.alt} width={760} height={520} priority sizes="(max-width: 1024px) 100vw, 46vw" wrapperClassName="relative z-10 shadow-soft-lg" />
           </div>
         )}

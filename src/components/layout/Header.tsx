@@ -115,7 +115,7 @@ export default function Header() {
             href={`tel:${siteConfig.phone}`}
             onClick={() => trackPhoneClick('header-mobile')}
             aria-label="Hemen ara"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green text-white"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-green text-white"
           >
             <Phone className="h-5 w-5" />
           </a>
@@ -124,7 +124,7 @@ export default function Header() {
             onClick={() => setMenuOpen(true)}
             aria-label="Menüyü aç"
             aria-expanded={menuOpen}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-white hover:bg-white/10"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white hover:bg-white/10"
           >
             <Menu className="h-6 w-6" />
           </button>

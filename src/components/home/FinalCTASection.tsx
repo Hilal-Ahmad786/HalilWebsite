@@ -31,7 +31,7 @@ export default function FinalCTASection() {
               <p className="mt-3 max-w-md text-[15px] text-ink-soft">
                 Kazalı, hasarlı, pert veya hurda — aracınız ne durumda olursa olsun en yüksek teklifi sunuyoruz.
               </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center [&>a]:w-full sm:[&>a]:w-auto">
                 <Button
                   href={`tel:${siteConfig.phone}`}
                   variant="primary"

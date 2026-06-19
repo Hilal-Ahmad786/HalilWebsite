@@ -36,7 +36,7 @@ export default function CTABanner({
             </h2>
             {subtitle && <p className="mt-3 text-[15px] text-ink-soft">{subtitle}</p>}
 
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row [&>a]:w-full sm:[&>a]:w-auto">
               <Button
                 href={`tel:${siteConfig.phone}`}
                 variant="primary"

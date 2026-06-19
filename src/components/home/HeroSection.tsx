@@ -44,7 +44,7 @@ export default function HeroSection() {
             Noterde güvenli devir ve anında ödeme.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row [&>a]:w-full sm:[&>a]:w-auto">
             <Button
               href={`tel:${siteConfig.phone}`}
               variant="primary"
@@ -90,9 +90,9 @@ export default function HeroSection() {
 
         {/* Right */}
         <div className="relative">
-          {/* arcs */}
-          <div className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 rounded-full border-[14px] border-brand-purple/15" aria-hidden="true" />
-          <div className="pointer-events-none absolute -bottom-8 left-6 h-28 w-28 rounded-full border-[12px] border-brand-green/20" aria-hidden="true" />
+          {/* arcs (desktop only) */}
+          <div className="pointer-events-none absolute -right-6 -top-6 hidden h-40 w-40 rounded-full border-[14px] border-brand-purple/15 sm:block" aria-hidden="true" />
+          <div className="pointer-events-none absolute -bottom-8 left-6 hidden h-28 w-28 rounded-full border-[12px] border-brand-green/20 sm:block" aria-hidden="true" />
 
           <AssetImage
             src={heroImage}
@@ -104,8 +104,8 @@ export default function HeroSection() {
             wrapperClassName="relative z-10 shadow-soft-lg"
           />
 
-          {/* Floating stat card */}
-          <div className="absolute -bottom-5 -left-2 z-20 flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3 shadow-soft-lg sm:-left-5">
+          {/* Floating stat card (desktop only — the stats strip below covers mobile) */}
+          <div className="absolute -bottom-5 -left-2 z-20 hidden items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3 shadow-soft-lg sm:-left-5 sm:flex">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-green-soft text-brand-green-dark">
               <Star className="h-5 w-5 fill-current" />
             </div>
