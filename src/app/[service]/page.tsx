@@ -1,501 +1,231 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { Check, ArrowRight, AlertTriangle, Star, BadgeCheck } from 'lucide-react';
 import { getServiceBySlug, getServiceSlugs } from '@/data/services';
-import ProcessSteps from '@/components/sections/ProcessSteps';
-import WhyUs from '@/components/sections/WhyUs';
-import CTASection from '@/components/sections/CTASection';
-import HeroCTAButtons from '@/components/ui/HeroCTAButtons';
-import SocialProof from '@/components/ui/SocialProof';
-import TrustBadges from '@/components/ui/TrustBadges';
-import QuickContactForm from '@/components/ui/QuickContactForm';
-import TrustProofSection from '@/components/sections/TrustProofSection';
-import { ModernIcon } from '@/components/ui/Icons';
-import ScrollIndicator from '@/components/ui/ScrollIndicator';
-import SectionLabel from '@/components/ui/SectionLabel';
 import { siteConfig } from '@/config/site';
+import { serviceImages } from '@/data/homeContent';
+import Container from '@/components/shared/Container';
+import SectionHeader from '@/components/shared/SectionHeader';
+import Accordion from '@/components/shared/Accordion';
+import PageHero from '@/components/shared/PageHero';
+import CTABanner from '@/components/shared/CTABanner';
+import { ModernIcon } from '@/components/ui/Icons';
+import ProcessSection from '@/components/home/ProcessSection';
+import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
+import QuoteFormSection from '@/components/home/QuoteFormSection';
 
-// Generate static paths at build time
 export async function generateStaticParams() {
-  const slugs = getServiceSlugs();
-  return slugs.map((slug) => ({
-    service: slug,
-  }));
+  return getServiceSlugs().map((slug) => ({ service: slug }));
 }
 
-// Generate metadata for each service - FIXED: await params
 export async function generateMetadata({ params }: { params: Promise<{ service: string }> }): Promise<Metadata> {
   const { service: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
-
-  if (!service) {
-    return {
-      title: 'Sayfa Bulunamadı | Hasar Park',
-    };
-  }
-
+  if (!service) return { title: 'Sayfa Bulunamadı' };
   return {
     title: service.metaTitle,
     description: service.metaDescription,
     keywords: service.keywords,
-    openGraph: {
-      title: service.metaTitle,
-      description: service.metaDescription,
-      images: [service.hero.image],
-    },
-    alternates: {
-      canonical: `/${service.slug}`,
-    },
+    alternates: { canonical: `/${service.slug}` },
+    openGraph: { title: service.metaTitle, description: service.metaDescription },
   };
 }
 
-// FIXED: await params
 export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
   const { service: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
+  if (!service) notFound();
 
-  if (!service) {
-    notFound();
-  }
-
-  // Determine accent color class based on service color
-  const colorClasses = {
-    lime: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
-    purple: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
-    fuchsia: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
-  };
-
-  const colors = colorClasses[service.color];
+  const image = serviceImages[service.id] ?? serviceImages.kazali;
 
   return (
     <div className={`service-page service-${service.id}`}>
-      {/* Hero Section - Matching Homepage Style */}
-      <section className="relative min-h-[86svh] flex items-center justify-center overflow-hidden pt-40 md:pt-44 pb-16" style={{ background: 'linear-gradient(135deg, #1A1F3A 0%, #252B4A 50%, #1A1F3A 100%)' }}>
-        {/* Background Pattern */}
-        <div className="absolute inset-0">
-          {service.hero.image ? (
-            <>
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url('${service.hero.image}')` }}
-              />
-              <div className="absolute inset-0 bg-gray-900/90" />
-            </>
-          ) : (
-            <div className="absolute inset-0 opacity-10">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                }}
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Diagonal Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-emerald-500/10 to-transparent transform skew-x-12"></div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-white">
-              {/* Badge */}
-              <div className="inline-block bg-emerald-500/15 text-emerald-400 px-6 py-3 mb-8 rounded-full">
-                <span className="font-semibold text-sm tracking-wide">
-                  {service.hero.badge.replace(/^[^\wığüşöçİĞÜŞÖÇ]+/, '').trim()}
-                </span>
-              </div>
-
-              {/* Title */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                {service.hero.title}
-                <span className="block text-lime-400">{service.hero.titleHighlight}</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed max-w-xl">
-                {service.hero.subtitle}
-              </p>
-
-              {/* CTA Buttons - Client Component */}
-              <HeroCTAButtons
-                trackingSource="service-hero"
-                whatsappMessage={`Merhaba, ${service.title} için teklif almak istiyorum.`}
-                align="left"
-              />
-
-              {/* Phone Display */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 inline-flex items-center gap-4 mt-8">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-gray-400 text-sm">7/24 Çağrı Merkezi</div>
-                  <div className="text-orange-400 text-2xl font-bold">{siteConfig.phoneDisplay}</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Stats Cards */}
-            <div className="grid grid-cols-2 gap-6">
-              {siteConfig.stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white/8 backdrop-blur-sm p-6 sm:p-8 rounded-2xl hover:bg-white/12 transition-all transform hover:-translate-y-1 border border-white/10"
-                >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-400 mb-3 leading-none">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm text-gray-300 font-medium">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Social Proof */}
-          <div className="mt-16">
-            <SocialProof variant="dark" />
-          </div>
-        </div>
-
-        <ScrollIndicator />
-      </section>
-
-      {/* Trust Badges */}
-      <section id="sayfa-icerigi" className="py-10 bg-gray-50 border-b border-gray-100 scroll-mt-24">
-        <div className="container mx-auto px-6">
-          <TrustBadges variant="light" />
-        </div>
-      </section>
-
-      <TrustProofSection />
-
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <SectionLabel>Avantajlarımız</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              {service.shortTitle} Alımında{' '}
-              <span className="text-emerald-600">Neden Biz?</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <div className={`w-14 h-14 ${colors.bg} ${colors.text} rounded-xl flex items-center justify-center mb-4 overflow-visible`}>
-                  <ModernIcon name={feature.icon} label={feature.title} className="h-12 w-12 scale-125" strokeWidth={2.25} />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section #1 */}
-      <CTASection
-        title={`${service.shortTitle.toUpperCase()} ARACINIZI HEMEN SATIN`}
-        subtitle="Tek bir telefonla başlayın, 24 saat içinde paranızı alın"
-        variant="urgent"
+      <PageHero
+        breadcrumbs={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Hizmetler', href: '/hizmetler' }, { label: service.shortTitle }]}
+        eyebrow={service.hero.badge.replace(/^[^\wığüşöçİĞÜŞÖÇ]+/, '').trim()}
+        title={service.hero.title}
+        highlight={service.hero.titleHighlight}
+        subtitle={service.hero.subtitle}
+        image={{ src: image, alt: `${service.title} - Hasar Park` }}
+        whatsappMessage={`Merhaba, ${service.title} için teklif almak istiyorum.`}
       />
 
-      {/* Lead Capture Form */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <QuickContactForm title={`${service.shortTitle} İçin Hızlı Teklif Alın`} />
-        </div>
-      </section>
-
-      {/* What We Accept */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <SectionLabel>Araç Türleri</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hangi Araçları <span className="text-emerald-600">Alıyoruz?</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {service.content.whatWeAccept.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center gap-3 hover:shadow-md transition-all"
-              >
-                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="font-semibold text-gray-900">{item}</span>
+      {/* Features */}
+      <section className="section bg-surface">
+        <Container>
+          <SectionHeader eyebrow="Avantajlarımız" title={`${service.shortTitle} Alımında`} highlight="Neden Biz?" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {service.features.map((f, i) => (
+              <div key={i} className="rounded-2xl border border-line bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-green-soft text-brand-green-dark">
+                  <ModernIcon name={f.icon} label={f.title} className="h-7 w-7" strokeWidth={2} />
+                </span>
+                <h3 className="mt-4 text-[17px] font-bold text-ink">{f.title}</h3>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">{f.description}</p>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Process Steps */}
-      <ProcessSteps />
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <SectionLabel>Fiyatlandırma</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              {service.content.pricing.title}
-            </h2>
+      {/* What we accept */}
+      <section className="section bg-surface-alt">
+        <Container>
+          <SectionHeader eyebrow="Araç Türleri" title="Hangi Araçları" highlight="Alıyoruz?" />
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {service.content.whatWeAccept.map((item, i) => (
+              <div key={i} className="flex items-center gap-3 rounded-xl border border-line bg-white p-4 shadow-soft">
+                <Check className="h-5 w-5 flex-shrink-0 text-brand-green-dark" aria-hidden="true" />
+                <span className="text-[14.5px] font-semibold text-ink">{item}</span>
+              </div>
+            ))}
           </div>
+        </Container>
+      </section>
 
-          <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 shadow-md">
-            <p className="text-lg text-gray-700 mb-6">
-              {service.content.pricing.description}
-            </p>
+      <CTABanner
+        title={`${service.shortTitle} Aracınızı`}
+        highlight="Hemen Satın"
+        subtitle="Tek bir telefonla başlayın, aynı gün ödemenizi alın."
+        source={`service-${service.id}-cta1`}
+        whatsappMessage={`Merhaba, ${service.title} için teklif almak istiyorum.`}
+      />
 
-            <ul className="space-y-4">
-              {service.content.pricing.factors.map((factor, index) => (
-                <li key={index} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 pt-1">{factor}</span>
+      {/* Lead form */}
+      <QuoteFormSection />
+
+      {/* Process */}
+      <ProcessSection />
+
+      {/* Pricing */}
+      <section className="section bg-surface">
+        <Container className="max-w-4xl">
+          <SectionHeader eyebrow="Fiyatlandırma" title={service.content.pricing.title} />
+          <div className="rounded-2xl border border-line bg-white p-6 shadow-soft sm:p-8">
+            <p className="text-[15px] leading-relaxed text-ink-soft">{service.content.pricing.description}</p>
+            <ul className="mt-5 space-y-3">
+              {service.content.pricing.factors.map((factor, i) => (
+                <li key={i} className="flex items-start gap-3 rounded-xl border border-line bg-surface-alt p-4">
+                  <BadgeCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-green-dark" aria-hidden="true" />
+                  <span className="text-[14.5px] text-ink-soft">{factor}</span>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
+
+          <div className="mt-6 space-y-2.5">
+            {service.content.pricing.byVehicleType.map((row, i) => (
+              <div key={i} className="flex items-center justify-between rounded-xl border border-line bg-white p-4 shadow-soft">
+                <span className="text-[14.5px] font-semibold text-ink">{row.type}</span>
+                <span className="rounded-lg bg-brand-green-soft px-3 py-1 text-[13px] font-bold text-brand-green-dark">{row.priceRange}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-[12.5px] text-ink-muted">
+            * Fiyatlar günlük piyasa koşullarına göre değişebilir. Kesin fiyat için bizi arayın.
+          </p>
+        </Container>
       </section>
 
-      {/* Pricing by Vehicle Type */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <SectionLabel>Araç Türüne Göre Fiyat</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Hangi Araçta <span className="text-emerald-600">Ne Kadar?</span>
-            </h2>
-          </div>
+      {/* Common mistakes */}
+      <section className="section bg-surface-alt">
+        <Container className="max-w-4xl">
+          <SectionHeader eyebrow="Dikkat" title="Bunları" highlight="Yapmayın" />
           <div className="space-y-3">
-            {service.content.pricing.byVehicleType.map((item, i) => (
-              <div key={i} className="flex items-center justify-between bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                <span className="font-semibold text-gray-800">{item.type}</span>
-                <span className={`font-bold ${colors.text} text-sm bg-gray-50 px-4 py-2 rounded-lg`}>{item.priceRange}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-sm text-gray-500 mt-4">* Fiyatlar günlük piyasa koşullarına göre değişkenlik gösterebilir. Kesin fiyat için bizi arayın.</p>
-        </div>
-      </section>
-
-      {/* Common Mistakes */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <span className="h-px w-8 bg-red-400/70" aria-hidden="true" />
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-red-600">Sık Yapılan Hatalar</span>
-              <span className="h-px w-8 bg-red-400/70" aria-hidden="true" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Bunları <span className="text-red-500">Yapmayın</span>
-            </h2>
-          </div>
-          <div className="space-y-4">
-            {service.commonMistakes.map((item, i) => (
-              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+            {service.commonMistakes.map((m, i) => (
+              <div key={i} className="rounded-2xl border border-line bg-white p-5 shadow-soft">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-red-50 text-danger">
+                    <AlertTriangle className="h-5 w-5" aria-hidden="true" />
+                  </span>
                   <div>
-                    <p className="font-bold text-gray-900 mb-1">Hata: {item.mistake}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">Çözüm: {item.tip}</p>
+                    <p className="text-[15px] font-bold text-ink">Hata: {m.mistake}</p>
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink-soft">Çözüm: {m.tip}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Customer Stories */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <SectionLabel>Müşteri Hikayeleri</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Gerçek <span className="text-emerald-600">Deneyimler</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
+      {/* Customer stories */}
+      <section className="section bg-surface">
+        <Container className="max-w-4xl">
+          <SectionHeader eyebrow="Müşteri Hikayeleri" title="Gerçek" highlight="Deneyimler" />
+          <div className="grid gap-5 md:grid-cols-2">
             {service.customerStories.map((story, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-700">
+              <figure key={i} className="rounded-2xl border border-line bg-white p-6 shadow-soft">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-green-soft text-[15px] font-bold text-brand-green-dark">
                     {story.name[0]}
-                  </div>
+                  </span>
                   <div>
-                    <div className="font-bold text-gray-900">{story.name}</div>
-                    <div className="text-sm text-gray-500">{story.city} • {story.vehicleType}</div>
+                    <div className="text-[14px] font-bold text-ink">{story.name}</div>
+                    <div className="text-[12px] text-ink-muted">{story.city} • {story.vehicleType}</div>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{story.story}"</p>
-                <div className="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded-lg">
-                  <p className="text-emerald-700 text-sm font-semibold">Sonuç: {story.result}</p>
+                <div className="mt-3 flex gap-0.5" aria-hidden="true">
+                  {[...Array(5)].map((_, s) => <Star key={s} className="h-4 w-4 fill-warning text-warning" />)}
                 </div>
-              </div>
+                <blockquote className="mt-2 text-[14.5px] italic leading-relaxed text-ink-soft">“{story.story}”</blockquote>
+                <figcaption className="mt-4 rounded-lg border-l-4 border-brand-green bg-brand-green-pale p-3 text-[13.5px] font-semibold text-brand-green-dark">
+                  Sonuç: {story.result}
+                </figcaption>
+              </figure>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Why Choose Us */}
-      <WhyUs />
-
-      {/* CTA Section #2 */}
-      <CTASection
-        title="HEMEN ARAYIN - ANINDA TEKLİF"
-        subtitle={`${service.shortTitle} için Türkiye'nin en yüksek fiyatını alın`}
-        variant="lime"
-      />
+      <WhyChooseUsSection />
 
       {/* FAQ */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-12">
-            <SectionLabel>Sık Sorulan Sorular</SectionLabel>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Merak Edilenler
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {service.faqs.map((faq, index) => (
-              <details
-                key={index}
-                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group"
-              >
-                <summary className="p-6 font-semibold text-gray-900 text-lg cursor-pointer hover:bg-gray-50 transition flex items-center justify-between">
-                  <span>{faq.question}</span>
-                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-open:bg-emerald-100 transition-colors">
-                    <svg className="w-5 h-5 text-gray-500 group-open:text-emerald-600 transform group-open:rotate-180 transition-all" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </summary>
-
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
+      <section className="section bg-surface-alt">
+        <Container className="max-w-3xl">
+          <SectionHeader eyebrow="SSS" title="Merak" highlight="Edilenler" />
+          <Accordion items={service.faqs} />
+        </Container>
       </section>
 
-      {/* Internal Linking - Other Services */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Diğer <span className="text-emerald-600">Hizmetlerimiz</span>
-            </h2>
-            <p className="text-gray-600 mt-3">Aracınızın durumuna göre size en uygun hizmeti seçin</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4">
-            {service.content.relatedServices.map((related, i) => (
-              <a
-                key={i}
-                href={`/${related.slug}`}
-                className="group bg-gray-50 hover:bg-emerald-50 border border-gray-100 hover:border-emerald-200 p-6 rounded-2xl transition-all hover:-translate-y-1"
-              >
-                <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 mb-2">{related.title}</h3>
-                <p className="text-sm text-gray-600">{related.description}</p>
-                <div className="flex items-center gap-1 mt-3 text-emerald-600 text-sm font-semibold">
-                  <span>Detay</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </a>
+      {/* Related services */}
+      <section className="section bg-surface">
+        <Container className="max-w-4xl">
+          <SectionHeader eyebrow="Diğer Hizmetler" title="Diğer" highlight="Hizmetlerimiz" subtitle="Aracınızın durumuna göre size en uygun hizmeti seçin" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {service.content.relatedServices.map((r, i) => (
+              <Link key={i} href={`/${r.slug}`} className="group rounded-2xl border border-line bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40">
+                <h3 className="text-[16px] font-bold text-ink group-hover:text-brand-green-dark">{r.title}</h3>
+                <p className="mt-1.5 text-[13.5px] text-ink-soft">{r.description}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-[13.5px] font-semibold text-brand-green-dark">
+                  Detay <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </span>
+              </Link>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Final CTA */}
-      <CTASection
-        title="BUGÜN ARAYIN - YARIN ÖDEME ALIN"
-        subtitle={`${service.shortTitle} satışında güvenilir partner`}
-        variant="dark"
+      <CTABanner
+        title="Bugün Arayın,"
+        highlight="Yarın Ödeme Alın!"
+        subtitle={`${service.shortTitle} satışında güvenilir partneriniz.`}
+        source={`service-${service.id}-cta2`}
+        whatsappMessage={`Merhaba, ${service.title} için teklif almak istiyorum.`}
       />
 
-      {/* Service Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: service.title,
-            description: service.metaDescription,
-            provider: {
-              '@type': 'AutomotiveBusiness',
-              name: 'Hasar Park',
-              telephone: siteConfig.phone,
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.9',
-                reviewCount: '100000',
-              },
-            },
-            areaServed: 'TR',
-            availableChannel: {
-              '@type': 'ServiceChannel',
-              serviceUrl: `${siteConfig.url}/${service.slug}`,
-            },
-            offers: {
-              '@type': 'Offer',
-              priceCurrency: 'TRY',
-              availability: 'https://schema.org/InStock',
-            },
-          }),
-        }}
-      />
-
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: service.faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
+      {/* Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'Service', name: service.title, description: service.metaDescription,
+        provider: { '@type': 'AutomotiveBusiness', name: 'Hasar Park', telephone: siteConfig.phone },
+        areaServed: 'TR', availableChannel: { '@type': 'ServiceChannel', serviceUrl: `${siteConfig.url}/${service.slug}` },
+        offers: { '@type': 'Offer', priceCurrency: 'TRY', availability: 'https://schema.org/InStock' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'FAQPage',
+        mainEntity: service.faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+      }) }} />
     </div>
   );
 }
