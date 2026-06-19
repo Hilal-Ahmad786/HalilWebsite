@@ -222,7 +222,7 @@ export default function QuoteFormSection() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark text-[16px] font-bold text-navy-950 shadow-soft transition hover:brightness-[1.05] disabled:opacity-60"
+                className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark text-[16px] font-bold text-white shadow-soft transition hover:brightness-[1.05] disabled:opacity-60"
               >
                 {submitting ? (
                   <>

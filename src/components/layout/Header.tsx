@@ -115,7 +115,7 @@ export default function Header() {
             href={`tel:${siteConfig.phone}`}
             onClick={() => trackPhoneClick('header-mobile')}
             aria-label="Hemen ara"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green text-navy-950"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green text-white"
           >
             <Phone className="h-5 w-5" />
           </a>

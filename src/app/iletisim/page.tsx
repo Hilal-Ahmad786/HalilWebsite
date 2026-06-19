@@ -28,7 +28,7 @@ export default function ContactPage() {
             <a
               href={`tel:${siteConfig.phone}`}
               onClick={() => trackPhoneClick('contact-page')}
-              className="group rounded-2xl bg-gradient-to-br from-brand-green to-brand-green-dark p-7 text-center text-navy-950 shadow-soft transition-transform hover:-translate-y-1"
+              className="group rounded-2xl bg-gradient-to-br from-brand-green to-brand-green-dark p-7 text-center text-white shadow-soft transition-transform hover:-translate-y-1"
             >
               <span className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-navy-950/10">
                 <Phone className="h-7 w-7" aria-hidden="true" />

@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
           <a
             href={`tel:${siteConfig.phone}`}
-            className="inline-flex h-12 items-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark px-6 text-[15px] font-bold text-navy-950 shadow-soft transition hover:brightness-[1.05]"
+            className="inline-flex h-12 items-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark px-6 text-[15px] font-bold text-white shadow-soft transition hover:brightness-[1.05]"
           >
             <Phone className="h-[18px] w-[18px]" aria-hidden="true" />
             {siteConfig.phoneDisplay}
@@ -71,11 +71,11 @@ export default function Footer() {
           </p>
           <div className="mt-5 flex gap-2.5">
             <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-green hover:text-navy-950">
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-green hover:text-white">
               <FacebookIcon className="h-4 w-4" />
             </a>
             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-green hover:text-navy-950">
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-green hover:text-white">
               <InstagramIcon className="h-4 w-4" />
             </a>
           </div>

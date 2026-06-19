@@ -86,7 +86,7 @@ export default function CallPopupModal() {
           <div className="mt-5 space-y-2.5">
             <button
               onClick={handlePhoneClick}
-              className="flex w-full items-center justify-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark px-5 py-3 text-[16px] font-bold text-navy-950 shadow-soft transition hover:brightness-[1.05]"
+              className="flex w-full items-center justify-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark px-5 py-3 text-[16px] font-bold text-white shadow-soft transition hover:brightness-[1.05]"
             >
               <Phone className="h-5 w-5" aria-hidden="true" />
               {siteConfig.phoneDisplay}

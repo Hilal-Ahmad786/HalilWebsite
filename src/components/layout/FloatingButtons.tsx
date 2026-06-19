@@ -81,7 +81,7 @@ export default function FloatingButtons() {
                 onClick={() => handlePhoneClick('floating-button')}
                 onMouseEnter={() => setShowTooltip('phone')}
                 onMouseLeave={() => setShowTooltip(null)}
-                className="relative w-14 h-14 bg-gradient-to-br from-brand-green to-brand-green-dark text-navy-950 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                className="relative w-14 h-14 bg-gradient-to-br from-brand-green to-brand-green-dark text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
                 style={{ animation: isVisible ? 'float-pulse 3s ease-in-out infinite' : 'none' }}
                 aria-label="Hemen Ara"
               >
@@ -215,7 +215,7 @@ export default function FloatingButtons() {
             {/* Phone - Right Half - Orange gradient */}
             <button
               onClick={() => handlePhoneClick('floating-button-mobile')}
-              className="min-w-0 flex flex-col items-center justify-center py-3.5 px-2 bg-gradient-to-r from-brand-green to-brand-green-dark text-navy-950 active:brightness-110 transition-colors"
+              className="min-w-0 flex flex-col items-center justify-center py-3.5 px-2 bg-gradient-to-r from-brand-green to-brand-green-dark text-white active:brightness-110 transition-colors"
             >
               <PhoneIcon className="w-6 h-6 mb-1" strokeWidth={2} />
               <span className="text-[11px] font-semibold leading-none">Hemen Ara</span>

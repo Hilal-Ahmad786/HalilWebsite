@@ -32,7 +32,7 @@ export default function BlogPage() {
       <section className="border-b border-line bg-surface py-6">
         <Container>
           <div className="flex flex-wrap justify-center gap-2.5">
-            <span className="rounded-full bg-brand-green px-4 py-2 text-[13px] font-semibold text-navy-950">Tümü</span>
+            <span className="rounded-full bg-brand-green px-4 py-2 text-[13px] font-semibold text-white">Tümü</span>
             {categories.map((c) => (
               <span key={c} className="rounded-full border border-line bg-white px-4 py-2 text-[13px] font-semibold text-ink-soft">
                 {c}

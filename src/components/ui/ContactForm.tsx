@@ -81,7 +81,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark text-[16px] font-bold text-navy-950 shadow-soft transition hover:brightness-[1.05] disabled:opacity-60"
+        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[11px] bg-gradient-to-br from-brand-green to-brand-green-dark text-[16px] font-bold text-white shadow-soft transition hover:brightness-[1.05] disabled:opacity-60"
       >
         {isSubmitting ? (
           <><Loader2 className="h-5 w-5 animate-spin" /> Gönderiliyor...</>

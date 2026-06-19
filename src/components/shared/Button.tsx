@@ -31,7 +31,7 @@ const base =
 // Lime is too light for white text (WCAG), so the green button uses navy text.
 const variants: Record<Variant, string> = {
   primary:
-    'bg-gradient-to-br from-brand-green to-brand-green-dark text-navy-950 hover:brightness-[1.05] shadow-soft',
+    'bg-gradient-to-br from-brand-green to-brand-green-dark text-white hover:brightness-[1.05] shadow-soft',
   purple:
     'bg-gradient-to-br from-brand-purple to-brand-purple-dark text-white hover:brightness-110 shadow-soft',
   navy: 'bg-navy-900 text-white hover:bg-navy-800',
