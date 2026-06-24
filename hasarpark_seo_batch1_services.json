@@ -1,0 +1,67 @@
+{
+  "batch": "1_services",
+  "domain_canonical": "www",
+  "apply_notes": "Update src/data/services.ts by slug. metaTitle<-title, metaDescription<-meta_description (note pert: '7+ yıl'->'5+ yıl'), metaKeywords<-meta_keywords. Fix H1 capitalization (was ALL CAPS, now Title Case - if H1 is force-uppercased via CSS that's fine, leave CSS; only change stored text). Fix the duplicated-word H2 'X Araç Aracınızı' -> 'X Aracınızı' per h2_fix map. Set canonical+ogUrl to www.",
+  "pages": [
+    {
+      "route": "/kazali-arac-alim",
+      "data_source": "src/data/services.ts -> kazali-arac-alim",
+      "title": "Kazalı Araç Alımı | 30 Dakikada Teklif - Hasar Park",
+      "title_len": 51,
+      "meta_description": "Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. En yüksek fiyat garantisi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 7/24 hizmet.",
+      "desc_len": 151,
+      "meta_keywords": "kazalı araç alan, kazalı araç alımı, kazalı araba alan, kaza yapmış araç alan, kazalı oto alan, kazalı araç satmak",
+      "h1": "Kazalı Aracınız En Yüksek Fiyata",
+      "h2_fix": {
+        "Kazalı Araç Aracınızı Hemen Satın": "Kazalı Aracınızı Hemen Satın"
+      },
+      "canonical": "https://www.hasarpark.com/kazali-arac-alim",
+      "og_url": "https://www.hasarpark.com/kazali-arac-alim"
+    },
+    {
+      "route": "/hasarli-arac-alim",
+      "data_source": "src/data/services.ts -> hasarli-arac-alim",
+      "title": "Hasarlı Araç Alımı | Kaporta & Motor Hasarlı Alan",
+      "title_len": 49,
+      "meta_description": "Motor, şanzıman ve kaporta hasarlı araçları alıyoruz. Detaylı ekspertiz, adil fiyat, ücretsiz çekici. Tüm evraklar bizden, anında ödeme garantisi.",
+      "desc_len": 146,
+      "meta_keywords": "hasarlı araç alan, hasarlı araç alımı, mekanik hasarlı araç, kaporta hasarlı araç, motor hasarlı araç alan, hasarlı oto alan",
+      "h1": "Hasarlı Aracınız Anında Nakde",
+      "h2_fix": {
+        "Hasarlı Araç Aracınızı Hemen Satın": "Hasarlı Aracınızı Hemen Satın"
+      },
+      "canonical": "https://www.hasarpark.com/hasarli-arac-alim",
+      "og_url": "https://www.hasarpark.com/hasarli-arac-alim"
+    },
+    {
+      "route": "/pert-arac-alim",
+      "data_source": "src/data/services.ts -> pert-arac-alim",
+      "title": "Pert Araç Alımı | Sigorta Pert Raporlu Alan",
+      "title_len": 43,
+      "meta_description": "Sigorta pert raporlu araçlar için özel değerlendirme. 5+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.",
+      "desc_len": 143,
+      "meta_keywords": "pert araç alan, pert araç alımı, pert kayıtlı araç alan, sigorta pertli araç, pert oto alan, pert araç satmak",
+      "h1": "Pert Aracınız Değerinde Satın",
+      "h2_fix": {
+        "Pert Araç Aracınızı Hemen Satın": "Pert Aracınızı Hemen Satın"
+      },
+      "canonical": "https://www.hasarpark.com/pert-arac-alim",
+      "og_url": "https://www.hasarpark.com/pert-arac-alim"
+    },
+    {
+      "route": "/hurda-arac-alim",
+      "data_source": "src/data/services.ts -> hurda-arac-alim",
+      "title": "Hurda Araç Alımı | Hurda Belgesi & En İyi Fiyat - Hasar Park",
+      "title_len": 60,
+      "meta_description": "Hurda belgeli araçları kilo bazında en yüksek fiyata alıyoruz. Resmi belgeli işlem, çevre dostu geri dönüşüm. Ücretsiz çekici, anında ödeme.",
+      "desc_len": 140,
+      "meta_keywords": "hurda araç alan, hurda araç alımı, hurda belgeli araç, hurdaya araç satmak, hurda oto alan, hurda araba alan",
+      "h1": "Hurda Aracınız Çevreci Çözüm",
+      "h2_fix": {
+        "Hurda Araç Aracınızı Hemen Satın": "Hurda Aracınızı Hemen Satın"
+      },
+      "canonical": "https://www.hasarpark.com/hurda-arac-alim",
+      "og_url": "https://www.hasarpark.com/hurda-arac-alim"
+    }
+  ]
+}

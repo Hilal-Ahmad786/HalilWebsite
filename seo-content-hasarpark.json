@@ -1,0 +1,2221 @@
+{
+  "_meta": {
+    "site": "hasarpark.com (Hasar Park)",
+    "generated_for": "external SEO content rewrite — EXTRACTION ONLY, no code changed",
+    "framework": "Next.js (app router)",
+    "total_pages": 46,
+    "turkish_preserved": true
+  },
+  "templates": {
+    "city_pages": {
+      "renders_via": "src/app/sehirler/[city]/page.tsx",
+      "data_file": "src/data/cities.ts (citiesData record per slug)",
+      "count": 19,
+      "title_pattern": "record.metaTitle (free-form per city; common shape: \"<Şehir> Araç Alımı | <hook> - Hasar Park\")",
+      "description_pattern": "record.metaDescription (free-form per city)",
+      "h1_pattern": "record.hero.title + ' ' + record.hero.titleHighlight (highlight rendered in green)",
+      "h2_pattern": [
+        "<name>'da Hizmetlerimiz",
+        "İlçeye Göre Hizmet (only if districtDetails present)",
+        "<name>'da Neden Biz?",
+        "<name>'dan Yorumlar",
+        "<name>'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "<name> İçin Sık Sorulanlar",
+        "<name>'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3_pattern": "service-card titles (servicesDetail[*].title or default '<Hizmet> Araç Alımı') + districtDetails[].title + features[].title",
+      "canonical_pattern": "/sehirler/<slug>",
+      "jsonld": "AutomotiveBusiness + FAQPage per page; aggregateRating 4.9 / 10000 hardcoded in template (line 209)"
+    },
+    "service_pages": {
+      "renders_via": "src/app/[service]/page.tsx",
+      "data_file": "src/data/services.ts (servicesData record per slug)",
+      "count": 4,
+      "title_pattern": "record.metaTitle",
+      "description_pattern": "record.metaDescription",
+      "h1_pattern": "record.hero.title + ' ' + record.hero.titleHighlight",
+      "h2_pattern": [
+        "<shortTitle> Alımında Neden Biz?",
+        "Hangi Araçları Alıyoruz?",
+        "<shortTitle> Aracınızı Hemen Satın",
+        "<pricing.title>",
+        "Bunları Yapmayın",
+        "Gerçek Deneyimler",
+        "Merak Edilenler",
+        "Diğer Hizmetlerimiz",
+        "Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3_pattern": "features[].title + content.relatedServices[].title",
+      "canonical_pattern": "/<slug>  (services live at site root, e.g. /kazali-arac-alim)",
+      "jsonld": "Service + FAQPage per page"
+    },
+    "blog_posts": {
+      "renders_via": "src/app/blog/[slug]/page.tsx",
+      "data_file": "src/data/blog.ts (blogPosts record per slug)",
+      "count": 12,
+      "title_pattern": "metadata.title = post.metaTitle",
+      "h1_pattern": "post.title (rendered via PageHero) — NOTE: differs from <title> which uses post.metaTitle",
+      "description_pattern": "metadata.description = post.excerpt/metaDescription",
+      "canonical_pattern": "/blog/<slug>",
+      "note": "generateMetadata defines NO openGraph block, so og_title/og_description are unset (inherit root default)."
+    }
+  },
+  "pages": [
+    {
+      "route": "(root default metadata)",
+      "source_file": "src/app/layout.tsx",
+      "data_source": "values from src/config/site.ts (siteConfig.name, siteConfig.description, siteConfig.keywords, siteConfig.url)",
+      "page_type": "other",
+      "title": "Hasar Park | Kazalı, Hasarlı, Pert & Hurda Araç Alımı - En Yüksek Fiyat (title.default; template: \"%s | Hasar Park\")",
+      "meta_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri.",
+      "meta_keywords": "kazalı araç alan, hasarlı araç alan, pert araç alan, hurda araç alan, kazalı araç satmak, hasarlı araç satmak, pert araç satmak, hurda araç satmak, araç alım, en yüksek fiyat, anında ödeme, hasar park",
+      "og_title": "Hasar Park - Kazalı, Hasarlı & Hurda Araç Alımı",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri.",
+      "canonical": "/ (metadataBase: https://hasarpark.com)",
+      "h1": "",
+      "h2": [],
+      "h3": [],
+      "body_snippets": []
+    },
+    {
+      "route": "/",
+      "source_file": "src/app/page.tsx",
+      "data_source": "headings/body in: src/components/home/HeroSection.tsx, src/components/home/TrustBenefitsSection.tsx, src/components/home/VehicleServicesSection.tsx, src/components/home/ProcessSection.tsx, src/components/home/QuoteFormSection.tsx, src/components/home/WhyChooseUsSection.tsx, src/components/home/TestimonialsSection.tsx, src/components/home/FAQSection.tsx, src/components/home/FinalCTASection.tsx; card/step/benefit data in src/data/homeContent.ts; service titles in src/config/site.ts",
+      "page_type": "home",
+      "title": "Hasarlı, Kazalı, Pert ve Hurda Araç Alımı | Hasar Park",
+      "meta_description": "Hasar Park ile kazalı, hasarlı, pert ve hurda aracınız için hızlı teklif alın. Ücretsiz çekici, noterde güvenli devir ve anında ödeme avantajlarından yararlanın.",
+      "meta_keywords": "",
+      "og_title": "Hasarlı, Kazalı, Pert ve Hurda Araç Alımı | Hasar Park",
+      "og_description": "Kazalı, hasarlı, pert ve hurda araçlar için 30 dakikada teklif. Ücretsiz çekici, noterde güvenli devir, anında ödeme.",
+      "canonical": "/",
+      "h1": "Aracınızı Değerinde Nakde Dönüştürün",
+      "h2": [
+        "Güvenilir Süreç, Hızlı Nakit",
+        "Hangi Araçları Satın Alıyoruz?",
+        "4 Adımda Kolay Satış",
+        "Aracınız için hızlı teklif alın",
+        "Neden Bizi Tercih Etmelisiniz?",
+        "Gerçek Yorumlar, Gerçek Memnuniyet",
+        "Merak Edilenler",
+        "Bugün Arayın, Yarın Ödemenizi Alın!"
+      ],
+      "h3": [
+        "Noterde Güvenli Devir",
+        "Deneyimli Uzman Kadro",
+        "Ücretsiz Çekici",
+        "30 Dakikada Ön Teklif",
+        "Tüm Evraklar Bizden",
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Bilgilerinizi Gönderin",
+        "Fotoğraf Gönderin",
+        "Teklif Alın",
+        "Hemen Satın",
+        "Anında Değerlendirme",
+        "En Yüksek Fiyat",
+        "Ücretsiz Çekici",
+        "Tüm Evraklar Bizden",
+        "Anında Ödeme",
+        "7+ Yıl Tecrübe"
+      ],
+      "body_snippets": [
+        "Türkiye'nin Lider Araç Alım Merkezi",
+        "Kazalı • Hasarlı • Pert • Hurda",
+        "Aracınızın fotoğraflarını gönderin, en yüksek fiyat teklifini 30 dakika içinde alın. Noterde güvenli devir ve anında ödeme.",
+        "Aracınızı satarken her adımı baştan netleştiriyoruz: teklif, ücretsiz çekici, noter ve ödeme. Sürpriz yok, gizli masraf yok.",
+        "Aracınızın bilgilerini paylaşın, 30 dakika içinde en iyi teklifi sizinle paylaşalım.",
+        "Kazalı, hasarlı, pert veya hurda — aracınız ne durumda olursa olsun en yüksek teklifi sunuyoruz."
+      ]
+    },
+    {
+      "route": "/hizmetler",
+      "source_file": "src/app/hizmetler/page.tsx",
+      "data_source": "h1 in src/components/shared/PageHero.tsx; CTA h2s in src/components/shared/CTABanner.tsx; section h2s in src/components/shared/SectionHeader.tsx; service card h3s in src/components/home/VehicleServicesSection.tsx (titles from src/config/site.ts); reason h3s in src/components/home/WhyChooseUsSection.tsx and step h3s in src/components/home/ProcessSection.tsx (data in src/data/homeContent.ts)",
+      "page_type": "other",
+      "title": "Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı",
+      "meta_description": "Hasar Park olarak kazalı araç alımı, hasarlı araç alımı, pert araç alımı ve hurda araç alımı hizmetleri sunuyoruz. En yüksek fiyat garantisi.",
+      "meta_keywords": "araç alım hizmetleri, kazalı araç, hasarlı araç, pert araç, hurda araç, araç satış",
+      "og_title": "Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri.",
+      "canonical": "/hizmetler",
+      "h1": "Araç Alım Hizmetlerimiz",
+      "h2": [
+        "Hangi Araçları Satın Alıyoruz?",
+        "Hangi Hizmeti Seçeceğinizden Emin Değil misiniz?",
+        "Neden Bizi Tercih Etmelisiniz?",
+        "4 Adımda Kolay Satış",
+        "Hangi Araçları Alıyoruz?",
+        "Aracınızı Bugün Satın"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Anında Değerlendirme",
+        "En Yüksek Fiyat",
+        "Ücretsiz Çekici",
+        "Tüm Evraklar Bizden",
+        "Anında Ödeme",
+        "7+ Yıl Tecrübe",
+        "Bilgilerinizi Gönderin",
+        "Fotoğraf Gönderin",
+        "Teklif Alın",
+        "Hemen Satın"
+      ],
+      "body_snippets": [
+        "Kazalı, hasarlı, pert ve hurda her türlü aracınızı en yüksek fiyatla alıyoruz. Ücretsiz ekspertiz, anında ödeme.",
+        "Bizi arayın, uzman ekibimiz size yardımcı olsun.",
+        "En yüksek fiyat garantisi ile hemen teklif alın."
+      ]
+    },
+    {
+      "route": "/sehirler",
+      "source_file": "src/app/sehirler/page.tsx",
+      "data_source": "h1 in src/components/shared/PageHero.tsx; section h2s in src/components/shared/SectionHeader.tsx; CTA h2s in src/components/shared/CTABanner.tsx; featured-city h3 names from src/data/cities.ts (getAllCities)",
+      "page_type": "other",
+      "title": "Hizmet Verdiğimiz Şehirler | Türkiye Geneli Araç Alımı",
+      "meta_description": "Hasar Park olarak Türkiye'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz. Size en yakın şehri seçin.",
+      "meta_keywords": "türkiye araç alım, şehirler, il il araç alım, türkiye geneli hizmet",
+      "og_title": "Hizmet Verdiğimiz Şehirler | Türkiye Geneli Araç Alımı | Hasar Park",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri.",
+      "canonical": "/sehirler",
+      "h1": "Türkiye Geneli Araç Alım Hizmeti",
+      "h2": [
+        "Başlıca Şehirler",
+        "Hizmete Açılacak Şehirler",
+        "Şehriniz Listede Yok mu?",
+        "Türkiye Geneli Kapsam",
+        "Bugün Arayın, Yanınızdayız!"
+      ],
+      "h3": [
+        "7 Bölge",
+        "81 İl"
+      ],
+      "body_snippets": [
+        "81 ilde kazalı, hasarlı, pert ve hurda araç alımı. Size en yakın şehri seçin, anında teklif alın.",
+        "Yakında daha fazla şehir eklenecek!",
+        "Şu anda İstanbul, Ankara ve İzmir'de hizmet veriyoruz.",
+        "Bu şehirlerden hizmet almak ister misiniz? Hemen arayın, en kısa sürede hizmete açalım!",
+        "Bizi arayın, Türkiye'nin her yerine gidiyoruz!",
+        "Hangi şehirde olursanız olun, size geliyoruz."
+      ]
+    },
+    {
+      "route": "/hakkimizda",
+      "source_file": "src/app/hakkimizda/page.tsx",
+      "data_source": "h1 in src/components/shared/PageHero.tsx; section h2s in src/components/shared/SectionHeader.tsx; CTA h2 in src/components/shared/CTABanner.tsx; reason h3s in src/components/home/WhyChooseUsSection.tsx (data in src/data/homeContent.ts)",
+      "page_type": "about",
+      "title": "Hakkımızda | Türkiye'nin En Güvenilir Araç Alım Merkezi",
+      "meta_description": "7+ yıl tecrübe, 10.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye'nin lider firmasıyız.",
+      "meta_keywords": "",
+      "og_title": "Hakkımızda | Türkiye'nin En Güvenilir Araç Alım Merkezi | Hasar Park",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri.",
+      "canonical": "/hakkimizda",
+      "h1": "Türkiye'nin En Güvenilir Firması",
+      "h2": [
+        "Bizim Hikayemiz",
+        "Temel Değerlerimiz",
+        "Neden Bizi Tercih Etmelisiniz?",
+        "Bizimle Çalışın, En Yüksek Fiyatı Alın"
+      ],
+      "h3": [
+        "Güven",
+        "Hız",
+        "Profesyonellik",
+        "Anında Değerlendirme",
+        "En Yüksek Fiyat",
+        "Ücretsiz Çekici",
+        "Tüm Evraklar Bizden",
+        "Anında Ödeme",
+        "7+ Yıl Tecrübe"
+      ],
+      "body_snippets": [
+        "7+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma. 10.000+ mutlu müşteri ile Türkiye'nin lideriyiz.",
+        "Hasar Park, 2018 yılından bu yana Türkiye'nin dört bir yanında kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 7 yılı aşkın tecrübemiz ve 10.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.",
+        "Müşteri memnuniyetini her şeyin üstünde tutan yaklaşımımız, şeffaf fiyatlandırma politikamız ve profesyonel ekibimizle Türkiye'nin en güvenilir araç alım merkezi olmayı başardık.",
+        "İstanbul, Ankara, İzmir başta olmak üzere Türkiye'nin 81 ilinde hizmet vermekteyiz. Uzman ekibimiz, 7/24 müşteri hizmetleri, ücretsiz çekici hizmetimiz ve aynı gün ödeme garantimizle yanınızdayız.",
+        "Şeffaf ve dürüst fiyatlandırma ile müşterilerimizin güvenini kazanıyoruz.",
+        "30 dakikada değerlendirme, aynı gün ödeme ile zamandan tasarruf sağlıyoruz.",
+        "7+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.",
+        "7+ yıllık tecrübemizden faydalanın."
+      ]
+    },
+    {
+      "route": "/iletisim",
+      "source_file": "src/app/iletisim/page.tsx",
+      "data_source": "metadata in src/app/iletisim/layout.tsx; h1 in src/components/shared/PageHero.tsx; section h2s in src/components/shared/SectionHeader.tsx",
+      "page_type": "contact",
+      "title": "İletişim - Hasar Park | Bize Ulaşın",
+      "meta_description": "Hasar Park ile iletişime geçin. Kazalı, hasarlı, pert ve hurda araç alımı için hemen arayın. 7/24 müşteri hizmetleri.",
+      "meta_keywords": "",
+      "og_title": "İletişim - Hasar Park | Bize Ulaşın | Hasar Park (inherits root default openGraph title format; root default og:title: \"Hasar Park - Kazalı, Hasarlı & Hurda Araç Alımı\")",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri. (inherits root default openGraph description)",
+      "canonical": "/ (inherits root default alternates.canonical; layout/page set none)",
+      "h1": "Bize Ulaşın",
+      "h2": [
+        "Bize Mesaj Gönderin",
+        "Her Zaman Yanınızdayız"
+      ],
+      "h3": [],
+      "body_snippets": [
+        "7/24 müşteri hizmetleri ile her zaman yanınızdayız. Hemen arayın, anında teklif alın!",
+        "Hafta sonu ve resmi tatillerde de hizmetinizdeyiz!"
+      ]
+    },
+    {
+      "route": "/cerez-politikasi",
+      "source_file": "src/app/cerez-politikasi/page.tsx",
+      "data_source": "h1 rendered via src/components/shared/LegalLayout.tsx (title prop); siteConfig.name from src/config/site.ts",
+      "page_type": "other",
+      "title": "Çerez Politikası | Hasar Park",
+      "meta_description": "Hasar Park web sitesinde kullanılan çerezler ve yönetimi hakkında bilgilendirme.",
+      "meta_keywords": "",
+      "og_title": "Çerez Politikası | Hasar Park (inherits root default openGraph; root default og:title: \"Hasar Park - Kazalı, Hasarlı & Hurda Araç Alımı\")",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri. (inherits root default openGraph description)",
+      "canonical": "/cerez-politikasi",
+      "h1": "Çerez Politikası",
+      "h2": [
+        "1. Çerez (Cookie) Nedir?",
+        "2. Hangi Çerezleri Kullanıyoruz?",
+        "3. Çerezlerin Kullanım Amaçları",
+        "4. Çerezleri Nasıl Yönetebilirsiniz?",
+        "5. İletişim"
+      ],
+      "h3": [],
+      "body_snippets": [
+        "Hasar Park olarak, web sitemizden (hasarpark.com) en verimli şekilde faydalanabilmeniz ve kullanıcı deneyiminizi geliştirebilmek için Çerezler (Cookies) kullanmaktayız. Çerez kullanılmasını tercih etmezseniz tarayıcınızın ayarlarından çerezleri silebilir ya da engelleyebilirsiniz.",
+        "Çerezler, ziyaret ettiğiniz internet siteleri tarafından tarayıcılar aracılığıyla bilgisayarınıza veya akıllı telefonunuza kaydedilen küçük metin dosyalarıdır. Çerezler, bir web sitesinin daha kullanıcı dostu deneyim sunmasını sağlar.",
+        "Kullandığınız internet tarayıcısının ayarlarına giderek çerezlere ilişkin tercihlerinizi kişiselleştirebilirsiniz. Çerezleri tamamen devre dışı bırakmanız halinde, web sitemizin bazı özellikleri düzgün çalışmayabilir.",
+        "Çerez politikamız ile ilgili soru ve görüşleriniz için bizimle iletişime geçebilirsiniz:"
+      ]
+    },
+    {
+      "route": "/gizlilik-politikasi",
+      "source_file": "src/app/gizlilik-politikasi/page.tsx",
+      "data_source": "h1 rendered via src/components/shared/LegalLayout.tsx (title prop); siteConfig.name from src/config/site.ts",
+      "page_type": "other",
+      "title": "Gizlilik Politikası | Hasar Park",
+      "meta_description": "Hasar Park gizlilik politikası ve kişisel verilerin işlenmesi hakkında bilgilendirme.",
+      "meta_keywords": "",
+      "og_title": "Gizlilik Politikası | Hasar Park (inherits root default openGraph; root default og:title: \"Hasar Park - Kazalı, Hasarlı & Hurda Araç Alımı\")",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri. (inherits root default openGraph description)",
+      "canonical": "/gizlilik-politikasi",
+      "h1": "Gizlilik Politikası",
+      "h2": [
+        "1. Toplanan Bilgiler",
+        "2. Bilgilerin Kullanım Amacı",
+        "3. Bilgilerin Paylaşımı",
+        "4. Veri Güvenliği",
+        "5. Haklarınız",
+        "6. İletişim"
+      ],
+      "h3": [],
+      "body_snippets": [
+        "Hasar Park (\"biz\", \"bizim\" veya \"şirketimiz\") olarak, müşterilerimizin ve web sitemizi ziyaret eden kullanıcıların gizliliğine ve kişisel verilerinin korunmasına büyük önem veriyoruz. Bu Gizlilik Politikası, web sitemizi (hasarpark.com) kullandığınızda veya hizmetlerimizden yararlandığınızda kişisel verilerinizin nasıl toplandığını, kullanıldığını, paylaşıldığını ve korunduğunu açıklar.",
+        "Hizmetlerimizi kullandığınızda aşağıdaki türde bilgileri toplayabiliriz:",
+        "Topladığımız kişisel verileri aşağıdaki amaçlarla kullanmaktayız:",
+        "Kişisel verileriniz, yalnızca size hizmet sunabilmek amacıyla ve yasal zorunluluklar çerçevesinde aşağıdaki kişi veya kurumlarla paylaşılabilir:",
+        "Verileriniz kesinlikle reklam veya pazarlama amacıyla üçüncü şahıslara satılmaz.",
+        "Kişisel verilerinizin yetkisiz erişime, kaybolmaya, değiştirilmeye veya ifşa edilmeye karşı korunması için gerekli tüm teknik ve idari tedbirleri almaktayız. Sitemiz 256-bit SSL sertifikası ile şifrelenmektedir.",
+        "KVKK uyarınca kişisel verilerinizle ilgili olarak; verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, eksik veya yanlış işlenmişse düzeltilmesini isteme haklarına sahipsiniz.",
+        "Gizlilik politikamız ile ilgili soru ve talepleriniz için bizimle iletişime geçebilirsiniz:"
+      ]
+    },
+    {
+      "route": "/kullanim-sartlari",
+      "source_file": "src/app/kullanim-sartlari/page.tsx",
+      "data_source": "h1 rendered via src/components/shared/LegalLayout.tsx (title prop); siteConfig.name from src/config/site.ts",
+      "page_type": "other",
+      "title": "Kullanım Şartları | Hasar Park",
+      "meta_description": "Hasar Park web sitesi kullanım şartları ve koşulları.",
+      "meta_keywords": "",
+      "og_title": "Kullanım Şartları | Hasar Park (inherits root default openGraph; root default og:title: \"Hasar Park - Kazalı, Hasarlı & Hurda Araç Alımı\")",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri. (inherits root default openGraph description)",
+      "canonical": "/kullanim-sartlari",
+      "h1": "Kullanım Şartları",
+      "h2": [
+        "1. Hizmet Kapsamı",
+        "2. Kullanıcı Yükümlülükleri",
+        "3. Fiyat Teklifleri ve Geçerlilik",
+        "4. Fikri Mülkiyet Hakları",
+        "5. Sorumluluğun Sınırlandırılması",
+        "6. Şartlarda Değişiklik",
+        "7. İletişim"
+      ],
+      "h3": [],
+      "body_snippets": [
+        "Bu web sitesini (hasarpark.com) ziyaret ederek veya hizmetlerimizden yararlanarak aşağıdaki kullanım şartlarını kabul etmiş sayılırsınız. Lütfen hizmetlerimizi kullanmadan önce bu şartları dikkatlice okuyunuz.",
+        "Hasar Park, kazalı, hasarlı, pert ve hurda araçların alımını gerçekleştiren bir platformdur. Web sitemiz üzerinden sunulan teklifler, tarafınızca sağlanan beyan ve fotoğraflara dayanmaktadır ve ön değerlendirme niteliği taşır. Kesin fiyat, aracın fiziki incelemesi sonucunda belirlenir.",
+        "Sitemiz üzerinden, WhatsApp hattımızdan veya telefonla verilen fiyat teklifleri aksi belirtilmedikçe o gün için geçerlidir. Piyasa koşullarındaki değişiklikler nedeniyle teklifler güncellenebilir. Hasar Park, herhangi bir aracı satın alma zorunluluğu altında değildir.",
+        "Bu web sitesinde yer alan tüm içerik, logo, tasarım, grafikler ve yazılımlar Hasar Park'a aittir veya lisanslı olarak kullanılmaktadır. İzinsiz kopyalanması, çoğaltılması veya dağıtılması yasaktır.",
+        "Hasar Park, web sitesinin kesintisiz veya hatasız çalışacağını garanti etmez. Site kullanımından doğabilecek doğrudan veya dolaylı zararlardan Hasar Park sorumlu tutulamaz. Dış bağlantılar (diğer web sitelerine verilen linkler) üzerindeki içeriklerden sorumluluk kabul edilmez.",
+        "Hasar Park, önceden bildirimde bulunmaksızın bu Kullanım Şartları'nda değişiklik yapma hakkını saklı tutar. Güncel şartlar sitede yayınlandığı andan itibaren geçerlilik kazanır.",
+        "Kullanım şartları hakkında sorularınız için bizimle iletişime geçebilirsiniz:"
+      ]
+    },
+    {
+      "route": "/kvkk",
+      "source_file": "src/app/kvkk/page.tsx",
+      "data_source": "h1 rendered via src/components/shared/LegalLayout.tsx (title prop); siteConfig.name from src/config/site.ts",
+      "page_type": "other",
+      "title": "KVKK Aydınlatma Metni | Hasar Park",
+      "meta_description": "Hasar Park Kişisel Verilerin Korunması Kanunu (KVKK) aydınlatma metni.",
+      "meta_keywords": "",
+      "og_title": "KVKK Aydınlatma Metni | Hasar Park (inherits root default openGraph; root default og:title: \"Hasar Park - Kazalı, Hasarlı & Hurda Araç Alımı\")",
+      "og_description": "Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye'nin En Güvenilir ve En Yüksek Fiyat Veren Merkezi. 7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri. (inherits root default openGraph description)",
+      "canonical": "/kvkk",
+      "h1": "KVKK Aydınlatma Metni",
+      "h2": [
+        "1. İşlenen Kişisel Verileriniz",
+        "2. Kişisel Verilerin İşlenme Amacı",
+        "3. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi",
+        "4. Kişisel Verilerin Aktarılması",
+        "5. İlgili Kişinin Hakları (KVKK Madde 11)",
+        "6. Veri Sorumlusuna Başvuru"
+      ],
+      "h3": [],
+      "body_snippets": [
+        "KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN AYDINLATMA METNİ",
+        "Hasar Park (\"Şirket\") olarak, veri sorumlusu sıfatıyla, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\"KVKK\") ve ilgili mevzuat kapsamında, kişisel verilerinizin güvenliğine ve hukuka uygun şekilde işlenmesine son derece önem vermekteyiz.",
+        "Tarafımızca işlenen kişisel verileriniz aşağıdakileri kapsayabilir:",
+        "Kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:",
+        "Kişisel verileriniz, web sitemiz, WhatsApp hattımız, e-posta veya telefon aracılığıyla elektronik ve sözlü ortamda toplanmaktadır. İşleme süreçleri, KVKK Madde 5'te belirtilen \"bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması kaydıyla, sözleşmenin taraflarına ait kişisel verilerin işlenmesinin gerekli olması\", \"veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması\" ve \"ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması\" hukuki sebeplerine dayanmaktadır.",
+        "Kişisel verileriniz, KVKK'nın 8. ve 9. maddelerinde belirtilen şartlar dâhilinde;",
+        "KVKK'nın 11. maddesi uyarınca veri sahipleri;",
+        "KVKK Madde 11 kapsamındaki haklarınızı kullanmak için taleplerinizi kimliğinizi tespit edici belgeler ile birlikte aşağıdaki iletişim kanalları üzerinden bize iletebilirsiniz:"
+      ]
+    },
+    {
+      "route": "/kazali-arac-alim",
+      "source_file": "src/data/services.ts",
+      "data_source": "src/data/services.ts -> kazali-arac-alim (L76)",
+      "page_type": "service",
+      "title": "Kazalı Araç Alımı | 30 Dakikada Teklif - Hasar Park",
+      "meta_description": "Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. En yüksek fiyat garantisi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 24 saat hizmet.",
+      "meta_keywords": "kazalı araç alan, kazalı araç satmak, kazalı araç alım, kazalı oto alan, kaza geçirmiş araç, kazalı araç satan yerler",
+      "og_title": "Kazalı Araç Alımı | 30 Dakikada Teklif - Hasar Park",
+      "og_description": "Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. En yüksek fiyat garantisi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 24 saat hizmet.",
+      "canonical": "/kazali-arac-alim",
+      "h1": "KAZALI ARACINIZ EN YÜKSEK FİYATA",
+      "h2": [
+        "Kazalı Araç Alımında Neden Biz?",
+        "Hangi Araçları Alıyoruz?",
+        "Kazalı Araç Aracınızı Hemen Satın",
+        "Kazalı Araç Fiyatlandırması",
+        "Bunları Yapmayın",
+        "Gerçek Deneyimler",
+        "Merak Edilenler",
+        "Diğer Hizmetlerimiz",
+        "Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "30 Dakikada Teklif",
+        "En Yüksek Fiyat",
+        "Ücretsiz Çekici",
+        "Tüm Evraklar Bizden",
+        "Anında Ödeme",
+        "Tecrübeli Ekip",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Kaza geçirmiş her türlü araç için anında değerlendirme. 30 dakikada teklif, ücretsiz çekici, anında ödeme.",
+        "Aracınızın fotoğraflarını gönderin, 30 dakika içinde en yüksek teklifi alın.",
+        "Piyasa araştırması ile kazalı aracınız için en iyi fiyatı garantiliyoruz.",
+        "Kazalı aracınızı bulunduğu yerden ücretsiz olarak alırız.",
+        "Noter ve tescil işlemlerini biz hallederiz.",
+        "İşlem tamamlandıktan sonra hemen nakit veya EFT ile ödeme.",
+        "7+ yıl kazalı araç alım satım tecrübesi.",
+        "Ön çarpma hasarlı araçlar",
+        "Yan çarpma hasarlı araçlar",
+        "Arka çarpma hasarlı araçlar",
+        "Devrilmiş araçlar",
+        "Motor hasarlı araçlar",
+        "Şanzıman hasarlı araçlar",
+        "Kaporta hasarlı araçlar",
+        "Hava yastığı patlamış araçlar",
+        "Fiyat belirlerken dikkate aldığımız faktörler:",
+        "Aracın markası ve modeli",
+        "Model yılı ve kilometre",
+        "Hasarın boyutu ve türü",
+        "Onarılabilir parçaların değeri",
+        "Piyasa talebi",
+        "Yedek parça değeri",
+        "Hata: Sadece tek bir alıcıdan teklif almak Çözüm: En az 2-3 alıcıdan teklif alın. Hasar Park olarak piyasanın en yüksek teklifini sunduğumuzu garanti ediyoruz, ancak karşılaştırma yapmanız haklı bir tercih.",
+        "Hata: Kaza fotoğrafı çekmemek Çözüm: Kazadan hemen sonra çok sayıda fotoğraf çekin. Hasar bölgelerini, plakayı ve genel görünümü belgeleyen fotoğraflar değerlendirmeyi hızlandırır ve daha adil fiyat almanızı sağlar.",
+        "Hata: Sigortaya başvurmadan araç satmak Çözüm: Önce sigorta şirketinizle görüşün ve kasko/zorunlu trafik sigortası kapsamını öğrenin. Sigorta tazminatı aldıktan sonra araç satışı yapmanız daha avantajlı olabilir.",
+        "Hata: Aracı onarıma verdikten sonra satmaya çalışmak Çözüm: Kazalı aracı tamir ettirip satmak çoğu zaman ekonomik değildir. Tamir maliyeti çıktıktan sonra kazancınız minimal olabilir. Doğrudan Hasar Park'a satış yaparak tamir masrafından kurtulun.",
+        "Araç kaza yaptıktan sonra ne yapacağımı bilemedim. Sigorta şirketi düşük teklif verdi, galericiler görmek bile istemedi. (Sonuç: Hasar Park'ı aradım, 25 dakika içinde teklif geldi ve aynı gün aracımı teslim ederek param hesabımda oldu.)",
+        "Ön tampon ve kaput tamamen ezilmişti. Tamir teklifi aldım, çok yüksekti. Aracı satmayı düşündüm ama fiyat konusunda endişeliydim. (Sonuç: Hasar Park'ın verdiği fiyat beklentimin üzerindeydi. Ücretsiz çekici geldi, evrakları onlar halletti, 3 saatte her şey bitti.)",
+        "S: Kazalı araç alımında nasıl bir süreç işliyor? C: Kazalı araç alım sürecimiz 4 adımda tamamlanır. İlk adımda bizi arayarak veya WhatsApp üzerinden iletişime geçerek aracınız hakkında temel bilgileri paylaşıyorsunuz. İkinci adımda birkaç fotoğraf gönderiyorsunuz; ön, arka, yan ve hasar bölgelerini net şekilde gösteren fotoğraflar yeterli. Üçüncü adımda uzman ekibimiz 30 dakika içinde size en yüksek fiyat teklifini sunuyor. Teklifi kabul etmeniz halinde dördüncü adımda ücretsiz çekici ile aracınızı istediğiniz lokasyondan alıyor, noter işlemlerini tamamlıyor ve anında ödeme yapıyoruz. Tüm süreç çoğunlukla aynı gün içinde tamamlanır; sizi bekleten bir süreç yok.",
+        "S: Hangi tür kazalı araçları alıyorsunuz? C: Hasar türü veya boyutundan bağımsız olarak tüm kazalı araçları alıyoruz. Ön çarpma, yan çarpma, arkadan çarpma, devrilme ve takla atmış araçların tamamı alım kapsamımızdadır. Motor hasarlı, şanzıman hasarlı, diferansiyel hasarlı, kaporta hasarlı, hava yastığı patlamış ve şasi hasarlı araçlar da değerlendiriyoruz. Sürülemez durumda, hareket edemeyen veya yangın geçirmiş araçlar için de ücretsiz çekici ile yerinden alım yapıyoruz. 7+ yıllık tecrübemizle karşılaşmadığımız hasar türü neredeyse kalmamıştır.",
+        "S: Kazalı araç için ne kadar ödeme yapıyorsunuz? C: Kazalı araç fiyatı birçok faktöre bağlı olarak değişir: aracın markası, modeli, üretim yılı, kilometresi, hasar türü ve boyutu, onarılabilir parçaların değeri ve güncel piyasa talebi bunların başında gelir. Genel bir kural olarak kazalı araçlar, sağlam piyasa değerinin %50-80'i arasında fiyatlanır; ancak bu oran hasarın ciddiyetine göre farklılık gösterir. Biz piyasa araştırması yaparak rakiplerimizin üzerinde fiyat teklifi sunmayı taahhüt ediyoruz. Size adil ve şeffaf bir fiyat veriyoruz; gizli kesinti veya sürpriz düşüş yaşamazsınız.",
+        "S: Trafik kazası raporu gerekli mi? C: Kaza raporu satış sürecini kolaylaştırır ve bazı durumlarda daha iyi fiyat almanızı sağlayabilir; ancak zorunlu değildir. Trafik kazası tutanağı, alkol raporu veya bilirkişi raporu olmasa dahi aracınızı yerinde değerlendirip size teklif verebiliriz. Raporunuz varsa mutlaka paylaşın, çünkü belgelenmiş hasar bilgisi süreci hızlandırır. Rapor yoksa ekibimiz yerinde inceleme yaparak bağımsız bir değerlendirme gerçekleştirir. Tüm evrak işlemlerinde de size rehberlik ediyoruz.",
+        "S: Çok hasarlı araçları da alıyor musunuz? C: Evet, hasar derecesi ne olursa olsun tüm kazalı araçları alıyoruz. Tamamen ezilmiş, motor bloğu çökmüş, şasi hasarlı veya yangın geçirmiş araçlar dahil olmak üzere her koşuldaki aracı değerlendiriyoruz. Ağır hasarlı araçlarda bile kullanılabilir parçalar, metal değeri ve sigorta tazminatları fiyatlandırmada rol oynar. Üstelik sürülemez veya hareket edemeyen araçlar için tüm Türkiye'ye ücretsiz çekici hizmetimiz mevcuttur. \"Aracım çok hasarlı, alamazlar\" düşüncesiyle vazgeçmeyin; bizi arayın ve gerçek teklifi görün."
+      ]
+    },
+    {
+      "route": "/hasarli-arac-alim",
+      "source_file": "src/data/services.ts",
+      "data_source": "src/data/services.ts -> hasarli-arac-alim (L241)",
+      "page_type": "service",
+      "title": "Hasarlı Araç Alımı | Mekanik & Kaporta Hasarlı Araç Alan - Hasar Park",
+      "meta_description": "Motor, şanzıman, kaporta hasarlı araçları alıyoruz. Detaylı ekspertiz, adil fiyat, ücretsiz çekici. Tüm evraklar bizden, anında ödeme garantisi.",
+      "meta_keywords": "hasarlı araç alan, hasarlı araç satmak, mekanik hasarlı araç, kaporta hasarlı araç, motor hasarlı araç",
+      "og_title": "Hasarlı Araç Alımı | Mekanik & Kaporta Hasarlı Araç Alan - Hasar Park",
+      "og_description": "Motor, şanzıman, kaporta hasarlı araçları alıyoruz. Detaylı ekspertiz, adil fiyat, ücretsiz çekici. Tüm evraklar bizden, anında ödeme garantisi.",
+      "canonical": "/hasarli-arac-alim",
+      "h1": "HASARLI ARACINIZ ANINDA NAKDE",
+      "h2": [
+        "Hasarlı Araç Alımında Neden Biz?",
+        "Hangi Araçları Alıyoruz?",
+        "Hasarlı Araç Aracınızı Hemen Satın",
+        "Hasarlı Araç Değerlendirmesi",
+        "Bunları Yapmayın",
+        "Gerçek Deneyimler",
+        "Merak Edilenler",
+        "Diğer Hizmetlerimiz",
+        "Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Detaylı Ekspertiz",
+        "Adil Fiyat",
+        "Tüm Hasar Türleri",
+        "Ücretsiz Taşıma",
+        "Kolay İşlem",
+        "Hızlı Ödeme",
+        "Kazalı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Mekanik, kaporta veya motor hasarlı tüm araçlar için profesyonel değerlendirme ve en yüksek fiyat.",
+        "Uzman ekibimiz aracınızı detaylı şekilde değerlendirir.",
+        "Hasar durumuna göre en adil fiyatı sunuyoruz.",
+        "Motor, şanzıman, kaporta her türlü hasarı kabul ediyoruz.",
+        "Hasarlı aracınızı ücretsiz çekiyoruz.",
+        "Tüm evrak ve işlemler bizden.",
+        "Anında nakit veya EFT ile ödeme.",
+        "Motor hasarlı araçlar",
+        "Şanzıman hasarlı araçlar",
+        "Kaporta hasarlı araçlar",
+        "Elektrik sistemi arızalı araçlar",
+        "Fren sistemi arızalı araçlar",
+        "Süspansiyon hasarlı araçlar",
+        "Diferansiyel hasarlı araçlar",
+        "Çalışmayan araçlar",
+        "Değerlendirmede dikkate aldığımız noktalar:",
+        "Hasarın türü (motor, şanzıman, kaporta)",
+        "Tamir edilebilirlik durumu",
+        "Yedek parça değeri",
+        "Aracın yaşı ve kilometresi",
+        "Piyasa talebi",
+        "Kullanılabilir parça sayısı",
+        "Hata: Mekanik arızayı kendiniz tamir ettirmeye çalışmak Çözüm: Hasarlı araç tamiri çoğunlukla aracın piyasa değerini aşar. Tamir ettirmeden önce Hasar Park'tan ücretsiz değerlendirme alın; tamir maliyeti ile satış fiyatını karşılaştırın.",
+        "Hata: Hasarı gizlemeye çalışmak Çözüm: Alıcılar hasarı fark eder ve bu güven kaybına neden olur. Hasar Park olarak tüm hasar türlerini kabul ediyoruz; dürüst bilgi paylaşımı süreci hızlandırır.",
+        "Hata: Aracı uzun süre bekletmek Çözüm: Hasarlı araçlar bekledikçe değer kaybeder; pas, nem ve ek arızalar fiyatı düşürür. En kısa sürede değerlendirme yaptırmak daha yüksek fiyat almanızı sağlar.",
+        "Motoru tamamen yandı, tamir teklifi aracın değerini geçiyordu. Kimse bakacak değil dedi. (Sonuç: Hasar Park motor hasarına rağmen beklediğimin üzerinde fiyat verdi. Çekici geldi, evrak halloldu, aynı gün param geldi.)",
+        "Otomatik vites arızası yüzünden araç hareket etmiyordu. Serviste 3 ay bekledi, tamir masrafı çok yüksekti. (Sonuç: Hasar Park'ı aradım, fotoğraf gönderdim. 20 dakikada teklif geldi, ertesi gün aracım alındı ve param yattı.)",
+        "S: Hangi tür hasarlı araçları alıyorsunuz? C: Motor hasarlı, şanzıman hasarlı, kaporta hasarlı, elektrik sistemi hasarlı, fren sistemi arızalı, süspansiyon hasarlı, diferansiyel hasarlı ve tüm mekanik hasarlı araçları alıyoruz. Tek bir parçası arızalı araçtan kapsamlı çoklu hasara kadar her durumu değerlendiriyoruz. Aracın çalışıp çalışmaması da fark etmez; hareket edemeyen araçlarınızı ücretsiz çekici ile istediğiniz noktadan teslim alıyoruz. 7 yılı aşkın tecrübemizle hangi hasar türü olursa olsun size adil ve en yüksek fiyatı sunuyoruz.",
+        "S: Motor arızalı araç için de alım yapıyor musunuz? C: Evet, motor arızalı veya motor hasarlı tüm araçlar için alım yapıyoruz. Motor hasarı; silindir kapağı çatlağı, motor blok çatlağı, turbo arızası, yakıt pompası sorunu veya komple motor değişimi gerektiren durum olabilir — hepsini değerlendiriyoruz. Motor hasarının boyutu fiyatı etkiler; ancak aracın diğer parçalarının durumu, marka ve model değeri de hesaba katılır. Çalışmayan, çekici gerektiren araçlarınızı bulunduğu yerden ücretsiz alıyoruz. Motor hasarı olan araçlar için de piyasanın en yüksek teklifini vermeyi garanti ediyoruz.",
+        "S: Hasarlı araç fiyatı nasıl belirleniyor? C: Hasarlı araç fiyatı; aracın genel durumu, hasarın türü ve boyutu, tamir maliyeti, yedek parça değeri, aracın yaşı ve kilometresi ile anlık piyasa talebine göre belirlenir. Örneğin kaporta hasarı olan ama motoru sağlam bir araç, motor hasarlı bir araca göre daha yüksek değer taşıyabilir. Değerlendirmemizde bu faktörlerin tümünü göz önünde bulunduruyoruz. Ayrıca değiştirilebilir parçalar, hurda metal değeri ve orijinal aksam fiyatları da hesaba katılır. Size şeffaf ve gerekçeli bir fiyat sunuyoruz; pazarlık ya da sürpriz düşüş yaşamazsınız.",
+        "S: Araç çalışmıyorsa da alıyor musunuz? C: Evet, kesinlikle alıyoruz. Çalışmayan, hareket edemeyen, kendi gücüyle sürülemeyen araçlar bizim uzmanlık alanımızda. Aracınız garajda, sokakta veya servis istasyonunda olabilir — fark etmez. Tüm Türkiye'ye ücretsiz çekici hizmetimizle aracınızı bulunduğunuz yerden teslim alıyoruz. Çekici gelirken bir gün önce randevu almanız yeterli; çoğu zaman aynı gün hizmet verebiliyoruz. Araç çalışmadığı için endişelenmeyin, bu durum değerlendirmemizi veya ödeme yapma kararlılığımızı değiştirmiyor.",
+        "S: Ekspertiz ücreti var mı? C: Hayır, ekspertiz hizmetimiz tamamen ücretsizdir. Uzman ekibimiz aracınızı yerinde inceleyerek detaylı değerlendirme yapar; bunun için herhangi bir ücret talep etmiyoruz. Araç teslim edilmesinden önce size tüm değerlendirme sonuçlarını ve gerekçeli fiyat teklifini sunuyoruz. Teklifi beğenmezseniz herhangi bir yükümlülük altında kalmıyorsunuz. Ücretsiz ekspertiz hizmetimiz Türkiye genelinde geçerlidir ve randevu ile hızlıca organize edilebilir."
+      ]
+    },
+    {
+      "route": "/pert-arac-alim",
+      "source_file": "src/data/services.ts",
+      "data_source": "src/data/services.ts -> pert-arac-alim (L401)",
+      "page_type": "service",
+      "title": "Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Hasar Park",
+      "meta_description": "Sigorta pert raporlu araçlar için özel değerlendirme. 7+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.",
+      "meta_keywords": "pert araç alan, pert araç satmak, pert raporu, sigorta pert, kasko pert",
+      "og_title": "Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Hasar Park",
+      "og_description": "Sigorta pert raporlu araçlar için özel değerlendirme. 7+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.",
+      "canonical": "/pert-arac-alim",
+      "h1": "PERT ARACINIZ DEĞERİNDE SATIN",
+      "h2": [
+        "Pert Araç Alımında Neden Biz?",
+        "Hangi Araçları Alıyoruz?",
+        "Pert Araç Aracınızı Hemen Satın",
+        "Pert Araç Fiyatlandırması",
+        "Bunları Yapmayın",
+        "Gerçek Deneyimler",
+        "Merak Edilenler",
+        "Diğer Hizmetlerimiz",
+        "Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Pert Raporu Uzmanı",
+        "Özel Değerlendirme",
+        "Yasal Süreç",
+        "Ücretsiz Çekici",
+        "Hızlı İşlem",
+        "Anında Ödeme",
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Sigorta pert raporu çıkmış araçlar için özel değerlendirme. En yüksek fiyat ve güvenli işlem garantisi.",
+        "Pert raporu olan araçlarda 7+ yıl tecrübe.",
+        "Pert araçlar için özel fiyatlandırma sistemimiz var.",
+        "Tüm yasal işlemler ve evraklar bizden.",
+        "Pert aracınızı ücretsiz çekiyoruz.",
+        "Pert işlemleri 24 saat içinde tamamlanır.",
+        "Noter sonrası hemen ödeme alırsınız.",
+        "Kasko pert raporlu araçlar",
+        "Trafik sigortası pert raporlu araçlar",
+        "Toplam hasar pert",
+        "Kısmi hasar pert",
+        "Yangın hasarı pert",
+        "Su basması pert",
+        "Tüm pert türleri",
+        "Pert araç değerini etkileyen faktörler:",
+        "Aracın piyasa değeri",
+        "Pert raporundaki hasar oranı",
+        "Kullanılabilir parça değeri",
+        "Aracın markası ve modeli",
+        "Model yılı",
+        "Sigorta ödeme durumu",
+        "Hata: Sigorta şirketinin teklifini sorgulamadan kabul etmek Çözüm: Sigorta tazminatı her zaman en yüksek değer olmayabilir. Önce Hasar Park'tan bağımsız değerlendirme alın; bazen aracı kendiniz satmak sigorta tazminatından daha karlı olabilir.",
+        "Hata: Pert belgesini almadan satış yapmaya çalışmak Çözüm: Pert belgesi olmadan yapılan satışlar ileride hukuki sorun yaratabilir. Sigorta şirketinden resmi pert raporunu mutlaka alın.",
+        "Hata: Pert aracı düşük fiyata satmak Çözüm: Pek çok araç sahibi pert raporlu araçların değersiz olduğunu düşünerek çok düşük fiyatlara satmaktadır. Hasar Park'ı arayın; gerçek piyasa değerini öğrenin.",
+        "Sigorta şirketi pert kararı verdi ve düşük tazminat teklif etti. Aracı kendim satmayı düşündüm ama nereden başlayacağımı bilemedim. (Sonuç: Hasar Park ile görüştüm. Tüm yasal süreci onlar yönetti, sigorta teklifinden %35 daha fazla para aldım.)",
+        "Lüks araç olduğu için pert sonrası ne yapacağımı bilemedim. Pek çok alıcı gerçek değerinin çok altında teklif verdi. (Sonuç: Hasar Park yedek parça değerini de hesaba katarak oldukça yüksek bir teklif sundu. Çok memnun kaldım.)",
+        "S: Pert araç nedir? C: Pert araç, sigorta şirketi tarafından ekonomik olarak onarılamaz şeklinde nitelendirilen ve \"pert raporu\" düzenlenen araçtır. Türk sigorta mevzuatına göre bir aracın tamir maliyeti, rayiç değerinin belirli bir oranını (genellikle %60-70'ini) aştığında sigorta şirketi pert kararı verebilir. Pert kararı verilen araç için sigorta şirketi sahibine tazminat öder ve aracı teslim alır ya da sahibi aracı elinde tutarak sigorta tazminatının bir kısmını alır. Pert raporlu araç satılabilir ve alınabilir; yasal bir engel yoktur. Hasar Park olarak pert araçlara özel değerlendirme yapıyor ve en yüksek fiyatı sunuyoruz.",
+        "S: Pert raporlu araç satılır mı? C: Evet, pert raporlu araçlar Türkiye'de yasal olarak satılabilir ve alınabilir. Pert raporu bir araç satış engeli oluşturmaz; aksine araç için özel bir statü tanımlar. Satış işlemi noterde gerçekleştirilir ve pert bilgisi resmi kayıtlara geçer. Alıcı bu durumdan haberdar olarak işlem yapar. Hasar Park olarak pert araç alımında 7 yılı aşkın tecrübemizle tüm yasal süreçleri sizin adınıza yürütüyoruz. Pert raporunuz olsun ya da olmasın, sigorta sürecinin hangi aşamasında olduğunuzdan bağımsız olarak aracınızı değerlendiriyor ve en yüksek teklifi sunuyoruz.",
+        "S: Pert aracın değeri ne kadardır? C: Pert aracın piyasa değeri birçok faktöre bağlıdır: aracın markası, modeli, üretim yılı, orijinal piyasa değeri, hasarın boyutu, kullanılabilir parçaların durumu ve sigorta ödeme tutarı bunların başında gelir. Genel olarak pert araçlar sağlam piyasa değerinin %25-55'i arasında fiyatlanır. Ancak hasar küçük ve parçaların büyük kısmı kullanılabilir durumdaysa bu oran %50-65'e kadar çıkabilir. Lüks veya nadir araçlarda yedek parça değeri yüksek olduğundan fiyat oranı da yükselebilir. Bizi arayarak ücretsiz değerlendirme yapın; sizi şaşırtacak bir teklif alabileceğinizi göreceksiniz.",
+        "S: Pert işlemi ne kadar sürer? C: Pert aracın alım satım işlemi genellikle 24-48 saat içinde tamamlanır. İlk aşamada fotoğraf üzerinden değerlendirme yaparak teklifi 30-60 dakika içinde sunuyoruz. Teklifi kabul etmeniz halinde aynı gün veya ertesi gün ücretsiz çekiciyle aracı teslim alıyoruz. Evrakların hazır olması (araç ruhsatı, pert raporu, kimlik) durumunda noter işlemi 1-2 saat içinde tamamlanır. Noterin ardından anında ödeme yapılır. Evraklarınız eksikse tamamlanması için rehberlik ediyoruz. Tüm süreci mümkün olduğunca hızlı tutmak önceliğimizdir.",
+        "S: Hangi evraklar gerekli? C: Pert araç satışı için gerekli belgeler: araç ruhsatı (aslı), pert raporu (sigorta şirketinden), kimlik belgesi (nüfus cüzdanı veya pasaport), sigorta poliçesi ve varsa araç muayene belgesi. Sigorta şirketi aracı teslim almışsa ek bir devir belgesi gerekebilir; bu durumda sizi bilgilendiriyor ve süreci yönetiyoruz. Eksik evrak olması durumunda nasıl tamamlanacağı konusunda ücretsiz rehberlik yapıyoruz. Bürokratik işlemlerin tamamını sizin adınıza takip ediyor, noter ve tescil işlemlerini hallediyoruz."
+      ]
+    },
+    {
+      "route": "/hurda-arac-alim",
+      "source_file": "src/data/services.ts",
+      "data_source": "src/data/services.ts -> hurda-arac-alim (L560)",
+      "page_type": "service",
+      "title": "Hurda Araç Alımı | Hurda Belgesi & En İyi Fiyat - Hasar Park",
+      "meta_description": "Hurda belgeli araçları kilo bazında en yüksek fiyata alıyoruz. Resmi belgeli işlem, çevre dostu geri dönüşüm. Ücretsiz çekici, anında ödeme.",
+      "meta_keywords": "hurda araç alan, hurda araç satmak, hurda belgesi, hurda araç fiyatı, araç hurdaya çıkarma",
+      "og_title": "Hurda Araç Alımı | Hurda Belgesi & En İyi Fiyat - Hasar Park",
+      "og_description": "Hurda belgeli araçları kilo bazında en yüksek fiyata alıyoruz. Resmi belgeli işlem, çevre dostu geri dönüşüm. Ücretsiz çekici, anında ödeme.",
+      "canonical": "/hurda-arac-alim",
+      "h1": "HURDA ARACINIZ ÇEVRECİ ÇÖZÜM",
+      "h2": [
+        "Hurda Araç Alımında Neden Biz?",
+        "Hangi Araçları Alıyoruz?",
+        "Hurda Araç Aracınızı Hemen Satın",
+        "Hurda Araç Değerlemesi",
+        "Bunları Yapmayın",
+        "Gerçek Deneyimler",
+        "Merak Edilenler",
+        "Diğer Hizmetlerimiz",
+        "Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Resmi Belgeli",
+        "Çevre Dostu",
+        "Kilo Bazlı",
+        "Ücretsiz Çekici",
+        "Hurda Belgesi",
+        "Anında Ödeme",
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı"
+      ],
+      "body_snippets": [
+        "Kullanım ömrünü tamamlamış araçlar için resmi belgeli hurda işlemi. En yüksek kilo fiyatı ve çevre dostu geri dönüşüm.",
+        "Yasal izinli hurda araç işletmesi belgeli hizmet.",
+        "Çevreye duyarlı geri dönüşüm süreçleri.",
+        "En yüksek kilo fiyatı ile alım yapıyoruz.",
+        "Hurda aracınızı ücretsiz çekiyoruz.",
+        "Tüm hurda belgesi işlemleri bizden.",
+        "Tartı sonrası hemen ödeme yapıyoruz.",
+        "Kullanım ömrü bitmiş araçlar",
+        "Çok hasarlı araçlar",
+        "Çalışmayan araçlar",
+        "Hurda belgesi çıkacak araçlar",
+        "MTV borcu olan araçlar",
+        "Tüm marka ve modeller",
+        "Hurda fiyatını etkileyen faktörler:",
+        "Aracın ağırlığı (kilo)",
+        "Günlük hurda demir fiyatı",
+        "Kullanılabilir parça değeri",
+        "Alüminyum ve metal oranı",
+        "Aracın genel durumu",
+        "Hata: Aracı sokakta veya boş arazide terk etmek Çözüm: Hurda araç olsa bile hukuki sorumluluk sahibine aittir. Ceza ve harç ödemekten kaçınmak için resmi hurda işlemi yaptırın.",
+        "Hata: Lisanssız hurda alıcılarla çalışmak Çözüm: Resmi belgesi olmayan hurda alıcıları size yasal sorun çıkarabilir. Hasar Park resmi izinli ve belgeli bir hurda işletmesidir.",
+        "Hata: Hurda fiyatını sorgulamadan kabul etmek Çözüm: Hurda fiyatı tartıya ve piyasa fiyatına göre belirlenir. Değerli metal parçalar ayrıca değer taşır. Hasar Park şeffaf tartım ve fiyatlandırma yapar.",
+        "18 yıllık araç artık muayeneden geçmiyordu, MTV borcu birikti. Ne yapacağımı bilemedim. (Sonuç: Hasar Park geldi, aracı tartı ile değerlendirdi, hurda belgesi halletti ve aynı gün param geldi. Harika hizmet.)",
+        "Araç hem kazalı hem de motoru arızalıydı. Kimse bakmak istemedi. (Sonuç: Hasar Park her durumu değerlendiriyor. Ücretsiz çekici geldi, kilo başı en yüksek fiyatı verdiler.)",
+        "S: Hurda araç işlemi nasıl yapılır? C: Hurda araç işlemi birkaç basit adımdan oluşur. Önce bizi arayarak veya WhatsApp ile iletişime geçerek aracınızın marka, model ve durumu hakkında bilgi veriyorsunuz. Ardından ücretsiz çekici hizmetimizle aracınız teslim alınır. Teslim noktasında aracınız tartılır, kilo bazında fiyat hesaplanır ve size sunulur. Anlaşma sağlanması durumunda hurda belgesi düzenlenir; bu belgeyle araç trafikten tescilden silinir ve MTV gibi vergi yükümlülükleri sona erer. Son adımda anında nakit veya EFT ile ödeme yapılır. Tüm süreç çoğunlukla aynı gün içinde tamamlanır.",
+        "S: Hurda araç kilosu ne kadar? C: Hurda araç kilo fiyatı, günlük hurda demir piyasa fiyatlarına bağlı olarak değişkenlik gösterir. Piyasa koşullarına göre kilogram başına ortalama 8-18 TL arasında fiyat oluşmaktadır; ancak bu rakam piyasaya göre farklılık gösterebilir. Güncel hurda fiyatı için bizi arayın, anında bilgi veriyoruz. Ortalama bir otomobil 800-1.200 kg arasındadır; SUV ve hafif ticari araçlar 1.200-1.800 kg'a kadar çıkabilir. Ayrıca alüminyum parçalar, motor bloğu gibi değerli metaller ayrıca değerlendirilerek toplam fiyatı artırabilir.",
+        "S: Hangi araçlar hurdaya ayrılabilir? C: Kullanım ömrünü tamamlamış veya artık ekonomik olarak işletilemeyecek durumdaki tüm araçlar hurdaya ayrılabilir. Bu kapsamda; çok hasarlı ve onarımı ekonomik olmayan araçlar, motor veya şanzıman arızası nedeniyle çalışmayan araçlar, sigorta pert raporu çıkmış araçlar, Araç Muayene İstasyonundan (TÜVTÜRK) sürekli ret alan araçlar ve MTV borcu birikmiş araçlar hurdaya ayrılabilir. Araç çalışıyor olsa bile sahibi hurda yapmayı tercih edebilir; herhangi bir zorunluluk yoktur.",
+        "S: Hurda belgesi ne işe yarar? C: Hurda belgesi birçok önemli avantaj sağlar. En önemli faydası, aracın trafikten tescilinin silinmesiyle birlikte yıllık Motorlu Taşıtlar Vergisi (MTV) ve diğer vergi yükümlülüklerinin tamamen sona ermesidir. Ayrıca araç muayene zorunluluğu, trafik sigortası yenileme ve plaka yenileme yükümlülükleri de kalkar. Bunun yanı sıra hurda belgesi, bazı teşvik programları kapsamında yeni araç alımında indirim veya destek sağlayabilir. Yasal açıdan araç artık kayıt dışı sayılır ve tüm sorumluluklar sona erer.",
+        "S: Hurda işlemi ne kadar sürer? C: Hurda araç işlemi oldukça hızlıdır ve genellikle aynı gün tamamlanır. Çekici geldiğinde araç teslim alınır, tartım ve değerlendirme 30-60 dakika içinde yapılır. Hurda belgesi düzenlenmesi de çoğunlukla aynı gün tamamlanır; ancak Trafik Tescil Müdürlüğü işlemleri bulunduğunuz şehre ve yoğunluğa göre 1-2 gün sürebilir. Noterde tescil silme işlemi yapıldıktan hemen sonra ödeme gerçekleştirilir. Evraklarınız hazır ve eksiksizse tüm süreç sabah başlayıp öğleden önce tamamlanabilir."
+      ]
+    },
+    {
+      "route": "/sehirler/istanbul",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> istanbul (L78)",
+      "page_type": "city",
+      "title": "İstanbul Araç Alımı | 2 Saatte Teklif - Hasar Park",
+      "meta_description": "İstanbul'da kazalı, hasarlı, pert ve hurda araç alımı. 40+ ilçeye hizmet, 2 saat içinde teklif. Ücretsiz çekici, anında ödeme, 10K+ müşteri.",
+      "meta_keywords": "istanbul kazalı araç alan, istanbul hasarlı araç alan, istanbul pert araç alan, istanbul hurda araç alan, anadolu yakası araç alım, avrupa yakası araç alım, kadıköy araç alım, beyoğlu araç alım, üsküdar araç alım",
+      "og_title": "İstanbul Araç Alımı | 2 Saatte Teklif - Hasar Park",
+      "og_description": "İstanbul'da kazalı, hasarlı, pert ve hurda araç alımı. 40+ ilçeye hizmet, 2 saat içinde teklif. Ücretsiz çekici, anında ödeme, 10K+ müşteri.",
+      "canonical": "/sehirler/istanbul",
+      "h1": "İSTANBUL'DA ARACINIZ EN YÜKSEK FİYATA",
+      "h2": [
+        "İstanbul'da Hizmetlerimiz",
+        "İstanbul'da Neden Biz?",
+        "İstanbul'dan Yorumlar",
+        "İstanbul'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "İstanbul İçin Sık Sorulanlar",
+        "İstanbul'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Her İlçeye Hizmet",
+        "2 Saat İçinde Teklif",
+        "Lokal Ofisler",
+        "İstanbul'un En Yüksek Fiyatı",
+        "Ücretsiz Çekici",
+        "Noter İşlemleri"
+      ],
+      "body_snippets": [
+        "Anadolu ve Avrupa Yakası'nda kazalı, hasarlı, pert ve hurda araç alımı. 2 saat içinde ücretsiz ekspertiz ve teklif.",
+        "39 ilçede ücretsiz çekici ve ekspertiz hizmeti.",
+        "İstanbul trafiğine rağmen hızlı değerlendirme.",
+        "Anadolu ve Avrupa yakası ofislerimizle yakınınızdayız.",
+        "Piyasa araştırması ile en iyi teklifi veriyoruz.",
+        "Tüm ilçelerden ücretsiz araç çekme hizmeti.",
+        "İstanbul'daki tüm noterlerle çalışıyoruz.",
+        "Kadıköy'den kazalı aracımı aldılar. 2 saat içinde geldiler, aynı gün ödemeyi yaptılar. İstanbul trafiğine rağmen çok hızlılar.",
+        "Avrupa yakasında en yüksek fiyatı veren firma. Başka yerlerle kıyasladım, gerçekten en iyisi.",
+        "Pert aracım için tüm evrakları hallettiler. Noter işlemlerini bile onlar yaptı. Çok profesyonel ekip.",
+        "S: İstanbul'un hangi ilçelerine hizmet veriyorsunuz? C: İstanbul'un tüm 39 ilçesine hizmet veriyoruz. Anadolu yakası ve Avrupa yakası olmak üzere her bölgede ücretsiz çekici ve ekspertiz hizmetimiz mevcuttur.",
+        "S: İstanbul trafiğinde ne kadar sürede gelirsiniz? C: İstanbul trafiğini göz önünde bulundurarak ortalama 2-3 saat içinde ekspertiz ekibimiz adresinize ulaşır. Acil durumlar için öncelik tanıyoruz.",
+        "S: Boğaz köprüsü geçişi için ücret alıyor musunuz? C: Hayır, köprü geçiş ücretleri dahil tüm çekici hizmetimiz tamamen ücretsizdir.",
+        "S: İstanbul'da hangi noterlerde işlem yapıyorsunuz? C: İstanbul'daki tüm noterlerle çalışıyoruz. Size en yakın noterde işlemlerinizi gerçekleştirebiliriz.",
+        "S: İstanbul'da kaç ofissiniz var? C: Kadıköy'de Anadolu yakası ofisimiz ve Beylikdüzü'nde Avrupa yakası ofisimiz bulunmaktadır. Her iki ofisten de tüm İstanbul'a hizmet veriyoruz."
+      ]
+    },
+    {
+      "route": "/sehirler/ankara",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> ankara (L210)",
+      "page_type": "city",
+      "title": "Ankara Hasarlı Kazalı Pert Hurda Araç Alan | 30 DK Teklif | Hasar Park",
+      "meta_description": "Ankara’da hasarlı/kazalı/pert/hurda araç alımı. 30 dk teklif, ücretsiz çekici, hızlı noter işlemi, anında ödeme. Çankaya-Keçiören-Etimesgut tüm ilçeler.",
+      "meta_keywords": "ankara hasarlı araç alan, ankara kazalı araç alan, ankara pert araç alan, ankara hurda araç alan, ankara araç alım satım, ankara hasarlı araç firmaları, ankara pert araç yerleri, çankaya hasarlı araç, keçiören hasarlı araç, etimesgut hasarlı araç",
+      "og_title": "Ankara Hasarlı Kazalı Pert Hurda Araç Alan | 30 DK Teklif | Hasar Park",
+      "og_description": "Ankara’da hasarlı/kazalı/pert/hurda araç alımı. 30 dk teklif, ücretsiz çekici, hızlı noter işlemi, anında ödeme. Çankaya-Keçiören-Etimesgut tüm ilçeler.",
+      "canonical": "/sehirler/ankara",
+      "h1": "Ankara Hasarlı, Kazalı, Pert & Hurda Araç Alan",
+      "h2": [
+        "Ankara'da Hizmetlerimiz",
+        "İlçeye Göre Hizmet",
+        "Ankara'da Neden Biz?",
+        "Ankara'dan Yorumlar",
+        "Ankara'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Ankara İçin Sık Sorulanlar",
+        "Ankara'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Ankara Kazalı Araç Alan",
+        "Ankara Hasarlı Araç Alan",
+        "Ankara Pert Araç Alan",
+        "Ankara Hurda Araç Alan",
+        "Çankaya hasarlı araç alan",
+        "Keçiören hasarlı araç alan",
+        "Etimesgut hasarlı araç alan",
+        "30 dk Teklif",
+        "Ücretsiz Çekici",
+        "Noterde Anında Ödeme"
+      ],
+      "body_snippets": [
+        "Hasarlı araç alım satım Ankara genelinde hızlı yürür. Fotoğraf gönderin, 30 dk içinde teklif alın. Ücretsiz çekici + noter + anında ödeme.",
+        "Kazalı araç alan Ankara için fotoğrafa göre ön fiyat, ekspertiz sonrası net teklif. Kazalı araç alan yerler Ankara arayanlara Çankaya-Keçiören-Etimesgut aynı gün hizmet.",
+        "Ankara hasarlı araç alan ekibimiz, kaporta/mekanik fark etmeksizin aracı yerinde görür. Hasarlı araç alan firmalar Ankara içinde şeffaf fiyat + ücretsiz çekici + noter süreç.",
+        "Pert araç alan Ankara için pert raporuna göre özel değerlendirme, yasal süreç bizden.",
+        "Hurda araç alan Ankara ekibi hurda belgeli araçlarda ücretsiz çekici + hızlı işlem.",
+        "Merkez ofise yakın bölgede 1 saat içinde ekspertiz.",
+        "Ücretsiz çekici ile adresten alım.",
+        "Aynı gün noter ve ödeme.",
+        "Ankara'da en hızlı değerlendirme.",
+        "Ankara geneli ücretsiz çekme.",
+        "Güvenli ve hızlı para transferi.",
+        "Çankaya'da ofisleri var, çok hızlı geldiler. Kızılay'da noterde işlemleri hallettik, aynı gün ödeme aldım.",
+        "Keçiören'e kadar geldiler, aracı aldılar. Ankara'da en yüksek fiyatı veren firma.",
+        "Yenimahalle'de hurdaya çıkardım aracımı. Tüm işlemleri onlar halletti, çok memnunum.",
+        "S: Hasarlı araç alım satım Ankara için hangi evraklar lazım? C: Ruhsat, kimlik ve (varsa) hasar geçmişi belgeleri yeterlidir. Noter satışı için ruhsat sahibi bizzat gelmelidir.",
+        "S: Hasarlı araç alan firmalar Ankara fiyatı neye göre belirler? C: Aracın marka/modeli, hasar durumu, değişen parçalar ve piyasa değerine göre şeffaf fiyatlandırma yapılır.",
+        "S: Hasarlı araç alan yerler Ankara içinde aynı gün gelir misiniz? C: Evet, Ankara içi tüm ilçelere aynı gün içerisinde, genellikle 1-2 saat içinde geliyoruz.",
+        "S: Keçiören/Etimesgut’ta çekici ücretsiz mi? C: Evet, Keçiören, Etimesgut ve Ankara'nın tüm ilçelerinde çekici hizmetimiz tamamen ücretsizdir.",
+        "S: Sincan, Polatlı gibi uzak ilçelere de geliyor musunuz? C: Evet, Ankara'nın tüm ilçelerine ücretsiz çekici hizmetimiz vardır. Uzaklık fiyatı etkilemez."
+      ]
+    },
+    {
+      "route": "/sehirler/izmir",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> izmir (L360)",
+      "page_type": "city",
+      "title": "İzmir Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "meta_description": "İzmir'de kazalı, hasarlı, pert ve hurda araç alımı. Konak, Karşıyaka, Bornova tüm ilçelere hizmet. Anında değerlendirme.",
+      "meta_keywords": "izmir kazalı araç alan, izmir hasarlı araç alan, izmir pert araç alan, izmir hurda araç alan, konak araç alım, karşıyaka araç alım, bornova araç alım, buca araç alım",
+      "og_title": "İzmir Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "og_description": "İzmir'de kazalı, hasarlı, pert ve hurda araç alımı. Konak, Karşıyaka, Bornova tüm ilçelere hizmet. Anında değerlendirme.",
+      "canonical": "/sehirler/izmir",
+      "h1": "İZMİR'DE ARACINIZ EN YÜKSEK FİYATA",
+      "h2": [
+        "İzmir'da Hizmetlerimiz",
+        "İzmir'da Neden Biz?",
+        "İzmir'dan Yorumlar",
+        "İzmir'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "İzmir İçin Sık Sorulanlar",
+        "İzmir'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Sahil Şeridi Hizmeti",
+        "Hızlı Ekspertiz",
+        "Ege'nin En İyi Fiyatı",
+        "Ücretsiz Çekici",
+        "Konak Noter",
+        "İki Yakada Ofis"
+      ],
+      "body_snippets": [
+        "İzmir'in tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Sahil şeridinden Kemalpaşa'ya kadar hizmet.",
+        "Karşıyaka'dan Çeşme'ye kadar her yerde.",
+        "1 saat içinde uzman değerlendirme.",
+        "İzmir'de en yüksek araç alım fiyatları.",
+        "İzmir geneli ücretsiz taşıma.",
+        "Alsancak noterlerinde işlem.",
+        "Konak ve Karşıyaka ofislerimiz.",
+        "Karşıyaka ofisinden hemen geldiler. İzmir'de böyle güvenilir firma bulmak zor. Teşekkürler.",
+        "Bornova'da hasarlı aracımı sattım. Piyasayı araştırmışlar, gerçekten en yüksek fiyatı verdiler.",
+        "Alsancak'ta noterde işlemleri yaptık. Aynı gün ödemeyi aldım. İzmir'de en iyisi.",
+        "S: İzmir'in hangi ilçelerine hizmet veriyorsunuz? C: İzmir'in 30 ilçesine hizmet veriyoruz. Konak, Karşıyaka, Bornova merkez ilçelerin yanı sıra Çeşme, Urla, Menemen gibi dış ilçelere de ücretsiz hizmet sunuyoruz.",
+        "S: İzmir'de ne kadar sürede gelirsiniz? C: Merkez ilçelerde (Konak, Karşıyaka, Bornova, Buca) 1 saat içinde, dış ilçelerde 2-3 saat içinde adresinize varırız.",
+        "S: Çeşme, Urla gibi uzak ilçelere de geliyor musunuz? C: Evet, İzmir'in tüm ilçelerine ücretsiz çekici hizmetimiz mevcuttur. Mesafe fark etmeksizin hizmet veriyoruz.",
+        "S: İzmir'de hangi noterlerde işlem yapıyorsunuz? C: Genellikle Alsancak ve Konak bölgesindeki noterlerle çalışıyoruz. Talep üzerine size yakın noterde işlem yapabiliriz."
+      ]
+    },
+    {
+      "route": "/sehirler/bursa",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> bursa (L485)",
+      "page_type": "city",
+      "title": "Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "meta_description": "Bursa'da kazalı, hasarlı, pert ve hurda araç alımı. Osmangazi, Nilüfer, Yıldırım tüm ilçelere hizmet. 1 saatte nakit ödeme.",
+      "meta_keywords": "bursa kazalı araç alan, bursa hasarlı araç alan, bursa pert araç alan, bursa hurda araç alan, osmangazi araç alım, nilüfer araç alım, yıldırım araç alım, mudanya araç alım",
+      "og_title": "Bursa Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "og_description": "Bursa'da kazalı, hasarlı, pert ve hurda araç alımı. Osmangazi, Nilüfer, Yıldırım tüm ilçelere hizmet. 1 saatte nakit ödeme.",
+      "canonical": "/sehirler/bursa",
+      "h1": "BURSA'DA ARACINIZ EN YÜKSEK FİYATA",
+      "h2": [
+        "Bursa'da Hizmetlerimiz",
+        "Bursa'da Neden Biz?",
+        "Bursa'dan Yorumlar",
+        "Bursa'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Bursa İçin Sık Sorulanlar",
+        "Bursa'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Tüm Bursa'ya Hizmet",
+        "Hızlı Ekspertiz",
+        "Bursa'nın En İyi Fiyatı",
+        "Ücretsiz Çekici",
+        "Hızlı Noter",
+        "Yerel Ofisler"
+      ],
+      "body_snippets": [
+        "Bursa'nın tüm ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Yerinde ekspertiz ve anında ödeme.",
+        "Merkez ve çevre ilçelerin tamamına hizmet.",
+        "1 saat içinde uzman ekibimiz yanınızda.",
+        "Piyasa değerinin üzerinde teklifler.",
+        "Bursa geneli ücretsiz araç çekimi.",
+        "Tüm noterlerde anında devir işlemi.",
+        "Nilüfer ve Osmangazi ofislerimiz.",
+        "Nilüfer'de kaza yapan aracımı değerinde aldılar. Çok memnun kaldım.",
+        "Osmangazi'de pert aracımı sattım. İşlemler çok hızlıydı.",
+        "İnegöl'e kadar geldiler, hiç beklemedim. Teşekkürler.",
+        "S: Bursa'nın hangi ilçelerine geliyorsunuz? C: Bursa'nın tüm 17 ilçesine hizmet veriyoruz. Merkez ilçeler ve İnegöl, Gemlik gibi dış ilçeler dahildir.",
+        "S: Bursa'da ödeme nasıl oluyor? C: Noter satışı ile eş zamanlı olarak banka hesabınıza nakit transfer yapıyoruz."
+      ]
+    },
+    {
+      "route": "/sehirler/antalya",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> antalya (L600)",
+      "page_type": "city",
+      "title": "Antalya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "meta_description": "Antalya'da kazalı, hasarlı, pert ve hurda araç alımı. Muratpaşa, Kepez, Konyaaltı, Alanya tüm ilçelere hizmet.",
+      "meta_keywords": "antalya kazalı araç alan, antalya hasarlı araç alan, antalya pert araç alan, antalya hurda araç alan, muratpaşa araç alım, kepez araç alım, konyaaltı araç alım, alanya araç alım",
+      "og_title": "Antalya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "og_description": "Antalya'da kazalı, hasarlı, pert ve hurda araç alımı. Muratpaşa, Kepez, Konyaaltı, Alanya tüm ilçelere hizmet.",
+      "canonical": "/sehirler/antalya",
+      "h1": "ANTALYA'DA ARACINIZ EN YÜKSEK FİYATA",
+      "h2": [
+        "Antalya'da Hizmetlerimiz",
+        "Antalya'da Neden Biz?",
+        "Antalya'dan Yorumlar",
+        "Antalya'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Antalya İçin Sık Sorulanlar",
+        "Antalya'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Tüm Antalya'ya Hizmet",
+        "Hızlı Değerleme",
+        "Antalya'nın En İyi Fiyatı",
+        "Ücretsiz Çekici",
+        "Kolay Devir",
+        "Merkezi Ofisler"
+      ],
+      "body_snippets": [
+        "Antalya ve ilçelerinde kazalı, hasarlı, pert ve hurda araç alımı. Turizm sezonu fark etmeksizin 7/24 hizmet.",
+        "Kaş'tan Gazipaşa'ya kadar hizmet.",
+        "Uzman ekibimizle hızlı fiyat teklifi.",
+        "Bölgedeki en yüksek fiyat garantisi.",
+        "Tüm ilçelerden ücretsiz araç alımı.",
+        "Noter işlemleri tarafımızca yapılır.",
+        "Muratpaşa ve Alanya şubelerimiz.",
+        "Muratpaşa'da aracımı sattım. Çok ilgililer, fiyat konusunda da yardımcı oldular.",
+        "Alanya'da tatilde kaza yaptım, aracı gelip aldılar. Çok büyük yükten kurtardılar.",
+        "Konyaaltı'nda pert aracımı en iyi fiyata sattım. Tavsiye ederim.",
+        "S: Antalya'nın turistik ilçelerine geliyor musunuz? C: Evet, Kemer, Alanya, Kaş gibi tüm turistik ilçelere hizmet veriyoruz.",
+        "S: Antalya dışına da hizmetiniz var mı? C: Evet, çevre illere de (Burdur, Isparta) hizmet vermekteyiz."
+      ]
+    },
+    {
+      "route": "/sehirler/adana",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> adana (L715)",
+      "page_type": "city",
+      "title": "Adana Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "meta_description": "Adana'da kazalı, hasarlı, pert ve hurda araç alımı. Seyhan, Yüreğir, Çukurova tüm ilçelere hizmet. Anında nakit.",
+      "meta_keywords": "adana kazalı araç alan, adana hasarlı araç alan, adana pert araç alan, adana hurda araç alan, seyhan araç alım, yüreğir araç alım, çukurova araç alım, sarıçam araç alım",
+      "og_title": "Adana Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "og_description": "Adana'da kazalı, hasarlı, pert ve hurda araç alımı. Seyhan, Yüreğir, Çukurova tüm ilçelere hizmet. Anında nakit.",
+      "canonical": "/sehirler/adana",
+      "h1": "ADANA'DA ARACINIZ EN YÜKSEK FİYATA",
+      "h2": [
+        "Adana'da Hizmetlerimiz",
+        "Adana'da Neden Biz?",
+        "Adana'dan Yorumlar",
+        "Adana'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Adana İçin Sık Sorulanlar",
+        "Adana'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı",
+        "Tüm Adana'ya Hizmet",
+        "Hızlı İşlem",
+        "Adana'nın En İyi Fiyatı",
+        "Ücretsiz Çekici",
+        "Güvenilir Devir",
+        "Merkezi Konum"
+      ],
+      "body_snippets": [
+        "Adana ve çevresinde kazalı, hasarlı, pert ve hurda araç alımı. 1 saat içinde adresinizdeyiz.",
+        "Merkez ve taşra ilçelerin tamamı.",
+        "1 saat içinde ekspertiz ve teklif.",
+        "Bölge piyasasının üzerinde rakamlar.",
+        "Adana içi ücretsiz çekici hizmeti.",
+        "Noter huzurunda güvenli satış.",
+        "Seyhan ofisimizle hizmetinizdeyiz.",
+        "Seyhan'da kaza yapan aracımı hemen gelip aldılar. Ödemeyi peşin yaptılar.",
+        "Çukurova'da hasarlı aracım için en iyi fiyatı verdiler. Memnun kaldım.",
+        "Ceyhan'a kadar geldiler. Hizmet kalitesi çok iyi.",
+        "S: Adana'nın hangi ilçelerine hizmet veriyorsunuz? C: Adana'nın 15 ilçesinin tamamına hizmet veriyoruz.",
+        "S: Adana'da ekspertiz ücretli mi? C: Hayır, ekspertiz hizmetimiz tamamen ücretsizdir."
+      ]
+    },
+    {
+      "route": "/sehirler/konya",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> konya (L829)",
+      "page_type": "city",
+      "title": "Konya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "meta_description": "Konya'da kazalı, hasarlı, pert ve hurda araç alımı. Selçuklu, Meram, Karatay tüm ilçelere hizmet.",
+      "meta_keywords": "konya kazalı araç, konya hasarlı araç, konya pert araç, selçuklu araç alım",
+      "og_title": "Konya Kazalı, Hasarlı, Pert, Hurda Araç Alımı | Hasar Park",
+      "og_description": "Konya'da kazalı, hasarlı, pert ve hurda araç alımı. Selçuklu, Meram, Karatay tüm ilçelere hizmet.",
+      "canonical": "/sehirler/konya",
+      "h1": "KONYA'DA ARACINIZ DEĞERİNDE ALINIR",
+      "h2": [
+        "Konya'da Hizmetlerimiz",
+        "Konya'da Neden Biz?",
+        "Konya'dan Yorumlar",
+        "Konya'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Konya İçin Sık Sorulanlar",
+        "Konya'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Konya ve ilçelerinde her türlü hasarlı araç alımı."
+      ]
+    },
+    {
+      "route": "/sehirler/gaziantep",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> gaziantep (L856)",
+      "page_type": "city",
+      "title": "Gaziantep Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Gaziantep'te kazalı, hasarlı, pert araç alımı. Şehitkamil, Şahinbey tüm ilçeler.",
+      "meta_keywords": "gaziantep kazalı araç, gaziantep hasarlı araç, şehitkamil araç alım",
+      "og_title": "Gaziantep Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Gaziantep'te kazalı, hasarlı, pert araç alımı. Şehitkamil, Şahinbey tüm ilçeler.",
+      "canonical": "/sehirler/gaziantep",
+      "h1": "GAZİANTEP'TE ARACINIZ NAKİT ALINIR",
+      "h2": [
+        "Gaziantep'da Hizmetlerimiz",
+        "Gaziantep'da Neden Biz?",
+        "Gaziantep'dan Yorumlar",
+        "Gaziantep'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Gaziantep İçin Sık Sorulanlar",
+        "Gaziantep'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Gaziantep genelinde hasarlı araçlarınızı yerinde alıyoruz."
+      ]
+    },
+    {
+      "route": "/sehirler/mersin",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> mersin (L883)",
+      "page_type": "city",
+      "title": "Mersin Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Mersin'de kazalı, hasarlı, pert araç alımı. Yenişehir, Mezitli, Tarsus tüm ilçeler.",
+      "meta_keywords": "mersin kazalı araç, mersin hasarlı araç, tarsus araç alım",
+      "og_title": "Mersin Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Mersin'de kazalı, hasarlı, pert araç alımı. Yenişehir, Mezitli, Tarsus tüm ilçeler.",
+      "canonical": "/sehirler/mersin",
+      "h1": "MERSİN'DE ARACINIZ DEĞERİNDE SATILSIN",
+      "h2": [
+        "Mersin'da Hizmetlerimiz",
+        "Mersin'da Neden Biz?",
+        "Mersin'dan Yorumlar",
+        "Mersin'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Mersin İçin Sık Sorulanlar",
+        "Mersin'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Mersin ve ilçelerinde hasarlı araç alım hizmeti."
+      ]
+    },
+    {
+      "route": "/sehirler/kayseri",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> kayseri (L910)",
+      "page_type": "city",
+      "title": "Kayseri Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Kayseri'de kazalı, hasarlı, pert araç alımı. Melikgazi, Kocasinan, Talas.",
+      "meta_keywords": "kayseri kazalı araç, kayseri hasarlı araç, melikgazi araç alım",
+      "og_title": "Kayseri Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Kayseri'de kazalı, hasarlı, pert araç alımı. Melikgazi, Kocasinan, Talas.",
+      "canonical": "/sehirler/kayseri",
+      "h1": "KAYSERİ'DE ARACINIZ NAKİT ALINIR",
+      "h2": [
+        "Kayseri'da Hizmetlerimiz",
+        "Kayseri'da Neden Biz?",
+        "Kayseri'dan Yorumlar",
+        "Kayseri'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Kayseri İçin Sık Sorulanlar",
+        "Kayseri'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Kayseri ve çevresinde hasarlı araçlarınızı değerlendiriyoruz."
+      ]
+    },
+    {
+      "route": "/sehirler/eskisehir",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> eskisehir (L937)",
+      "page_type": "city",
+      "title": "Eskişehir Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Eskişehir'de kazalı, hasarlı, pert araç alımı. Odunpazarı, Tepebaşı.",
+      "meta_keywords": "eskişehir kazalı araç, eskişehir hasarlı araç, odunpazarı araç alım",
+      "og_title": "Eskişehir Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Eskişehir'de kazalı, hasarlı, pert araç alımı. Odunpazarı, Tepebaşı.",
+      "canonical": "/sehirler/eskisehir",
+      "h1": "ESKİŞEHİR'DE ARACINIZ DEĞERİNDE ALINIR",
+      "h2": [
+        "Eskişehir'da Hizmetlerimiz",
+        "Eskişehir'da Neden Biz?",
+        "Eskişehir'dan Yorumlar",
+        "Eskişehir'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Eskişehir İçin Sık Sorulanlar",
+        "Eskişehir'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Eskişehir genelinde hasarlı araç alım hizmeti."
+      ]
+    },
+    {
+      "route": "/sehirler/diyarbakir",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> diyarbakir (L963)",
+      "page_type": "city",
+      "title": "Diyarbakır Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Diyarbakır'da kazalı, hasarlı, pert araç alımı. Bağlar, Kayapınar, Yenişehir.",
+      "meta_keywords": "diyarbakır kazalı araç, diyarbakır hasarlı araç, bağlar araç alım",
+      "og_title": "Diyarbakır Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Diyarbakır'da kazalı, hasarlı, pert araç alımı. Bağlar, Kayapınar, Yenişehir.",
+      "canonical": "/sehirler/diyarbakir",
+      "h1": "DİYARBAKIR'DA ARACINIZ NAKİT ALINIR",
+      "h2": [
+        "Diyarbakır'da Hizmetlerimiz",
+        "Diyarbakır'da Neden Biz?",
+        "Diyarbakır'dan Yorumlar",
+        "Diyarbakır'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Diyarbakır İçin Sık Sorulanlar",
+        "Diyarbakır'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Diyarbakır ve ilçelerinde hasarlı araç alımı."
+      ]
+    },
+    {
+      "route": "/sehirler/samsun",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> samsun (L989)",
+      "page_type": "city",
+      "title": "Samsun Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Samsun'da kazalı, hasarlı, pert araç alımı. İlkadım, Atakum, Canik.",
+      "meta_keywords": "samsun kazalı araç, samsun hasarlı araç, atakum araç alım",
+      "og_title": "Samsun Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Samsun'da kazalı, hasarlı, pert araç alımı. İlkadım, Atakum, Canik.",
+      "canonical": "/sehirler/samsun",
+      "h1": "SAMSUN'DA ARACINIZ DEĞERİNDE SATILSIN",
+      "h2": [
+        "Samsun'da Hizmetlerimiz",
+        "Samsun'da Neden Biz?",
+        "Samsun'dan Yorumlar",
+        "Samsun'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Samsun İçin Sık Sorulanlar",
+        "Samsun'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Samsun ve Karadeniz bölgesinde hasarlı araç alımı."
+      ]
+    },
+    {
+      "route": "/sehirler/denizli",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> denizli (L1015)",
+      "page_type": "city",
+      "title": "Denizli Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Denizli'de kazalı, hasarlı, pert araç alımı. Pamukkale, Merkezefendi.",
+      "meta_keywords": "denizli kazalı araç, denizli hasarlı araç, pamukkale araç alım",
+      "og_title": "Denizli Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Denizli'de kazalı, hasarlı, pert araç alımı. Pamukkale, Merkezefendi.",
+      "canonical": "/sehirler/denizli",
+      "h1": "DENİZLİ'DE ARACINIZ NAKİT ALINIR",
+      "h2": [
+        "Denizli'da Hizmetlerimiz",
+        "Denizli'da Neden Biz?",
+        "Denizli'dan Yorumlar",
+        "Denizli'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Denizli İçin Sık Sorulanlar",
+        "Denizli'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Denizli ve çevresinde hasarlı araçlarınızı alıyoruz."
+      ]
+    },
+    {
+      "route": "/sehirler/sanliurfa",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> sanliurfa (L1041)",
+      "page_type": "city",
+      "title": "Şanlıurfa Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Şanlıurfa'da kazalı, hasarlı, pert araç alımı. Haliliye, Eyyübiye, Karaköprü.",
+      "meta_keywords": "şanlıurfa kazalı araç, urfa hasarlı araç, haliliye araç alım",
+      "og_title": "Şanlıurfa Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Şanlıurfa'da kazalı, hasarlı, pert araç alımı. Haliliye, Eyyübiye, Karaköprü.",
+      "canonical": "/sehirler/sanliurfa",
+      "h1": "ŞANLIURFA'DA ARACINIZ DEĞERİNDE ALINIR",
+      "h2": [
+        "Şanlıurfa'da Hizmetlerimiz",
+        "Şanlıurfa'da Neden Biz?",
+        "Şanlıurfa'dan Yorumlar",
+        "Şanlıurfa'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Şanlıurfa İçin Sık Sorulanlar",
+        "Şanlıurfa'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Şanlıurfa ve ilçelerinde hasarlı araç alım hizmeti."
+      ]
+    },
+    {
+      "route": "/sehirler/malatya",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> malatya (L1067)",
+      "page_type": "city",
+      "title": "Malatya Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Malatya'da kazalı, hasarlı, pert araç alımı. Battalgazi, Yeşilyurt.",
+      "meta_keywords": "malatya kazalı araç, malatya hasarlı araç, battalgazi araç alım",
+      "og_title": "Malatya Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Malatya'da kazalı, hasarlı, pert araç alımı. Battalgazi, Yeşilyurt.",
+      "canonical": "/sehirler/malatya",
+      "h1": "MALATYA'DA ARACINIZ NAKİT ALINIR",
+      "h2": [
+        "Malatya'da Hizmetlerimiz",
+        "Malatya'da Neden Biz?",
+        "Malatya'dan Yorumlar",
+        "Malatya'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Malatya İçin Sık Sorulanlar",
+        "Malatya'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Malatya genelinde hasarlı araç alımı."
+      ]
+    },
+    {
+      "route": "/sehirler/kahramanmaras",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> kahramanmaras (L1093)",
+      "page_type": "city",
+      "title": "Kahramanmaraş Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Kahramanmaraş'ta kazalı, hasarlı, pert araç alımı. Onikişubat, Dulkadiroğlu.",
+      "meta_keywords": "kahramanmaraş kazalı araç, maraş hasarlı araç, onikişubat araç alım",
+      "og_title": "Kahramanmaraş Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Kahramanmaraş'ta kazalı, hasarlı, pert araç alımı. Onikişubat, Dulkadiroğlu.",
+      "canonical": "/sehirler/kahramanmaras",
+      "h1": "MARAŞ'TA ARACINIZ DEĞERİNDE SATILSIN",
+      "h2": [
+        "Kahramanmaraş'da Hizmetlerimiz",
+        "Kahramanmaraş'da Neden Biz?",
+        "Kahramanmaraş'dan Yorumlar",
+        "Kahramanmaraş'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Kahramanmaraş İçin Sık Sorulanlar",
+        "Kahramanmaraş'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Kahramanmaraş ve ilçelerinde hasarlı araç alımı."
+      ]
+    },
+    {
+      "route": "/sehirler/erzurum",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> erzurum (L1119)",
+      "page_type": "city",
+      "title": "Erzurum Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Erzurum'da kazalı, hasarlı, pert araç alımı. Yakutiye, Palandöken, Aziziye.",
+      "meta_keywords": "erzurum kazalı araç, erzurum hasarlı araç, yakutiye araç alım",
+      "og_title": "Erzurum Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Erzurum'da kazalı, hasarlı, pert araç alımı. Yakutiye, Palandöken, Aziziye.",
+      "canonical": "/sehirler/erzurum",
+      "h1": "ERZURUM'DA ARACINIZ NAKİT ALINIR",
+      "h2": [
+        "Erzurum'da Hizmetlerimiz",
+        "Erzurum'da Neden Biz?",
+        "Erzurum'dan Yorumlar",
+        "Erzurum'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Erzurum İçin Sık Sorulanlar",
+        "Erzurum'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Erzurum ve çevresinde hasarlı araçlarınızı alıyoruz."
+      ]
+    },
+    {
+      "route": "/sehirler/van",
+      "source_file": "src/data/cities.ts",
+      "data_source": "src/data/cities.ts -> van (L1145)",
+      "page_type": "city",
+      "title": "Van Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "meta_description": "Van'da kazalı, hasarlı, pert araç alımı. İpekyolu, Tuşba, Edremit.",
+      "meta_keywords": "van kazalı araç, van hasarlı araç, ipekyolu araç alım",
+      "og_title": "Van Kazalı, Hasarlı, Pert Araç Alımı | Hasar Park",
+      "og_description": "Van'da kazalı, hasarlı, pert araç alımı. İpekyolu, Tuşba, Edremit.",
+      "canonical": "/sehirler/van",
+      "h1": "VAN'DA ARACINIZ DEĞERİNDE ALINIR",
+      "h2": [
+        "Van'da Hizmetlerimiz",
+        "Van'da Neden Biz?",
+        "Van'dan Yorumlar",
+        "Van'da Hemen Satın",
+        "Hizmet Verdiğimiz İlçeler",
+        "Van İçin Sık Sorulanlar",
+        "Van'da Bugün Arayın, Yarın Ödeme Alın!"
+      ],
+      "h3": [
+        "Kazalı Araç Alımı",
+        "Hasarlı Araç Alımı",
+        "Pert Araç Alımı",
+        "Hurda Araç Alımı"
+      ],
+      "body_snippets": [
+        "Van ve ilçelerinde hasarlı araç alım hizmeti."
+      ]
+    },
+    {
+      "route": "/blog/kazali-arac-satarken-nelere-dikkat-edilmeli",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> kazali-arac-satarken-nelere-dikkat-edilmeli (L20)",
+      "page_type": "blog",
+      "title": "Kazalı Araç Satarken Dikkat Edilecekler | Hasar Park Blog",
+      "meta_description": "Kazalı aracınızı en yüksek fiyata satmak için bilmeniz gereken tüm detaylar. Profesyonel ipuçları ve öneriler.",
+      "meta_keywords": "kazalı araç, araç satış, ipuçları",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/kazali-arac-satarken-nelere-dikkat-edilmeli",
+      "h1": "Kazalı Araç Satarken Nelere Dikkat Edilmeli?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Kazalı Araç Satışında Bilmeniz Gerekenler",
+        "En Yüksek Fiyatı Nasıl Alırsınız?",
+        "Kazalı Araç Satışında Yapılan Yaygın Hatalar",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "1. Aracın Hasar Durumunu Realistik Şekilde Değerlendirin",
+        "2. Trafik Kazası Raporu Alın",
+        "3. Kapsamlı Fotoğraf Belgelemesi Yapın",
+        "4. Sigorta Sürecini Tamamlayın",
+        "5. Birden Fazla Alıcıdan Teklif Alın",
+        "6. Gerekli Evrakları Hazırlayın",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Kazalı bir aracı satmak stresli bir süreç gibi görünebilir, ancak doğru adımları izlerseniz en yüksek fiyatı alabilirsiniz. Bu rehberde kazalı araç satışında dikkat etmeniz gereken tüm ayrıntıları ele alıyoruz.",
+        "İlk adım, aracınızın hasar durumunu tarafsız bir gözle değerlendirmektir. Büyük hasarlar fiyatı önemli ölçüde etkiler; ancak küçük hasarlar için de adil bir değer alabilirsiniz. Hasar türünü (kaporta, motor, şanzıman, hava yastığı) doğru tespit etmek, hem alıcıya dürüst bilgi vermenizi hem de gerçekçi bir fiyat beklentisi oluşturmanızı sağlar.",
+        "Kaza raporu, alıcıların güvenini artırır ve satış sürecini hızlandırır. Kaza yerine trafik polisi çağrıldıysa mutlaka tutanak alın. Alkolsüz ve belgelenmiş bir kaza, aracın değerini korumasına yardımcı olur.",
+        "Kazadan hemen sonra detaylı fotoğraf çekin: hasarlı bölgelerin yakın çekimleri, araç genelinin dört yönden görüntüleri, motor kaputu altı ve plakanın net fotoğrafı. Bu belgeler hem sigorta sürecinde hem de satış aşamasında değerlidir.",
+        "Araç kaskonuz varsa sigorta şirketiyle görüşün. Sigorta tazminatı aldıktan sonra aracı satmak daha karlı olabilir. Sigorta pert kararı verdiyse pert belgesiyle birlikte araç satışı yapabilirsiniz.",
+        "Sadece tek bir alıcıyla görüşmek genellikle en yüksek fiyatı almanızı engeller. Hasar Park gibi profesyonel alıcılar piyasa araştırması yaparak adil ve rekabetçi teklifler sunar.",
+        "Araç ruhsatı (aslı)",
+        "Trafik kazası tutanağı",
+        "Kimlik belgesi",
+        "Sigorta poliçesi ve varsa kasko belgesi",
+        "Araç muayene belgesi",
+        "Birden fazla alıcıdan teklif alın ve karşılaştırın. Hasar Park, 7+ yıllık tecrübesiyle piyasa araştırması yaparak size her zaman en yüksek teklifi sunar. Üstelik ücretsiz çekici, noter işlemi ve anında ödeme ile süreç tamamen zahmetsizdir.",
+        "En yaygın hata, aracı tamir ettirdikten sonra satmaya çalışmaktır. Çoğu zaman tamir maliyeti aracın piyasa değerini aşar ve bu yaklaşım ekonomik açıdan mantıklı değildir. İkinci yaygın hata ise sadece tanıdıklara satmaya çalışmak; profesyonel alıcılar genellikle çok daha iyi fiyat teklifleri sunar."
+      ]
+    },
+    {
+      "route": "/blog/pert-raporu-nedir",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> pert-raporu-nedir (L68)",
+      "page_type": "blog",
+      "title": "Pert Raporu Nedir, Nasıl Alınır? | Hasar Park",
+      "meta_description": "Pert raporu hakkında tüm detaylar. Pert raporlu araç satışı ve alımı konusunda bilmeniz gerekenler.",
+      "meta_keywords": "pert raporu, sigorta, yasal süreç",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/pert-raporu-nedir",
+      "h1": "Pert Raporu Nedir? Nasıl Alınır?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Pert Raporu Nedir?",
+        "Pert Araç Sahibi Ne Yapmalı?",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Pert Raporu Ne Zaman Düzenlenir?",
+        "Pert Raporu Türleri",
+        "Pert Raporlu Araç Satılır mı?",
+        "Gerekli Evraklar",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Pert raporu, sigorta şirketinin bir aracı ekonomik olarak onarılamaz olarak değerlendirmesi sonucu düzenlenen resmi belgedir. \"Pert\" kelimesi Türkçede \"işe yaramaz hale gelmiş\" anlamına gelir ve araç sigortacılığında özel bir anlam taşır.",
+        "Sigorta mevzuatına göre bir aracın tamir maliyeti, aracın rayiç (piyasa) değerinin belirli bir oranını aştığında — genellikle %60-70'ini — sigorta şirketi pert kararı verebilir. Bu karar sigorta şirketinin içinde bulunduğu koşullara, aracın yaşına ve hasar durumuna göre değişebilir.",
+        "Tam Hasar Pert: Araç tamamen kullanılamaz hale gelmiştir.",
+        "Kısmi Hasar Pert: Araç tamamen yok olmamış; ancak ekonomik onarım sınırını geçmiştir.",
+        "Hırsızlık Pert: Çalınan araç belirli süre içinde bulunamazsa pert işlemi yapılır.",
+        "Su Baskını / Yangın Pert: Doğal afet ya da yangın nedeniyle oluşan hasarlarda düzenlenir.",
+        "Evet! Pert raporlu araçlar Türkiye'de yasal olarak satılabilir ve alınabilir. Araç sahibi pert kararını kabul edip tazminatı aldıktan sonra aracı sigorta şirketine devredebilir; ya da tazminatın bir kısmını alarak aracı kendisi elinde tutabilir ve dilediğine satabilir. Hasar Park olarak pert araçlar için özel değerlendirme yapıyor, en yüksek fiyatı sunuyoruz.",
+        "Pert raporu (sigorta şirketinden alınan resmi belge)",
+        "Araç ruhsatı (aslı)",
+        "Sigorta poliçesi",
+        "Kimlik belgesi",
+        "Varsa kaza tutanağı",
+        "Sigorta şirketinin teklifini sorgulamadan kabul etmeden önce bağımsız bir değerlendirme yaptırın. Hasar Park'ı arayın; sigorta teklifinin üzerinde bir fiyat alıp alamayacağınızı öğrenin. Çoğu zaman aracı kendiniz satmak sigorta tazminatından daha kazançlı olabilir."
+      ]
+    },
+    {
+      "route": "/blog/hurda-arac-teslim-sureci",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> hurda-arac-teslim-sureci (L112)",
+      "page_type": "blog",
+      "title": "Hurda Araç Teslim Süreci | Hasar Park Blog",
+      "meta_description": "Hurda aracınızı teslim etme süreci hakkında detaylı bilgi. Ücretsiz çekici ve anında ödeme.",
+      "meta_keywords": "hurda araç, hurda belgesi, süreç",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/hurda-arac-teslim-sureci",
+      "h1": "Hurda Araç Teslim Süreci Nasıl İşler?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Hurda Araç Teslim Sürecinde Yapmanız Gerekenler",
+        "Hurda Belgesi Ne İşe Yarar?",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Adım 1: Bizi Arayın veya WhatsApp'tan Yazın",
+        "Adım 2: Ücretsiz Çekici Hizmeti",
+        "Adım 3: Tartım ve Değerlendirme",
+        "Adım 4: Hurda Belgesi İşlemleri",
+        "Adım 5: Anında Ödeme",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Hurda aracınızı teslim etmek düşündüğünüzden çok daha kolay! Hasar Park ile tüm süreci aynı gün tamamlayabilirsiniz.",
+        "İlk adım basit: +90 534 580 93 15 numaralı telefondan bizi arayın ya da WhatsApp üzerinden mesaj gönderin. Aracınızın markası, modeli, yılı ve genel durumu hakkında bilgi verin. Fotoğraf göndermeniz değerlendirmeyi hızlandırır.",
+        "Anlaşma sağlandıktan sonra tüm Türkiye'ye ücretsiz çekici gönderiyoruz. Araç çalışmıyor olsa bile fark etmez; çekici hizmetimiz her koşulda geçerlidir. Randevu saatini size uygun şekilde planlıyoruz.",
+        "Aracınız teslim alındıktan sonra endüstriyel baskülde tartılır. Kilo başına güncel hurda demir fiyatı uygulanır. Alüminyum parçalar, motor bloğu gibi değerli metaller ayrıca hesaplanır. Şeffaf tartım süreci; hiçbir sürpriz olmaz.",
+        "Hurda belgesi, aracınızı trafikten silen ve vergi yükümlülüklerini sona erdiren resmi belgedir. İşlemleri Trafik Tescil Müdürlüğü'nde gerçekleştiriyoruz. Hurda belgesi düzenlendikten sonra araç tamamen kayıt dışı olur.",
+        "Tüm işlemler tamamlandıktan sonra hemen nakit veya EFT ile ödeme yapılır. Ödemenin gerçekleşmesi için gün sonu beklemenize gerek yoktur.",
+        "Hurda belgesi ile aracınızın trafikten kaydı silinir, MTV (Motorlu Taşıtlar Vergisi) ödemeleri sona erer, araç muayene yükümlülüğü kalkar ve trafik sigortası yenileme zorunluluğu ortadan kalkar. Bunun yanı sıra bazı devlet destekli araç yenileme programlarında hurda belgesi, yeni araç alımında indirim imkânı sunmaktadır."
+      ]
+    },
+    {
+      "route": "/blog/hasarli-arac-ne-kadar-deger-kaybeder",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> hasarli-arac-ne-kadar-deger-kaybeder (L148)",
+      "page_type": "blog",
+      "title": "Hasarlı Araç Ne Kadar Değer Kaybeder? | Hasar Park Blog",
+      "meta_description": "Motor, kaporta ve şanzıman hasarının araç değerine etkisi. Hasar türüne göre değer kaybı oranları ve satış önerileri.",
+      "meta_keywords": "hasarlı araç, değer kaybı, araç fiyatı",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/hasarli-arac-ne-kadar-deger-kaybeder",
+      "h1": "Hasarlı Araç Ne Kadar Değer Kaybeder?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Hasar Türüne Göre Araç Değer Kaybı",
+        "Hasarlı Araç Satışında En İyi Strateji",
+        "Ne Yapmalısınız?",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Kaporta Hasarı",
+        "Motor Hasarı",
+        "Şanzıman Hasarı",
+        "Elektrik Sistemi Hasarı",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Bir araçta meydana gelen hasar, aracın piyasa değerini doğrudan etkiler. Ancak bu etki hasar türüne, kapsamına ve aracın diğer özelliklerine göre büyük farklılıklar gösterir. Bu yazıda en yaygın hasar türlerinin araç değerine etkisini inceliyoruz.",
+        "Kaporta hasarı, aracın mekanik performansını etkilemediği için değer kaybı genellikle en düşük olandır. Hafif boyama veya göçük tamir gerektiren hasarlarda değer kaybı %10-20 civarındadır. Ancak kapsamlı kaporta değişimi gerektiren durumlarda (kapı, kanat, bagaj) bu oran %20-35'e çıkabilir. Şasi hasarına dönüşen kaporta hasarları ise değeri %40-60 oranında düşürebilir.",
+        "Motor hasarı, en ciddi değer kaybına yol açan hasar türlerinden biridir. Motor baş contası yanması, silindir blok çatlağı veya turbo arızası gibi sorunlar aracın değerini %30-50 oranında düşürebilir. Komple motor değişimi gerektiren durumlarda ise değer kaybı %40-60'a ulaşabilir. Bununla birlikte motor hasarı olan araçlarda kullanılabilir diğer parçalar (elektrik sistemi, iç döşeme, aksesuar) değer korunmasına yardımcı olur.",
+        "Şanzıman hasarı, tamir maliyeti yüksek olduğundan araç değerini ciddi ölçüde etkiler. Otomatik şanzımanda arıza, aracın değerini %25-45 oranında düşürebilir. Manuel şanzıman hasarında değer kaybı biraz daha düşük; %15-30 civarında seyredebilir.",
+        "Elektrik arızaları, modern araçlarda giderek daha karmaşık ve maliyetli hale gelmektedir. ECU (motor kontrol ünitesi) veya airbag sistemi arızaları değeri %20-35 oranında düşürebilir. Hibrit veya elektrikli araçlarda pil sistemi hasarı ise çok daha büyük değer kayıplarına neden olur.",
+        "Hasarlı araçları tamir ettirmeden doğrudan satmak çoğu zaman daha mantıklıdır. Tamir maliyeti ile satış fiyatı karşılaştırıldığında, çoğu durumda hasarlı aracı olduğu gibi satmak daha yüksek net gelir sağlar. Hasar Park, hasarlı araç alımında 7+ yıllık tecrübesiyle size adil ve en yüksek fiyatı sunar.",
+        "Önce ücretsiz değerlendirme yaptırın, ardından tamir maliyetiyle karşılaştırın. Hasar Park'ı arayın; 30 dakika içinde hasarlı aracınız için net teklif alın ve en doğru kararı verin."
+      ]
+    },
+    {
+      "route": "/blog/arac-ekspertizi-ne-kadar-surer",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> arac-ekspertizi-ne-kadar-surer (L184)",
+      "page_type": "blog",
+      "title": "Araç Ekspertizi Ne Kadar Sürer? | Hasar Park Blog",
+      "meta_description": "Araç ekspertizinin aşamaları ve süresi hakkında detaylı bilgi. Hasarlı araçlarda ekspertiz ve ücretsiz değerlendirme.",
+      "meta_keywords": "araç ekspertizi, ekspertiz süresi, hasar tespiti",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/arac-ekspertizi-ne-kadar-surer",
+      "h1": "Araç Ekspertizi Ne Kadar Sürer ve Nasıl Yapılır?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Araç Ekspertizi Nedir?",
+        "Ekspertiz Sonrası Ne Yapmalısınız?",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Standart Araç Ekspertizi Ne Kadar Sürer?",
+        "Ekspertiz Aşamaları",
+        "Hasarlı Araçlarda Ekspertiz",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Araç ekspertizi, bir motorlu taşıtın teknik durumunun, hasar durumunun ve piyasa değerinin uzman kişiler tarafından incelenmesi işlemidir. Ekspertiz, araç alım-satım süreçlerinde, sigorta değerlendirmelerinde ve hasar tespitinde kritik rol oynar.",
+        "Standart bir araç ekspertizi 30 dakika ile 2 saat arasında sürer. Süre; aracın türüne, hasar boyutuna, kullanılan ekipmanlara ve ekspertizin kapsamına göre değişir. Dijital sistemler kullanan modern ekspertiz merkezlerinde bu süre önemli ölçüde kısalmaktadır.",
+        "Görsel İnceleme (10-15 dk): Kaporta, boya, lastik ve genel dış görünüm incelenir.",
+        "Mekanik Kontrol (15-20 dk): Motor, şanzıman, fren sistemi ve süspansiyon kontrol edilir.",
+        "Elektronik Tarama (10-15 dk): OBD cihazıyla hata kodları okunur, airbag ve ABS sistemi kontrol edilir.",
+        "Boya Ölçümü (5-10 dk): Boya kalınlık ölçer ile orijinal boya tespiti yapılır.",
+        "Değerlendirme ve Rapor (10-20 dk): Tüm bulgular raporlanır ve piyasa değeri belirlenir.",
+        "Hasarlı araçlarda ekspertiz daha kapsamlı olabilir. Şasi kontrolü, hasar analizi ve parça değer tespiti ek süre gerektirebilir. Hasar Park, hasarlı araç ekspertizini ücretsiz olarak gerçekleştirmektedir; bu konuda sizi ayrıca ücretlendirmiyoruz.",
+        "Ekspertiz raporu elinizde olduğunda, hasarlı aracınızı satmak için en uygun zamandasınız demektir. Hasar Park'ı arayın; ekspertiz raporunuzu paylaşın ve 30 dakika içinde size en yüksek fiyat teklifini sunalım. Ekspertiz raporu olmasa da değerlendirme yapıyoruz."
+      ]
+    },
+    {
+      "route": "/blog/kazali-arac-sigorta-sureci",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> kazali-arac-sigorta-sureci (L220)",
+      "page_type": "blog",
+      "title": "Kazalı Araçta Sigorta Süreci Nasıl İşler? | Hasar Park",
+      "meta_description": "Kaza sonrası sigorta başvurusu ve hasar tespiti sürecinin tüm adımları. Sigorta teklifi düşük gelirse ne yapmalısınız?",
+      "meta_keywords": "sigorta süreci, kaza sonrası, kasko",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/kazali-arac-sigorta-sureci",
+      "h1": "Kazalı Araçta Sigorta Süreci Nasıl İşler?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Kaza Sonrası İlk 24 Saat",
+        "Sigorta Teklifi Düşük Gelirse Ne Yapmalısınız?",
+        "Kaza Sonrası Araç Satışı",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Hemen Yapmanız Gerekenler",
+        "Sigorta Hasar Başvurusu",
+        "Hasar Tespiti ve Pert Kararı",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Trafik kazasından sonra ilk 24 saat kritiktir. Bu süreçte doğru adımları atmak, hem sigorta sürecinizi hem de araç satış sürecinizi önemli ölçüde etkiler.",
+        "Güvendeyseniz aracı yolun kenarına çekin ve reflektör koyun",
+        "Trafik polisini veya jandarma arayın (tutanak için)",
+        "Gerekiyorsa ambulans çağırın",
+        "Karşı araç bilgilerini alın (plaka, ruhsat, sigorta poliçesi)",
+        "Kazayı fotoğraflarla belgeleyin",
+        "24 saat içinde sigorta şirketinizi arayın",
+        "Kasko sigortanız varsa kendi sigorta şirketinize başvurursunuz. Sadece zorunlu trafik sigortanız varsa karşı tarafın sigortasına başvuru yapmanız gerekir. Başvurudan sonra sigorta şirketi bir eksper görevlendirir ve hasar tespiti yapılır.",
+        "Sigorta şirketinin eksperi hasarı değerlendirir ve tamir maliyetini hesaplar. Tamir maliyeti aracın rayiç değerinin %60-70'ini aşarsa pert kararı verilebilir. Bu durumda sigorta şirketi size tazminat teklifinde bulunur.",
+        "Sigorta tazminat teklifini sorgulamadan kabul etme zorunluluğunuz yoktur. İtiraz hakkınızı kullanabilir veya bağımsız eksper tayin ettirebilirsiniz. Alternatif olarak aracı kendiniz satmayı değerlendirebilirsiniz. Hasar Park olarak sigorta tazminatını beklemeden aracınızı anında satın alıyoruz — çoğu zaman sigorta teklifinden daha yüksek fiyat sunabiliyoruz.",
+        "Sigorta sürecini beklemek istemiyorsanız doğrudan kazalı araç alıcılarıyla görüşebilirsiniz. Hasar Park, sigorta sürecinizin herhangi bir aşamasında aracınızı değerlendirerek en yüksek teklifi sunar. Ücretsiz ekspertiz, çekici ve tüm evrak işlemleri bizden."
+      ]
+    },
+    {
+      "route": "/blog/pert-arac-satin-almak-mantikli-mi",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> pert-arac-satin-almak-mantikli-mi (L260)",
+      "page_type": "blog",
+      "title": "Pert Araç Satın Almak Mantıklı mı? | Hasar Park Blog",
+      "meta_description": "Pert araç alımının avantajları ve riskleri. Pert araç satın alırken dikkat etmeniz gereken kritik noktalar.",
+      "meta_keywords": "pert araç, araç satın alma, ikinci el",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/pert-arac-satin-almak-mantikli-mi",
+      "h1": "Pert Araç Satın Almak Mantıklı mı?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Pert Araç Nedir ve Neden Satın Alınır?",
+        "Hasar Park'tan Pert Araç Satın Alabilir Misiniz?",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Pert Araç Almanın Avantajları",
+        "Pert Araç Almanın Riskleri",
+        "Pert Araç Satın Almadan Önce Kontrol Edilmesi Gerekenler",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Pert araç, sigorta şirketi tarafından ekonomik onarım sınırını aştığı değerlendirilen araçtır. Bu araçlar piyasa değerinin çok altında satılır; bu da yedek parça üreticileri, oto tamircileri ve bilinçli alıcılar için cazip fırsatlar yaratır.",
+        "Piyasa değerinin %30-50'si fiyatla araç sahibi olabilirsiniz",
+        "Yedek parça kaynağı olarak değerlendirilebilir",
+        "Deneyimli tamircilerin elinde orijinal haline döndürülebilir",
+        "Tarımsal veya endüstriyel kullanım için uygun olabilir",
+        "Gizli hasarlar her zaman görünür olmayabilir",
+        "Tamir maliyeti beklentinin üzerine çıkabilir",
+        "Yeniden trafiğe çıkarma süreci bürokratik olabilir",
+        "Sigorta bulmak güçleşebilir",
+        "Şasi numarasını mutlaka sorgulayın. Pert raporunu ve sigorta belgelerini inceleyin. Bağımsız bir eksperden görüş alın. Tamir maliyeti tahmini yaptırın ve gerçekçi bir bütçe planlayın.",
+        "Hasar Park esas olarak pert araç alan bir şirkettir; pert araç satmıyoruz. Pert aracınızı en yüksek fiyata Hasar Park'a satabilirsiniz. Tüm yasal süreçler, evraklar ve çekici hizmetimizden ücretsiz yararlanırsınız."
+      ]
+    },
+    {
+      "route": "/blog/aracinizi-en-yuksek-fiyata-satmanin-yollari",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> aracinizi-en-yuksek-fiyata-satmanin-yollari (L300)",
+      "page_type": "blog",
+      "title": "Hasarlı Aracı En Yüksek Fiyata Satmanın 7 Yolu | Hasar Park",
+      "meta_description": "Kazalı ve hasarlı aracınızı en yüksek fiyata satmak için 7 kanıtlanmış strateji. Profesyonel ipuçları ve öneriler.",
+      "meta_keywords": "araç satış stratejisi, hasarlı araç, en yüksek fiyat",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/aracinizi-en-yuksek-fiyata-satmanin-yollari",
+      "h1": "Hasarlı Aracınızı En Yüksek Fiyata Satmanın 7 Yolu",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Hasarlı Araç Satışında Maksimum Fiyat İçin 7 Strateji",
+        "Hasar Park ile En Yüksek Fiyatı Garantileyin",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "1. Zamanlamayı İyi Seçin",
+        "2. Detaylı Fotoğraf Çekin",
+        "3. Tüm Belgeleri Hazırlayın",
+        "4. Birden Fazla Alıcıdan Teklif Alın",
+        "5. Profesyonel Alıcılarla Çalışın",
+        "6. Tamir Ettirmeden Satın",
+        "7. Sigorta Teklifini Sorgulamadan Kabul Etmeyin",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Hasarlı araç satışı, doğru yaklaşımla beklentinizin üzerinde gelir sağlayabilir. İşte uzmanların önerdiği ve işe kanıtlanmış 7 strateji:",
+        "Hasarlı araçlar bekledikçe ek hasar (pas, nem, pil boşalması) nedeniyle değer kaybeder. Kaza veya arıza sonrası mümkün olan en kısa sürede satışa çıkmak daha yüksek fiyat almanızı sağlar.",
+        "Hasarı açıkça gösteren, iyi ışıklı fotoğraflar alıcıların güvenini artırır. 10-15 fotoğraf yeterlidir: her açıdan dış görünüm, hasar bölgesinin yakın çekimi, motor kaputu altı ve iç mekan.",
+        "Araç ruhsatı, sigorta belgesi, varsa kaza tutanağı ve servis geçmişi belgeleri satış fiyatını olumlu etkiler. Bakımlı ve belgeli araçlar daha yüksek teklif alır.",
+        "Sadece tek alıcıyla görüşmek her zaman en iyi fiyatı almanızı sağlamaz. En az 2-3 profesyonel alıcıdan teklif alarak karşılaştırın.",
+        "Bireysel alıcılar genellikle düşük teklif verir. Hasar Park gibi profesyonel alıcılar piyasa araştırması yaparak adil ve rekabetçi fiyatlar sunar.",
+        "Hasarlı araç tamir maliyeti çoğu zaman piyasa değerini aşar. Tamir masrafı çıkarmadan doğrudan satmak çoğu durumda daha karlıdır.",
+        "Sigorta şirketinin ilk teklifi her zaman en iyi teklif değildir. Bağımsız değerlendirme yaptırmak ve itiraz haklarınızı kullanmak daha yüksek tazminat almanızı sağlayabilir.",
+        "Hasar Park, 7+ yıllık tecrübesiyle hasarlı araç alımında Türkiye'nin en yüksek fiyatlarını sunmaktadır. Ücretsiz ekspertiz, anında teklif, ücretsiz çekici ve noter işlemleri dahil eksiksiz hizmet. Hemen arayın: +90 534 580 93 15"
+      ]
+    },
+    {
+      "route": "/blog/hurda-arac-fiyatlari-nasil-belirlenir",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> hurda-arac-fiyatlari-nasil-belirlenir (L342)",
+      "page_type": "blog",
+      "title": "Hurda Araç Fiyatları Nasıl Belirlenir? | Hasar Park Blog",
+      "meta_description": "Hurda araç fiyatını etkileyen faktörler ve güncel kilo fiyatları. Aracınız için en yüksek hurda teklifini alın.",
+      "meta_keywords": "hurda araç fiyatı, kilo fiyatı, hurda demir",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/hurda-arac-fiyatlari-nasil-belirlenir",
+      "h1": "Hurda Araç Fiyatları Nasıl Belirlenir?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Hurda Araç Fiyatını Belirleyen Faktörler",
+        "Örnek Hurda Araç Fiyat Hesabı",
+        "Neden Hasar Park'ı Seçmelisiniz?",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "1. Günlük Hurda Demir Fiyatı",
+        "2. Araç Ağırlığı",
+        "3. Değerli Metal İçeriği",
+        "4. Kullanılabilir Parçalar",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Hurda araç fiyatı; araç ağırlığı, günlük hurda demir fiyatı ve kullanılabilir parça değerinin birleşiminden oluşur. Bu faktörleri anlayarak aracınız için en iyi fiyatı alabilirsiniz.",
+        "Hurda araç fiyatlamasının temelini oluşturur. Hurda demir fiyatı günlük değişkenlik gösterir ve çelik piyasasıyla bağlantılıdır. Piyasa koşullarına göre kilogram başına 8-18 TL arasında seyreder. Hasar Park, her gün güncel piyasa fiyatlarını takip ederek size en iyi teklifi sunar.",
+        "Ortalama araç ağırlıkları: - Küçük otomobil (Fiat Punto, Renault Clio): 900-1.100 kg - Orta sınıf (Toyota Corolla, VW Golf): 1.100-1.400 kg - Büyük sedan (BMW 5 Serisi): 1.400-1.700 kg - SUV (Volkswagen Tiguan): 1.500-1.900 kg - Hafif ticari araç: 1.500-2.500 kg",
+        "Alüminyum kapılar, motor bloğu ve bazı özel parçalar hurda demir değerinin üzerinde fiyatlanır. Bakır kablo demeti, katalitik konvertör (platin içeriği nedeniyle) ve alüminyum jantlar ek değer yaratır.",
+        "Araçta kullanılabilir durumda parçalar varsa (çalışan motor, sağlam koltuklar, hasarsız camlar, orijinal aksesuar) bu parçalar hurda değerinin üzerinde fiyatlandırılır ve toplam ödemeyi artırır.",
+        "1.200 kg ağırlığında bir araç, günlük 12 TL/kg fiyatıyla değerlendirildiğinde: 1.200 × 12 = 14.400 TL temel değer oluşur. Değerli parçalar ve metal içeriğiyle bu rakam artabilir.",
+        "Resmi belgeli hurda araç işletmesi olarak Hasar Park; şeffaf tartım süreci, güncel piyasa fiyatları ve anında ödeme garantisiyle Türkiye genelinde hizmet vermektedir. Ücretsiz çekici ve tüm evrak işlemleri dahildir."
+      ]
+    },
+    {
+      "route": "/blog/motor-ariza-sonrasi-ne-yapilmali",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> motor-ariza-sonrasi-ne-yapilmali (L383)",
+      "page_type": "blog",
+      "title": "Motor Arızasından Sonra Ne Yapmalısınız? | Hasar Park Blog",
+      "meta_description": "Motor arızalı araçta doğru karar: tamir mi satış mı? Motor arıza türleri ve satış stratejisi rehberi.",
+      "meta_keywords": "motor arızası, motor hasarı, tamir mi satış mı",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/motor-ariza-sonrasi-ne-yapilmali",
+      "h1": "Motor Arızasından Sonra Ne Yapmalısınız?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Motor Arızası: Tamir mi, Satış mı?",
+        "Motor Arızalı Araç Satışı",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Motor Arızasının Türleri",
+        "Tamir mi, Satış mı? Karar Kriterleri",
+        "Karar Tablosu",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Motor arızası, araç sahiplerinin en zor kararlardan biriyle yüz yüze gelmesine neden olur: Pahalı tamirata girmek mi, yoksa aracı satmak mı? Bu rehber karar sürecinizi kolaylaştıracak.",
+        "Hafif Arızalar (Tamir edilebilir): Conta değişimi, enjektör temizliği, soğutma sistemi arızası",
+        "Orta Düzey Arızalar (Maliyet değerlendirmesi gerekir): Turbo arızası, zamanlama zinciri sorunu, şanzıman arızası",
+        "Ağır Arızalar (Satış önerilir): Motor bloğu çatlağı, silindir kapağı çatlağı, hidrolik hasar (su basması)",
+        "Bu soruyu yanıtlamak için önce tamir maliyetini öğrenin. Ardından şu hesabı yapın: Tamir sonrası aracın piyasa değeri - Tamir maliyeti = Net kazanç. Eğer bu değer negatifse veya çok düşükse satış daha mantıklıdır.",
+        "Tamir mantıklı: Araç gençse (0-5 yaş), tamir maliyeti aracın değerinin %30'unun altındaysa, aracın duygusal değeri varsa.",
+        "Satış mantıklı: Araç eskiyse (8+ yaş), tamir maliyeti değerin %50'sini geçiyorsa, ek sorunlar da mevcutsa.",
+        "Motor arızalı araçları alıyoruz — çalışmasa bile. Hasar Park, motor durumundan bağımsız olarak aracınızı değerlendiriyor. Komple motor arızalı araçlarda bile parça değerleri, metal içeriği ve genel araç durumu hesaba katılarak adil bir fiyat belirleniyor.",
+        "Ücretsiz ekspertiz için +90 534 580 93 15 numarayı arayın. 30 dakikada net teklif, aynı gün çekici hizmeti ve anında ödeme."
+      ]
+    },
+    {
+      "route": "/blog/noter-ile-arac-satisi-nasil-yapilir",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> noter-ile-arac-satisi-nasil-yapilir (L420)",
+      "page_type": "blog",
+      "title": "Noterde Araç Satışı Nasıl Yapılır? | Hasar Park Blog",
+      "meta_description": "Hasarlı ve kazalı araçlarda noter süreci, gerekli belgeler ve adımlar. Hasar Park ile zahmetsiz noter işlemi.",
+      "meta_keywords": "noter işlemleri, araç satışı, evraklar",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/noter-ile-arac-satisi-nasil-yapilir",
+      "h1": "Noterde Araç Satışı Nasıl Yapılır? Adım Adım Rehber",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Noterde Araç Satışı Süreci",
+        "Hasar Park ile Zahmetsiz Satış",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "Gerekli Belgeler",
+        "Noter Süreci Adım Adım",
+        "Toplam Maliyet Ne Kadar?",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Türkiye'de araç satışı noter onayı gerektirir. Bu süreç, alıcı ve satıcı için hukuki güvence sağlar. Hasarlı, kazalı veya pert raporlu araçlarda noter süreci aynı şekilde işler.",
+        "Araç ruhsatı (aslı)",
+        "Satıcı ve alıcının nüfus cüzdanı veya pasaportu",
+        "Araç muayene belgesi (geçerli tarihli)",
+        "Trafik sigortası poliçesi",
+        "Varsa pert raporu veya hasar belgesi",
+        "Araç satış sözleşmesi (noter tarafından düzenlenir)",
+        "1. Notere randevu alın (bazı noterler randevusuz da kabul eder). 2. Tüm belgelerinizle notere gidin. 3. Noter, araç ruhsatı üzerindeki bilgileri kontrol eder. 4. Satış sözleşmesi düzenlenir ve taraflarca imzalanır. 5. Gerekli vergi ve harçlar ödenir. 6. Tapu sicil müdürlüğüne bildirim yapılır.",
+        "Araç satış işleminin noter ücreti, araç değeri ve harç oranlarına göre değişir. Tipik bir işlemde noter harçları ve masraflar 500-2.000 TL arasında değişebilir. Hasar Park olarak noter işlem ücretlerini ve bürokratik süreçleri tamamen biz üstleniyoruz; ekstra maliyet ödemiyorsunuz.",
+        "Hasar Park, noter sürecinin tamamını sizin adınıza yönetir. Tek yapmanız gereken aracınızı teslim etmek; geri kalan her şey bizden. Randevu, evrak hazırlığı, noter ziyareti ve tescil işlemleri dahil eksiksiz hizmet sunuyoruz."
+      ]
+    },
+    {
+      "route": "/blog/ikinci-el-arac-deger-kaybi-nasil-onlenir",
+      "source_file": "src/data/blog.ts",
+      "data_source": "src/data/blog.ts -> ikinci-el-arac-deger-kaybi-nasil-onlenir (L462)",
+      "page_type": "blog",
+      "title": "İkinci El Araçlarda Değer Kaybı Nasıl Önlenir? | Hasar Park",
+      "meta_description": "Araç değer kaybına neden olan faktörler ve değer koruma stratejileri. Hasar sonrası en doğru karar.",
+      "meta_keywords": "değer kaybı, araç değeri, ikinci el",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog/ikinci-el-arac-deger-kaybi-nasil-onlenir",
+      "h1": "İkinci El Araçlarda Değer Kaybı Nasıl Önlenir?",
+      "h2": [
+        "Aracınız için bugün net fiyat aralığı öğrenin",
+        "Araç Değer Kaybına Neden Olan Faktörler",
+        "Hasar Sonrası En İyi Karar: Satmak",
+        "İlginizi Çekebilir",
+        "Daha Fazla Sorunuz mu Var?"
+      ],
+      "h3": [
+        "En Hızlı Değer Kaybına Yol Açan Durumlar",
+        "Değer Koruma Stratejileri",
+        "Kaza Sonrası Değer Kaybı Talepçiliği",
+        "Etiketler:"
+      ],
+      "body_snippets": [
+        "Her araç zamanla değer kaybeder. Ancak hasar, bakımsızlık ve yanlış kullanım bu süreci önemli ölçüde hızlandırır. Değer kaybını minimize etmek için bunları bilmeniz gerekir.",
+        "Trafik kazası (değer kaybı: %15-40)",
+        "Motor veya şanzıman arızası (değer kaybı: %20-50)",
+        "Pert raporu (değer kaybı: %40-70)",
+        "Düzensiz bakım geçmişi (değer kaybı: %10-20)",
+        "Yüksek kilometre (değer kaybı: %5-15 her 10.000 km'de)",
+        "Sigara içilmesi / hayvan taşıması (değer kaybı: %5-10)",
+        "Düzenli bakım yaptırın ve tüm servis kayıtlarını saklayın. Kazadan sonra orijinal parçalarla tamir yaptırın. Boya ve kaporta işlerini yetkili serviste gerçekleştirin. Araç bakım geçmişini belgeleyin.",
+        "Türkiye'de kaza sonrası araç değer kaybı için karşı tarafın sigortasından tazminat talep edebilirsiniz. \"Değer kaybı davası\" olarak bilinen bu süreçte mahkeme veya sigorta tahkimi yoluyla kaza nedeniyle oluşan değer kaybı tazminatı alınabilir.",
+        "Ciddi hasar geçirmiş araçlarda zaman geçtikçe değer kaybı derinleşir. En hızlı ve karlı çözüm, hasarlı aracı profesyonel bir alıcıya satmaktır. Hasar Park ile 30 dakika içinde en güncel ve en yüksek teklifi alın; değer kaybı daha da büyümeden önce doğru kararı verin."
+      ]
+    },
+    {
+      "route": "/blog",
+      "source_file": "src/app/blog/page.tsx",
+      "data_source": "",
+      "page_type": "other",
+      "title": "Blog & Bilgiler | Araç Alım Rehberi",
+      "meta_description": "Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilgilendirici yazılar, ipuçları ve rehberler.",
+      "meta_keywords": "",
+      "og_title": "",
+      "og_description": "",
+      "canonical": "/blog",
+      "h1": "Araç Alım Rehberi",
+      "h2": [
+        "Sorularınız mı Var?"
+      ],
+      "h3": [],
+      "body_snippets": [
+        "Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilmeniz gereken her şey. Uzman içeriklerimizle doğru kararlar verin.",
+        "Hemen arayın, uzman ekibimiz size yardımcı olsun."
+      ]
+    }
+  ],
+  "site_audit": {
+    "phone_numbers": [
+      {
+        "value": "+905345809315",
+        "file": "src/config/site.ts",
+        "line": 8,
+        "context": "siteConfig.phone — E.164, used by all tel: links & JSON-LD telephone (env default for NEXT_PUBLIC_PHONE)"
+      },
+      {
+        "value": "0534 580 93 15",
+        "file": "src/config/site.ts",
+        "line": 9,
+        "context": "siteConfig.phoneDisplay — human-visible number rendered in header/footer/contact/blog CTAs"
+      },
+      {
+        "value": "05345809315",
+        "file": "src/config/site.ts",
+        "line": 10,
+        "context": "siteConfig.phoneClean — used by tracking logic"
+      },
+      {
+        "value": "905345809315",
+        "file": "src/config/site.ts",
+        "line": 11,
+        "context": "siteConfig.whatsapp — wa.me format, used by all WhatsApp links (env default for NEXT_PUBLIC_WHATSAPP)"
+      },
+      {
+        "value": "+905345809315",
+        "file": ".env.local",
+        "line": 5,
+        "context": "NEXT_PUBLIC_PHONE — runtime override of siteConfig.phone"
+      },
+      {
+        "value": "905345809315",
+        "file": ".env.local",
+        "line": 6,
+        "context": "NEXT_PUBLIC_WHATSAPP — runtime override of siteConfig.whatsapp"
+      },
+      {
+        "value": "+90 534 580 93 15",
+        "file": "src/data/blog.ts",
+        "line": 120,
+        "context": "HARDCODED inside blog post content (bypasses siteConfig)"
+      },
+      {
+        "value": "+90 534 580 93 15",
+        "file": "src/data/blog.ts",
+        "line": 329,
+        "context": "HARDCODED inside blog post content (bypasses siteConfig)"
+      },
+      {
+        "value": "+90 534 580 93 15",
+        "file": "src/data/blog.ts",
+        "line": 407,
+        "context": "HARDCODED inside blog post content (bypasses siteConfig)"
+      },
+      {
+        "value": "05345809315",
+        "file": "src/data/cities.ts",
+        "line": 238,
+        "context": "HARDCODED istanbul hero.customPhone (bypasses siteConfig)"
+      },
+      {
+        "value": "+90 534 580 93 15",
+        "file": "public/llms.txt",
+        "line": 31,
+        "context": "HARDCODED in llms.txt (AI crawler file)"
+      },
+      {
+        "value": "+90 534 580 93 15",
+        "file": "public/llms.txt",
+        "line": 37,
+        "context": "HARDCODED in llms.txt (AI crawler file)"
+      },
+      {
+        "value": "4133724287",
+        "file": "public/pizza.vcf",
+        "line": 7,
+        "context": "UNRELATED — US pizzeria vCard (TEL;TYPE=mobile). Stray/junk file, not a Hasar Park number. Recommend deleting the file."
+      }
+    ],
+    "phone_audit_notes": {
+      "WRONG_NUMBER_SEARCHED": "0530 344 40 97",
+      "wrong_number_found": false,
+      "finding": "The old/wrong number '0530 344 40 97' does NOT appear anywhere in src/ or public/. Every Hasar Park phone string already resolves to 0534 580 93 15 (in varying formats). There is nothing to REPLACE; instead the issues are (a) format INCONSISTENCY and (b) HARDCODED copies that bypass siteConfig.",
+      "single_source_of_truth": "src/config/site.ts (siteConfig.phone / .phoneDisplay / .phoneClean / .whatsapp), overridable via .env.local",
+      "dynamic_links_note": "All tel: links, wa.me/WhatsApp links, header, footer, and JSON-LD 'telephone' fields are built from siteConfig via template literals (e.g. `tel:${siteConfig.phone}`, `https://wa.me/${siteConfig.whatsapp}`) — they contain NO literal number and update automatically when siteConfig changes. ~85 such dynamic references exist across components (Header, Footer, TopBar, CTABanner, PageHero, HeroCTAButtons, CallButton, WhatsAppButton, FloatingButtons, CallPopupModal, ContactForm, JsonLd, etc.).",
+      "hardcoded_literals_to_centralize": [
+        "src/data/blog.ts:120",
+        "src/data/blog.ts:329",
+        "src/data/blog.ts:407",
+        "src/data/cities.ts:238",
+        "public/llms.txt:31",
+        "public/llms.txt:37"
+      ]
+    },
+    "stat_claims": [
+      {
+        "file": "src/config/site.ts",
+        "line": 4,
+        "claim": "7+ Yıl Tecrübe, 10.000+ Mutlu Müşteri.",
+        "type": "experience+customers",
+        "scope": "site description (used across metadata)"
+      },
+      {
+        "file": "src/config/site.ts",
+        "line": 94,
+        "claim": "7+ Yıl Tecrübe",
+        "type": "experience"
+      },
+      {
+        "file": "src/config/site.ts",
+        "line": 95,
+        "claim": "10.000+ mutlu müşteri",
+        "type": "customers"
+      },
+      {
+        "file": "src/config/site.ts",
+        "line": 135,
+        "claim": "10K+",
+        "type": "customers",
+        "scope": "stat badge"
+      },
+      {
+        "file": "src/config/site.ts",
+        "line": 140,
+        "claim": "24/7",
+        "type": "availability"
+      },
+      {
+        "file": "src/data/homeContent.ts",
+        "line": 24,
+        "claim": "7+ yıllık tecrübeyle aracınızı doğru ve adil şekilde değerlendiririz.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/homeContent.ts",
+        "line": 59,
+        "claim": "7+ Yıl Tecrübe — 10.000+ mutlu müşteri.",
+        "type": "experience+customers",
+        "scope": "home trust badge"
+      },
+      {
+        "file": "src/components/home/HeroSection.tsx",
+        "line": 86,
+        "claim": "10.000+ memnun müşteri",
+        "type": "customers",
+        "scope": "home hero"
+      },
+      {
+        "file": "src/components/home/HeroSection.tsx",
+        "line": 113,
+        "claim": "10.000+ Memnun müşteri",
+        "type": "customers",
+        "scope": "home hero stat"
+      },
+      {
+        "file": "src/components/sections/HeroSection.tsx",
+        "line": 105,
+        "claim": "10.000+ (müşteri)",
+        "type": "customers",
+        "scope": "alt hero section component"
+      },
+      {
+        "file": "src/components/home/QuoteFormSection.tsx",
+        "line": 140,
+        "claim": "10.000+",
+        "type": "customers",
+        "scope": "quote form trust stat"
+      },
+      {
+        "file": "src/components/ui/SocialProof.tsx",
+        "line": 27,
+        "claim": "10.000+ mutlu müşteri",
+        "type": "customers"
+      },
+      {
+        "file": "src/components/ui/SocialProof.tsx",
+        "line": 58,
+        "claim": "Son 24 saatte {recentCount} araç değerlendirildi",
+        "type": "activity (dynamic count)",
+        "scope": "social proof ticker"
+      },
+      {
+        "file": "src/components/home/TestimonialsSection.tsx",
+        "line": 16,
+        "claim": "5 yıl",
+        "type": "experience (in testimonial copy)"
+      },
+      {
+        "file": "src/app/hakkimizda/page.tsx",
+        "line": 12,
+        "claim": "7+ yıl tecrübe, 10.000+ mutlu müşteri. ... Türkiye'nin lider firmasıyız.",
+        "type": "experience+customers",
+        "scope": "about meta description"
+      },
+      {
+        "file": "src/app/hakkimizda/page.tsx",
+        "line": 19,
+        "claim": "7+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.",
+        "type": "experience"
+      },
+      {
+        "file": "src/app/hakkimizda/page.tsx",
+        "line": 30,
+        "claim": "7+ yıldır ... 10.000+ mutlu müşteri ile Türkiye'nin lideriyiz.",
+        "type": "experience+customers"
+      },
+      {
+        "file": "src/app/hakkimizda/page.tsx",
+        "line": 40,
+        "claim": "2018 yılından bu yana ... 7 yılı aşkın tecrübemiz ve 10.000'den fazla mutlu müşterimizle",
+        "type": "founding-year+experience+customers",
+        "scope": "about body (founding year 2018)"
+      },
+      {
+        "file": "src/app/hakkimizda/page.tsx",
+        "line": 50,
+        "claim": "Türkiye'nin 81 ilinde hizmet vermekteyiz",
+        "type": "coverage"
+      },
+      {
+        "file": "src/app/hakkimizda/page.tsx",
+        "line": 80,
+        "claim": "7+ yıllık tecrübemizden faydalanın.",
+        "type": "experience"
+      },
+      {
+        "file": "src/app/sehirler/page.tsx",
+        "line": 13,
+        "claim": "Türkiye'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz.",
+        "type": "coverage",
+        "scope": "sehirler meta description"
+      },
+      {
+        "file": "src/app/sehirler/page.tsx",
+        "line": 41,
+        "claim": "81 ilde kazalı, hasarlı, pert ve hurda araç alımı.",
+        "type": "coverage",
+        "scope": "sehirler hero"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 132,
+        "claim": "7+ yıl kazalı araç alım satım tecrübesi.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 143,
+        "claim": "7+ yıllık tecrübemizle karşılaşmadığımız hasar türü neredeyse kalmamıştır.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 227,
+        "claim": "7+ yıl kazalı araç alım satım tecrübesi",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 303,
+        "claim": "7 yılı aşkın tecrübemizle ... en yüksek fiyatı sunuyoruz.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 410,
+        "claim": "7+ yıl tecrübe, en yüksek fiyat, hızlı işlem.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 431,
+        "claim": "Pert raporu olan araçlarda 7+ yıl tecrübe.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 467,
+        "claim": "pert araç alımında 7 yılı aşkın tecrübemizle tüm yasal süreçleri ... yürütüyoruz.",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 545,
+        "claim": "Pert araç alımında 7+ yıl tecrübe",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/services.ts",
+        "line": 662,
+        "claim": "18 yıllık araç artık muayeneden geçmiyordu...",
+        "type": "NOT-a-credibility-claim (age of a customer's car in a testimonial)"
+      },
+      {
+        "file": "src/data/blog.ts",
+        "line": 52,
+        "claim": "7+ yıllık tecrübe",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/blog.ts",
+        "line": 168,
+        "claim": "7+ yıllık tecrübe",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/blog.ts",
+        "line": 329,
+        "claim": "7+ yıllık tecrübe",
+        "type": "experience"
+      },
+      {
+        "file": "src/data/blog.ts",
+        "line": 475,
+        "claim": "10.000+ (müşteri reference in post)",
+        "type": "customers"
+      },
+      {
+        "file": "src/data/cities.ts",
+        "line": 85,
+        "claim": "40+ ilçeye hizmet, 2 saat içinde teklif ... 10K+ müşteri.",
+        "type": "coverage+customers",
+        "scope": "istanbul meta description (per-city pattern; most city metas claim '10K+ müşteri')"
+      },
+      {
+        "file": "src/app/sehirler/[city]/page.tsx",
+        "line": 209,
+        "claim": "AggregateRating ratingValue '4.9', reviewCount '10000'",
+        "type": "rating (JSON-LD)",
+        "scope": "EMITTED ON ALL 19 CITY PAGES"
+      },
+      {
+        "file": "src/components/analytics/JsonLd.tsx",
+        "line": 83,
+        "claim": "AggregateRating ratingValue '4.9', reviewCount '10000'",
+        "type": "rating (JSON-LD)",
+        "scope": "site-wide Organization schema"
+      }
+    ],
+    "stat_claims_notes": {
+      "primary_credibility_claims": {
+        "customers": "10.000+ / 10K+ mutlu müşteri (appears ~12x)",
+        "experience": "7+ yıl tecrübe (appears ~18x); about-page body also says '7 yılı aşkın'",
+        "founding_year": "2018 (src/app/hakkimizda/page.tsx:40)",
+        "coverage": "81 il / Türkiye geneli (sehirler + hakkimizda); per-city '40+ ilçe'",
+        "rating": "4.9 / 10000 reviews in JSON-LD (Organization schema + every city page)"
+      },
+      "consistency_warnings": [
+        "Experience phrased two ways: '7+ yıl' vs about-body '7 yılı aşkın' — and TestimonialsSection.tsx:16 says '5 yıl'. Reconcile if the editor changes the experience figure.",
+        "Customer count '10.000+' (display) vs JSON-LD reviewCount '10000' — keep these in sync; if you change one, change both (site.ts, homeContent.ts, hakkimizda, hero components, SocialProof, JsonLd.tsx, city template:209).",
+        "Founding year 2018 vs '7+ yıl' implies ~2018-2019; today is 2026 so '7+' is now arguably '8 yıl' — verify before rewrite.",
+        "services.ts:662 '18 yıllık araç' is a car's age in a customer story, NOT a credibility stat — do not treat as one."
+      ]
+    },
+    "duplicate_content": {
+      "title": {},
+      "meta_description": {},
+      "h1": {}
+    }
+  }
+}
