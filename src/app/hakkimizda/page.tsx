@@ -7,16 +7,24 @@ import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import { ModernIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | Türkiye'nin En Güvenilir Araç Alım Merkezi",
+  title: { absolute: "Hakkımızda | Türkiye'nin Güvenilir Araç Alım Merkezi" },
   description:
-    "7+ yıl tecrübe, 10.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye'nin lider firmasıyız.",
-  alternates: { canonical: '/hakkimizda' },
+    "5+ yıl tecrübe, 10.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye genelinde güvenilir hizmet sunuyoruz.",
+  alternates: { canonical: 'https://www.hasarpark.com/hakkimizda' },
+  openGraph: {
+    title: "Hakkımızda | Türkiye'nin Güvenilir Araç Alım Merkezi",
+    description:
+      "5+ yıl tecrübe, 10.000+ mutlu müşteri. Hasar Park olarak kazalı, hasarlı, pert ve hurda araç alımında Türkiye genelinde güvenilir hizmet sunuyoruz.",
+    url: 'https://www.hasarpark.com/hakkimizda',
+    type: 'website',
+    images: ['/images/kazali-arac.png'],
+  },
 };
 
 const values = [
   { icon: 'garanti', title: 'Güven', text: 'Şeffaf ve dürüst fiyatlandırma ile müşterilerimizin güvenini kazanıyoruz.' },
   { icon: 'anında', title: 'Hız', text: '30 dakikada değerlendirme, aynı gün ödeme ile zamandan tasarruf sağlıyoruz.' },
-  { icon: 'tecrübe', title: 'Profesyonellik', text: '7+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.' },
+  { icon: 'tecrübe', title: 'Profesyonellik', text: '5+ yıllık tecrübe ve uzman kadromuzla profesyonel hizmet sunuyoruz.' },
 ];
 
 export default function AboutPage() {
@@ -27,7 +35,7 @@ export default function AboutPage() {
         eyebrow="Hakkımızda"
         title="Türkiye'nin"
         highlight="En Güvenilir Firması"
-        subtitle="7+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma. 10.000+ mutlu müşteri ile Türkiye'nin lideriyiz."
+        subtitle="5+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma. 10.000+ mutlu müşteri ile Türkiye'nin güvenilir firmasıyız."
         showStats
       />
 
@@ -37,8 +45,8 @@ export default function AboutPage() {
           <SectionHeader eyebrow="Hikayemiz" title="Bizim" highlight="Hikayemiz" />
           <div className="space-y-5 text-[16px] leading-relaxed text-ink-soft">
             <p>
-              <strong className="text-ink">Hasar Park</strong>, 2018 yılından bu yana Türkiye'nin dört bir yanında
-              kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 7 yılı aşkın tecrübemiz ve
+              <strong className="text-ink">Hasar Park</strong>, 2021 yılından bu yana Türkiye'nin dört bir yanında
+              kazalı, hasarlı, pert ve hurda araç alım-satım hizmeti vermektedir. 5 yılı aşkın tecrübemiz ve
               10.000'den fazla mutlu müşterimizle sektörün öncü firmalarından biriyiz.
             </p>
             <p>
@@ -47,7 +55,7 @@ export default function AboutPage() {
               olmayı başardık.
             </p>
             <p>
-              İstanbul, Ankara, İzmir başta olmak üzere Türkiye'nin 81 ilinde hizmet vermekteyiz. Uzman ekibimiz,
+              İstanbul, Ankara, İzmir başta olmak üzere Türkiye genelinde hizmet vermekteyiz. Uzman ekibimiz,
               7/24 müşteri hizmetleri, ücretsiz çekici hizmetimiz ve aynı gün ödeme garantimizle yanınızdayız.
             </p>
           </div>
@@ -77,7 +85,7 @@ export default function AboutPage() {
       <CTABanner
         title="Bizimle Çalışın,"
         highlight="En Yüksek Fiyatı Alın"
-        subtitle="7+ yıllık tecrübemizden faydalanın."
+        subtitle="5+ yıllık tecrübemizden faydalanın."
         source="hakkimizda-cta"
       />
     </div>

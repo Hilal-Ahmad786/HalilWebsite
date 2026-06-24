@@ -21,7 +21,7 @@ export interface Benefit {
 
 export const benefits: Benefit[] = [
   { icon: ShieldCheck, title: 'Noterde Güvenli Devir', description: 'Satış işlemi resmi noter süreciyle güvence altında tamamlanır.' },
-  { icon: Users, title: 'Deneyimli Uzman Kadro', description: '7+ yıllık tecrübeyle aracınızı doğru ve adil şekilde değerlendiririz.' },
+  { icon: Users, title: 'Deneyimli Uzman Kadro', description: '5+ yıllık tecrübeyle aracınızı doğru ve adil şekilde değerlendiririz.' },
   { icon: Truck, title: 'Ücretsiz Çekici', description: 'Hareketsiz araçlar dahil, bulunduğunuz yerden ücretsiz teslim alırız.' },
   { icon: Clock, title: '30 Dakikada Ön Teklif', description: 'Fotoğraf ve araç bilgisiyle 30 dakika içinde fiyat aralığı veririz.' },
   { icon: FileText, title: 'Tüm Evraklar Bizden', description: 'Noter ve tescil işlemlerini sizin adınıza eksiksiz yürütürüz.' },
@@ -56,7 +56,7 @@ export const reasons: Reason[] = [
   { icon: Truck, title: 'Ücretsiz Çekici', description: 'Aracınızı bulunduğu yerden alırız.' },
   { icon: FileText, title: 'Tüm Evraklar Bizden', description: 'Noter ve tescil işlemleri dahil.' },
   { icon: HandCoins, title: 'Anında Ödeme', description: 'Nakit veya EFT ile hızlı ödeme.' },
-  { icon: BadgeCheck, title: '7+ Yıl Tecrübe', description: '10.000+ mutlu müşteri.' },
+  { icon: BadgeCheck, title: '5+ Yıl Tecrübe', description: '10.000+ mutlu müşteri.' },
 ];
 
 /* ---- Service images (transparent cars in /public/cars) ---- */

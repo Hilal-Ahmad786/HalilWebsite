@@ -8,11 +8,19 @@ import PageHero from '@/components/shared/PageHero';
 import CTABanner from '@/components/shared/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'Hizmet Verdiğimiz Şehirler | Türkiye Geneli Araç Alımı',
+  title: { absolute: 'Hizmet Verdiğimiz Şehirler | Türkiye Geneli Araç Alımı' },
   description:
-    "Hasar Park olarak Türkiye'nin 81 ilinde kazalı, hasarlı, pert ve hurda araç alımı hizmeti veriyoruz. Size en yakın şehri seçin.",
+    'Hasar Park Türkiye genelinde kazalı, hasarlı, pert ve hurda araç alımı yapıyor. Size en yakın şehri seçin, 30 dakikada teklif alın.',
   keywords: ['türkiye araç alım', 'şehirler', 'il il araç alım', 'türkiye geneli hizmet'],
-  alternates: { canonical: '/sehirler' },
+  alternates: { canonical: 'https://www.hasarpark.com/sehirler' },
+  openGraph: {
+    title: 'Hizmet Verdiğimiz Şehirler | Türkiye Geneli Araç Alımı',
+    description:
+      'Hasar Park Türkiye genelinde kazalı, hasarlı, pert ve hurda araç alımı yapıyor. Size en yakın şehri seçin, 30 dakikada teklif alın.',
+    url: 'https://www.hasarpark.com/sehirler',
+    type: 'website',
+    images: ['/images/kazali-arac.png'],
+  },
 };
 
 const regions = ['Marmara', 'Ege', 'Akdeniz', 'İç Anadolu', 'Karadeniz', 'Doğu Anadolu', 'Güneydoğu Anadolu'];
@@ -23,7 +31,7 @@ const comingSoon = [
 ];
 const coverage = [
   { icon: Truck, text: 'Her ile ücretsiz çekici' },
-  { icon: Zap, text: '24 saat içinde ekspertiz' },
+  { icon: Zap, text: '30 dakika içinde ekspertiz' },
   { icon: Wallet, text: 'En yüksek fiyat garantisi' },
   { icon: FileText, text: 'Tüm evrak işlemleri' },
 ];
@@ -38,7 +46,7 @@ export default function CitiesIndexPage() {
         eyebrow="Hizmet Bölgeleri"
         title="Türkiye Geneli"
         highlight="Araç Alım Hizmeti"
-        subtitle="81 ilde kazalı, hasarlı, pert ve hurda araç alımı. Size en yakın şehri seçin, anında teklif alın."
+        subtitle="Türkiye genelinde kazalı, hasarlı, pert ve hurda araç alımı. Size en yakın şehri seçin, anında teklif alın."
         showStats
       />
 

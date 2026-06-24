@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Çerez Politikası',
   description: 'Hasar Park web sitesinde kullanılan çerezler ve yönetimi hakkında bilgilendirme.',
   alternates: {
-    canonical: '/cerez-politikasi',
+    canonical: 'https://www.hasarpark.com/cerez-politikasi',
   },
 };
 

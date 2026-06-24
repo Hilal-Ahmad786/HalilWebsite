@@ -26,7 +26,7 @@ export default function HeroSection() {
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 shadow-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
             <span className="text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink-soft">
-              Türkiye’nin Lider Araç Alım Merkezi
+              Türkiye’nin Güvenilir Araç Alım Merkezi
             </span>
           </div>
 

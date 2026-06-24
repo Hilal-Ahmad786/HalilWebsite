@@ -10,11 +10,19 @@ import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import ProcessSection from '@/components/home/ProcessSection';
 
 export const metadata: Metadata = {
-  title: 'Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı',
+  title: { absolute: 'Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı' },
   description:
-    'Hasar Park olarak kazalı araç alımı, hasarlı araç alımı, pert araç alımı ve hurda araç alımı hizmetleri sunuyoruz. En yüksek fiyat garantisi.',
+    'Hasar Park: kazalı, hasarlı, pert, hurda, motor arızalı ve çekme belgeli araç alımı. En yüksek fiyat garantisi, ücretsiz çekici, anında ödeme.',
   keywords: ['araç alım hizmetleri', 'kazalı araç', 'hasarlı araç', 'pert araç', 'hurda araç', 'araç satış'],
-  alternates: { canonical: '/hizmetler' },
+  alternates: { canonical: 'https://www.hasarpark.com/hizmetler' },
+  openGraph: {
+    title: 'Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı',
+    description:
+      'Hasar Park: kazalı, hasarlı, pert, hurda, motor arızalı ve çekme belgeli araç alımı. En yüksek fiyat garantisi, ücretsiz çekici, anında ödeme.',
+    url: 'https://www.hasarpark.com/hizmetler',
+    type: 'website',
+    images: ['/images/kazali-arac.png'],
+  },
 };
 
 const vehicleTypes = [

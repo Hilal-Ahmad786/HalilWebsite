@@ -11,15 +11,15 @@ import FAQSection from '@/components/home/FAQSection';
 import FinalCTASection from '@/components/home/FinalCTASection';
 
 export const metadata: Metadata = {
-  title: 'Hasarlı, Kazalı, Pert ve Hurda Araç Alımı',
+  title: { absolute: 'Hasarlı, Kazalı, Pert ve Hurda Araç Alımı | Hasar Park' },
   description:
-    'Hasar Park ile kazalı, hasarlı, pert ve hurda aracınız için hızlı teklif alın. Ücretsiz çekici, noterde güvenli devir ve anında ödeme avantajlarından yararlanın.',
-  alternates: { canonical: '/' },
+    'Hasar Park ile kazalı, hasarlı, pert ve hurda aracınız için 30 dakikada teklif alın. Ücretsiz çekici, noterde güvenli devir ve anında nakit ödeme.',
+  alternates: { canonical: 'https://www.hasarpark.com/' },
   openGraph: {
     title: 'Hasarlı, Kazalı, Pert ve Hurda Araç Alımı | Hasar Park',
     description:
-      'Kazalı, hasarlı, pert ve hurda araçlar için 30 dakikada teklif. Ücretsiz çekici, noterde güvenli devir, anında ödeme.',
-    url: '/',
+      'Hasar Park ile kazalı, hasarlı, pert ve hurda aracınız için 30 dakikada teklif alın. Ücretsiz çekici, noterde güvenli devir ve anında nakit ödeme.',
+    url: 'https://www.hasarpark.com/',
     type: 'website',
   },
 };

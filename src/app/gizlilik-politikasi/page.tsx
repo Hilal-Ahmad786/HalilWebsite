@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Gizlilik Politikası',
   description: 'Hasar Park gizlilik politikası ve kişisel verilerin işlenmesi hakkında bilgilendirme.',
   alternates: {
-    canonical: '/gizlilik-politikasi',
+    canonical: 'https://www.hasarpark.com/gizlilik-politikasi',
   },
 };
 

@@ -8,9 +8,16 @@ import PageHero from '@/components/shared/PageHero';
 import CTABanner from '@/components/shared/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'Blog & Bilgiler | Araç Alım Rehberi',
-  description: 'Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilgilendirici yazılar, ipuçları ve rehberler.',
-  alternates: { canonical: '/blog' },
+  title: { absolute: 'Blog & Bilgiler | Araç Alım Rehberi - Hasar Park' },
+  description: 'Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilgilendirici rehberler, ipuçları ve sık sorulan sorular.',
+  alternates: { canonical: 'https://www.hasarpark.com/blog' },
+  openGraph: {
+    title: 'Blog & Bilgiler | Araç Alım Rehberi - Hasar Park',
+    description: 'Kazalı, hasarlı, pert ve hurda araç satışı hakkında bilgilendirici rehberler, ipuçları ve sık sorulan sorular.',
+    url: 'https://www.hasarpark.com/blog',
+    type: 'website',
+    images: ['/images/kazali-arac.png'],
+  },
 };
 
 export default function BlogPage() {

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ChevronDownIcon } from './Icons';
+import { siteConfig } from '@/config/site';
 
 interface BreadcrumbItem {
   label: string;
@@ -22,7 +23,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       '@type': 'ListItem',
       position: index + 1,
       name: item.label,
-      item: item.href ? `https://hasarpark.com${item.href}` : undefined,
+      item: item.href ? `${siteConfig.url}${item.href}` : undefined,
     })),
   };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'KVKK Aydınlatma Metni',
   description: 'Hasar Park Kişisel Verilerin Korunması Kanunu (KVKK) aydınlatma metni.',
   alternates: {
-    canonical: '/kvkk',
+    canonical: 'https://www.hasarpark.com/kvkk',
   },
 };
 

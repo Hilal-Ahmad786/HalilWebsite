@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Kullanım Şartları',
   description: 'Hasar Park web sitesi kullanım şartları ve koşulları.',
   alternates: {
-    canonical: '/kullanim-sartlari',
+    canonical: 'https://www.hasarpark.com/kullanim-sartlari',
   },
 };
 
