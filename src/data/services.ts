@@ -10,8 +10,8 @@ export interface ServiceData {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
-
-
+  canonical: string;
+  ogUrl: string;
 
   // Hero Section
   hero: {
@@ -82,20 +82,22 @@ export const servicesData: Record<string, ServiceData> = {
     color: 'lime',
 
     metaTitle: 'Kazalı Araç Alımı | 30 Dakikada Teklif - Hasar Park',
-    metaDescription: 'Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. En yüksek fiyat garantisi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 24 saat hizmet.',
+    metaDescription: 'Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. En yüksek fiyat garantisi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 7/24 hizmet.',
     keywords: [
       'kazalı araç alan',
-      'kazalı araç satmak',
-      'kazalı araç alım',
+      'kazalı araç alımı',
+      'kazalı araba alan',
+      'kaza yapmış araç alan',
       'kazalı oto alan',
-      'kaza geçirmiş araç',
-      'kazalı araç satan yerler',
+      'kazalı araç satmak',
     ],
+    canonical: 'https://www.hasarpark.com/kazali-arac-alim',
+    ogUrl: 'https://www.hasarpark.com/kazali-arac-alim',
 
     hero: {
       badge: '🚗 KAZALI ARAÇ ALIMI',
-      title: 'KAZALI ARACINIZ',
-      titleHighlight: 'EN YÜKSEK FİYATA',
+      title: 'Kazalı Aracınız',
+      titleHighlight: 'En Yüksek Fiyata',
       subtitle: 'Kaza geçirmiş her türlü araç için anında değerlendirme. 30 dakikada teklif, ücretsiz çekici, anında ödeme.',
       image: '/images/kazali-arac.png',
     },
@@ -129,7 +131,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         icon: '🏆',
         title: 'Tecrübeli Ekip',
-        description: '7+ yıl kazalı araç alım satım tecrübesi.',
+        description: '5+ yıl kazalı araç alım satım tecrübesi.',
       },
     ],
 
@@ -140,7 +142,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         question: 'Hangi tür kazalı araçları alıyorsunuz?',
-        answer: 'Hasar türü veya boyutundan bağımsız olarak tüm kazalı araçları alıyoruz. Ön çarpma, yan çarpma, arkadan çarpma, devrilme ve takla atmış araçların tamamı alım kapsamımızdadır. Motor hasarlı, şanzıman hasarlı, diferansiyel hasarlı, kaporta hasarlı, hava yastığı patlamış ve şasi hasarlı araçlar da değerlendiriyoruz. Sürülemez durumda, hareket edemeyen veya yangın geçirmiş araçlar için de ücretsiz çekici ile yerinden alım yapıyoruz. 7+ yıllık tecrübemizle karşılaşmadığımız hasar türü neredeyse kalmamıştır.',
+        answer: 'Hasar türü veya boyutundan bağımsız olarak tüm kazalı araçları alıyoruz. Ön çarpma, yan çarpma, arkadan çarpma, devrilme ve takla atmış araçların tamamı alım kapsamımızdadır. Motor hasarlı, şanzıman hasarlı, diferansiyel hasarlı, kaporta hasarlı, hava yastığı patlamış ve şasi hasarlı araçlar da değerlendiriyoruz. Sürülemez durumda, hareket edemeyen veya yangın geçirmiş araçlar için de ücretsiz çekici ile yerinden alım yapıyoruz. 5+ yıllık tecrübemizle karşılaşmadığımız hasar türü neredeyse kalmamıştır.',
       },
       {
         question: 'Kazalı araç için ne kadar ödeme yapıyorsunuz?',
@@ -224,7 +226,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       whyChooseUs: [
         'Türkiye\'nin en yüksek kazalı araç fiyatlarını veriyoruz',
-        '7+ yıl kazalı araç alım satım tecrübesi',
+        '5+ yıl kazalı araç alım satım tecrübesi',
         'Her marka ve model için profesyonel değerlendirme',
         'Şeffaf ve güvenilir işlem süreci',
         'Tüm Türkiye\'de ücretsiz çekici hizmeti',
@@ -246,20 +248,23 @@ export const servicesData: Record<string, ServiceData> = {
     icon: '🔧',
     color: 'purple',
 
-    metaTitle: 'Hasarlı Araç Alımı | Mekanik & Kaporta Hasarlı Araç Alan - Hasar Park',
-    metaDescription: 'Motor, şanzıman, kaporta hasarlı araçları alıyoruz. Detaylı ekspertiz, adil fiyat, ücretsiz çekici. Tüm evraklar bizden, anında ödeme garantisi.',
+    metaTitle: 'Hasarlı Araç Alımı | Kaporta & Motor Hasarlı Alan',
+    metaDescription: 'Motor, şanzıman ve kaporta hasarlı araçları alıyoruz. Detaylı ekspertiz, adil fiyat, ücretsiz çekici. Tüm evraklar bizden, anında ödeme garantisi.',
     keywords: [
       'hasarlı araç alan',
-      'hasarlı araç satmak',
+      'hasarlı araç alımı',
       'mekanik hasarlı araç',
       'kaporta hasarlı araç',
-      'motor hasarlı araç',
+      'motor hasarlı araç alan',
+      'hasarlı oto alan',
     ],
+    canonical: 'https://www.hasarpark.com/hasarli-arac-alim',
+    ogUrl: 'https://www.hasarpark.com/hasarli-arac-alim',
 
     hero: {
       badge: '🔧 HASARLI ARAÇ ALIMI',
-      title: 'HASARLI ARACINIZ',
-      titleHighlight: 'ANINDA NAKDE',
+      title: 'Hasarlı Aracınız',
+      titleHighlight: 'Anında Nakde',
       subtitle: 'Mekanik, kaporta veya motor hasarlı tüm araçlar için profesyonel değerlendirme ve en yüksek fiyat.',
       image: '/images/hasarli-arac.png',
     },
@@ -300,7 +305,7 @@ export const servicesData: Record<string, ServiceData> = {
     faqs: [
       {
         question: 'Hangi tür hasarlı araçları alıyorsunuz?',
-        answer: 'Motor hasarlı, şanzıman hasarlı, kaporta hasarlı, elektrik sistemi hasarlı, fren sistemi arızalı, süspansiyon hasarlı, diferansiyel hasarlı ve tüm mekanik hasarlı araçları alıyoruz. Tek bir parçası arızalı araçtan kapsamlı çoklu hasara kadar her durumu değerlendiriyoruz. Aracın çalışıp çalışmaması da fark etmez; hareket edemeyen araçlarınızı ücretsiz çekici ile istediğiniz noktadan teslim alıyoruz. 7 yılı aşkın tecrübemizle hangi hasar türü olursa olsun size adil ve en yüksek fiyatı sunuyoruz.',
+        answer: 'Motor hasarlı, şanzıman hasarlı, kaporta hasarlı, elektrik sistemi hasarlı, fren sistemi arızalı, süspansiyon hasarlı, diferansiyel hasarlı ve tüm mekanik hasarlı araçları alıyoruz. Tek bir parçası arızalı araçtan kapsamlı çoklu hasara kadar her durumu değerlendiriyoruz. Aracın çalışıp çalışmaması da fark etmez; hareket edemeyen araçlarınızı ücretsiz çekici ile istediğiniz noktadan teslim alıyoruz. 5 yılı aşkın tecrübemizle hangi hasar türü olursa olsun size adil ve en yüksek fiyatı sunuyoruz.',
       },
       {
         question: 'Motor arızalı araç için de alım yapıyor musunuz?',
@@ -406,20 +411,23 @@ export const servicesData: Record<string, ServiceData> = {
     icon: '⚠️',
     color: 'fuchsia',
 
-    metaTitle: 'Pert Araç Alımı | Sigorta Pert Raporlu Araç Alan - Hasar Park',
-    metaDescription: 'Sigorta pert raporlu araçlar için özel değerlendirme. 7+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.',
+    metaTitle: 'Pert Araç Alımı | Sigorta Pert Raporlu Alan',
+    metaDescription: 'Sigorta pert raporlu araçlar için özel değerlendirme. 5+ yıl tecrübe, en yüksek fiyat, hızlı işlem. Yasal süreç, ücretsiz çekici, anında ödeme.',
     keywords: [
       'pert araç alan',
+      'pert araç alımı',
+      'pert kayıtlı araç alan',
+      'sigorta pertli araç',
+      'pert oto alan',
       'pert araç satmak',
-      'pert raporu',
-      'sigorta pert',
-      'kasko pert',
     ],
+    canonical: 'https://www.hasarpark.com/pert-arac-alim',
+    ogUrl: 'https://www.hasarpark.com/pert-arac-alim',
 
     hero: {
       badge: '⚠️ PERT ARAÇ ALIMI',
-      title: 'PERT ARACINIZ',
-      titleHighlight: 'DEĞERİNDE SATIN',
+      title: 'Pert Aracınız',
+      titleHighlight: 'Değerinde Satın',
       subtitle: 'Sigorta pert raporu çıkmış araçlar için özel değerlendirme. En yüksek fiyat ve güvenli işlem garantisi.',
       image: '/images/pert-arac.png',
     },
@@ -428,7 +436,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         icon: '📋',
         title: 'Pert Raporu Uzmanı',
-        description: 'Pert raporu olan araçlarda 7+ yıl tecrübe.',
+        description: 'Pert raporu olan araçlarda 5+ yıl tecrübe.',
       },
       {
         icon: '💰',
@@ -464,7 +472,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         question: 'Pert raporlu araç satılır mı?',
-        answer: 'Evet, pert raporlu araçlar Türkiye\'de yasal olarak satılabilir ve alınabilir. Pert raporu bir araç satış engeli oluşturmaz; aksine araç için özel bir statü tanımlar. Satış işlemi noterde gerçekleştirilir ve pert bilgisi resmi kayıtlara geçer. Alıcı bu durumdan haberdar olarak işlem yapar. Hasar Park olarak pert araç alımında 7 yılı aşkın tecrübemizle tüm yasal süreçleri sizin adınıza yürütüyoruz. Pert raporunuz olsun ya da olmasın, sigorta sürecinin hangi aşamasında olduğunuzdan bağımsız olarak aracınızı değerlendiriyor ve en yüksek teklifi sunuyoruz.',
+        answer: 'Evet, pert raporlu araçlar Türkiye\'de yasal olarak satılabilir ve alınabilir. Pert raporu bir araç satış engeli oluşturmaz; aksine araç için özel bir statü tanımlar. Satış işlemi noterde gerçekleştirilir ve pert bilgisi resmi kayıtlara geçer. Alıcı bu durumdan haberdar olarak işlem yapar. Hasar Park olarak pert araç alımında 5 yılı aşkın tecrübemizle tüm yasal süreçleri sizin adınıza yürütüyoruz. Pert raporunuz olsun ya da olmasın, sigorta sürecinin hangi aşamasında olduğunuzdan bağımsız olarak aracınızı değerlendiriyor ve en yüksek teklifi sunuyoruz.',
       },
       {
         question: 'Pert aracın değeri ne kadardır?',
@@ -542,7 +550,7 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       whyChooseUs: [
-        'Pert araç alımında 7+ yıl tecrübe',
+        'Pert araç alımında 5+ yıl tecrübe',
         'En yüksek pert araç fiyatları',
         'Tüm yasal işlemler bizden',
         'Hızlı değerlendirme ve ödeme',
@@ -569,16 +577,19 @@ export const servicesData: Record<string, ServiceData> = {
     metaDescription: 'Hurda belgeli araçları kilo bazında en yüksek fiyata alıyoruz. Resmi belgeli işlem, çevre dostu geri dönüşüm. Ücretsiz çekici, anında ödeme.',
     keywords: [
       'hurda araç alan',
-      'hurda araç satmak',
-      'hurda belgesi',
-      'hurda araç fiyatı',
-      'araç hurdaya çıkarma',
+      'hurda araç alımı',
+      'hurda belgeli araç',
+      'hurdaya araç satmak',
+      'hurda oto alan',
+      'hurda araba alan',
     ],
+    canonical: 'https://www.hasarpark.com/hurda-arac-alim',
+    ogUrl: 'https://www.hasarpark.com/hurda-arac-alim',
 
     hero: {
       badge: '♻️ HURDA ARAÇ ALIMI',
-      title: 'HURDA ARACINIZ',
-      titleHighlight: 'ÇEVRECİ ÇÖZÜM',
+      title: 'Hurda Aracınız',
+      titleHighlight: 'Çevreci Çözüm',
       subtitle: 'Kullanım ömrünü tamamlamış araçlar için resmi belgeli hurda işlemi. En yüksek kilo fiyatı ve çevre dostu geri dönüşüm.',
       image: '/images/hurda-arac.png',
     },

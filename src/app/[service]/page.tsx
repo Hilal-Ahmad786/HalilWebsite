@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
     title: service.metaTitle,
     description: service.metaDescription,
     keywords: service.keywords,
-    alternates: { canonical: `/${service.slug}` },
-    openGraph: { title: service.metaTitle, description: service.metaDescription },
+    alternates: { canonical: service.canonical },
+    openGraph: { title: service.metaTitle, description: service.metaDescription, url: service.ogUrl },
   };
 }
 
@@ -85,7 +85,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       </section>
 
       <CTABanner
-        title={`${service.shortTitle} Aracınızı`}
+        title={`${service.shortTitle.replace(/ Araç$/, '')} Aracınızı`}
         highlight="Hemen Satın"
         subtitle="Tek bir telefonla başlayın, aynı gün ödemenizi alın."
         source={`service-${service.id}-cta1`}
