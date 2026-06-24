@@ -25,6 +25,7 @@ export const mainNav: NavItem[] = [
       .slice(0, 8)
       .map((c) => ({ label: c.name, href: `/sehirler/${c.slug}` })),
   },
+  { label: 'Blog', href: '/blog' },
   { label: 'Hakkımızda', href: '/hakkimizda' },
   { label: 'İletişim', href: '/iletisim' },
 ];

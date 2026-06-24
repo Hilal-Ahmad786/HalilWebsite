@@ -2,11 +2,10 @@
 
 import { useRef, useState } from 'react';
 import Image from 'next/image';
-import { Upload, X, ShieldCheck, Clock, BadgeCheck, Send, Loader2 } from 'lucide-react';
+import { Upload, X, ShieldCheck, Clock, BadgeCheck, Send, Loader2, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { trackFormSubmit } from '@/lib/analytics';
 import Container from '@/components/shared/Container';
-import SectionHeader from '@/components/shared/SectionHeader';
 import { cn } from '@/lib/cn';
 
 const MAX_FILES = 6;
@@ -92,38 +91,70 @@ export default function QuoteFormSection() {
   return (
     <section className="section bg-surface-purple">
       <Container>
-        <SectionHeader
-          eyebrow="Teklif Formu"
-          title="Hızlı"
-          highlight="Teklif Alın"
-          subtitle="Aracınızın bilgilerini paylaşın, 30 dakika içinde en iyi teklifi sizinle paylaşalım."
-        />
-
         <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-soft">
-          <div className="grid lg:grid-cols-[260px_1fr]">
-            {/* Info column */}
-            <aside className="border-b border-line bg-navy-900 p-7 text-white lg:border-b-0 lg:border-r">
-              <h3 className="text-[19px] font-extrabold">Neden formla başlamalısınız?</h3>
-              <ul className="mt-5 space-y-4 text-[14px] text-white/80">
+          <div className="grid lg:grid-cols-[320px_1fr]">
+            {/* Info / pitch column */}
+            <aside className="relative flex flex-col gap-6 overflow-hidden border-b border-line bg-navy-900 p-7 text-white lg:border-b-0 lg:border-r lg:p-8">
+              {/* accent glows */}
+              <span className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-brand-green/15 blur-3xl" aria-hidden="true" />
+              <span className="pointer-events-none absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-brand-purple/10 blur-3xl" aria-hidden="true" />
+
+              <div className="relative">
+                <div className="flex items-center gap-2.5">
+                  <span className="h-px w-7 bg-brand-purple/70" aria-hidden="true" />
+                  <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-purple">Teklif Formu</span>
+                </div>
+                <h2 className="mt-4 text-[24px] font-extrabold leading-[1.2] text-white">
+                  Aracınız için <span className="text-brand-green">hızlı teklif</span> alın
+                </h2>
+                <p className="mt-3 text-[14px] leading-relaxed text-white/65">
+                  Aracınızın bilgilerini paylaşın, 30 dakika içinde en iyi teklifi sizinle paylaşalım.
+                </p>
+              </div>
+
+              <ul className="relative space-y-2.5">
                 {[
-                  { icon: Clock, t: '30 dakikada ön teklif' },
-                  { icon: ShieldCheck, t: 'Bilgileriniz gizli tutulur' },
-                  { icon: BadgeCheck, t: 'Ücretsiz ekspertiz ve çekici' },
-                ].map(({ icon: Icon, t }) => (
-                  <li key={t} className="flex items-start gap-3">
-                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-green">
-                      <Icon className="h-4 w-4" aria-hidden="true" />
+                  { icon: Clock, t: '30 dakikada ön teklif', d: 'Fotoğraf ve bilgilerle hızlı değerlendirme.' },
+                  { icon: ShieldCheck, t: 'Bilgileriniz gizli tutulur', d: 'Verileriniz sadece teklif için kullanılır.' },
+                  { icon: BadgeCheck, t: 'Ücretsiz ekspertiz ve çekici', d: 'Yerinde değerleme, masrafsız çekici.' },
+                ].map(({ icon: Icon, t, d }) => (
+                  <li key={t} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3.5">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green">
+                      <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
                     </span>
-                    <span className="pt-1.5">{t}</span>
+                    <span className="min-w-0">
+                      <span className="block text-[14px] font-bold text-white">{t}</span>
+                      <span className="block text-[12.5px] leading-snug text-white/55">{d}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-[13px] text-white/60">
-                Acele mi? Hemen arayın:{' '}
-                <a href={`tel:${siteConfig.phone}`} className="font-bold text-brand-green">
-                  {siteConfig.phoneDisplay}
-                </a>
-              </p>
+
+              {/* Trust stats */}
+              <div className="relative grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
+                <div>
+                  <p className="text-[20px] font-extrabold leading-none text-brand-green">5+</p>
+                  <p className="mt-1 text-[12px] text-white/55">Yıl Tecrübe</p>
+                </div>
+                <div>
+                  <p className="text-[20px] font-extrabold leading-none text-brand-green">10.000+</p>
+                  <p className="mt-1 text-[12px] text-white/55">Mutlu Müşteri</p>
+                </div>
+              </div>
+
+              {/* Phone CTA pinned to the bottom — fills the column */}
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="relative mt-auto flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-brand-green/40 hover:bg-white/10"
+              >
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-green text-white">
+                  <Phone className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[12px] text-white/60">Acele mi? Hemen arayın</span>
+                  <span className="block text-[16px] font-extrabold text-white">{siteConfig.phoneDisplay}</span>
+                </span>
+              </a>
             </aside>
 
             {/* Form */}

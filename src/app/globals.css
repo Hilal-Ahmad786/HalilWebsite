@@ -104,18 +104,18 @@ a {
 /* ===== CONTROLLED DESKTOP CONTAINER (max 1180) ===== */
 .container-page {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1320px;
   margin-inline: auto;
   padding-inline: 24px;
 }
-@media (max-width: 1199px) { .container-page { max-width: 1120px; } }
+@media (max-width: 1199px) { .container-page { max-width: 1280px; } }
 @media (max-width: 991px)  { .container-page { padding-inline: 24px; } }
 @media (max-width: 767px)  { .container-page { padding-inline: 16px; } }
 @media (max-width: 479px)  { .container-page { padding-inline: 12px; } }
 
 /* Narrow the legacy Tailwind `.container` used by not-yet-migrated pages */
 .container {
-  max-width: 1180px !important;
+  max-width: 1320px !important;
   margin-inline: auto;
 }
 

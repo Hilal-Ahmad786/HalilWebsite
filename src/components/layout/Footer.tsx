@@ -24,6 +24,7 @@ const quickLinks = [
   { label: 'Ana Sayfa', href: '/' },
   { label: 'Hizmetler', href: '/hizmetler' },
   { label: 'Şehirler', href: '/sehirler' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Hakkımızda', href: '/hakkimizda' },
   { label: 'İletişim', href: '/iletisim' },
 ];
