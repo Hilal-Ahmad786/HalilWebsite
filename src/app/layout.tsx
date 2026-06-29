@@ -18,6 +18,7 @@ import GoogleAdsConversion from '@/components/analytics/GoogleAdsConversion';
 import JsonLd from '@/components/analytics/JsonLd';
 import { siteConfig } from '@/config/site';
 import CallPopupModal from '@/components/layout/CallPopupModal';
+import PageViewTracker from '@/components/PageViewTracker';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -94,6 +95,8 @@ export default function RootLayout({
         {/* Loads gtag with your AW- ID only when NEXT_PUBLIC_ADS_CONVERSION_ID is set */}
         <GoogleAdsConversion />
         {/* GA4 is handled inside GTM */}
+        {/* First-party page-view tracking (counts every visitor) */}
+        <PageViewTracker />
 
         {/* Layout */}
         <TopBar />

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { and, desc, gte, lt, inArray, isNotNull, sql } from "drizzle-orm";
+import { and, desc, eq, gte, lt, inArray, isNotNull, sql } from "drizzle-orm";
 import { isDbConfigured, requireDb } from "@/db";
 import { clickEvents } from "@/db/schema";
 import { isAdminAuthed } from "@/lib/admin-auth";
@@ -102,7 +102,13 @@ export default async function AdminClicksPage({
     lt(clickEvents.occurredAt, range.to),
   );
 
-  const [byName, agg, ipGroups, rows] = await Promise.all([
+  const visitWhere = and(
+    eq(clickEvents.name, "page_view"),
+    gte(clickEvents.occurredAt, range.from),
+    lt(clickEvents.occurredAt, range.to),
+  );
+
+  const [byName, agg, ipGroups, rows, visitAgg] = await Promise.all([
     db
       .select({ name: clickEvents.name, c: sql<number>`count(*)::int` })
       .from(clickEvents)
@@ -122,7 +128,19 @@ export default async function AdminClicksPage({
       .groupBy(clickEvents.ipHash)
       .orderBy(desc(sql`count(*)`)),
     db.select().from(clickEvents).where(baseWhere).orderBy(desc(clickEvents.occurredAt)).limit(200),
+    db
+      .select({
+        visits: sql<number>`count(*)::int`,
+        visitors: sql<number>`count(distinct ${clickEvents.sessionId})::int`,
+        ips: sql<number>`count(distinct ${clickEvents.ipHash})::int`,
+      })
+      .from(clickEvents)
+      .where(visitWhere),
   ]);
+
+  const visits = Number(visitAgg[0]?.visits ?? 0);
+  const visitVisitors = Number(visitAgg[0]?.visitors ?? 0);
+  const visitIps = Number(visitAgg[0]?.ips ?? 0);
 
   const counts: Record<string, number> = {};
   for (const ev of EVENTS) counts[ev] = 0;
@@ -184,8 +202,37 @@ export default async function AdminClicksPage({
         </button>
       </form>
 
+      {/* Visit summary (everyone — including people who don't call/form) */}
+      <h2 className="mt-8 text-lg font-bold text-ink">Ziyaret Özeti</h2>
+      <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="rounded-card border border-line bg-surface p-5 text-center">
+          <p className="text-sm text-ink-soft">Toplam ziyaret</p>
+          <p className="mt-1 text-3xl font-bold text-ink">{visits}</p>
+          <p className="mt-1 text-xs text-ink-muted">sayfa görüntüleme</p>
+        </div>
+        <div className="rounded-card border border-line bg-surface p-5 text-center">
+          <p className="text-sm text-ink-soft">Benzersiz ziyaretçi</p>
+          <p className="mt-1 text-3xl font-bold text-ink">{visitVisitors}</p>
+          <p className="mt-1 text-xs text-ink-muted">farklı oturum</p>
+        </div>
+        <div className="rounded-card border border-line bg-surface p-5 text-center">
+          <p className="text-sm text-ink-soft">Benzersiz IP</p>
+          <p className="mt-1 text-3xl font-bold text-ink">{visitIps}</p>
+          <p className="mt-1 text-xs text-ink-muted">farklı IP adresi</p>
+        </div>
+      </div>
+      <p className="mt-3 text-xs text-ink-soft">
+        Siteyi ziyaret eden herkes sayılır (arama/form yapmasa bile).{" "}
+        {visits > 0
+          ? `Bu dönemde ${visits} ziyaretin ${total} tanesi bir butona tıklamayla sonuçlandı (≈%${Math.round(
+              (total / visits) * 100,
+            )} dönüşüm).`
+          : "Ziyaret verisi bu özellik yayına alındıktan sonraki ziyaretler için birikir."}
+      </p>
+
       {/* KPI cards */}
-      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <h2 className="mt-8 text-lg font-bold text-ink">Buton Tıklamaları</h2>
+      <div className="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-4">
         {EVENTS.map((ev) => (
           <div key={ev} className="rounded-card border border-line bg-surface p-5">
             <p className="text-sm text-ink-soft">{LABELS[ev]}</p>
