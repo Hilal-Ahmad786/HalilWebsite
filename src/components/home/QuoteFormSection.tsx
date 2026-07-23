@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { Upload, X, ShieldCheck, Clock, BadgeCheck, Send, Loader2, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { trackFormSubmit, trackPhoneClick } from '@/lib/analytics';
+import { trackFormSubmit, trackPhoneClick, submitLead } from '@/lib/analytics';
 import Container from '@/components/shared/Container';
 import { cn } from '@/lib/cn';
 
@@ -63,6 +63,18 @@ export default function QuoteFormSection() {
     setSubmitting(true);
     try {
       trackFormSubmit('quote_form');
+      // Persist the lead server-side so it's readable in /admin/forms
+      submitLead({
+        formName: 'quote_form',
+        name: form.name,
+        phone: form.phone,
+        brand: form.brand,
+        model: form.model,
+        year: form.year,
+        fuel: form.fuel,
+        damage: form.damage,
+        contactMethod: form.contactMethod,
+      });
       const contact =
         form.contactMethod === 'whatsapp' ? 'WhatsApp' : form.contactMethod === 'email' ? 'E-posta' : 'Telefon';
       const msg =

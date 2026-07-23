@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackFormSubmit } from '@/lib/analytics';
+import { trackFormSubmit, submitLead } from '@/lib/analytics';
 
 interface QuickContactFormProps {
   variant?: 'light' | 'dark';
@@ -36,6 +36,17 @@ export default function QuickContactForm({ variant = 'light', title = 'Hızlı T
 
     try {
       trackFormSubmit('quick_contact_form');
+      // Persist the lead server-side so it's readable in /admin/forms
+      submitLead({
+        formName: 'quick_contact_form',
+        name: formData.name,
+        phone: formData.phone,
+        service: formData.service,
+        brand: formData.brand,
+        year: formData.year,
+        damage: formData.damage,
+        contactMethod: formData.contactMethod,
+      });
 
       const messageText = `*Araç Teklif Talebi*\n\n` +
         `👤 *İsim:* ${formData.name}\n` +

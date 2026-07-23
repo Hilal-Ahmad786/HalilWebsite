@@ -142,6 +142,48 @@ export function beaconClick(event: string, location?: string): void {
   }
 }
 
+// ===== LEAD SUBMISSION (form contents → /admin/forms) =====
+// Persists the actual form data server-side so leads are readable in the admin
+// panel even if the visitor never sends the prepared WhatsApp message.
+// Fire-and-forget with keepalive — never blocks the WhatsApp redirect.
+
+export interface LeadData {
+  formName: 'quote_form' | 'quick_contact_form' | 'contact_form';
+  name: string;
+  phone: string;
+  service?: string;
+  brand?: string;
+  model?: string;
+  year?: string;
+  fuel?: string;
+  damage?: string;
+  message?: string;
+  contactMethod?: string;
+}
+
+export function submitLead(lead: LeadData): void {
+  if (typeof window === 'undefined') return;
+  try {
+    const attr = storedAttribution();
+    void fetch('/api/track/form', {
+      method: 'POST',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...lead,
+        path: window.location.pathname,
+        sessionId: clickSid(),
+        gclid: attr.gclid ?? null,
+        utmSource: attr.utm_source ?? null,
+        utmMedium: attr.utm_medium ?? null,
+        utmCampaign: attr.utm_campaign ?? null,
+      }),
+    }).catch(() => {});
+  } catch {
+    /* never block the submit */
+  }
+}
+
 // ===== PHONE TRACKING - PRIMARY CONVERSION =====
 
 export const trackPhoneClick = (location: string = 'unknown') => {

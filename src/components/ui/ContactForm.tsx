@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Phone, Send, Loader2 } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { trackFormSubmit } from '@/lib/analytics';
+import { trackFormSubmit, submitLead } from '@/lib/analytics';
 import { cn } from '@/lib/cn';
 
 const inputClass =
@@ -24,7 +24,15 @@ export default function ContactForm() {
     setIsSubmitting(true);
     try {
       trackFormSubmit('contact_form');
-      // No backend — submissions are delivered to WhatsApp.
+      // Persist the lead server-side so it's readable in /admin/forms;
+      // WhatsApp remains the delivery channel.
+      submitLead({
+        formName: 'contact_form',
+        name: formData.name,
+        phone: formData.phone,
+        service: formData.service,
+        message: [formData.email && `E-posta: ${formData.email}`, formData.message].filter(Boolean).join(' — '),
+      });
       const messageText =
         `*Yeni İletişim Formu Mesajı*\n\n` +
         `👤 *İsim:* ${formData.name}\n` +
