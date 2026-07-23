@@ -27,11 +27,14 @@ const dateFmt = new Intl.DateTimeFormat("tr-TR", {
   timeZone: "Europe/Istanbul",
 });
 
-/** Distinct colors so the same IP is instantly recognizable across rows. */
-const IP_COLORS = [
-  "#0ea5e9", "#f59e0b", "#10b981", "#ef4444", "#8b5cf6",
-  "#ec4899", "#14b8a6", "#f97316", "#6366f1", "#84cc16",
-];
+/**
+ * 6 colors validated to be pairwise distinguishable (incl. for color-blind
+ * viewers) — assigned to the 6 busiest IPs, never cycled. More colors would
+ * inevitably produce look-alike tones, so every IP beyond the top 6 gets a
+ * neutral gray badge; the "IP #n" number is always the definitive identifier.
+ */
+const IP_COLORS = ["#2a78d6", "#e34948", "#008300", "#eda100", "#4a3aa7", "#1baf7a"];
+const IP_GRAY = "#9ca3af";
 
 type SP = { period?: string; from?: string; to?: string };
 
@@ -156,10 +159,11 @@ export default async function AdminClicksPage({
   const repeatIps = ipGroups.filter((g) => Number(g.c) > 1).length;
 
   // Map each distinct IP hash to a stable label/color/count (busiest = #1).
-  const ipInfo = new Map<string, { label: string; color: string; count: number }>();
+  // Only the 6 busiest get a color — no cycling, so no two IPs ever share one.
+  const ipInfo = new Map<string, { label: string; color: string | null; count: number }>();
   ipGroups.forEach((g, i) => {
     if (!g.ip) return;
-    ipInfo.set(g.ip, { label: `IP #${i + 1}`, color: IP_COLORS[i % IP_COLORS.length], count: Number(g.c) });
+    ipInfo.set(g.ip, { label: `IP #${i + 1}`, color: i < IP_COLORS.length ? IP_COLORS[i] : null, count: Number(g.c) });
   });
 
   const presetHref = (key: string) =>
@@ -268,9 +272,10 @@ export default async function AdminClicksPage({
       </div>
 
       <p className="mt-4 text-xs text-ink-muted">
-        Her farklı IP&apos;ye bir renk/numara verilir. Aynı renk = büyük olasılıkla aynı kişi/cihaz;
-        farklı renkler = farklı ziyaretçiler. IP&apos;ler gizlilik için geri döndürülemez şekilde
-        özetlenir (ham IP saklanmaz).
+        Her farklı IP&apos;ye kalıcı bir numara verilir (IP #1 = en çok tıklayan). Kesin ayırt edici
+        olan numaradır; en yoğun 6 IP ayrıca birbirinden net ayrılan birer renk taşır, diğerleri
+        gri görünür. Aynı numara = aynı kişi/cihaz. IP&apos;ler gizlilik için geri döndürülemez
+        şekilde özetlenir (ham IP saklanmaz).
       </p>
 
       {/* Recent clicks table */}
@@ -309,11 +314,19 @@ export default async function AdminClicksPage({
                         {info ? (
                           <span
                             title={`${info.count} tıklama bu IP'den`}
-                            className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold text-white"
-                            style={{ backgroundColor: info.color }}
+                            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2 py-0.5 text-xs font-semibold text-ink"
+                            style={{
+                              borderColor: info.color ?? "#d1d5db",
+                              backgroundColor: info.color ? `${info.color}14` : "#f3f4f6",
+                            }}
                           >
+                            <span
+                              className="h-2.5 w-2.5 flex-shrink-0 rounded-full"
+                              style={{ backgroundColor: info.color ?? IP_GRAY }}
+                              aria-hidden="true"
+                            />
                             {info.label}
-                            {info.count > 1 && <span className="opacity-80">×{info.count}</span>}
+                            {info.count > 1 && <span className="font-normal text-ink-muted">×{info.count}</span>}
                           </span>
                         ) : (
                           <span className="text-xs text-ink-muted">IP yok</span>
