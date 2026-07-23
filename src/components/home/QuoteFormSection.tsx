@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { Upload, X, ShieldCheck, Clock, BadgeCheck, Send, Loader2, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { trackFormSubmit } from '@/lib/analytics';
+import { trackFormSubmit, trackPhoneClick } from '@/lib/analytics';
 import Container from '@/components/shared/Container';
 import { cn } from '@/lib/cn';
 
@@ -145,6 +145,7 @@ export default function QuoteFormSection() {
               {/* Phone CTA pinned to the bottom — fills the column */}
               <a
                 href={`tel:${siteConfig.phone}`}
+                onClick={() => trackPhoneClick('quote-form-aside')}
                 className="relative mt-auto flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-brand-green/40 hover:bg-white/10"
               >
                 <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-green text-white">
@@ -158,7 +159,8 @@ export default function QuoteFormSection() {
             </aside>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="p-6 sm:p-7" noValidate>
+            {/* Native validation gates onSubmit — tracking only fires for valid submissions */}
+            <form onSubmit={handleSubmit} className="p-6 sm:p-7">
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Adınız Soyadınız" htmlFor="q-name">
                   <input id="q-name" name="name" required value={form.name} onChange={update} placeholder="Ad Soyad" className={inputClass} />

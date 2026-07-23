@@ -1,5 +1,6 @@
 import { Phone, Clock } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import TrackedContactLink from '@/components/shared/TrackedContactLink';
 
 /** Compact dark utility bar above the main header. */
 export default function TopBar() {
@@ -14,13 +15,15 @@ export default function TopBar() {
             <Clock className="h-3.5 w-3.5" aria-hidden="true" />
             7/24 Hizmetinizdeyiz!
           </span>
-          <a
+          <TrackedContactLink
+            kind="phone"
+            location="topbar"
             href={`tel:${siteConfig.phone}`}
             className="inline-flex items-center gap-1.5 font-semibold text-brand-green hover:text-white transition-colors"
           >
             <Phone className="h-3.5 w-3.5" aria-hidden="true" />
             {siteConfig.phoneDisplay}
-          </a>
+          </TrackedContactLink>
         </div>
       </div>
     </div>

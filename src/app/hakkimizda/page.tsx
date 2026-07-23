@@ -33,9 +33,9 @@ export default function AboutPage() {
       <PageHero
         breadcrumbs={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Hakkımızda' }]}
         eyebrow="Hakkımızda"
-        title="Türkiye'nin"
-        highlight="En Güvenilir Firması"
-        subtitle="5+ yıldır kazalı, hasarlı, pert ve hurda araç alımında öncü firma. 10.000+ mutlu müşteri ile Türkiye'nin güvenilir firmasıyız."
+        title="Güvenilir"
+        highlight="Araç Alım Merkezi"
+        subtitle="5+ yıldır kazalı, hasarlı, pert ve hurda araç alımında hizmet veriyoruz. Binlerce mutlu müşterimizle Türkiye genelinde güvenilir çözüm ortağınızız."
         showStats
       />
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
             </p>
             <p>
               Müşteri memnuniyetini her şeyin üstünde tutan yaklaşımımız, şeffaf fiyatlandırma politikamız ve
-              profesyonel ekibimizle <strong className="text-ink">Türkiye'nin en güvenilir araç alım merkezi</strong>{' '}
+              profesyonel ekibimizle <strong className="text-ink">Türkiye genelinde güvenilir bir araç alım merkezi</strong>{' '}
               olmayı başardık.
             </p>
             <p>

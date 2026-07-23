@@ -7,6 +7,7 @@ import { getPostBySlug, getPostSlugs, getAllPosts } from '@/data/blog';
 import { siteConfig } from '@/config/site';
 import { WhatsAppIcon } from '@/components/ui/Icons';
 import Container from '@/components/shared/Container';
+import TrackedContactLink from '@/components/shared/TrackedContactLink';
 import SectionHeader from '@/components/shared/SectionHeader';
 import PageHero from '@/components/shared/PageHero';
 import CTABanner from '@/components/shared/CTABanner';
@@ -114,12 +115,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               ))}
             </div>
             <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
-              <a href={`tel:${siteConfig.phone}`} className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-brand-green to-brand-green-dark px-5 py-3 text-[14px] font-bold text-white transition hover:brightness-[1.05]">
+              <TrackedContactLink kind="phone" location="blog-post-cta" href={`tel:${siteConfig.phone}`} className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-brand-green to-brand-green-dark px-5 py-3 text-[14px] font-bold text-white transition hover:brightness-[1.05]">
                 <Phone className="h-5 w-5" aria-hidden="true" /> {siteConfig.phoneDisplay}
-              </a>
-              <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-[14px] font-bold text-white transition hover:bg-[#20BA5A]">
+              </TrackedContactLink>
+              <TrackedContactLink kind="whatsapp" location="blog-post-cta" href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-[14px] font-bold text-white transition hover:bg-[#20BA5A]">
                 <WhatsAppIcon className="h-5 w-5" /> WhatsApp'tan Teklif Al
-              </a>
+              </TrackedContactLink>
             </div>
           </div>
 

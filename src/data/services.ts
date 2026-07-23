@@ -82,7 +82,7 @@ export const servicesData: Record<string, ServiceData> = {
     color: 'lime',
 
     metaTitle: 'Kazalı Araç Alımı | 30 Dakikada Teklif - Hasar Park',
-    metaDescription: 'Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. En yüksek fiyat garantisi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 7/24 hizmet.',
+    metaDescription: 'Kaza geçirmiş araçlarınızı 30 dakikada değerlendiriyoruz. Rekabetçi fiyat teklifi, ücretsiz çekici, noter işlemleri dahil. Anında ödeme, 7/24 hizmet.',
     keywords: [
       'kazalı araç alan',
       'kazalı araç alımı',
@@ -111,7 +111,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         icon: '💰',
         title: 'En Yüksek Fiyat',
-        description: 'Piyasa araştırması ile kazalı aracınız için en iyi fiyatı garantiliyoruz.',
+        description: 'Piyasa araştırması ile kazalı aracınız için en iyi fiyatı hedefliyoruz.',
       },
       {
         icon: '🚚',
@@ -161,7 +161,7 @@ export const servicesData: Record<string, ServiceData> = {
     commonMistakes: [
       {
         mistake: 'Sadece tek bir alıcıdan teklif almak',
-        tip: 'En az 2-3 alıcıdan teklif alın. Hasar Park olarak piyasanın en yüksek teklifini sunduğumuzu garanti ediyoruz, ancak karşılaştırma yapmanız haklı bir tercih.',
+        tip: 'En az 2-3 alıcıdan teklif alın. Hasar Park olarak piyasanın en yüksek teklifini sunmayı hedefliyoruz, ancak karşılaştırma yapmanız haklı bir tercih.',
       },
       {
         mistake: 'Kaza fotoğrafı çekmemek',
@@ -225,7 +225,7 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       whyChooseUs: [
-        'Türkiye\'nin en yüksek kazalı araç fiyatlarını veriyoruz',
+        'Kazalı araçlar için piyasa koşullarında yüksek fiyat veriyoruz',
         '5+ yıl kazalı araç alım satım tecrübesi',
         'Her marka ve model için profesyonel değerlendirme',
         'Şeffaf ve güvenilir işlem süreci',
@@ -309,7 +309,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         question: 'Motor arızalı araç için de alım yapıyor musunuz?',
-        answer: 'Evet, motor arızalı veya motor hasarlı tüm araçlar için alım yapıyoruz. Motor hasarı; silindir kapağı çatlağı, motor blok çatlağı, turbo arızası, yakıt pompası sorunu veya komple motor değişimi gerektiren durum olabilir — hepsini değerlendiriyoruz. Motor hasarının boyutu fiyatı etkiler; ancak aracın diğer parçalarının durumu, marka ve model değeri de hesaba katılır. Çalışmayan, çekici gerektiren araçlarınızı bulunduğu yerden ücretsiz alıyoruz. Motor hasarı olan araçlar için de piyasanın en yüksek teklifini vermeyi garanti ediyoruz.',
+        answer: 'Evet, motor arızalı veya motor hasarlı tüm araçlar için alım yapıyoruz. Motor hasarı; silindir kapağı çatlağı, motor blok çatlağı, turbo arızası, yakıt pompası sorunu veya komple motor değişimi gerektiren durum olabilir — hepsini değerlendiriyoruz. Motor hasarının boyutu fiyatı etkiler; ancak aracın diğer parçalarının durumu, marka ve model değeri de hesaba katılır. Çalışmayan, çekici gerektiren araçlarınızı bulunduğu yerden ücretsiz alıyoruz. Motor hasarı olan araçlar için de piyasanın en yüksek teklifini sunmayı hedefliyoruz.',
       },
       {
         question: 'Hasarlı araç fiyatı nasıl belirleniyor?',
@@ -389,7 +389,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       whyChooseUs: [
         'Tüm hasar türleri için profesyonel değerlendirme',
-        'En yüksek fiyat garantisi',
+        'Rekabetçi fiyat teklifi',
         'Ücretsiz ekspertiz ve çekici hizmeti',
         'Hızlı ve güvenli işlem',
         'Şeffaf fiyatlandırma',
@@ -428,7 +428,7 @@ export const servicesData: Record<string, ServiceData> = {
       badge: '⚠️ PERT ARAÇ ALIMI',
       title: 'Pert Aracınız',
       titleHighlight: 'Değerinde Satın',
-      subtitle: 'Sigorta pert raporu çıkmış araçlar için özel değerlendirme. En yüksek fiyat ve güvenli işlem garantisi.',
+      subtitle: 'Sigorta pert raporu çıkmış araçlar için özel değerlendirme. Yüksek fiyat teklifi ve noterde güvenli işlem.',
       image: '/images/pert-arac.png',
     },
 
@@ -711,7 +711,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       whyChooseUs: [
         'Resmi belgeli hurda araç işletmesi',
-        'En yüksek kilo fiyatı garantisi',
+        'Güncel piyasa kilo fiyatından teklif',
         'Çevre dostu geri dönüşüm',
         'Tüm evrak ve işlemler bizden',
         'Aynı gün ödeme',

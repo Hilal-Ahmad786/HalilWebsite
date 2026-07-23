@@ -31,12 +31,12 @@ export default function HeroSection() {
           </div>
 
           <h1 className="font-extrabold leading-[1.05] text-[clamp(36px,4.2vw,56px)] text-ink">
-            Aracınızı Değerinde{' '}
-            <span className="text-brand-green-dark">Nakde Dönüştürün</span>
+            Kazalı, Hasarlı, Pert ve Hurda{' '}
+            <span className="text-brand-green-dark">Araç Alan Merkez</span>
           </h1>
 
           <p className="mt-4 text-[15px] font-semibold uppercase tracking-wide text-brand-purple">
-            Kazalı • Hasarlı • Pert • Hurda
+            Aracınızı Değerinde Nakde Dönüştürün
           </p>
 
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft">

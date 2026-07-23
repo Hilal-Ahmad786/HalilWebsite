@@ -12,13 +12,13 @@ import ProcessSection from '@/components/home/ProcessSection';
 export const metadata: Metadata = {
   title: { absolute: 'Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı' },
   description:
-    'Hasar Park: kazalı, hasarlı, pert, hurda, motor arızalı ve çekme belgeli araç alımı. En yüksek fiyat garantisi, ücretsiz çekici, anında ödeme.',
+    'Hasar Park: kazalı, hasarlı, pert, hurda, motor arızalı ve çekme belgeli araç alımı. Rekabetçi fiyat teklifi, ücretsiz çekici, anında ödeme.',
   keywords: ['araç alım hizmetleri', 'kazalı araç', 'hasarlı araç', 'pert araç', 'hurda araç', 'araç satış'],
   alternates: { canonical: 'https://www.hasarpark.com/hizmetler' },
   openGraph: {
     title: 'Hizmetlerimiz | Kazalı, Hasarlı, Pert, Hurda Araç Alımı',
     description:
-      'Hasar Park: kazalı, hasarlı, pert, hurda, motor arızalı ve çekme belgeli araç alımı. En yüksek fiyat garantisi, ücretsiz çekici, anında ödeme.',
+      'Hasar Park: kazalı, hasarlı, pert, hurda, motor arızalı ve çekme belgeli araç alımı. Rekabetçi fiyat teklifi, ücretsiz çekici, anında ödeme.',
     url: 'https://www.hasarpark.com/hizmetler',
     type: 'website',
     images: ['/images/kazali-arac.png'],
@@ -70,7 +70,7 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <CTABanner title="Aracınızı Bugün" highlight="Satın" subtitle="En yüksek fiyat garantisi ile hemen teklif alın." source="hizmetler-cta2" />
+      <CTABanner title="Aracınızı Bugün" highlight="Satın" subtitle="Rekabetçi fiyat teklifi ile hemen teklif alın." source="hizmetler-cta2" />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'ItemList', name: 'Hasar Park Hizmetleri',

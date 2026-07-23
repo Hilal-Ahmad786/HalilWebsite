@@ -107,7 +107,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     <ModernIcon name={s.icon} label={s.title} className="h-7 w-7" strokeWidth={2} />
                   </span>
                   <h3 className="mt-4 text-[16px] font-bold text-ink group-hover:text-brand-green-dark">{detail?.title ?? s.title}</h3>
-                  <p className="mt-1.5 flex-1 text-[13.5px] text-ink-soft">{detail?.description ?? `${city.name}'da en yüksek fiyat garantisi`}</p>
+                  <p className="mt-1.5 flex-1 text-[13.5px] text-ink-soft">{detail?.description ?? `${city.name}'da rekabetçi fiyat teklifi`}</p>
                   <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-brand-green-dark">
                     Detay <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>

@@ -31,7 +31,7 @@ const comingSoon = [
 const coverage = [
   { icon: Truck, text: 'Her ile ücretsiz çekici' },
   { icon: Zap, text: '30 dakika içinde ekspertiz' },
-  { icon: Wallet, text: 'En yüksek fiyat garantisi' },
+  { icon: Wallet, text: 'Rekabetçi fiyat teklifi' },
   { icon: FileText, text: 'Tüm evrak işlemleri' },
 ];
 

@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Kazalı, Hasarlı, Pert & Hurda Araç Alımı - En Yüksek Fiyat`,
+    default: `${siteConfig.name} | Kazalı, Hasarlı, Pert & Hurda Araç Alımı`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   publisher: 'Hasar Park',
   category: 'Automotive',
   // Stops iOS Safari from auto-styling phone numbers and breaking the dark UI
-  formatDetection: { telephone: true, email: true, address: false },
+  formatDetection: { telephone: false, email: true, address: false },
   alternates: {
     canonical: '/',
   },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${siteConfig.name} - Araç Alım Uzmanı`,
-    description: 'En yüksek fiyat garantisi ile kazalı, hasarlı, pert ve hurda araç alımı.',
+    description: 'Rekabetçi fiyat teklifi ile kazalı, hasarlı, pert ve hurda araç alımı.',
     images: ['/images/kazali-arac.png'],
   },
   robots: {

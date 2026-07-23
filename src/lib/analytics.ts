@@ -60,14 +60,70 @@ function clickSid(): string | undefined {
   }
 }
 
+// ===== AD ATTRIBUTION CAPTURE =====
+// Persists gclid/utm params from the landing URL so every later conversion
+// (phone/WhatsApp/form click) can be tied back to the campaign that brought
+// the visitor — enables campaign-level lead reporting and future offline
+// conversion imports into Google Ads.
+
+interface Attribution {
+  gclid?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  referrer?: string;
+}
+
+const ATTR_KEY = 'cp_attr';
+
+export function captureAttribution(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid');
+    const utm_source = params.get('utm_source');
+    // Only overwrite stored attribution when a NEW campaign click lands
+    // (last-click attribution); plain direct visits keep the original source.
+    if (gclid || utm_source) {
+      const attr: Attribution = {
+        gclid: gclid ?? undefined,
+        utm_source: utm_source ?? undefined,
+        utm_medium: params.get('utm_medium') ?? undefined,
+        utm_campaign: params.get('utm_campaign') ?? undefined,
+        referrer: document.referrer || undefined,
+      };
+      localStorage.setItem(ATTR_KEY, JSON.stringify(attr));
+    } else if (!localStorage.getItem(ATTR_KEY) && document.referrer) {
+      localStorage.setItem(ATTR_KEY, JSON.stringify({ referrer: document.referrer }));
+    }
+  } catch {
+    /* never block */
+  }
+}
+
+function storedAttribution(): Attribution {
+  try {
+    const raw = localStorage.getItem(ATTR_KEY);
+    return raw ? (JSON.parse(raw) as Attribution) : {};
+  } catch {
+    return {};
+  }
+}
+
 export function beaconClick(event: string, location?: string): void {
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
   try {
+    const attr = storedAttribution();
     const payload = JSON.stringify({
       event,
       location: location ?? null,
       path: window.location.pathname,
       sessionId: clickSid(),
+      gclid: attr.gclid ?? null,
+      utmSource: attr.utm_source ?? null,
+      utmMedium: attr.utm_medium ?? null,
+      utmCampaign: attr.utm_campaign ?? null,
+      referrer: attr.referrer ?? null,
     });
     if (navigator.sendBeacon) {
       navigator.sendBeacon(
@@ -89,7 +145,7 @@ export function beaconClick(event: string, location?: string): void {
 // ===== PHONE TRACKING - PRIMARY CONVERSION =====
 
 export const trackPhoneClick = (location: string = 'unknown') => {
-  console.log('📞 Phone click tracked:', location);
+  if (process.env.NODE_ENV === 'development') console.log('📞 Phone click tracked:', location);
 
   // First-party click record
   beaconClick('phone_click', location);
@@ -122,7 +178,7 @@ export const trackPhoneClick = (location: string = 'unknown') => {
 // ===== WHATSAPP TRACKING - PRIMARY CONVERSION =====
 
 export const trackWhatsAppClick = (location: string = 'unknown') => {
-  console.log('💬 WhatsApp click tracked:', location);
+  if (process.env.NODE_ENV === 'development') console.log('💬 WhatsApp click tracked:', location);
 
   // First-party click record
   beaconClick('whatsapp_click', location);
@@ -155,7 +211,10 @@ export const trackWhatsAppClick = (location: string = 'unknown') => {
 // ===== FORM SUBMISSION TRACKING =====
 
 export const trackFormSubmit = (formName: string = 'contact_form') => {
-  console.log('📝 Form submit tracked:', formName);
+  if (process.env.NODE_ENV === 'development') console.log('📝 Form submit tracked:', formName);
+
+  // First-party click record (was missing — form leads were invisible in /admin/clicks)
+  beaconClick('form_submit', formName);
 
   // Google Tag Manager
   if (typeof window !== 'undefined' && window.dataLayer) {
@@ -201,7 +260,7 @@ export const trackPageView = (url: string) => {
 // ===== SERVICE PAGE VIEW =====
 
 export const trackServiceView = (serviceName: string) => {
-  console.log('👁️ Service view tracked:', serviceName);
+  if (process.env.NODE_ENV === 'development') console.log('👁️ Service view tracked:', serviceName);
 
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
@@ -258,7 +317,7 @@ export const trackTimeOnPage = (seconds: number) => {
 // ===== INITIALIZE ANALYTICS =====
 
 export const initAnalytics = () => {
-  console.log('🚀 Analytics initialized');
+  if (process.env.NODE_ENV === 'development') console.log('🚀 Analytics initialized');
 
   if (typeof window !== 'undefined') {
     // Scroll Tracking

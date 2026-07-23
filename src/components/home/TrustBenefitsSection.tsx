@@ -1,6 +1,9 @@
+'use client';
+
 import { Phone } from 'lucide-react';
 import Container from '@/components/shared/Container';
 import Button from '@/components/shared/Button';
+import { trackPhoneClick } from '@/lib/analytics';
 import IconBox from '@/components/shared/IconBox';
 import { benefits } from '@/data/homeContent';
 import { siteConfig } from '@/config/site';
@@ -23,7 +26,7 @@ export default function TrustBenefitsSection() {
             Aracınızı satarken her adımı baştan netleştiriyoruz: teklif, ücretsiz çekici, noter ve
             ödeme. Sürpriz yok, gizli masraf yok.
           </p>
-          <Button href={`tel:${siteConfig.phone}`} variant="primary" icon={Phone} className="mt-6">
+          <Button href={`tel:${siteConfig.phone}`} onClick={() => trackPhoneClick('trust-benefits')} variant="primary" icon={Phone} className="mt-6">
             Hemen Ara
           </Button>
         </div>

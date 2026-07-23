@@ -62,7 +62,7 @@ export default function HeroSection() {
             </p>
 
             <p className="text-sm sm:text-lg mb-8 sm:mb-12 text-gray-400 leading-relaxed max-w-xl">
-              Anında değerlendirme, en yüksek fiyat garantisi ve 30 dakika içinde teklif.
+              Anında değerlendirme, rekabetçi fiyat teklifi ve 30 dakika içinde teklif.
               Ücretsiz çekici ve tüm evraklar bizden!
             </p>
 

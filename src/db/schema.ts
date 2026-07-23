@@ -10,6 +10,12 @@ export const clickEvents = pgTable(
     sessionId: text("session_id"),
     ipHash: text("ip_hash"),
     userAgent: text("user_agent"),
+    // Ad attribution captured on landing (see captureAttribution in lib/analytics)
+    gclid: text("gclid"),
+    utmSource: text("utm_source"),
+    utmMedium: text("utm_medium"),
+    utmCampaign: text("utm_campaign"),
+    referrer: text("referrer"),
     occurredAt: timestamp("occurred_at", { withTimezone: true })
       .defaultNow()
       .notNull(),

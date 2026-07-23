@@ -52,7 +52,7 @@ export interface Reason {
 
 export const reasons: Reason[] = [
   { icon: Clock, title: 'Anında Değerlendirme', description: '30 dakika içinde net fiyat teklifi.' },
-  { icon: Wallet, title: 'En Yüksek Fiyat', description: 'Piyasanın en iyi teklifini garantiliyoruz.' },
+  { icon: Wallet, title: 'En Yüksek Fiyat', description: 'Piyasa koşullarında en iyi teklifi hedefliyoruz.' },
   { icon: Truck, title: 'Ücretsiz Çekici', description: 'Aracınızı bulunduğu yerden alırız.' },
   { icon: FileText, title: 'Tüm Evraklar Bizden', description: 'Noter ve tescil işlemleri dahil.' },
   { icon: HandCoins, title: 'Anında Ödeme', description: 'Nakit veya EFT ile hızlı ödeme.' },

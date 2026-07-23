@@ -620,8 +620,8 @@ export const citiesData: Record<string, CityData> = {
       },
       {
         icon: '💰',
-        title: 'Antalya\'nın En İyi Fiyatı',
-        description: 'Bölgedeki en yüksek fiyat garantisi.',
+        title: 'Antalya\'da Güçlü Teklif',
+        description: 'Bölgede rekabetçi fiyat teklifi.',
       },
       {
         icon: '🚚',

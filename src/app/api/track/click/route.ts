@@ -12,6 +12,7 @@ const ALLOWED = new Set([
   "quote_click",
   "chat_open",
   "page_view",
+  "form_submit",
 ]);
 
 /** Skip obvious bots/crawlers so visit counts reflect real people. */
@@ -62,6 +63,17 @@ export async function POST(req: NextRequest) {
             : null,
         ipHash,
         userAgent: userAgent.slice(0, 300) || null,
+        gclid: typeof body.gclid === "string" ? body.gclid.slice(0, 200) : null,
+        utmSource:
+          typeof body.utmSource === "string" ? body.utmSource.slice(0, 100) : null,
+        utmMedium:
+          typeof body.utmMedium === "string" ? body.utmMedium.slice(0, 100) : null,
+        utmCampaign:
+          typeof body.utmCampaign === "string"
+            ? body.utmCampaign.slice(0, 150)
+            : null,
+        referrer:
+          typeof body.referrer === "string" ? body.referrer.slice(0, 500) : null,
       });
   } catch (e) {
     console.error("[track/click]", e instanceof Error ? e.message : e);

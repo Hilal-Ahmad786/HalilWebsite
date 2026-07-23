@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
-import { trackCTAClick } from '@/lib/analytics';
+import { trackCTAClick, trackPhoneClick } from '@/lib/analytics';
 import { ModernIcon } from '@/components/ui/Icons';
 import SectionLabel from '@/components/ui/SectionLabel';
 
@@ -33,7 +33,7 @@ export default function ServicesGrid() {
           </h2>
 
           <p className="text-sm sm:text-lg text-gray-600 max-w-3xl mx-auto">
-            Tüm araç türleri için en yüksek fiyat garantisi ve anında ödeme
+            Tüm araç türleri için rekabetçi fiyat teklifi ve anında ödeme
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function ServicesGrid() {
           </p>
           <a
             href={`tel:${siteConfig.phone}`}
-            onClick={() => trackCTAClick('Services Grid Bottom Phone', 'services-grid')}
+            onClick={() => trackPhoneClick('services-grid')}
             className="inline-flex items-center gap-2 sm:gap-3 bg-emerald-500 text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl hover:bg-emerald-600 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-emerald-500/25"
           >
             <svg
