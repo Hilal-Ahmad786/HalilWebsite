@@ -24,10 +24,9 @@ export const metadata: Metadata = {
 };
 
 const regions = ['Marmara', 'Ege', 'Akdeniz', 'İç Anadolu', 'Karadeniz', 'Doğu Anadolu', 'Güneydoğu Anadolu'];
+// Only cities WITHOUT a live /sehirler/[city] page — never list an active city here
 const comingSoon = [
-  'Bursa', 'Antalya', 'Adana', 'Konya', 'Gaziantep', 'Şanlıurfa', 'Mersin', 'Kayseri', 'Eskişehir', 'Diyarbakır',
-  'Samsun', 'Denizli', 'Malatya', 'Kahramanmaraş', 'Erzurum', 'Van', 'Trabzon', 'Kocaeli', 'Balıkesir', 'Manisa',
-  'Aydın', 'Tekirdağ', 'Sivas', 'Ordu', 'Isparta',
+  'Trabzon', 'Kocaeli', 'Balıkesir', 'Manisa', 'Aydın', 'Tekirdağ', 'Sivas', 'Ordu', 'Isparta',
 ];
 const coverage = [
   { icon: Truck, text: 'Her ile ücretsiz çekici' },
@@ -78,7 +77,7 @@ export default function CitiesIndexPage() {
           </div>
           <div className="mx-auto mt-8 max-w-2xl rounded-2xl bg-brand-green-pale p-6 text-center">
             <p className="text-[16px] font-semibold text-ink">Yakında daha fazla şehir eklenecek!</p>
-            <p className="mt-1 text-[14px] text-ink-soft">Şu anda İstanbul, Ankara ve İzmir'de hizmet veriyoruz.</p>
+            <p className="mt-1 text-[14px] text-ink-soft">Türkiye genelinde {allCities.length} şehirde aktif olarak hizmet veriyoruz.</p>
           </div>
         </Container>
       </section>

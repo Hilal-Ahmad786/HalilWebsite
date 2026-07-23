@@ -33,6 +33,7 @@ const legalLinks = [
   { label: 'KVKK', href: '/kvkk' },
   { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi' },
   { label: 'Kullanım Şartları', href: '/kullanim-sartlari' },
+  { label: 'Çerez Politikası', href: '/cerez-politikasi' },
 ];
 
 export default function Footer() {

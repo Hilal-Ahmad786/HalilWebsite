@@ -17,16 +17,32 @@ export async function generateStaticParams() {
   return getCitySlugs().map((slug) => ({ city: slug }));
 }
 
+// Skeleton pages (no local features/testimonials/FAQ yet) are near-duplicate,
+// thin content — keep them out of the index until they have real local content.
+function isSkeletonCity(city: NonNullable<ReturnType<typeof getCityBySlug>>) {
+  return city.features.length === 0 && city.faqs.length === 0;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
   const { city: citySlug } = await params;
   const city = getCityBySlug(citySlug);
   if (!city) return { title: 'Şehir Bulunamadı' };
   return {
-    title: city.metaTitle,
+    // absolute: metaTitle already contains the brand; the root template would duplicate it
+    title: { absolute: city.metaTitle },
     description: city.metaDescription,
     keywords: city.keywords,
     alternates: { canonical: city.canonical },
-    openGraph: { title: city.metaTitle, description: city.metaDescription, url: city.ogUrl },
+    openGraph: {
+      title: city.metaTitle,
+      description: city.metaDescription,
+      url: city.ogUrl,
+      type: 'website',
+      siteName: siteConfig.name,
+      locale: 'tr_TR',
+      images: [{ url: '/images/kazali-arac.png', width: 1024, height: 1024, alt: `${city.name} araç alımı - Hasar Park` }],
+    },
+    ...(isSkeletonCity(city) ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -123,6 +139,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       )}
 
       {/* City features */}
+      {city.features.length > 0 && (
       <section className="section bg-surface">
         <Container>
           <SectionHeader eyebrow="Avantajlarımız" title={`${city.name}'da`} highlight="Neden Biz?" />
@@ -139,8 +156,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
         </Container>
       </section>
+      )}
 
       {/* Testimonials */}
+      {city.testimonials.length > 0 && (
       <section className="section bg-surface-alt">
         <Container>
           <SectionHeader eyebrow="Müşteri Yorumları" title={`${city.name}'dan`} highlight="Yorumlar" />
@@ -160,6 +179,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
         </Container>
       </section>
+      )}
 
       <CTABanner title={`${city.name}'da`} highlight="Hemen Satın" subtitle="Aynı gün değerlendirme ve ödeme garantisi." source={`city-${city.id}-cta1`} whatsappMessage={`Merhaba, ${city.name}'da araç alımı için bilgi almak istiyorum.`} />
 
@@ -191,27 +211,35 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <ProcessSection />
 
       {/* FAQ */}
+      {city.faqs.length > 0 && (
       <section className="section bg-surface-alt">
         <Container className="max-w-3xl">
           <SectionHeader eyebrow="SSS" title={`${city.name} İçin`} highlight="Sık Sorulanlar" />
           <Accordion items={city.faqs} />
         </Container>
       </section>
+      )}
 
       <CTABanner title={`${city.name}'da Bugün Arayın,`} highlight="Yarın Ödeme Alın!" subtitle="Paranız aynı gün hesabınızda." source={`city-${city.id}-cta2`} whatsappMessage={`Merhaba, ${city.name}'da araç alımı için bilgi almak istiyorum.`} />
 
-      {/* Schema */}
+      {/* Schema: reference the sitewide business entity instead of minting a new one per city.
+          No aggregateRating here — self-serving ratings violate Google's structured-data policy. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'AutomotiveBusiness', name: `Hasar Park ${city.name}`,
-        description: city.metaDescription, telephone: siteConfig.phone, url: siteConfig.url,
-        areaServed: { '@type': 'City', name: city.name },
-        openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '1000' },
+        '@context': 'https://schema.org', '@type': 'WebPage',
+        name: city.metaTitle, description: city.metaDescription, url: city.canonical,
+        about: { '@id': `${siteConfig.url}/#business` },
+        breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: siteConfig.url },
+          { '@type': 'ListItem', position: 2, name: 'Şehirler', item: `${siteConfig.url}/sehirler` },
+          { '@type': 'ListItem', position: 3, name: city.name, item: city.canonical },
+        ] },
       }) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'FAQPage',
-        mainEntity: city.faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
-      }) }} />
+      {city.faqs.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org', '@type': 'FAQPage',
+          mainEntity: city.faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+        }) }} />
+      )}
     </div>
   );
 }

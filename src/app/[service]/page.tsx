@@ -24,11 +24,20 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   const service = getServiceBySlug(serviceSlug);
   if (!service) return { title: 'Sayfa Bulunamadı' };
   return {
-    title: service.metaTitle,
+    // absolute: metaTitle already contains the brand; the root template would duplicate it
+    title: { absolute: service.metaTitle },
     description: service.metaDescription,
     keywords: service.keywords,
     alternates: { canonical: service.canonical },
-    openGraph: { title: service.metaTitle, description: service.metaDescription, url: service.ogUrl },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      url: service.ogUrl,
+      type: 'website',
+      siteName: siteConfig.name,
+      locale: 'tr_TR',
+      images: [{ url: '/images/kazali-arac.png', width: 1024, height: 1024, alt: `${service.title} - Hasar Park` }],
+    },
   };
 }
 

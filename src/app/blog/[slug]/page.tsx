@@ -20,10 +20,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return { title: 'Yazı Bulunamadı' };
   return {
-    title: post.metaTitle,
+    // absolute: metaTitle already contains the brand; the root template would duplicate it
+    title: { absolute: post.metaTitle },
     description: post.metaDescription,
     keywords: post.tags,
     alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: post.metaTitle,
+      description: post.metaDescription,
+      url: `/blog/${post.slug}`,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      siteName: siteConfig.name,
+      locale: 'tr_TR',
+      images: [{ url: post.image, alt: post.title }],
+    },
   };
 }
 

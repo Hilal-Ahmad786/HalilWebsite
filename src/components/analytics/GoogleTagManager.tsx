@@ -1,33 +1,24 @@
 'use client';
 
-import { useEffect } from 'react';
 import Script from 'next/script';
+import { analyticsConfig } from '@/config/analytics';
 
 export default function GoogleTagManager() {
-  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+  // Single source of truth: env var with a hardcoded fallback (see src/config/analytics.ts).
+  // Never returns null silently in production — the fallback ID keeps tracking alive
+  // even if the Vercel env var is missing or typo'd.
+  const GTM_ID = analyticsConfig.gtm.id;
 
-  useEffect(() => {
-    if (GTM_ID && typeof window !== 'undefined') {
-      // Initialize dataLayer
-      window.dataLayer = window.dataLayer || [];
-      
-      window.dataLayer.push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js',
-      });
-
-      console.log('✅ GTM Initialized:', GTM_ID);
+  if (!GTM_ID || !analyticsConfig.gtm.enabled) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('⚠️ GTM_ID not configured');
     }
-  }, [GTM_ID]);
-
-  if (!GTM_ID) {
-    console.warn('⚠️ GTM_ID not configured');
     return null;
   }
 
   return (
     <>
-      {/* Google Tag Manager Script */}
+      {/* Google Tag Manager Script — the snippet pushes gtm.start itself; do not duplicate it elsewhere */}
       <Script
         id="gtm-script"
         strategy="afterInteractive"

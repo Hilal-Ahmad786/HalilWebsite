@@ -8,32 +8,9 @@ export default function JsonLd() {
         siteConfig.social.youtube,
     ].filter(Boolean);
 
-    // A few real, on-site reviews that back the aggregateRating below.
-    // These mirror the testimonials shown on the homepage so the rating is defensible.
-    const sampleReviews = [
-        {
-            '@type': 'Review',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            author: { '@type': 'Person', name: 'Ahmet Y.' },
-            reviewBody:
-                'Kazalı aracımı 30 dakikada değerlendirdiler. Piyasanın en iyi fiyatını verdiler. Kesinlikle tavsiye ederim!',
-        },
-        {
-            '@type': 'Review',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            author: { '@type': 'Person', name: 'Zeynep K.' },
-            reviewBody:
-                'Ücretsiz çekici hizmeti çok işime yaradı. Evrakları da hemen hallettiler. Profesyonel ekip.',
-        },
-        {
-            '@type': 'Review',
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            author: { '@type': 'Person', name: 'Mehmet D.' },
-            reviewBody:
-                'Pert aracımı satarken çok endişeliydim. Tüm süreci bana anlattılar, aynı gün ödeme aldım.',
-        },
-    ];
-
+    // NOTE: Do NOT add aggregateRating or review markup here unless it is backed by
+    // real, third-party-verifiable reviews (e.g. Google Business Profile).
+    // Self-serving ratings violate Google's structured-data policies (manual-action risk).
     const localBusinessSchema = {
         '@context': 'https://schema.org',
         '@type': 'AutomotiveBusiness',
@@ -42,7 +19,7 @@ export default function JsonLd() {
         image: `${siteConfig.url}/logo.png`,
         logo: `${siteConfig.url}/logo.png`,
         description:
-            'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye geneline hizmet veren güvenilir araç alım merkezi. Ücretsiz çekici, anında ödeme ve en yüksek fiyat garantisi.',
+            'Kazalı, hasarlı, pert ve hurda araç alımında Türkiye geneline hizmet veren araç alım merkezi. Ücretsiz çekici, anında ödeme ve rekabetçi fiyat teklifi.',
         slogan: 'Aracınız Nakde Dönsün',
         telephone: siteConfig.phone,
         email: siteConfig.email,
@@ -78,21 +55,20 @@ export default function JsonLd() {
             priceCurrency: 'TRY',
             availability: 'https://schema.org/InStock',
         })),
-        aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '4.9',
-            bestRating: '5',
-            worstRating: '1',
-            ratingCount: '1000',
-            reviewCount: '1000',
-        },
-        review: sampleReviews,
-        openingHoursSpecification: {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-            opens: '00:00',
-            closes: '23:59',
-        },
+        openingHoursSpecification: [
+            {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '09:00',
+                closes: '22:00',
+            },
+            {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Saturday', 'Sunday'],
+                opens: '09:00',
+                closes: '20:00',
+            },
+        ],
         contactPoint: {
             '@type': 'ContactPoint',
             telephone: siteConfig.phone,
