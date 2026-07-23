@@ -7,11 +7,16 @@ import { isAdminAuthed } from "@/lib/admin-auth";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const EVENTS = ["phone_click", "whatsapp_click", "quote_click", "chat_open"] as const;
+// robots.txt disallows /admin/ from crawling, but disallowed URLs can still be
+// indexed URL-only — the meta tag keeps them out of the index entirely.
+export const metadata = { robots: { index: false, follow: false } };
+
+const EVENTS = ["phone_click", "whatsapp_click", "form_submit", "quote_click", "chat_open"] as const;
 
 const LABELS: Record<string, string> = {
   phone_click: "Telefon",
   whatsapp_click: "WhatsApp",
+  form_submit: "Form",
   quote_click: "Teklif",
   chat_open: "Sohbet",
 };

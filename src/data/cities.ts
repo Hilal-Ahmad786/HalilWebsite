@@ -1169,24 +1169,5 @@ export const getCitiesByRegion = (region: string): CityData[] => {
   return Object.values(citiesData).filter(city => city.region === region);
 };
 
-// Generate city-service combination URLs
-export const generateCityServiceUrls = () => {
-  const cities = getAllCities();
-  const services = ['kazali', 'hasarli', 'pert', 'hurda'];
-
-  const urls: Array<{ city: string; service: string; url: string }> = [];
-
-  cities.forEach(city => {
-    services.forEach(service => {
-      if (city.services[service as keyof typeof city.services]) {
-        urls.push({
-          city: city.name,
-          service,
-          url: `/sehirler/${city.slug}/${service}-arac-alim`,
-        });
-      }
-    });
-  });
-
-  return urls;
-};
+// NOTE: no /sehirler/[city]/[service] routes exist — do not generate such URLs
+// (a helper here used to produce 76 would-be-404 links; removed intentionally).

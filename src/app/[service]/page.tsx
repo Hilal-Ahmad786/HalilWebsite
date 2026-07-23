@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Check, ArrowRight, AlertTriangle, Star, BadgeCheck } from 'lucide-react';
 import { getServiceBySlug, getServiceSlugs } from '@/data/services';
+import { getAllCities } from '@/data/cities';
+import { locative } from '@/lib/turkish';
 import { siteConfig } from '@/config/site';
 import { serviceImages } from '@/data/homeContent';
 import Container from '@/components/shared/Container';
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
       type: 'website',
       siteName: siteConfig.name,
       locale: 'tr_TR',
-      images: [{ url: '/images/kazali-arac.png', width: 1024, height: 1024, alt: `${service.title} - Hasar Park` }],
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: `${service.title} - Hasar Park` }],
     },
   };
 }
@@ -212,6 +214,27 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                 </span>
               </Link>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Cities we serve — service→city internal links with keyword anchors */}
+      <section className="section bg-surface-alt">
+        <Container className="max-w-5xl">
+          <SectionHeader eyebrow="Hizmet Bölgeleri" title="Şehrinizde" highlight={service.shortTitle} subtitle={`${service.title} hizmetimiz Türkiye genelinde — şehrinizi seçin.`} />
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+            {getAllCities()
+              .filter((c) => c.features.length > 0 || c.faqs.length > 0)
+              .map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/sehirler/${c.slug}`}
+                  className="group flex items-center justify-between rounded-xl border border-line bg-white px-4 py-3 text-[13.5px] font-semibold text-ink transition hover:border-brand-green hover:text-brand-green-dark"
+                >
+                  {locative(c.name)} {service.shortTitle} Alımı
+                  <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </Link>
+              ))}
           </div>
         </Container>
       </section>

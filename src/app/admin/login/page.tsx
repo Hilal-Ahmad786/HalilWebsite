@@ -2,6 +2,10 @@ import LoginForm from "./LoginForm";
 
 export const dynamic = "force-dynamic";
 
+// robots.txt disallows /admin/ from crawling, but disallowed URLs can still be
+// indexed URL-only — the meta tag keeps them out of the index entirely.
+export const metadata = { robots: { index: false, follow: false } };
+
 export default function AdminLoginPage() {
   const passwordConfigured = Boolean(process.env.ADMIN_CLICKS_PASSWORD);
 

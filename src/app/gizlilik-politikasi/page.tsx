@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
     <LegalLayout title="Gizlilik Politikası">
           <div className="prose prose-emerald max-w-none text-gray-600 leading-relaxed space-y-6">
             <p>
-              Son güncellenme tarihi: {new Date().toLocaleDateString('tr-TR')}
+              Son güncellenme tarihi: 23.07.2026
             </p>
             
             <p>

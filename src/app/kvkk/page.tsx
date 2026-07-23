@@ -18,7 +18,7 @@ export default function KVKKPage() {
               <strong>KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN AYDINLATMA METNİ</strong>
             </p>
             <p>
-              Son güncellenme tarihi: {new Date().toLocaleDateString('tr-TR')}
+              Son güncellenme tarihi: 23.07.2026
             </p>
             
             <p>

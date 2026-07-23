@@ -5,6 +5,7 @@ import { MapPin, ArrowRight, Star, Building2 } from 'lucide-react';
 import { getCityBySlug, getCitySlugs } from '@/data/cities';
 import { siteConfig } from '@/config/site';
 import { heroImage } from '@/data/homeContent';
+import { locative, ablative } from '@/lib/turkish';
 import Container from '@/components/shared/Container';
 import SectionHeader from '@/components/shared/SectionHeader';
 import Accordion from '@/components/shared/Accordion';
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
       type: 'website',
       siteName: siteConfig.name,
       locale: 'tr_TR',
-      images: [{ url: '/images/kazali-arac.png', width: 1024, height: 1024, alt: `${city.name} araç alımı - Hasar Park` }],
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: `${city.name} araç alımı - Hasar Park` }],
     },
     ...(isSkeletonCity(city) ? { robots: { index: false, follow: true } } : {}),
   };
@@ -74,8 +75,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         title={city.hero.title}
         highlight={city.hero.titleHighlight}
         subtitle={city.hero.subtitle}
-        image={{ src: heroImage, alt: `${city.name} araç alımı - Hasar Park` }}
-        whatsappMessage={`Merhaba, ${city.name}'da araç alımı için bilgi almak istiyorum.`}
+        image={{ src: city.hero.image ?? heroImage, alt: `${city.name} araç alımı - Hasar Park` }}
+        whatsappMessage={`Merhaba, ${locative(city.name)} araç alımı için bilgi almak istiyorum.`}
       >
         <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {cityStats.map((s) => (
@@ -90,7 +91,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {/* Services available */}
       <section className="section bg-surface">
         <Container>
-          <SectionHeader eyebrow="Hizmetlerimiz" title={`${city.name}'da`} highlight="Hizmetlerimiz" />
+          <SectionHeader eyebrow="Hizmetlerimiz" title={locative(city.name)} highlight="Hizmetlerimiz" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {availableServices.map((key) => {
               const s = serviceInfo[key];
@@ -107,7 +108,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     <ModernIcon name={s.icon} label={s.title} className="h-7 w-7" strokeWidth={2} />
                   </span>
                   <h3 className="mt-4 text-[16px] font-bold text-ink group-hover:text-brand-green-dark">{detail?.title ?? s.title}</h3>
-                  <p className="mt-1.5 flex-1 text-[13.5px] text-ink-soft">{detail?.description ?? `${city.name}'da rekabetçi fiyat teklifi`}</p>
+                  <p className="mt-1.5 flex-1 text-[13.5px] text-ink-soft">{detail?.description ?? `${locative(city.name)} rekabetçi fiyat teklifi`}</p>
                   <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-brand-green-dark">
                     Detay <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
@@ -142,7 +143,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {city.features.length > 0 && (
       <section className="section bg-surface">
         <Container>
-          <SectionHeader eyebrow="Avantajlarımız" title={`${city.name}'da`} highlight="Neden Biz?" />
+          <SectionHeader eyebrow="Avantajlarımız" title={locative(city.name)} highlight="Neden Biz?" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {city.features.map((f, i) => (
               <div key={i} className="rounded-2xl border border-line bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40">
@@ -162,7 +163,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {city.testimonials.length > 0 && (
       <section className="section bg-surface-alt">
         <Container>
-          <SectionHeader eyebrow="Müşteri Yorumları" title={`${city.name}'dan`} highlight="Yorumlar" />
+          <SectionHeader eyebrow="Müşteri Yorumları" title={ablative(city.name)} highlight="Yorumlar" />
           <div className="grid gap-5 md:grid-cols-3">
             {city.testimonials.map((t, i) => (
               <figure key={i} className="rounded-2xl border border-line bg-white p-6 shadow-soft">
@@ -181,7 +182,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       </section>
       )}
 
-      <CTABanner title={`${city.name}'da`} highlight="Hemen Satın" subtitle="Aynı gün değerlendirme ve ödeme garantisi." source={`city-${city.id}-cta1`} whatsappMessage={`Merhaba, ${city.name}'da araç alımı için bilgi almak istiyorum.`} />
+      <CTABanner title={locative(city.name)} highlight="Hemen Satın" subtitle="Aynı gün değerlendirme ve ödeme garantisi." source={`city-${city.id}-cta1`} whatsappMessage={`Merhaba, ${locative(city.name)} araç alımı için bilgi almak istiyorum.`} />
 
       {/* Coverage areas */}
       <section className="section bg-surface">
@@ -220,7 +221,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       </section>
       )}
 
-      <CTABanner title={`${city.name}'da Bugün Arayın,`} highlight="Yarın Ödeme Alın!" subtitle="Paranız aynı gün hesabınızda." source={`city-${city.id}-cta2`} whatsappMessage={`Merhaba, ${city.name}'da araç alımı için bilgi almak istiyorum.`} />
+      <CTABanner title={`${locative(city.name)} Bugün Arayın,`} highlight="Yarın Ödeme Alın!" subtitle="Paranız aynı gün hesabınızda." source={`city-${city.id}-cta2`} whatsappMessage={`Merhaba, ${locative(city.name)} araç alımı için bilgi almak istiyorum.`} />
 
       {/* Schema: reference the sitewide business entity instead of minting a new one per city.
           No aggregateRating here — self-serving ratings violate Google's structured-data policy. */}
