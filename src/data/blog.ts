@@ -67,45 +67,61 @@ export const blogPosts: BlogPost[] = [
     id: '2',
     slug: 'pert-raporu-nedir',
     title: 'Pert Raporu Nedir? Nasıl Alınır?',
-    excerpt: 'Pert raporu hakkında merak ettiğiniz her şey ve pert raporlu araç satışı süreçleri.',
+    excerpt: 'Pert raporu nedir, sovtaj ne demek, pert kaydı sorgulama nasıl yapılır? Pert araç sahiplerinin bilmesi gereken her şey bu kapsamlı rehberde.',
     content: `
 <h2>Pert Raporu Nedir?</h2>
-<p>Pert raporu, sigorta şirketinin bir aracı ekonomik olarak onarılamaz olarak değerlendirmesi sonucu düzenlenen resmi belgedir. "Pert" kelimesi Türkçede "işe yaramaz hale gelmiş" anlamına gelir ve araç sigortacılığında özel bir anlam taşır.</p>
+<p>Pert raporu; trafik kazası, yangın, sel baskını veya benzeri bir olay sonucunda ağır hasar gören bir aracın, sigorta şirketi tarafından ekonomik olarak onarılamaz kabul edilmesi üzerine düzenlenen resmi tespittir. Halk arasında "pert araç" olarak bilinen bu durum, sigortacılık dilinde tam hasar ya da tam ziya olarak adlandırılır. Pert kararı verilen araç hukuken ortadan kalkmaz; ancak bu kayıt sigorta ve trafik sistemlerinde izlenir ve aracın ikinci el değerini doğrudan etkiler. Bu yazıda pert raporu nedir sorusunun yanıtını, pert kaydı sorgulama yöntemlerini ve aracı pert ilan edilen sürücülerin izlemesi gereken adımları ayrıntılı biçimde ele alıyoruz.</p>
 
-<h3>Pert Raporu Ne Zaman Düzenlenir?</h3>
-<p>Sigorta mevzuatına göre bir aracın tamir maliyeti, aracın rayiç (piyasa) değerinin belirli bir oranını aştığında — genellikle %60-70'ini — sigorta şirketi pert kararı verebilir. Bu karar sigorta şirketinin içinde bulunduğu koşullara, aracın yaşına ve hasar durumuna göre değişebilir.</p>
+<h3>Sigorta Şirketi Ne Zaman Pert Kararı Verir?</h3>
+<p>Uygulamada pert kararının temel ölçütü, onarım maliyetinin aracın rayiç (piyasa) değerine oranıdır. Kaza sonrası görevlendirilen eksper aracı inceler; parça, işçilik ve boya dahil toplam onarım maliyetini hesaplar. Bu maliyet, aracın hasar tarihindeki rayiç değerinin belirli bir bölümünü — genellikle yaklaşık yüzde 60-70'ini — aştığında sigorta şirketi aracı onarmak yerine pert işlemine yönelir. Bu oran kesin bir yasal sınır değildir; poliçe şartlarına, aracın yaşına, yedek parça bulunabilirliğine ve hasarın niteliğine göre şirketten şirkete değişebilir. Örneğin şasiye ulaşan hasarlarda, onarım maliyeti bu eşiğin altında kalsa bile güvenlik gerekçesiyle pert kararı verilebilir.</p>
 
-<h3>Pert Raporu Türleri</h3>
+<h3>Ağır Hasar Kaydı ile Pert Aynı Şey mi?</h3>
+<p>Bu iki kavram sık sık birbirine karıştırılır. Ağır hasar kaydı, aracın taşıyıcı bölümlerinde (şasi, tavan, podye gibi) ciddi hasar oluştuğunda trafik siciline işlenen ve aracın yeniden trafiğe çıkabilmesi için özel muayene şartı getiren bir kayıttır. Pert ise sigorta şirketinin ekonomik bir değerlendirmesidir: Araç taşıyıcı sistemlerinden hasar almamış olsa bile, onarım maliyeti rayiç değere göre çok yüksekse pert sayılabilir. Yani her pert araç ağır hasarlı değildir; her ağır hasarlı araç da pert ilan edilmiş olmayabilir. Alım veya satım öncesinde her iki kaydın ayrı ayrı sorgulanması bu nedenle önemlidir.</p>
+
+<h2>Pert Kararı Sonrası İki Seçenek: Tam Tazminat veya Sovtaj</h2>
+<p>Sigorta şirketi pert kararı verdiğinde araç sahibinin önünde genellikle iki yol bulunur:</p>
 <ul>
-  <li><strong>Tam Hasar Pert:</strong> Araç tamamen kullanılamaz hale gelmiştir.</li>
-  <li><strong>Kısmi Hasar Pert:</strong> Araç tamamen yok olmamış; ancak ekonomik onarım sınırını geçmiştir.</li>
-  <li><strong>Hırsızlık Pert:</strong> Çalınan araç belirli süre içinde bulunamazsa pert işlemi yapılır.</li>
-  <li><strong>Su Baskını / Yangın Pert:</strong> Doğal afet ya da yangın nedeniyle oluşan hasarlarda düzenlenir.</li>
+  <li><strong>Aracı sigortaya devretmek:</strong> Araç sahibi, aracın hasar tarihindeki rayiç değeri üzerinden hesaplanan tazminatın tamamını alır ve aracın mülkiyetini sigorta şirketine devreder. Şirket, aracı hasarlı araç veya hurda piyasasında kendisi değerlendirir.</li>
+  <li><strong>Sovtaj bedeliyle aracı elde tutmak:</strong> Araç sahibi aracı kendisinde bırakır; sigorta şirketi ise tazminattan aracın hasarlı haliyle taşıdığı değeri, yani sovtaj bedelini düşerek ödeme yapar. Bu durumda araç sahibi, hasarlı aracı dilediği kişi ya da kuruma satmakta serbesttir.</li>
+</ul>
+<p>Hangi seçeneğin daha kazançlı olduğu, sigortanın belirlediği sovtaj bedeline ve hasarlı aracın gerçek piyasa değerine bağlıdır. Karar vermeden önce hasarlı araç alımında uzmanlaşmış bir firmadan bağımsız teklif almak, iki senaryoyu sağlıklı biçimde karşılaştırmanızı sağlar.</p>
+
+<h2>Pert Kaydı Tramer'e İşler mi? Satışı Nasıl Etkiler?</h2>
+<p>Evet. Pert işlemi tamamlandığında bu bilgi Tramer (Trafik Sigortaları Bilgi Merkezi) kayıtlarına işlenir ve aracın hasar geçmişinde kalıcı olarak görünür. Aracı ileride kim satın alırsa alsın, sorgulama yaptığında pert kaydına ulaşabilir. Bu şeffaflık, pert kayıtlı araçların ikinci el piyasasında benzer temiz araçlara göre belirgin biçimde düşük fiyattan işlem görmesine neden olur. Kaydı gizleyerek satış yapmaya çalışmak ise ileride ayıplı mal iddialarına ve tazminat taleplerine yol açabileceğinden hem yasal risk hem de güven sorunu doğurur.</p>
+
+<h3>Pert Kaydı Sorgulama Nasıl Yapılır?</h3>
+<p>Pert kaydı sorgulama için iki pratik yol vardır. Birincisi e-Devlet üzerinden sunulan araç sorgulama hizmetleridir; plaka ve ruhsat bilgileriyle aracın tescil durumu ve hasar bilgilerine ulaşabilirsiniz. İkincisi Tramer'in SMS kanalıdır: Aracın plakasıyla kısa mesaj göndererek hasar geçmişi sorgulanabilir. Ayrıca sigorta acenteleri ve ekspertiz firmaları aracılığıyla da ayrıntılı hasar dökümü alınabilir. Alım ya da satım öncesinde bu sorgulamaların yapılması, her iki taraf için de sürpriz yaşanmasını önler.</p>
+
+<h2>Pert Araç Yasal Olarak Satılabilir mi?</h2>
+<p>Evet, pert kayıtlı araçlar Türkiye'de yasal olarak alınıp satılabilir. Satış, tıpkı normal araçlarda olduğu gibi noter kanalıyla yapılır ve alıcı, pert kaydını sorgulamalarda açıkça görebilir. Trafikten çekilmiş pert araçlarda ise devir işlemi, muayene ve yeniden tescil şartlarına bağlı olarak farklılık gösterebilir. Noter aşamasının nasıl işlediğini merak ediyorsanız <a href="/blog/noter-ile-arac-satisi-nasil-yapilir">noterde araç satışı rehberimize</a> göz atabilirsiniz. Önemli olan, hasar durumunun alıcıya dürüstçe bildirilmesi ve tüm belgelerin eksiksiz hazırlanmasıdır.</p>
+
+<h2>Aracınız Pert İlan Edilirse Adım Adım Ne Yapmalısınız?</h2>
+<p>Pert kararı çoğu araç sahibi için beklenmedik ve stresli bir durumdur; ancak panikle atılan adımlar ciddi maddi kayba yol açabilir. Sürecin her aşamasında yazılı belge istemek, rakamları karşılaştırmak ve karar vermeden önce alternatif teklifleri görmek en güvenli yoldur. Aşağıdaki adımları sırasıyla izleyerek hem haklarınızı koruyabilir hem de elinize geçecek toplam tutarı artırabilirsiniz:</p>
+<ul>
+  <li>Eksper raporunu ve sigortanın tazminat teklifini yazılı olarak isteyin; rakamların neye göre hesaplandığını öğrenin.</li>
+  <li>Aracın hasarlı haliyle piyasa değerini bağımsız kaynaklardan araştırın; benzer ilanları ve profesyonel alıcı tekliflerini karşılaştırın.</li>
+  <li>Sovtaj bedelini sorgulayın: Aracı elde tutmanız halinde elinize geçecek toplam tutarı, devretmeniz halindeki tazminatla kıyaslayın.</li>
+  <li>Karar netleşmeden araca onarım yaptırmayın; yapılan masraf tazminat hesabını değiştirmez ve çoğu zaman geri kazanılamaz.</li>
+  <li>Teklifler belli olduktan sonra ruhsat, kimlik, poliçe ve eksper raporunu hazırlayarak süreci tamamlayın.</li>
 </ul>
 
-<h3>Pert Raporlu Araç Satılır mı?</h3>
-<p>Evet! Pert raporlu araçlar Türkiye'de yasal olarak satılabilir ve alınabilir. Araç sahibi pert kararını kabul edip tazminatı aldıktan sonra aracı sigorta şirketine devredebilir; ya da tazminatın bir kısmını alarak aracı kendisi elinde tutabilir ve dilediğine satabilir. Hasar Park olarak pert araçlar için özel değerlendirme yapıyor, en yüksek fiyatı sunuyoruz.</p>
+<h2>Pert Araç Değeri Nasıl Hesaplanır?</h2>
+<p>Pert bir aracın değeri tek bir formülle bulunmaz; birden fazla etkenin birleşimiyle ortaya çıkar. Marka, model ve yıl ilk belirleyicidir: Yedek parçası çok aranan yaygın modeller, hasarlı halde bile güçlü talep görür. İkinci etken hasarın kapsamıdır; yalnızca kaporta ve boya hasarı bulunan bir pert araç, motoru ve şanzımanı sağlamsa ciddi değer taşır. Üçüncü etken kurtarılabilir parçalardır: Motor, şanzıman, kapılar, farlar, iç donanım ve elektronik üniteler parça piyasasında ayrı ayrı ekonomik değer üretir. Son olarak bölgesel talep de fiyatı etkiler; <a href="/sehirler/istanbul">İstanbul gibi büyük şehirlerde</a> hasarlı araç ve parça piyasası daha hareketli olduğundan teklifler genellikle daha rekabetçidir. Kazaya bağlı hasarı olan araçlarda <a href="/kazali-arac-alim">kazalı araç alımı</a> yapan uzman firmalardan değerleme istemek, gerçekçi bir fiyat aralığı görmenizi sağlar.</p>
 
-<h3>Gerekli Evraklar</h3>
-<ul>
-  <li>Pert raporu (sigorta şirketinden alınan resmi belge)</li>
-  <li>Araç ruhsatı (aslı)</li>
-  <li>Sigorta poliçesi</li>
-  <li>Kimlik belgesi</li>
-  <li>Varsa kaza tutanağı</li>
-</ul>
+<h2>Pert Sürecinde Sık Yapılan Hatalar</h2>
+<p>En yaygın hata, sigortanın ilk sovtaj teklifini hiçbir karşılaştırma yapmadan kabul etmektir; hasarlı aracın gerçek piyasa değeri, teklif edilen sovtaj bedelinin üzerinde olabilir. İkinci hata, değerleme tamamlanmadan araca onarım yaptırmaktır; bu masraf çoğu zaman satış fiyatına yansımaz. Üçüncü hata, pert kaydını gizleyerek satış yapmaya çalışmaktır; kayıt Tramer'de göründüğü için bu yaklaşım hem güven kaybına hem de hukuki sorumluluğa yol açar. Son olarak süreci uzatmak da maliyetlidir: Bekleyen hasarlı araç pas, nem ve parça eskimesi nedeniyle zamanla değer kaybeder.</p>
 
-<h2>Pert Araç Sahibi Ne Yapmalı?</h2>
-<p>Sigorta şirketinin teklifini sorgulamadan kabul etmeden önce bağımsız bir değerlendirme yaptırın. Hasar Park'ı arayın; sigorta teklifinin üzerinde bir fiyat alıp alamayacağınızı öğrenin. Çoğu zaman aracı kendiniz satmak sigorta tazminatından daha kazançlı olabilir.</p>
+<h2>Pert Aracınız İçin Rekabetçi Teklif Alın</h2>
+<p>Aracınız pert ilan edildiyse acele karar vermeden önce ikinci bir görüş alın. Hasar Park, pert ve <a href="/hasarli-arac-alim">hasarlı araç alımında</a> uzman ekibiyle aracınızı değerlendirir; yaklaşık 30 dakika içinde piyasa koşullarında rekabetçi bir teklif sunar. Türkiye genelinde ücretsiz çekici, noter işlemlerinde tam destek ve anında ödeme ile süreç sizin için zahmetsiz ilerler. <a href="/pert-arac-alim">Pert araç alım hizmetimiz</a> hakkında ayrıntılı bilgi almak ve teklifinizi öğrenmek için hemen bize ulaşın.</p>
     `,
     image: '/images/blog/pert-raporu-belgesi.png',
     category: 'Bilgi',
     author: 'Hukuk Ekibi',
     publishedAt: '2025-01-03',
-    readTime: '5 dk',
+    readTime: '7 dk',
     tags: ['pert raporu', 'sigorta', 'yasal süreç'],
     metaTitle: 'Pert Raporu Nedir, Nasıl Alınır? | Hasar Park',
-    metaDescription: 'Pert raporu hakkında tüm detaylar. Pert raporlu araç satışı ve alımı konusunda bilmeniz gerekenler.',
+    metaDescription: 'Pert raporu nedir, sigorta ne zaman pert kararı verir? Sovtaj, Tramer kaydı ve pert kaydı sorgulama dahil tüm süreç bu rehberde.',
   },
   {
     id: '3',
@@ -341,42 +357,71 @@ export const blogPosts: BlogPost[] = [
     id: '9',
     slug: 'hurda-arac-fiyatlari-nasil-belirlenir',
     title: 'Hurda Araç Fiyatları Nasıl Belirlenir?',
-    excerpt: 'Hurda araç fiyatını etkileyen faktörler, kilo fiyatları ve değerlendirme süreci hakkında kapsamlı rehber.',
+    excerpt: 'Hurda araç fiyatlarını belirleyen etkenler: kilo fiyatı, kurtarılabilir parçalar, çekme ve hurda belgesi farkı ve hurdaya ayırma süreci.',
     content: `
-<h2>Hurda Araç Fiyatını Belirleyen Faktörler</h2>
-<p>Hurda araç fiyatı; araç ağırlığı, günlük hurda demir fiyatı ve kullanılabilir parça değerinin birleşiminden oluşur. Bu faktörleri anlayarak aracınız için en iyi fiyatı alabilirsiniz.</p>
+<h2>Hurda Araç Fiyatları Nasıl Belirlenir?</h2>
+<p>Ekonomik ömrünü tamamlamış, ağır hasar görmüş ya da onarımı anlamsız hale gelmiş bir aracı elden çıkarmak isteyen herkesin ilk sorusu aynıdır: Hurda araç fiyatları neye göre belirlenir? Yaygın kanının aksine hurda araç fiyatı tek bir rakamdan ibaret değildir; aracın ağırlığı, güncel hurda metal piyasası, kurtarılabilir parçaların değeri ve markaya olan parça talebi birlikte hesaba katılır. Bu rehberde hurda araç kilo fiyatının nasıl işlediğini, hurda belgesi ve hurdaya ayırma sürecini ve aracınızdan alabileceğiniz bedeli artırmanın yollarını adım adım anlatıyoruz.</p>
 
-<h3>1. Günlük Hurda Demir Fiyatı</h3>
-<p>Hurda araç fiyatlamasının temelini oluşturur. Hurda demir fiyatı günlük değişkenlik gösterir ve çelik piyasasıyla bağlantılıdır. Piyasa koşullarına göre kilogram başına 8-18 TL arasında seyreder. Hasar Park, her gün güncel piyasa fiyatlarını takip ederek size en iyi teklifi sunar.</p>
+<h3>Hangi Araçlar Hurda Sayılır? Çekme Belgeli ve Hurda Belgeli Farkı</h3>
+<p>Türkiye'de bir aracın hurda statüsü, trafik tescil kayıtları üzerinden tanımlanır ve karşımıza iki farklı belge çıkar. Çekme belgeli (ÇKB) araç, sahibinin talebiyle trafikten çekilmiş ancak tescil kaydı tamamen silinmemiş araçtır; gerekli muayene ve tescil şartları sağlandığında ileride yeniden trafiğe dönebilir. Bu ihtimal korunduğu için çekme belgeli araçlar, hurda belgelilere göre genellikle daha değerlidir. Hurda belgeli araçta ise tescil kaydı kalıcı olarak silinir; araç bir daha trafiğe çıkamaz ve yalnızca parça ile geri dönüşüm değeri üzerinden fiyatlanır. Satıştan önce aracınızın hangi statüde olduğunu netleştirmek, doğru fiyat beklentisi oluşturmanın ilk adımıdır.</p>
 
-<h3>2. Araç Ağırlığı</h3>
-<p>Ortalama araç ağırlıkları:
-- Küçük otomobil (Fiat Punto, Renault Clio): 900-1.100 kg
-- Orta sınıf (Toyota Corolla, VW Golf): 1.100-1.400 kg
-- Büyük sedan (BMW 5 Serisi): 1.400-1.700 kg
-- SUV (Volkswagen Tiguan): 1.500-1.900 kg
-- Hafif ticari araç: 1.500-2.500 kg</p>
+<h2>Hurda Araç Fiyatını Belirleyen Ana Etkenler</h2>
 
-<h3>3. Değerli Metal İçeriği</h3>
-<p>Alüminyum kapılar, motor bloğu ve bazı özel parçalar hurda demir değerinin üzerinde fiyatlanır. Bakır kablo demeti, katalitik konvertör (platin içeriği nedeniyle) ve alüminyum jantlar ek değer yaratır.</p>
+<h3>1. Araç Ağırlığı ve Güncel Hurda Kilo Fiyatı</h3>
+<p>Fiyatlamanın temeli, aracın ağırlığının güncel hurda metal kilo fiyatıyla çarpılmasıdır. Küçük bir otomobil yaklaşık 900-1.100 kilogram, orta sınıf bir sedan 1.100-1.400 kilogram, SUV ve hafif ticari araçlar ise çoğunlukla 1.500 kilogramın üzerinde ağırlığa sahiptir. Hurda araç kilo fiyatı sabit değildir; küresel çelik ve metal piyasalarındaki dalgalanmalara, döviz kuruna ve iç talebe bağlı olarak haftadan haftaya değişir. Bu nedenle internette rastladığınız eski bir kilo fiyatı üzerinden hesap yapmak yanıltıcı olur; satış günü geçerli olan güncel fiyatı mutlaka teyit edin ve tartımın şeffaf yapılmasını isteyin.</p>
 
-<h3>4. Kullanılabilir Parçalar</h3>
-<p>Araçta kullanılabilir durumda parçalar varsa (çalışan motor, sağlam koltuklar, hasarsız camlar, orijinal aksesuar) bu parçalar hurda değerinin üzerinde fiyatlandırılır ve toplam ödemeyi artırır.</p>
+<h3>2. Kurtarılabilir Parçaların Ek Değeri</h3>
+<p>Dışarıdan hurda görünen bir araçta, salt metal ağırlığının çok üzerinde değer taşıyan parçalar bulunabilir. Bu parçaların başlıcaları şunlardır:</p>
+<ul>
+  <li><strong>Katalitik konvertör:</strong> İçerdiği değerli metaller nedeniyle tek başına önemli bir kalemdir.</li>
+  <li><strong>Alüminyum jantlar ve motor bloğu:</strong> Alüminyum, hurda demirden daha yüksek fiyatla alınır.</li>
+  <li><strong>Akü ve bakır kablo tesisatı:</strong> Geri dönüşüm piyasasında ayrıca değerlendirilir.</li>
+  <li><strong>Elektronik üniteler, farlar ve iç donanım:</strong> Çalışır durumdaysa ikinci el parça piyasasında alıcı bulur.</li>
+  <li><strong>Motor ve şanzıman:</strong> Sağlam ya da onarılabilir durumdaysa aracın toplam değerini ciddi biçimde yükseltir.</li>
+</ul>
 
-<h2>Örnek Hurda Araç Fiyat Hesabı</h2>
-<p>1.200 kg ağırlığında bir araç, günlük 12 TL/kg fiyatıyla değerlendirildiğinde: 1.200 × 12 = 14.400 TL temel değer oluşur. Değerli parçalar ve metal içeriğiyle bu rakam artabilir.</p>
+<h3>3. Marka, Model ve Parça Talebi</h3>
+<p>Yollarda sık görülen modellerin yedek parçaları sürekli arandığı için bu araçların hurdası da daha kolay ve daha iyi fiyata alıcı bulur. Az satılmış ya da parça talebi sınırlı modellerde ise fiyat, ağırlık esaslı hesaba daha çok yaklaşır. Aracın yaşı ve hasar geçmişi de bu dengeyi etkiler: Görece yeni bir modelin hurdası, parça talebi yüksek olduğu için eski muadillerine göre daha iyi fiyatlanır. Bölgesel piyasa da etkilidir: <a href="/sehirler/istanbul">İstanbul gibi büyük şehirlerde</a> parça ve geri dönüşüm piyasası hareketli olduğundan teklifler genellikle daha rekabetçi olur.</p>
 
-<h2>Neden Hasar Park'ı Seçmelisiniz?</h2>
-<p>Resmi belgeli hurda araç işletmesi olarak Hasar Park; şeffaf tartım süreci, güncel piyasa fiyatları ve anında ödeme garantisiyle Türkiye genelinde hizmet vermektedir. Ücretsiz çekici ve tüm evrak işlemleri dahildir.</p>
+<h2>Hurdaya Ayırma Süreci Adım Adım</h2>
+<p>Hurdaya ayırma, yalnızca aracı bir tesise teslim etmekten ibaret değildir; işin resmi ayağı en az fiyat kadar önemlidir. Tescil kaydı doğru şekilde kapatılmadığında araç kağıt üzerinde sizin adınıza kayıtlı kalır ve tüm yükümlülükler devam eder. Sürecin sağlıklı ilerlemesi için izlenmesi gereken adımlar şunlardır:</p>
+<ul>
+  <li><strong>Karar aşaması:</strong> Aracı trafikten çekmek mi (çekme belgesi) yoksa tamamen hurdaya ayırmak mı istediğinize karar verin; iki işlemin sonuçları farklıdır.</li>
+  <li><strong>Noter ve tescil başvurusu:</strong> İşlemler noter ve trafik tescil birimleri üzerinden yürütülür. Devir aşamasının ayrıntıları için <a href="/blog/noter-ile-arac-satisi-nasil-yapilir">noterde araç satışı rehberimizi</a> inceleyebilirsiniz.</li>
+  <li><strong>Hurda belgesi düzenlenmesi:</strong> Hurdaya ayrılan aracın tescil kaydı silinir ve hurda belgesi düzenlenir; araç artık trafiğe çıkamaz.</li>
+  <li><strong>MTV yükümlülüğünün sona ermesi:</strong> Kayıt silindikten sonra Motorlu Taşıtlar Vergisi tahakkuku durur; muayene ve zorunlu trafik sigortası yükümlülükleri de ortadan kalkar.</li>
+  <li><strong>Teslim ve ödeme:</strong> Araç, alıcı firmaya ya da lisanslı tesise teslim edilir; tartım ve değerleme sonrası ödeme yapılır.</li>
+</ul>
+
+<h3>Gerekli Belgeler</h3>
+<ul>
+  <li>Araç ruhsatı (aslı)</li>
+  <li>Araç sahibinin kimlik belgesi</li>
+  <li>Araç sahibi işlemlere katılamıyorsa noter onaylı vekaletname</li>
+  <li>Plakalar ve varsa aracın anahtarları</li>
+</ul>
+<p>Belgelerin eksiksiz olması işlemleri önemli ölçüde hızlandırır. Ruhsat kayıp ise ya da araç üzerinde haciz, rehin gibi bir şerh varsa bu durumların önceden çözülmesi gerekir. Profesyonel alım firmaları bu tür durumlarda hangi adımların izleneceği konusunda yol gösterir ve evrak sürecinin büyük bölümünü sizin adınıza yürütür.</p>
+
+<h2>Lisanslı Geri Dönüşüm Tesisi mi, Hurda Araç Alım Firması mı?</h2>
+<p>Lisanslı geri dönüşüm tesisleri aracı esas olarak metal ağırlığı üzerinden değerlendirir; süreç mevzuata uygun ilerler ancak kullanılabilir parçaların katkısı fiyata her zaman tam yansımayabilir. <a href="/hurda-arac-alim">Hurda araç alımı</a> yapan profesyonel firmalar ise aracı bir bütün olarak inceler: Ağırlığın yanında çalışan aksamlar, değerli metaller ve parça talebi de teklife dahil edilir. Aracınızda kurtarılabilir parça varsa, yalnızca kilo hesabıyla satmak çoğu durumda eksik kazanç anlamına gelir. En sağlıklı yaklaşım, satmadan önce her iki kanaldan da teklif alıp karşılaştırmaktır.</p>
+
+<h2>Kullanılabilir Parçası Olan Araç Neden Daha Değerlidir?</h2>
+<p>Salt hurda hesabı, aracı yalnızca eritilecek metal olarak görür. Oysa çalışan bir motor, sağlam bir şanzıman ya da hasarsız kapılar, parça piyasasında metal değerinin katbekat üzerinde fiyat bulabilir. Aynı ağırlıktaki iki araçtan biri komple yanmış, diğeri yalnızca önden darbe almışsa aralarındaki fiyat farkı birkaç kat olabilir; çünkü ikinci araçta motor, arka aksam ve iç donanım büyük olasılıkla değerlendirilebilir durumdadır. Bu yüzden kaza geçirmiş ama önemli aksamları sağlam kalmış bir araç, hurdadan çok hasarlı araç sınıfında değerlendirilmelidir. Böyle bir durumda <a href="/hasarli-arac-alim">hasarlı araç alımı</a> ya da <a href="/kazali-arac-alim">kazalı araç alımı</a> kapsamında değerleme istemek, kilo hesabına göre belirgin biçimde daha yüksek bir teklif almanızı sağlayabilir.</p>
+
+<h2>Hurda Araç Satışında Sık Yapılan Hatalar</h2>
+<p>En kritik hata, aracı trafikten çekmeden ya da hurdaya ayırmadan yalnızca fiziken teslim etmektir. Tescil kaydı üzerinizde kaldığı sürece MTV, trafik cezaları ve araçla ilgili hukuki sorumluluk size ait olmaya devam eder; bu nedenle resmi işlemler tamamlanmadan süreci bitmiş saymayın. İkinci hata, tek bir teklifle yetinmektir; alıcılar arasındaki fark ciddi olabilir. Üçüncü hata, katalitik konvertör ve alüminyum aksam gibi değerli kalemleri hesaba katmadan pazarlık yapmaktır. Son olarak aracı uzun süre bekletmek de kayıptır: Açıkta duran araçta pas ve parça bozulması ilerledikçe hem parça değeri hem de toplam teklif düşer.</p>
+
+<h2>Hurda Aracınız İçin Hasar Park'tan Teklif Alın</h2>
+<p>Hurda ya da ekonomik ömrünü doldurmuş aracınızı satmayı düşünüyorsanız süreci tek başınıza yürütmek zorunda değilsiniz. Hasar Park, aracınızı ağırlığı ve kurtarılabilir parçalarıyla birlikte değerlendirir; yaklaşık 30 dakika içinde piyasa koşullarında rekabetçi bir teklif iletir. Türkiye genelinde ücretsiz çekici, noter ve tescil işlemlerinde tam destek ve anında ödeme hizmetimizle tüm süreç zahmetsiz tamamlanır. Ayrıntılı bilgi için <a href="/hurda-arac-alim">hurda araç alım sayfamızı</a> ziyaret edin veya hemen bize ulaşın.</p>
     `,
     image: '/images/blog/hurda-demir-fiyatlari.png',
     category: 'Bilgi',
     author: 'Hasar Park Uzman Ekibi',
     publishedAt: '2025-02-01',
-    readTime: '5 dk',
+    readTime: '7 dk',
     tags: ['hurda araç fiyatı', 'kilo fiyatı', 'hurda demir'],
     metaTitle: 'Hurda Araç Fiyatları Nasıl Belirlenir? | Hasar Park Blog',
-    metaDescription: 'Hurda araç fiyatını etkileyen faktörler ve güncel kilo fiyatları. Aracınız için en yüksek hurda teklifini alın.',
+    metaDescription: 'Hurda araç fiyatları nasıl hesaplanır? Kilo fiyatı, kurtarılabilir parça değeri, hurda belgesi ve hurdaya ayırma süreci bu rehberde.',
   },
   {
     id: '10',

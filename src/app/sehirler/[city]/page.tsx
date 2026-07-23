@@ -182,7 +182,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       </section>
       )}
 
-      <CTABanner title={locative(city.name)} highlight="Hemen Satın" subtitle="Aynı gün değerlendirme ve ödeme garantisi." source={`city-${city.id}-cta1`} whatsappMessage={`Merhaba, ${locative(city.name)} araç alımı için bilgi almak istiyorum.`} />
+      <CTABanner title={locative(city.name)} highlight="Hemen Satın" subtitle="Aynı gün değerlendirme, noterde eş zamanlı ödeme." source={`city-${city.id}-cta1`} whatsappMessage={`Merhaba, ${locative(city.name)} araç alımı için bilgi almak istiyorum.`} />
 
       {/* Coverage areas */}
       <section className="section bg-surface">
